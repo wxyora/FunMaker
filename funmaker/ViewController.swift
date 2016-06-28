@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
 
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +22,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        userName.resignFirstResponder()
+        password.resignFirstResponder()
+        return true
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        return true
+    }
+    
+    
 
 
 }
