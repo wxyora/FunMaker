@@ -18,6 +18,25 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func login(sender: AnyObject) {
+        if userName.text?.isEmpty == true{
+            let alert = UIAlertView(title: "提示信息", message: "用户名不能为空", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            
+        }else{
+            if password.text?.isEmpty == true{
+                let alert = UIAlertView(title: "提示信息", message: "密码不能为空", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
+                
+            }else{
+                let alert = UIAlertView(title: "提示信息", message: "登录成功", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
+            }
+        
+        }
+        
+      
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
