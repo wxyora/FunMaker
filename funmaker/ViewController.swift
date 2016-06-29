@@ -12,10 +12,18 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var registButton: UIButton!
+    
     var message:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.layer.cornerRadius = 5
+        registButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -52,6 +60,30 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
         }
         
       
+    }
+    @IBAction func acitonSheet(sender: AnyObject) {
+        //UIAlertController默认不传参数就是actionSheet操作表控件
+        let actionSheet = UIAlertController()
+        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
+            print("取消")
+        })
+        actionSheet.addAction(UIAlertAction(title: "腾讯QQ", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+            print("腾讯QQ")
+        })
+        actionSheet.addAction(UIAlertAction(title: "新浪微博", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            print("新浪微博")
+        })
+        actionSheet.addAction(UIAlertAction(title: "微信", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            print("微信")
+        })
+        
+        actionSheet.addAction(UIAlertAction(title: "朋友圈", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            print("朋友圈")
+        })
+
+            
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
