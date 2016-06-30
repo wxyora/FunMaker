@@ -15,6 +15,7 @@
 		098891051D1ED5A7008D1257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */; };
 		098891101D1ED5A7008D1257 /* funmakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988910F1D1ED5A7008D1257 /* funmakerTests.swift */; };
 		0988911B1D1ED5A7008D1257 /* funmakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */; };
+		09988B501D24C3280069A65C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		098891161D1ED5A7008D1257 /* funmakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = funmakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funmakerUITests.swift; sourceTree = "<group>"; };
 		0988911C1D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09988B4F1D24C3280069A65C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				098890FA1D1ED5A7008D1257 /* AppDelegate.swift */,
 				098890FC1D1ED5A7008D1257 /* ViewController.swift */,
 				096E68CF1D21168000501D5B /* RegistViewController.swift */,
+				09988B4F1D24C3280069A65C /* WebViewController.swift */,
 				098890FE1D1ED5A7008D1257 /* Main.storyboard */,
 				098891011D1ED5A7008D1257 /* Assets.xcassets */,
 				098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				098890FD1D1ED5A7008D1257 /* ViewController.swift in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
+				09988B501D24C3280069A65C /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

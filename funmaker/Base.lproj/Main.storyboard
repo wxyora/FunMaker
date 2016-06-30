@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--登录-->
@@ -24,7 +22,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="59" y="201" width="209" height="30"/>
+                                    <rect key="frame" x="96" y="201" width="209" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="88" y="201" width="250" height="30"/>
                                 </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="VcP-tT-cjS"/>
@@ -33,13 +34,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_name" translatesAutoresizingMaskIntoConstraints="NO" id="yji-OF-ykm">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="140" width="38" height="30"/>
+                                    <rect key="frame" x="49" y="140" width="38" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="140" width="38" height="30"/>
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="LnK-cf-qLq">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="201" width="38" height="30"/>
+                                    <rect key="frame" x="49" y="201" width="38" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="201" width="38" height="30"/>
                                 </variation>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号／邮箱／用户名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aaF-pX-63c">
@@ -47,7 +54,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="59" y="140" width="209" height="30"/>
+                                    <rect key="frame" x="95" y="140" width="209" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="88" y="140" width="250" height="30"/>
                                 </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nhY-U6-2BX"/>
@@ -60,11 +70,14 @@
                                 <state key="normal" title="登录">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="59" y="329" width="279" height="33"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="72" y="380" width="255" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="365" width="276" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ezu-6h-fkh"/>
+                                    <segue destination="hDe-Ul-FHa" kind="presentation" modalTransitionStyle="flipHorizontal" id="oPE-Id-j0z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVX-8h-KzU">
@@ -74,27 +87,18 @@
                                 <state key="normal" title="注册">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="59" y="430" width="279" height="30"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="72" y="444" width="255" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="439" width="276" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="R3S-9I-V4j" kind="presentation" id="XmD-IL-CHd"/>
+                                    <segue destination="R3S-9I-V4j" kind="presentation" id="2Bb-uH-m8h"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="hQC-vd-Csc" secondAttribute="trailing" constant="115" id="AO4-LA-t2S">
-                                <variation key="widthClass=compact" constant="33"/>
-                            </constraint>
-                            <constraint firstItem="nVX-8h-KzU" firstAttribute="top" secondItem="hQC-vd-Csc" secondAttribute="bottom" constant="2" id="IoS-Ie-uaw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nVX-8h-KzU" secondAttribute="trailing" constant="42" id="cEh-QV-ejK"/>
-                            <constraint firstItem="nVX-8h-KzU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="hUw-IN-ToE"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nVX-8h-KzU" secondAttribute="bottom" constant="44" id="lhj-Wa-qaC"/>
-                            <constraint firstItem="hQC-vd-Csc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="xQ1-H5-1fO">
-                                <variation key="widthClass=compact" constant="33"/>
-                            </constraint>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="jMj-M8-dvj"/>
@@ -103,14 +107,6 @@
                                 <exclude reference="aaF-pX-63c"/>
                                 <exclude reference="hQC-vd-Csc"/>
                                 <exclude reference="nVX-8h-KzU"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="AO4-LA-t2S"/>
-                                <exclude reference="xQ1-H5-1fO"/>
-                                <exclude reference="IoS-Ie-uaw"/>
-                                <exclude reference="cEh-QV-ejK"/>
-                                <exclude reference="hUw-IN-ToE"/>
-                                <exclude reference="lhj-Wa-qaC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -121,14 +117,6 @@
                                 <include reference="aaF-pX-63c"/>
                                 <include reference="hQC-vd-Csc"/>
                                 <include reference="nVX-8h-KzU"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="AO4-LA-t2S"/>
-                                <include reference="xQ1-H5-1fO"/>
-                                <include reference="IoS-Ie-uaw"/>
-                                <include reference="cEh-QV-ejK"/>
-                                <include reference="hUw-IN-ToE"/>
-                                <include reference="lhj-Wa-qaC"/>
                             </mask>
                         </variation>
                     </view>
@@ -142,13 +130,64 @@
                     <connections>
                         <outlet property="loginButton" destination="hQC-vd-Csc" id="pOd-b6-x0S"/>
                         <outlet property="password" destination="jMj-M8-dvj" id="o8H-Rj-TLg"/>
-                        <outlet property="registButton" destination="nVX-8h-KzU" id="m2g-fL-14R"/>
+                        <outlet property="registButton" destination="nVX-8h-KzU" id="R0e-RX-WYg"/>
                         <outlet property="userName" destination="aaF-pX-63c" id="bKd-ng-LKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17290.5" y="-6098"/>
+            <point key="canvasLocation" x="-21670.5" y="-7215"/>
+        </scene>
+        <!--网页-->
+        <scene sceneID="ZXb-Dk-h4h">
+            <objects>
+                <viewController id="Doc-PJ-bAN" customClass="WebViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nBZ-f2-Saj"/>
+                        <viewControllerLayoutGuide type="bottom" id="mz7-iT-DY1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KTO-oP-M8d" customClass="Web">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-nZ-sle">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="72" width="380" height="354"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="BWY-nZ-sle"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="BWY-nZ-sle"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="网页" id="8K3-yK-cKu">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="uob-fA-EDj">
+                            <connections>
+                                <action selector="returnUpStep:" destination="Doc-PJ-bAN" id="9TP-Rx-n3p"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="Ex8-GY-Bae"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myWebView" destination="BWY-nZ-sle" id="e22-3s-E8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNn-uQ-b6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20409" y="-6479.25"/>
         </scene>
         <!--注册-->
         <scene sceneID="KCC-GV-uQB">
@@ -237,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-m2-7OT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15934.5" y="-6072"/>
+            <point key="canvasLocation" x="-19750.5" y="-7192.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9gP-1E-Eri">
@@ -255,7 +294,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0R1-02-nsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18034.5" y="-5946"/>
+            <point key="canvasLocation" x="-22746" y="-7234.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7yE-3J-Vul">
@@ -273,7 +312,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOC-8x-whS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16626" y="-6088"/>
+            <point key="canvasLocation" x="-20841" y="-7197"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c9d-iQ-fmX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hDe-Ul-FHa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tHr-Ep-oBy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Doc-PJ-bAN" kind="relationship" relationship="rootViewController" id="iwz-ax-mOq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZK-LO-1z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-21189" y="-6482.25"/>
         </scene>
     </scenes>
     <resources>
