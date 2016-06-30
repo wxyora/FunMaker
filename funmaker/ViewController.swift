@@ -24,9 +24,22 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 5
         registButton.layer.cornerRadius = 5
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let c = add(4)
+        print(c)
+        
+        
     }
-
+    
+    func add(a:Int=3,b:Int = 2)->Int{
+        
+        return a+b
+        
+    }
+    
+    
+    
+    
     @IBAction func login(sender: AnyObject) {
         if userName.text?.isEmpty == true{
 //            let alert = UIAlertView(title: "提示信息", message: "用户名不能为空", delegate: nil, cancelButtonTitle: "OK")
