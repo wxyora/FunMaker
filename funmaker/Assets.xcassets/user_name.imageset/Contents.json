@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "iphone",
+      "filename" : "user_name.png",
       "scale" : "1x"
     },
     {
@@ -11,12 +12,6 @@
     {
       "idiom" : "iphone",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "user_name.png",
-      "unassigned" : true,
-      "scale" : "1x"
     }
   ],
   "info" : {

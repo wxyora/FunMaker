@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "iphone",
+      "filename" : "password.png",
       "scale" : "1x"
     },
     {
@@ -11,12 +12,6 @@
     {
       "idiom" : "iphone",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "password.png",
-      "unassigned" : true,
-      "scale" : "1x"
     }
   ],
   "info" : {
