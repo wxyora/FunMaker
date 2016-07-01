@@ -28,6 +28,13 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
         let c = add(4)
         print(c)
         
+        let str = {
+            a,b in
+            return a + b
+            
+        }("hello,","world")
+        
+        print(str)
         
     }
     
