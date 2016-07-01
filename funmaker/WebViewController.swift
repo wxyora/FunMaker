@@ -8,18 +8,22 @@
 
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController,UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
+    @IBOutlet weak var progressShow: UIActivityIndicatorView!
     
     @IBAction func returnUpStep(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad() {
+    
         super.viewDidLoad()
+        myWebView.delegate = self
         let url = NSURL(string: "https://www.baidu.com")!
         let request = NSURLRequest(URL: url)
         myWebView.loadRequest(request)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +31,19 @@ class WebViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        progressShow.stopAnimating()
+        progressShow.hidesWhenStopped = true
+
+        
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        progressShow.startAnimating()
+           }
+
     
 
     /*
