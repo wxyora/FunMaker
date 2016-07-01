@@ -75,6 +75,10 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
                 print("OK button was pressed")
                 })
+            
+            alertController.addAction(UIAlertAction(title: "警告", style: UIAlertActionStyle.Destructive, handler: { (self) in
+                
+            }))
             //显示
             self.presentViewController(alertController, animated: true, completion: nil)
         }
