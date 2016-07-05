@@ -275,12 +275,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="vd5-JR-beM">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="uHe-ll-rMe">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="done" id="uHe-ll-rMe">
                             <connections>
                                 <action selector="cancel:" destination="NX8-dz-lIO" id="zng-Mc-Jgd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="提交" id="ubw-v8-Zft">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="ubw-v8-Zft">
                             <connections>
                                 <action selector="save:" destination="NX8-dz-lIO" id="Wy7-ps-4Bo"/>
                             </connections>
@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-m2-7OT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-21364.5" y="-7657.5"/>
+            <point key="canvasLocation" x="-21883.5" y="-7648.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9gP-1E-Eri">
@@ -325,7 +325,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOC-8x-whS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22665" y="-7506"/>
+            <point key="canvasLocation" x="-22611" y="-7574.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c9d-iQ-fmX">
