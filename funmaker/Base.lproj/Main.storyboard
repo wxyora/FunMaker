@@ -89,6 +89,9 @@
                                 <state key="normal" title="注册">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="35" y="605" width="330" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="R3S-9I-V4j" kind="presentation" id="2Bb-uH-m8h"/>
                                 </connections>
@@ -101,7 +104,7 @@
                             <constraint firstItem="aaF-pX-63c" firstAttribute="leading" secondItem="yji-OF-ykm" secondAttribute="trailing" constant="3" id="BbU-rJ-sh4"/>
                             <constraint firstItem="yji-OF-ykm" firstAttribute="top" secondItem="aaF-pX-63c" secondAttribute="top" id="NPM-MW-2PM"/>
                             <constraint firstItem="nVX-8h-KzU" firstAttribute="top" secondItem="hQC-vd-Csc" secondAttribute="bottom" constant="30" id="OUJ-rB-k2Y">
-                                <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="57"/>
                             </constraint>
                             <constraint firstItem="LnK-cf-qLq" firstAttribute="top" secondItem="yji-OF-ykm" secondAttribute="bottom" constant="31" id="P9h-Nu-8bG"/>
                             <constraint firstItem="LnK-cf-qLq" firstAttribute="leading" secondItem="hQC-vd-Csc" secondAttribute="leading" constant="-13" id="ST1-eg-DCl"/>
@@ -114,7 +117,7 @@
                             <constraint firstItem="LnK-cf-qLq" firstAttribute="leading" secondItem="yji-OF-ykm" secondAttribute="leading" id="fph-E0-qA8"/>
                             <constraint firstItem="aaF-pX-63c" firstAttribute="leading" secondItem="jMj-M8-dvj" secondAttribute="leading" id="fvk-oq-vNR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nVX-8h-KzU" secondAttribute="bottom" constant="78" id="ld8-Ee-Cbg">
-                                <variation key="heightClass=regular-widthClass=compact" constant="116"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="94"/>
                             </constraint>
                             <constraint firstItem="aaF-pX-63c" firstAttribute="trailing" secondItem="jMj-M8-dvj" secondAttribute="trailing" id="nEH-CC-5y7"/>
                             <constraint firstAttribute="trailing" secondItem="hQC-vd-Csc" secondAttribute="trailing" constant="35" id="uzN-lF-2fp"/>
