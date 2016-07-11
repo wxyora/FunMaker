@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
+		096004611D2F974200507D25 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096004601D2F974200507D25 /* IndexViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
 		098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FA1D1ED5A7008D1257 /* AppDelegate.swift */; };
 		098890FD1D1ED5A7008D1257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FC1D1ED5A7008D1257 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
+		096004601D2F974200507D25 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		098890F71D1ED5A7008D1257 /* funmaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funmaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098890FA1D1ED5A7008D1257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		096004621D2F977F00507D25 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				096004601D2F974200507D25 /* IndexViewController.swift */,
+				096E68CF1D21168000501D5B /* RegistViewController.swift */,
+				098890FC1D1ED5A7008D1257 /* ViewController.swift */,
+				09988B4F1D24C3280069A65C /* WebViewController.swift */,
+				093C0F681D33775F007C62BC /* RecentOrderViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		096004631D2F979200507D25 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				098890FA1D1ED5A7008D1257 /* AppDelegate.swift */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
+		096004641D2F979C00507D25 /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		098890EE1D1ED5A7008D1257 = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +132,12 @@
 		098890F91D1ED5A7008D1257 /* funmaker */ = {
 			isa = PBXGroup;
 			children = (
-				098890FA1D1ED5A7008D1257 /* AppDelegate.swift */,
-				098890FC1D1ED5A7008D1257 /* ViewController.swift */,
-				096E68CF1D21168000501D5B /* RegistViewController.swift */,
-				09988B4F1D24C3280069A65C /* WebViewController.swift */,
+				096004631D2F979200507D25 /* delegate */,
+				096004621D2F977F00507D25 /* controller */,
+				096004641D2F979C00507D25 /* util */,
 				098890FE1D1ED5A7008D1257 /* Main.storyboard */,
-				098891011D1ED5A7008D1257 /* Assets.xcassets */,
 				098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */,
+				098891011D1ED5A7008D1257 /* Assets.xcassets */,
 				098891061D1ED5A7008D1257 /* Info.plist */,
 			);
 			path = funmaker;
@@ -199,6 +229,7 @@
 				TargetAttributes = {
 					098890F61D1ED5A7008D1257 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = NCG8SLAG2Z;
 					};
 					0988910A1D1ED5A7008D1257 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -262,10 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */,
 				098890FD1D1ED5A7008D1257 /* ViewController.swift in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
 				09988B501D24C3280069A65C /* WebViewController.swift in Sources */,
+				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,10 +440,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = funmaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -418,10 +454,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = funmaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -29,6 +29,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
         print(c)
         
         
+        
+        
 //        sdgsdg
         let str = {
             a,b in
@@ -50,6 +52,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
     
     
     @IBAction func login(sender: AnyObject) {
+        
+        
         if userName.text?.isEmpty == true{
 //            let alert = UIAlertView(title: "提示信息", message: "用户名不能为空", delegate: nil, cancelButtonTitle: "OK")
 //            alert.show()
