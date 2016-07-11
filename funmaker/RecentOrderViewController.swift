@@ -34,8 +34,6 @@ class RecentOrderViewController: UITableViewController{
         return cell
     }
     
-    table
-    
 //    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return str.count
 //        
