@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28486.5" y="-7359"/>
+            <point key="canvasLocation" x="-28456.5" y="-7611"/>
         </scene>
         <!--网页-->
         <scene sceneID="ZXb-Dk-h4h">
@@ -291,44 +291,6 @@
             </objects>
             <point key="canvasLocation" x="-25819.5" y="-7168.5"/>
         </scene>
-        <!--最近订单-->
-        <scene sceneID="dWe-2l-bi8">
-            <objects>
-                <viewController id="nQF-cH-3WS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c7i-az-0md"/>
-                        <viewControllerLayoutGuide type="bottom" id="iVG-FS-iT0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FfU-y7-PuC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orders" translatesAutoresizingMaskIntoConstraints="NO" id="Hts-fl-b28">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <rect key="contentStretch" x="0.0" y="0.45000000000000001" width="1" height="1"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="371" height="544"/>
-                                </variation>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Hts-fl-b28"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Hts-fl-b28"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="最近订单" id="F9H-Av-Wxt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Uo-DM-Er3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-27625.5" y="-8608.5"/>
-        </scene>
         <!--首页-->
         <scene sceneID="JTm-nn-4vc">
             <objects>
@@ -468,12 +430,38 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nQF-cH-3WS" kind="relationship" relationship="rootViewController" id="hv2-08-KWn"/>
+                        <segue destination="878-7P-Ntl" kind="relationship" relationship="rootViewController" id="oo9-xe-cGx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6A-zX-uPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-29458.5" y="-8058.75"/>
+            <point key="canvasLocation" x="-29377.5" y="-8139.75"/>
+        </scene>
+        <!--订单详情-->
+        <scene sceneID="bcE-Dm-Tjq">
+            <objects>
+                <tableViewController id="878-7P-Ntl" customClass="RecentOrderViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="owY-od-c17">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F8U-oK-sYJ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="878-7P-Ntl" id="8YV-GE-TEv"/>
+                            <outlet property="delegate" destination="878-7P-Ntl" id="Hq6-Ep-DOt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="订单详情" id="bld-fG-ILu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smb-gi-y7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28611" y="-8071.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1fV-y9-o1E">
@@ -496,7 +484,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="orders" width="271" height="250"/>
         <image name="password" width="271" height="250"/>
         <image name="user_name" width="271" height="250"/>
     </resources>
