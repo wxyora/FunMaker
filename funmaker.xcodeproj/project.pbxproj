@@ -229,7 +229,7 @@
 				TargetAttributes = {
 					098890F61D1ED5A7008D1257 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = NCG8SLAG2Z;
+						DevelopmentTeam = 8K9U2T8H8D;
 					};
 					0988910A1D1ED5A7008D1257 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -393,6 +393,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "656709c8-6cd6-4229-b7c8-365e1eff533c";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -431,6 +432,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "24263148-f4b3-4750-b81e-a52eedf96ac8";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -444,7 +446,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = funmaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.funny.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -458,7 +460,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = funmaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.funny.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
