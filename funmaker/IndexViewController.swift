@@ -3,7 +3,7 @@ import UIKit
 class IndexViewController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var myWebView: UIWebView!
-    @IBOutlet weak var progressShow: UIActivityIndicatorView!
+    @IBOutlet weak var progressShow: UIActivityIndicatorView?
     
     @IBAction func returnUpStep(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -30,14 +30,14 @@ class IndexViewController: UIViewController,UIWebViewDelegate {
     
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        progressShow.stopAnimating()
-        progressShow.hidesWhenStopped = true
+        progressShow?.stopAnimating()
+        progressShow?.hidesWhenStopped = true
         
         
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        progressShow.startAnimating()
+        progressShow?.startAnimating()
     }
     
     
