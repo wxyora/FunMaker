@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f7F-kP-GRT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f7F-kP-GRT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -116,24 +116,20 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ld8-Ee-Cbg"/>
+                                <exclude reference="NPM-MW-2PM"/>
                                 <exclude reference="BbU-rJ-sh4"/>
                                 <exclude reference="fK9-fA-ctv"/>
                                 <exclude reference="fvk-oq-vNR"/>
                                 <exclude reference="nEH-CC-5y7"/>
+                                <exclude reference="B2c-Pa-kMI"/>
+                                <exclude reference="ST1-eg-DCl"/>
+                                <exclude reference="fph-E0-qA8"/>
+                                <exclude reference="ysM-PN-YIV"/>
                                 <exclude reference="Xlh-Wx-CKu"/>
                                 <exclude reference="uzN-lF-2fp"/>
                                 <exclude reference="7Sy-sx-hog"/>
                                 <exclude reference="OUJ-rB-k2Y"/>
                                 <exclude reference="bUc-wQ-mle"/>
-                                <exclude reference="B2c-Pa-kMI"/>
-                                <exclude reference="P9h-Nu-8bG"/>
-                                <exclude reference="ST1-eg-DCl"/>
-                                <exclude reference="WUx-NO-pxz"/>
-                                <exclude reference="fph-E0-qA8"/>
-                                <exclude reference="ysM-PN-YIV"/>
-                                <exclude reference="NPM-MW-2PM"/>
-                                <exclude reference="Uvc-fO-cky"/>
-                                <exclude reference="YJb-m8-Tx3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -153,22 +149,18 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="NPM-MW-2PM"/>
                                 <include reference="BbU-rJ-sh4"/>
                                 <include reference="fK9-fA-ctv"/>
                                 <include reference="fvk-oq-vNR"/>
                                 <include reference="nEH-CC-5y7"/>
+                                <include reference="B2c-Pa-kMI"/>
+                                <include reference="ST1-eg-DCl"/>
+                                <include reference="fph-E0-qA8"/>
+                                <include reference="ysM-PN-YIV"/>
                                 <include reference="Xlh-Wx-CKu"/>
                                 <include reference="uzN-lF-2fp"/>
                                 <include reference="OUJ-rB-k2Y"/>
-                                <include reference="B2c-Pa-kMI"/>
-                                <include reference="P9h-Nu-8bG"/>
-                                <include reference="ST1-eg-DCl"/>
-                                <include reference="WUx-NO-pxz"/>
-                                <include reference="fph-E0-qA8"/>
-                                <include reference="ysM-PN-YIV"/>
-                                <include reference="NPM-MW-2PM"/>
-                                <include reference="Uvc-fO-cky"/>
-                                <include reference="YJb-m8-Tx3"/>
                             </mask>
                         </variation>
                     </view>
@@ -434,7 +426,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
