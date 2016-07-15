@@ -160,13 +160,13 @@
                     <navigationItem key="navigationItem" title="成功登录" id="8K3-yK-cKu">
                         <barButtonItem key="backBarButtonItem" title="返回" id="hWV-rZ-JDw"/>
                         <barButtonItem key="leftBarButtonItem" image="Back Chevron" id="uob-fA-EDj">
-                            <color key="tintColor" red="0.1619222877" green="0.32123282069999998" blue="0.2050482652" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="returnUpStep:" destination="Doc-PJ-bAN" id="9TP-Rx-n3p"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="下一步" id="Ex8-GY-Bae">
-                            <color key="tintColor" red="0.27924718139999999" green="0.32123282069999998" blue="0.00052039602440000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -257,13 +257,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="vd5-JR-beM">
                         <barButtonItem key="leftBarButtonItem" image="Back Chevron" style="done" id="uHe-ll-rMe">
-                            <color key="tintColor" red="0.27924718139999999" green="0.32123282069999998" blue="0.00052039602440000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cancel:" destination="NX8-dz-lIO" id="zng-Mc-Jgd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ubw-v8-Zft">
-                            <color key="tintColor" red="0.27924718139999999" green="0.32123282069999998" blue="0.00052039602440000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="save:" destination="NX8-dz-lIO" id="Wy7-ps-4Bo"/>
                             </connections>
@@ -290,18 +290,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUd-FZ-M1l">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="即将构建复合表示图..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkt-Af-lU7">
+                                <rect key="frame" x="68" y="273" width="225" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UUd-FZ-M1l" firstAttribute="top" secondItem="8ZV-gV-eoH" secondAttribute="bottom" constant="-64" id="0rH-qp-65j"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="UUd-FZ-M1l" secondAttribute="bottom" id="6d9-co-Dut"/>
-                            <constraint firstAttribute="trailing" secondItem="UUd-FZ-M1l" secondAttribute="trailing" id="BLY-Eu-0lR"/>
-                            <constraint firstItem="UUd-FZ-M1l" firstAttribute="leading" secondItem="s6v-3b-MlF" secondAttribute="leading" id="HCE-bh-f2q"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="jbi-Vq-CO6">
                         <barButtonItem key="leftBarButtonItem" id="9pR-w9-4FY"/>
@@ -309,9 +305,6 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="myWebView" destination="UUd-FZ-M1l" id="eYn-ZT-AW4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCb-pv-fbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

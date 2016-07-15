@@ -11,16 +11,16 @@ class IndexViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        myWebView.delegate = self
-        let url = NSURL(string: "https://login.m.taobao.com/login.htm")!
-        let request = NSURLRequest(URL: url)
-        myWebView.loadRequest(request)
+        //myWebView.delegate = self
+        //let url = NSURL(string: "https://login.m.taobao.com/login.htm")!
+        //let request = NSURLRequest(URL: url)
+        //myWebView.loadRequest(request)
         
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("页面即将出现")
+        //print("页面即将出现")
     }
     
     override func didReceiveMemoryWarning() {
