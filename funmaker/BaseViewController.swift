@@ -1,37 +1,19 @@
 //
-//  RegistViewController.swift
+//  BaseViewController.swift
 //  funmaker
 //
-//  Created by Waylon on 16/6/27.
+//  Created by Waylon on 16/7/15.
 //  Copyright © 2016年 Waylon. All rights reserved.
 //
 
 import UIKit
 
-class RegistViewController: BaseViewController {
+class BaseViewController: UIViewController {
 
-    @IBOutlet weak var getPhoneCode: UIButton!
-    
-    @IBOutlet weak var commitUserInfo: UIButton!
-    
-    @IBAction func cancel(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true) { 
-            print("cancel button is pressed")
-        }
-    }
-    @IBAction func save(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true) {
-            print("cave button is pressed")
-        }
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("registerName",object: "")
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPhoneCode.layer.cornerRadius = 3
-        commitUserInfo.layer.cornerRadius = 3
+        //set navigation bar tile color ---titleTextAttributes = NSDicturnary
+         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
 
         // Do any additional setup after loading the view.
     }

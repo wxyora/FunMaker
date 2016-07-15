@@ -293,7 +293,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="即将构建复合表示图..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkt-Af-lU7">
                                 <rect key="frame" x="68" y="273" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCb-pv-fbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15142" y="-8473"/>
+            <point key="canvasLocation" x="-15144" y="-8681"/>
         </scene>
         <!--TAB导航-->
         <scene sceneID="Alc-7I-uRe">
@@ -386,7 +386,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyh-UK-eNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15558" y="-8497"/>
+            <point key="canvasLocation" x="-15498" y="-8654"/>
         </scene>
         <!--订单详情导航-->
         <scene sceneID="UOt-ec-xKG">
