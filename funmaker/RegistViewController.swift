@@ -10,6 +10,10 @@ import UIKit
 
 class RegistViewController: UIViewController {
 
+    @IBOutlet weak var getPhoneCode: UIButton!
+    
+    @IBOutlet weak var commitUserInfo: UIButton!
+    
     @IBAction func cancel(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true) { 
@@ -26,6 +30,8 @@ class RegistViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPhoneCode.layer.cornerRadius = 3
+        commitUserInfo.layer.cornerRadius = 3
 
         // Do any additional setup after loading the view.
     }
