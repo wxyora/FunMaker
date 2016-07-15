@@ -22,8 +22,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.layer.cornerRadius = 5
-        registButton.layer.cornerRadius = 5
+        loginButton.layer.cornerRadius = 3
+        registButton.layer.cornerRadius = 3
         
         let c = add(4)
         print(c)

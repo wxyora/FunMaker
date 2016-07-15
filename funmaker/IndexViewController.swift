@@ -12,7 +12,7 @@ class IndexViewController: UIViewController,UIWebViewDelegate {
         
         super.viewDidLoad()
         myWebView.delegate = self
-        let url = NSURL(string: "https://m.taobao.com/#index")!
+        let url = NSURL(string: "https://login.m.taobao.com/login.htm")!
         let request = NSURLRequest(URL: url)
         myWebView.loadRequest(request)
         
