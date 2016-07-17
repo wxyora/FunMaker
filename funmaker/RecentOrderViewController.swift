@@ -9,11 +9,12 @@
 import UIKit
 
 class RecentOrderViewController: UITableViewController{
-    
+
     var str = ["订单1","订单2","订单3","订单4","订单5","订单3","订单6"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         
 
         // Do any additional setup after loading the view.

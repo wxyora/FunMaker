@@ -1,6 +1,6 @@
 import UIKit
 
-class IndexViewController: UIViewController,UIWebViewDelegate {
+class IndexViewController: BaseViewController,UIWebViewDelegate {
     
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var progressShow: UIActivityIndicatorView?
@@ -11,6 +11,7 @@ class IndexViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+       // self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         //myWebView.delegate = self
         //let url = NSURL(string: "https://login.m.taobao.com/login.htm")!
         //let request = NSURLRequest(URL: url)
