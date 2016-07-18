@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebViewController: BaseViewController,UIWebViewDelegate {
+class LoginedViewController: BaseViewController,UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var progressShow: UIActivityIndicatorView!

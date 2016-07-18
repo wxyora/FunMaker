@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
+class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -67,7 +67,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate 
                 //alert.show()
                 message = "登录成功"
                 self.performSegueWithIdentifier("loginSuccessSegue", sender: nil)
-                let vc = ViewController()
+                let vc = LoginViewController()
                 vc.dismissViewControllerAnimated(true, completion: {
                     
                 })

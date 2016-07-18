@@ -14,13 +14,13 @@
 		096004611D2F974200507D25 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096004601D2F974200507D25 /* IndexViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
 		098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FA1D1ED5A7008D1257 /* AppDelegate.swift */; };
-		098890FD1D1ED5A7008D1257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FC1D1ED5A7008D1257 /* ViewController.swift */; };
+		098890FD1D1ED5A7008D1257 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FC1D1ED5A7008D1257 /* LoginViewController.swift */; };
 		098891001D1ED5A7008D1257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098890FE1D1ED5A7008D1257 /* Main.storyboard */; };
 		098891021D1ED5A7008D1257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098891011D1ED5A7008D1257 /* Assets.xcassets */; };
 		098891051D1ED5A7008D1257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */; };
 		098891101D1ED5A7008D1257 /* funmakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988910F1D1ED5A7008D1257 /* funmakerTests.swift */; };
 		0988911B1D1ED5A7008D1257 /* funmakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */; };
-		09988B501D24C3280069A65C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* WebViewController.swift */; };
+		09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* LoginedViewController.swift */; };
 		09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F2BA721D39380C00672B3A /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		098890F71D1ED5A7008D1257 /* funmaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funmaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098890FA1D1ED5A7008D1257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		098890FC1D1ED5A7008D1257 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		098890FC1D1ED5A7008D1257 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		098890FF1D1ED5A7008D1257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		098891011D1ED5A7008D1257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		098891041D1ED5A7008D1257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		098891161D1ED5A7008D1257 /* funmakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = funmakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funmakerUITests.swift; sourceTree = "<group>"; };
 		0988911C1D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09988B4F1D24C3280069A65C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		09988B4F1D24C3280069A65C /* LoginedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginedViewController.swift; sourceTree = "<group>"; };
 		09F2BA721D39380C00672B3A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,8 +97,8 @@
 				0930D2621D3C68FF002AF3C5 /* MyViewController.swift */,
 				096004601D2F974200507D25 /* IndexViewController.swift */,
 				096E68CF1D21168000501D5B /* RegistViewController.swift */,
-				098890FC1D1ED5A7008D1257 /* ViewController.swift */,
-				09988B4F1D24C3280069A65C /* WebViewController.swift */,
+				098890FC1D1ED5A7008D1257 /* LoginViewController.swift */,
+				09988B4F1D24C3280069A65C /* LoginedViewController.swift */,
 				093C0F681D33775F007C62BC /* RecentOrderViewController.swift */,
 				093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */,
 				09F2BA721D39380C00672B3A /* BaseViewController.swift */,
@@ -306,11 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */,
-				098890FD1D1ED5A7008D1257 /* ViewController.swift in Sources */,
+				098890FD1D1ED5A7008D1257 /* LoginViewController.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
-				09988B501D24C3280069A65C /* WebViewController.swift in Sources */,
+				09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */,
 				09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */,
 				0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */,
 				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
