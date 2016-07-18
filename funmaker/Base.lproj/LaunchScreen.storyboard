@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,15 +22,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="143" y="253" width="113" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZW3-AU-AM5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="A7q-zd-ivP"/>
                             <constraint firstItem="ZW3-AU-AM5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="P9i-9k-agL"/>
+                            <constraint firstItem="ZW3-AU-AM5" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="233" id="jsb-wC-xem"/>
+                            <constraint firstItem="ZW3-AU-AM5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qx9-9j-P9y"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -39,11 +38,17 @@
                             <mask key="constraints">
                                 <exclude reference="A7q-zd-ivP"/>
                                 <exclude reference="P9i-9k-agL"/>
+                                <exclude reference="jsb-wC-xem"/>
+                                <exclude reference="qx9-9j-P9y"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ZW3-AU-AM5"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="jsb-wC-xem"/>
+                                <include reference="qx9-9j-P9y"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">

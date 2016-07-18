@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f7F-kP-GRT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f7F-kP-GRT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -104,6 +105,64 @@
                             <constraint firstAttribute="trailing" secondItem="hQC-vd-Csc" secondAttribute="trailing" constant="35" id="uzN-lF-2fp"/>
                             <constraint firstItem="LnK-cf-qLq" firstAttribute="top" secondItem="jMj-M8-dvj" secondAttribute="top" id="ysM-PN-YIV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jMj-M8-dvj"/>
+                                <exclude reference="yji-OF-ykm"/>
+                                <exclude reference="aaF-pX-63c"/>
+                                <exclude reference="hQC-vd-Csc"/>
+                                <exclude reference="LnK-cf-qLq"/>
+                                <exclude reference="nVX-8h-KzU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ld8-Ee-Cbg"/>
+                                <exclude reference="NPM-MW-2PM"/>
+                                <exclude reference="BbU-rJ-sh4"/>
+                                <exclude reference="fK9-fA-ctv"/>
+                                <exclude reference="fvk-oq-vNR"/>
+                                <exclude reference="nEH-CC-5y7"/>
+                                <exclude reference="B2c-Pa-kMI"/>
+                                <exclude reference="ST1-eg-DCl"/>
+                                <exclude reference="fph-E0-qA8"/>
+                                <exclude reference="ysM-PN-YIV"/>
+                                <exclude reference="Xlh-Wx-CKu"/>
+                                <exclude reference="uzN-lF-2fp"/>
+                                <exclude reference="7Sy-sx-hog"/>
+                                <exclude reference="OUJ-rB-k2Y"/>
+                                <exclude reference="bUc-wQ-mle"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="jMj-M8-dvj"/>
+                                <include reference="yji-OF-ykm"/>
+                                <include reference="aaF-pX-63c"/>
+                                <include reference="hQC-vd-Csc"/>
+                                <include reference="LnK-cf-qLq"/>
+                                <include reference="nVX-8h-KzU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ld8-Ee-Cbg"/>
+                                <include reference="7Sy-sx-hog"/>
+                                <include reference="bUc-wQ-mle"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="NPM-MW-2PM"/>
+                                <include reference="BbU-rJ-sh4"/>
+                                <include reference="fK9-fA-ctv"/>
+                                <include reference="fvk-oq-vNR"/>
+                                <include reference="nEH-CC-5y7"/>
+                                <include reference="B2c-Pa-kMI"/>
+                                <include reference="ST1-eg-DCl"/>
+                                <include reference="fph-E0-qA8"/>
+                                <include reference="ysM-PN-YIV"/>
+                                <include reference="Xlh-Wx-CKu"/>
+                                <include reference="uzN-lF-2fp"/>
+                                <include reference="OUJ-rB-k2Y"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="gsy-OT-nG6">
                         <barButtonItem key="rightBarButtonItem" title="分享" id="iGE-Nk-B7h">
@@ -372,7 +431,7 @@
         <scene sceneID="acE-Sq-0A0">
             <objects>
                 <navigationController title="首页导航" automaticallyAdjustsScrollViewInsets="NO" id="slh-sQ-Sa5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="ZJp-c7-Eoe"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="Shape-23" id="ZJp-c7-Eoe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OIj-AZ-Rc5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -386,13 +445,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyh-UK-eNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15498" y="-8654"/>
+            <point key="canvasLocation" x="-15634" y="-8676"/>
         </scene>
         <!--订单详情导航-->
         <scene sceneID="UOt-ec-xKG">
             <objects>
                 <navigationController title="订单详情导航" automaticallyAdjustsScrollViewInsets="NO" id="ST0-vO-uO3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="DXx-TU-4Rg"/>
+                    <tabBarItem key="tabBarItem" title="最近" image="Shape-29" id="DXx-TU-4Rg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rEu-xP-eZl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -421,7 +480,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -450,7 +509,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN2-yK-KNT" id="IGz-IH-r6u">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -470,7 +529,7 @@
         <scene sceneID="1fV-y9-o1E">
             <objects>
                 <navigationController title="登录导航" automaticallyAdjustsScrollViewInsets="NO" id="Kis-1g-P7g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="6ld-jb-PZ7"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="Shape-38" id="6ld-jb-PZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eDH-26-M8H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -486,11 +545,11 @@
             </objects>
             <point key="canvasLocation" x="-15448" y="-7459"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--最爱-->
         <scene sceneID="6WE-dP-bFb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8YD-6T-zNS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="cH4-Uh-QSD"/>
+                    <tabBarItem key="tabBarItem" title="最爱" image="Shape-31-copy" id="cH4-Uh-QSD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9bJ-3h-qeo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -504,11 +563,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAf-aD-Req" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16552" y="-7042"/>
+            <point key="canvasLocation" x="-16010" y="-7492"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back Chevron" width="13" height="21"/>
+        <image name="Shape-23" width="30" height="30"/>
+        <image name="Shape-29" width="30" height="30"/>
+        <image name="Shape-31-copy" width="30" height="30"/>
+        <image name="Shape-38" width="30" height="30"/>
         <image name="password" width="271" height="250"/>
         <image name="user_name" width="271" height="250"/>
     </resources>
