@@ -8,15 +8,18 @@
 
 import UIKit
 
-class RegistViewController: BaseViewController {
+class RegistViewController: BaseViewController ,UITextFieldDelegate{
 
+    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var verifyCode: UITextField!
     @IBOutlet weak var getPhoneCode: UIButton!
     
     @IBOutlet weak var commitUserInfo: UIButton!
     
     @IBAction func cancel(sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true) { 
+        self.dismissViewControllerAnimated(true) {
             print("cancel button is pressed")
         }
     }
@@ -32,6 +35,10 @@ class RegistViewController: BaseViewController {
         super.viewDidLoad()
         getPhoneCode.layer.cornerRadius = 3
         commitUserInfo.layer.cornerRadius = 3
+        
+        phone.delegate = self
+        password.delegate=self
+        verifyCode.delegate=self
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +48,12 @@ class RegistViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        phone.resignFirstResponder()
+        password.resignFirstResponder()
+        verifyCode.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation

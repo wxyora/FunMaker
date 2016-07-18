@@ -1,12 +1,18 @@
 import UIKit
 
-class IndexViewController: UITableViewController,UIWebViewDelegate{
+class IndexViewController: UITableViewController,UISearchBarDelegate{
     
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var progressShow: UIActivityIndicatorView?
     
-     var str = ["租户1","租户2","租户3","租户4","租户5","租户3","租户6"]
+    @IBOutlet weak var searchBar: UISearchBar!
     
+     var str = ["租户1","租户2","租户3","租户4","租户5","租户3","租户6"]
+   // @IBOutlet var searchBar: UISearchBar!
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
  
     override func viewDidLoad() {
         
@@ -19,6 +25,7 @@ class IndexViewController: UITableViewController,UIWebViewDelegate{
         //myWebView.loadRequest(request)
         
     
+        self.searchBar.delegate = self
         
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
@@ -27,9 +34,10 @@ class IndexViewController: UITableViewController,UIWebViewDelegate{
         
     }
     
+
     func refreshTableView(){
-      //print("下拉刷新控件被启动")
-        if(self.refreshControl?.refreshing==true){
+        
+            if(self.refreshControl?.refreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
             
             
@@ -82,7 +90,7 @@ class IndexViewController: UITableViewController,UIWebViewDelegate{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "RentInfoCell")
         cell.textLabel?.text = str[indexPath.row]
         return cell
     }

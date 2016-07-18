@@ -1,32 +1,32 @@
 //
-//  RecentOrderViewController.swift
+//  MessageTableViewController.swift
 //  funmaker
 //
-//  Created by Waylon on 16/7/11.
+//  Created by Waylon on 16/7/18.
 //  Copyright © 2016年 Waylon. All rights reserved.
 //
 
 import UIKit
 
-class RecentOrderViewController: UITableViewController{
+class MessageTableViewController: UITableViewController ,UISearchBarDelegate{
 
-    var str = ["景区1","景区2","景区3","景区4","景区5","景区3","景区6"]
-
+    var str = ["消息1","消息2","消息3","消息4","消息5","消息3","消息6"]
+    
+    @IBOutlet weak var seachBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-        
+        self.seachBar.delegate = self
         //self.searchBar.delegate = self
         
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
         rc.addTarget(self, action: #selector(IndexViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = rc
-
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,6 +40,10 @@ class RecentOrderViewController: UITableViewController{
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
         cell.textLabel?.text = str[indexPath.row]
         return cell
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.seachBar.resignFirstResponder()
     }
     
     func refreshTableView(){
@@ -71,19 +75,51 @@ class RecentOrderViewController: UITableViewController{
         }
     }
 
-    
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return str.count
-//        
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-//        cell.textLabel?.text = "Row \(str[indexPath.row])))"
-//        return cell
-//    }
-    
-   
+
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
+    /*
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+
+    }
+    */
+
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
 
     /*
     // MARK: - Navigation
