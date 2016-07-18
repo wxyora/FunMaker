@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
+		0930D2651D3C7759002AF3C5 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2641D3C7759002AF3C5 /* PublishViewController.swift */; };
 		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
 		096004611D2F974200507D25 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096004601D2F974200507D25 /* IndexViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		0930D2621D3C68FF002AF3C5 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		0930D2641D3C7759002AF3C5 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
 		096004601D2F974200507D25 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		096004621D2F977F00507D25 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				0930D2641D3C7759002AF3C5 /* PublishViewController.swift */,
 				0930D2621D3C68FF002AF3C5 /* MyViewController.swift */,
 				096004601D2F974200507D25 /* IndexViewController.swift */,
 				096E68CF1D21168000501D5B /* RegistViewController.swift */,
@@ -307,6 +310,7 @@
 				09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */,
 				0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */,
 				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
+				0930D2651D3C7759002AF3C5 /* PublishViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
