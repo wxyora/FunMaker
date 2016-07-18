@@ -20,35 +20,30 @@ class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate 
     
     var message:String!
     
+    @IBAction func goBack(sender: UIBarButtonItem) {
+        
+        self.dismissViewControllerAnimated(true) {
+            print("cancel button is pressed")
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 3
         registButton.layer.cornerRadius = 3
-        
         let c = add(4)
         print(c)
-        
-        
-        
-        
-//        sdgsdg
         let str = {
             a,b in
             return a + b
             
         }("hello,","world")
-        
         print(str)
-        
     }
     
     func add(a:Int=3,b:Int = 2)->Int{
-        
         return a+b
         
     }
-    
-    
     
     
     @IBAction func login(sender: AnyObject) {
@@ -71,20 +66,33 @@ class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate 
                 //let alert = UIAlertView(title: "提示信息", message: "登录成功", delegate: nil, cancelButtonTitle: "OK")
                 //alert.show()
                 message = "登录成功"
+                self.performSegueWithIdentifier("loginSuccessSegue", sender: nil)
+                let vc = ViewController()
+                vc.dismissViewControllerAnimated(true, completion: {
+                    
+                })
+               
+               
+//                let sb = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = sb.instantiateViewControllerWithIdentifier("loginSuccessViewController")
+//                self.presentViewController(vc, animated: true, completion: nil)
+                
+                
             }
         
         }
         
         if !message.isEmpty{
             //            UIAlertController通过闭包来实现响应事件，UIAlertView是通过实现委托协议来实现的
-            let alertController:UIAlertController = UIAlertController(title: "新的提示控件", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController:UIAlertController = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
-                print("OK button was pressed")
+                //print("OK button was pressed")
                 })
             
-            alertController.addAction(UIAlertAction(title: "警告", style: UIAlertActionStyle.Destructive, handler: { (self) in
-                
-            }))
+//            alertController.addAction(UIAlertAction(title: "警告", style: UIAlertActionStyle.Destructive, handler: { (self) in
+//                
+//            }))
+            
             //显示
             self.presentViewController(alertController, animated: true, completion: nil)
         }
