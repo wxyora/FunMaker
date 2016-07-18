@@ -45,6 +45,10 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print("login page appear")
+    }
+    
     
     @IBAction func login(sender: AnyObject) {
         
@@ -66,9 +70,9 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                 //let alert = UIAlertView(title: "提示信息", message: "登录成功", delegate: nil, cancelButtonTitle: "OK")
                 //alert.show()
                 message = "登录成功"
-                self.performSegueWithIdentifier("loginSuccessSegue", sender: nil)
-                let vc = LoginViewController()
-                vc.dismissViewControllerAnimated(true, completion: {
+                //self.performSegueWithIdentifier("loginSuccessSegue", sender: nil)
+            
+                self.dismissViewControllerAnimated(true, completion: {
                     
                 })
                

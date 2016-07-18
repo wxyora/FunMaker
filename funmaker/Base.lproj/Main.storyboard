@@ -59,7 +59,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ss-l5-4ZQ"/>
-                                    <segue destination="Doc-PJ-bAN" kind="push" identifier="loginSuccessSegue" id="gCU-ss-9EX"/>
+                                    <segue destination="lrv-1l-Nhk" kind="push" identifier="loginSuccessSegue" id="t4T-NS-qix"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="LnK-cf-qLq">
@@ -521,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60f-C7-ykq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36627" y="-8934"/>
+            <point key="canvasLocation" x="-36615" y="-8829"/>
         </scene>
         <!--登录成功导航-->
         <scene sceneID="c9d-iQ-fmX">
@@ -795,7 +795,7 @@
         <image name="user_name" width="271" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gCU-ss-9EX"/>
+        <segue reference="t4T-NS-qix"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
