@@ -20,35 +20,30 @@ class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate 
     
     var message:String!
     
+    @IBAction func goBack(sender: UIBarButtonItem) {
+        
+        self.dismissViewControllerAnimated(true) {
+            print("cancel button is pressed")
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 3
         registButton.layer.cornerRadius = 3
-        
         let c = add(4)
         print(c)
-        
-        
-        
-        
-//        sdgsdg
         let str = {
             a,b in
             return a + b
             
         }("hello,","world")
-        
         print(str)
-        
     }
     
     func add(a:Int=3,b:Int = 2)->Int{
-        
         return a+b
         
     }
-    
-    
     
     
     @IBAction func login(sender: AnyObject) {

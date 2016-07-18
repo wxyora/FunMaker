@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f7F-kP-GRT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f7F-kP-GRT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -165,6 +165,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="gsy-OT-nG6">
+                        <barButtonItem key="leftBarButtonItem" image="Back Chevron" id="Z5m-Ow-S6a">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goBack:" destination="BYZ-38-t0r" id="mDg-xX-rAw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="分享" id="iGE-Nk-B7h">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -186,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15031" y="-7211"/>
+            <point key="canvasLocation" x="-19267" y="-7731"/>
         </scene>
         <!--成功登录-->
         <scene sceneID="ZXb-Dk-h4h">
@@ -235,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNn-uQ-b6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13454" y="-7590"/>
+            <point key="canvasLocation" x="-17458" y="-8067"/>
         </scene>
         <!--注册-->
         <scene sceneID="KCC-GV-uQB">
@@ -335,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-m2-7OT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12175" y="-6787"/>
+            <point key="canvasLocation" x="-18381" y="-7431"/>
         </scene>
         <!--首页-->
         <scene sceneID="JTm-nn-4vc">
@@ -367,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCb-pv-fbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15144" y="-8681"/>
+            <point key="canvasLocation" x="-19704" y="-9417"/>
         </scene>
         <!--TAB导航-->
         <scene sceneID="Alc-7I-uRe">
@@ -387,7 +393,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KZ-mo-kVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16387.200000000001" y="-8210.4400000000005"/>
+            <point key="canvasLocation" x="-20764" y="-8923"/>
         </scene>
         <!--注册导航-->
         <scene sceneID="7yE-3J-Vul">
@@ -406,7 +412,41 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOC-8x-whS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12784" y="-6679"/>
+            <point key="canvasLocation" x="-18806" y="-7471"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="dqh-TP-gfJ">
+            <objects>
+                <viewController id="lrv-1l-Nhk" customClass="MyViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NPA-ir-jOl"/>
+                        <viewControllerLayoutGuide type="bottom" id="YHc-H9-Xf3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nNl-5B-mZb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR7-Eg-hji">
+                                <rect key="frame" x="171" y="89" width="129" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="马上登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GJk-yM-Zd2" kind="modal" id="TXX-Bg-V3V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的" id="GE1-74-aqO"/>
+                    <connections>
+                        <outlet property="loginNow" destination="FR7-Eg-hji" id="exe-dW-VrI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="60f-C7-ykq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-19455" y="-8423"/>
         </scene>
         <!--登录成功导航-->
         <scene sceneID="c9d-iQ-fmX">
@@ -425,13 +465,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZK-LO-1z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14001" y="-7435"/>
+            <point key="canvasLocation" x="-17997" y="-8055"/>
         </scene>
         <!--首页导航-->
         <scene sceneID="acE-Sq-0A0">
             <objects>
                 <navigationController title="首页导航" automaticallyAdjustsScrollViewInsets="NO" id="slh-sQ-Sa5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="Shape-23" id="ZJp-c7-Eoe"/>
+                    <tabBarItem key="tabBarItem" title="异客" image="Shape-23" id="ZJp-c7-Eoe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OIj-AZ-Rc5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -445,7 +485,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyh-UK-eNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15634" y="-8676"/>
+            <point key="canvasLocation" x="-20202" y="-9402"/>
         </scene>
         <!--订单详情导航-->
         <scene sceneID="UOt-ec-xKG">
@@ -465,7 +505,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6A-zX-uPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15503.199999999999" y="-7905.1400000000003"/>
+            <point key="canvasLocation" x="-19920" y="-8818"/>
         </scene>
         <!--订单详情-->
         <scene sceneID="bcE-Dm-Tjq">
@@ -480,7 +520,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -494,12 +534,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smb-gi-y7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15000.799999999999" y="-7747.5199999999995"/>
+            <point key="canvasLocation" x="-18933" y="-8756"/>
         </scene>
-        <!--最爱-->
+        <!--预定-->
         <scene sceneID="Yib-gJ-EF2">
             <objects>
-                <tableViewController id="ZdY-dc-cMM" sceneMemberID="viewController">
+                <tableViewController id="ZdY-dc-cMM" customClass="RecentOrderViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8g3-Cm-ke6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -509,7 +549,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN2-yK-KNT" id="IGz-IH-r6u">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -519,16 +559,16 @@
                             <outlet property="delegate" destination="ZdY-dc-cMM" id="C6x-Ud-Tr9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="最爱" id="vG4-Hk-pMW"/>
+                    <navigationItem key="navigationItem" title="预定" id="vG4-Hk-pMW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgy-Qq-YEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16129" y="-7042"/>
+            <point key="canvasLocation" x="-20231" y="-7531"/>
         </scene>
-        <!--登录导航-->
+        <!--我的导航-->
         <scene sceneID="1fV-y9-o1E">
             <objects>
-                <navigationController title="登录导航" automaticallyAdjustsScrollViewInsets="NO" id="Kis-1g-P7g" sceneMemberID="viewController">
+                <navigationController title="我的导航" automaticallyAdjustsScrollViewInsets="NO" id="Kis-1g-P7g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="Shape-38" id="6ld-jb-PZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eDH-26-M8H">
@@ -538,18 +578,18 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EeZ-4T-60X"/>
+                        <segue destination="lrv-1l-Nhk" kind="relationship" relationship="rootViewController" id="jdr-yl-XrG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df8-gR-JCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15448" y="-7459"/>
+            <point key="canvasLocation" x="-20334" y="-8271"/>
         </scene>
-        <!--最爱-->
+        <!--预定-->
         <scene sceneID="6WE-dP-bFb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8YD-6T-zNS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="最爱" image="Shape-31-copy" id="cH4-Uh-QSD"/>
+                    <tabBarItem key="tabBarItem" title="预定" image="Shape-31-copy" id="cH4-Uh-QSD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9bJ-3h-qeo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -563,7 +603,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAf-aD-Req" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16010" y="-7492"/>
+            <point key="canvasLocation" x="-20718" y="-7620"/>
+        </scene>
+        <!--登录导航-->
+        <scene sceneID="lOV-cG-puP">
+            <objects>
+                <navigationController title="登录导航" automaticallyAdjustsScrollViewInsets="NO" id="GJk-yM-Zd2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5r0-G1-7cD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="os3-I0-S9O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jR-cr-mV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-19767" y="-7739"/>
         </scene>
     </scenes>
     <resources>
