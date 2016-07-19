@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
+class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -45,6 +45,10 @@ class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate 
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print("login page appear")
+    }
+    
     
     @IBAction func login(sender: AnyObject) {
         
@@ -66,9 +70,9 @@ class ViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate 
                 //let alert = UIAlertView(title: "提示信息", message: "登录成功", delegate: nil, cancelButtonTitle: "OK")
                 //alert.show()
                 message = "登录成功"
-                self.performSegueWithIdentifier("loginSuccessSegue", sender: nil)
-                let vc = ViewController()
-                vc.dismissViewControllerAnimated(true, completion: {
+                //self.performSegueWithIdentifier("loginSuccessSegue", sender: nil)
+            
+                self.dismissViewControllerAnimated(true, completion: {
                     
                 })
                

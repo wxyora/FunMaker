@@ -10,6 +10,7 @@ import UIKit
 
 class RegistViewController: BaseViewController ,UITextFieldDelegate{
 
+    
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var verifyCode: UITextField!

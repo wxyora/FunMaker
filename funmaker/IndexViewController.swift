@@ -7,7 +7,7 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-     var str = ["租户1","租户2","租户3","租户4","租户5","租户3","租户6"]
+     var str = ["精装修别墅","豪华洋房","三亚海景房","重庆江景房"]
    // @IBOutlet var searchBar: UISearchBar!
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -24,7 +24,10 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
         //let request = NSURLRequest(URL: url)
         //myWebView.loadRequest(request)
         
-    
+         // self.tableView.registerClass(CustomCell.self, forCellReuseIdentifier:"RentInfoCell")
+        
+         //self.tableView.registerClass(CustomCell.self, forCellReuseIdentifier:"RentInfoCell")
+        
         self.searchBar.delegate = self
         
         let rc = UIRefreshControl()
@@ -90,9 +93,29 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "RentInfoCell")
-        cell.textLabel?.text = str[indexPath.row]
+
+      
+
+        //不能对为空的optional进行解包,否则会报运行时错误.所以在对optional进行解包之前进行判断是否为空.
+       // var cell:CustomCell! = tableView.dequeueReusableCellWithIdentifier("RentInfoCell", forIndexPath: indexPath) as? CustomCell
+        var cell:CustomCell! = tableView.dequeueReusableCellWithIdentifier("RentInfoCell", forIndexPath: indexPath) as? CustomCell
+        if(cell == nil){
+            cell = CustomCell(style: UITableViewCellStyle.Default, reuseIdentifier:"RentInfoCell")
+        }else{
+            cell.rentDetailInfo.text = "安静，舒适，交通方便，距离景点很近"
+            cell.rentInfoName.text = str[indexPath.row]
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            //cell.rentInfoImage.image = UIImage(contentsOfFile:"首页tab")
+        }
+        
+        
+         //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+       
         return cell
+        
+       
+    
     }
     
     
