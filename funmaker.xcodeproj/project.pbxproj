@@ -156,11 +156,11 @@
 			isa = PBXGroup;
 			children = (
 				09F29FC01D3F244500211E2F /* libicucore.tbd */,
-				09F29FBC1D3F23BE00211E2F /* MOBFoundation.framework */,
 				09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */,
+				09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */,
+				09F29FBC1D3F23BE00211E2F /* MOBFoundation.framework */,
 				09F29FB81D3F230900211E2F /* JavaScriptCore.framework */,
 				09F29FB61D3F22FE00211E2F /* MessageUI.framework */,
-				09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */,
 				09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */,
 				098890F91D1ED5A7008D1257 /* funmaker */,
 				0988910E1D1ED5A7008D1257 /* funmakerTests */,

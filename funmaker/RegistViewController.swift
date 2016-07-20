@@ -24,7 +24,7 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
         SMSSDK.getVerificationCodeByMethod(SMSGetCodeMethodSMS, phoneNumber:phone.text, zone: "86", customIdentifier: nil) { (error) in
             var message,title:String
             if((error == nil)){
-                message="获取验证码成功"
+                message="验证码已经发送"
                 title="Nice"
                 
             }else{
@@ -45,7 +45,7 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
         SMSSDK.commitVerificationCode(verifyCode.text, phoneNumber:phone.text, zone: "86") { (error) in
             var message,title:String
             if((error == nil)){
-                message="手机验证成功"
+                message="账号注册成功"
                 title="Nice"
             }else{
                 message="手机验证失败"
