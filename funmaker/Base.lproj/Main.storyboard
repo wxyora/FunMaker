@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7F-kP-GRT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7F-kP-GRT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -434,7 +434,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -468,7 +468,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN2-yK-KNT" id="IGz-IH-r6u">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -559,28 +559,69 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" defersCurrentPageDisplay="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="0Kw-zG-Xqj">
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-6i-1CG">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                </scrollView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9PK-qT-Y3C">
                                     <rect key="frame" x="-19" y="-18" width="39" height="37"/>
-                                    <color key="pageIndicatorTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="currentPageIndicatorTintColor" red="1" green="0.1071204132" blue="0.16178715129999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="149" y="98" width="39" height="37"/>
-                                    </variation>
+                                    <color key="pageIndicatorTintColor" red="0.25462709700000002" green="0.46045729930000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </pageControl>
                             </subviews>
-                            <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="lOv-6i-1CG" firstAttribute="leading" secondItem="gi4-aK-Dpn" secondAttribute="leading" constant="-1" id="4E1-ac-wrq">
+                                    <variation key="widthClass=compact" constant="0.0"/>
+                                </constraint>
+                                <constraint firstItem="9PK-qT-Y3C" firstAttribute="top" secondItem="gi4-aK-Dpn" secondAttribute="top" constant="90" id="FiT-pF-kqy">
+                                    <variation key="widthClass=compact" constant="100"/>
+                                </constraint>
+                                <constraint firstItem="9PK-qT-Y3C" firstAttribute="leading" secondItem="gi4-aK-Dpn" secondAttribute="leading" constant="143" id="Riv-gF-XJy"/>
+                                <constraint firstItem="lOv-6i-1CG" firstAttribute="top" secondItem="gi4-aK-Dpn" secondAttribute="top" id="VfI-ZR-gYm"/>
+                                <constraint firstAttribute="bottom" secondItem="lOv-6i-1CG" secondAttribute="bottom" id="Wbn-Pl-voA"/>
+                                <constraint firstAttribute="bottom" secondItem="9PK-qT-Y3C" secondAttribute="bottom" constant="2" id="fw2-UG-bAJ">
+                                    <variation key="widthClass=compact" constant="1"/>
+                                </constraint>
+                                <constraint firstAttribute="trailing" secondItem="9PK-qT-Y3C" secondAttribute="trailing" constant="218" id="nFX-sJ-p02">
+                                    <variation key="widthClass=compact" constant="143"/>
+                                </constraint>
+                                <constraint firstAttribute="trailing" secondItem="lOv-6i-1CG" secondAttribute="trailing" constant="1" id="wDi-y5-X4X">
+                                    <variation key="widthClass=compact" constant="0.0"/>
+                                </constraint>
+                            </constraints>
                             <variation key="default">
                                 <mask key="subviews">
-                                    <exclude reference="0Kw-zG-Xqj"/>
+                                    <exclude reference="lOv-6i-1CG"/>
+                                    <exclude reference="9PK-qT-Y3C"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="4E1-ac-wrq"/>
+                                    <exclude reference="VfI-ZR-gYm"/>
+                                    <exclude reference="Wbn-Pl-voA"/>
+                                    <exclude reference="wDi-y5-X4X"/>
+                                    <exclude reference="FiT-pF-kqy"/>
+                                    <exclude reference="Riv-gF-XJy"/>
+                                    <exclude reference="fw2-UG-bAJ"/>
+                                    <exclude reference="nFX-sJ-p02"/>
                                 </mask>
                             </variation>
-                            <variation key="widthClass=compact" ambiguous="YES">
-                                <rect key="frame" x="0.0" y="64" width="400" height="135"/>
+                            <variation key="widthClass=compact">
                                 <mask key="subviews">
-                                    <include reference="0Kw-zG-Xqj"/>
+                                    <include reference="lOv-6i-1CG"/>
+                                    <include reference="9PK-qT-Y3C"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="4E1-ac-wrq"/>
+                                    <include reference="VfI-ZR-gYm"/>
+                                    <include reference="Wbn-Pl-voA"/>
+                                    <include reference="wDi-y5-X4X"/>
+                                    <include reference="FiT-pF-kqy"/>
+                                    <include reference="Riv-gF-XJy"/>
+                                    <include reference="fw2-UG-bAJ"/>
+                                    <include reference="nFX-sJ-p02"/>
                                 </mask>
                             </variation>
-                        </scrollView>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationLevel="6" indentationWidth="9" reuseIdentifier="RentInfoCell" rowHeight="80" id="ArE-la-xig" customClass="CustomCell" customModule="funmaker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="220" width="600" height="80"/>
@@ -650,12 +691,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pageScrollView" destination="GsO-WV-tPn" id="kn5-Cq-sK0"/>
+                        <outlet property="pageControl" destination="9PK-qT-Y3C" id="OQE-ez-4aG"/>
+                        <outlet property="pageScrollView" destination="lOv-6i-1CG" id="3p3-5P-K4F"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsV-Y7-IWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36891" y="-10477"/>
+            <point key="canvasLocation" x="-36271.5" y="-10661"/>
         </scene>
         <!--发布导航-->
         <scene sceneID="GE3-hW-PZE">

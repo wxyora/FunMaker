@@ -49,8 +49,17 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
         let hight=self.pageScrollView.frame.height
         //设置scrollview 4个区域
         pageScrollView.contentSize = CGSize(width: 4*wight, height: hight)
+//         pageScrollView.contentSize=CGSizeMake(
+//            CGFloat(CGRectGetWidth(self.view.bounds)) * CGFloat(4),
+//            CGRectGetHeight(self.view.bounds))
+
         //set scrollview delegete
         pageScrollView.delegate=self
+        
+        //关闭滚动条显示
+        pageScrollView.showsHorizontalScrollIndicator = false
+        pageScrollView.showsVerticalScrollIndicator = false
+        pageScrollView.scrollsToTop = false
         
         let totalCount = 4
         
@@ -59,7 +68,7 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
         for index in 0..<totalCount{
             //let imageView:UIImageView = UIImageView();
             let imageX:CGFloat = CGFloat(index) * wight;
-            let imageView:UIImageView = UIImageView(frame: CGRectMake(imageX, 0, 320, 128))
+            let imageView:UIImageView = UIImageView(frame: CGRectMake(imageX, 0, wight, 128))
             //let imageX:CGFloat = CGFloat(index) * wight;
             //imageView.frame = CGRectMake(imageX, hight, wight, hight);//设置图片的大小，注意Image和ScrollView的关系，其实几张图片是按顺序从左向右依次放置在ScrollView中的，但是ScrollView在界面中显示的只是一张图片的大小，效果类似与画廊；
             let name:String = String(format: "gallery%d.png", index);
@@ -69,18 +78,22 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
             self.pageScrollView.addSubview(imageView)//把图片加入到ScrollView中去，实现轮播的效果；
             //self.pageScrollView.addSubview(imageView)
         }
-        //通过坐标和大小来创建图像视图
-//                var imageView:UIImageView = UIImageView(frame: CGRectMake(0, 0, 320, 128))
-//                imageView.image = UIImage(named: "gallery1.png")
-//                self.pageScrollView.addSubview(imageView)
         
     
     }
     
+    
+    //UIScrollViewDelegate方法，每次滚动结束后调用
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        //通过scrollView内容的偏移计算当前显示的是第几页
+        let page = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        //设置pageController的当前页
+        pageControl.currentPage = page
+    }
 
     func refreshTableView(){
         
-            if(self.refreshControl?.refreshing==true){
+        if(self.refreshControl?.refreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
             
             
