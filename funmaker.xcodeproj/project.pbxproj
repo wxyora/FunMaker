@@ -12,6 +12,7 @@
 		093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */; };
 		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
 		09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09558A511D3D10EA008A0A15 /* CustomCell.swift */; };
+		095A696B1D3F6204009265ED /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095A696A1D3F6204009265ED /* MOBFoundation.framework */; };
 		096004611D2F974200507D25 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096004601D2F974200507D25 /* IndexViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
 		098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FA1D1ED5A7008D1257 /* AppDelegate.swift */; };
@@ -27,7 +28,6 @@
 		09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB61D3F22FE00211E2F /* MessageUI.framework */; };
 		09F29FB91D3F230900211E2F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB81D3F230900211E2F /* JavaScriptCore.framework */; };
 		09F29FBB1D3F231D00211E2F /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */; };
-		09F29FBD1D3F23BE00211E2F /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FBC1D3F23BE00211E2F /* MOBFoundation.framework */; };
 		09F29FBF1D3F240700211E2F /* SMS_SDK in Resources */ = {isa = PBXBuildFile; fileRef = 09F29FBE1D3F240700211E2F /* SMS_SDK */; };
 		09F29FC11D3F244500211E2F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FC01D3F244500211E2F /* libicucore.tbd */; };
 		09F29FC41D3F248600211E2F /* noUse.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F29FC31D3F248600211E2F /* noUse.m */; };
@@ -57,6 +57,7 @@
 		093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		095A696A1D3F6204009265ED /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = SMS_SDK/MOBFoundation.framework; sourceTree = "<group>"; };
 		096004601D2F974200507D25 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		098890F71D1ED5A7008D1257 /* funmaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funmaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +79,6 @@
 		09F29FB61D3F22FE00211E2F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		09F29FB81D3F230900211E2F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		09F29FBC1D3F23BE00211E2F /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = ../../../Desktop/SMS_SDK/MOBFoundation.framework; sourceTree = "<group>"; };
 		09F29FBE1D3F240700211E2F /* SMS_SDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SMS_SDK; sourceTree = "<group>"; };
 		09F29FC01D3F244500211E2F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		09F29FC21D3F248600211E2F /* funmaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funmaker-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -92,11 +92,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				09F29FC11D3F244500211E2F /* libicucore.tbd in Frameworks */,
-				09F29FBD1D3F23BE00211E2F /* MOBFoundation.framework in Frameworks */,
+				09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */,
 				09F29FBB1D3F231D00211E2F /* libstdc++.6.0.9.tbd in Frameworks */,
 				09F29FB91D3F230900211E2F /* JavaScriptCore.framework in Frameworks */,
+				095A696B1D3F6204009265ED /* MOBFoundation.framework in Frameworks */,
 				09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */,
-				09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */,
 				09F29FB11D3F20AD00211E2F /* SMS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,9 +163,9 @@
 				09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */,
 				09F29FB61D3F22FE00211E2F /* MessageUI.framework */,
 				09F29FB81D3F230900211E2F /* JavaScriptCore.framework */,
-				09F29FBC1D3F23BE00211E2F /* MOBFoundation.framework */,
-				09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */,
+				095A696A1D3F6204009265ED /* MOBFoundation.framework */,
 				09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */,
+				09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */,
 				09F29FC01D3F244500211E2F /* libicucore.tbd */,
 			);
 			sourceTree = "<group>";
