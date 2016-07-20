@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7F-kP-GRT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7F-kP-GRT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -434,7 +434,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -468,7 +468,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN2-yK-KNT" id="IGz-IH-r6u">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -555,7 +555,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" indicatorStyle="black" id="GsO-WV-tPn">
+                        <view key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="GsO-WV-tPn">
                             <rect key="frame" x="0.0" y="64" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -570,15 +570,9 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="lOv-6i-1CG" firstAttribute="leading" secondItem="gi4-aK-Dpn" secondAttribute="leading" constant="-1" id="4E1-ac-wrq">
-                                    <variation key="widthClass=compact" constant="0.0"/>
-                                </constraint>
-                                <constraint firstItem="9PK-qT-Y3C" firstAttribute="top" secondItem="gi4-aK-Dpn" secondAttribute="top" constant="90" id="FiT-pF-kqy">
-                                    <variation key="widthClass=compact" constant="100"/>
-                                </constraint>
-                                <constraint firstItem="9PK-qT-Y3C" firstAttribute="leading" secondItem="gi4-aK-Dpn" secondAttribute="leading" constant="143" id="Riv-gF-XJy"/>
-                                <constraint firstItem="lOv-6i-1CG" firstAttribute="top" secondItem="gi4-aK-Dpn" secondAttribute="top" id="VfI-ZR-gYm"/>
+                                <constraint firstItem="lOv-6i-1CG" firstAttribute="top" secondItem="GsO-WV-tPn" secondAttribute="top" id="4ml-HD-MTX"/>
                                 <constraint firstAttribute="bottom" secondItem="lOv-6i-1CG" secondAttribute="bottom" id="Wbn-Pl-voA"/>
+                                <constraint firstItem="lOv-6i-1CG" firstAttribute="leading" secondItem="GsO-WV-tPn" secondAttribute="leading" id="bwI-tL-hKS"/>
                                 <constraint firstAttribute="bottom" secondItem="9PK-qT-Y3C" secondAttribute="bottom" constant="2" id="fw2-UG-bAJ">
                                     <variation key="widthClass=compact" constant="1"/>
                                 </constraint>
@@ -595,12 +589,10 @@
                                     <exclude reference="9PK-qT-Y3C"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="4E1-ac-wrq"/>
-                                    <exclude reference="VfI-ZR-gYm"/>
+                                    <exclude reference="4ml-HD-MTX"/>
                                     <exclude reference="Wbn-Pl-voA"/>
+                                    <exclude reference="bwI-tL-hKS"/>
                                     <exclude reference="wDi-y5-X4X"/>
-                                    <exclude reference="FiT-pF-kqy"/>
-                                    <exclude reference="Riv-gF-XJy"/>
                                     <exclude reference="fw2-UG-bAJ"/>
                                     <exclude reference="nFX-sJ-p02"/>
                                 </mask>
@@ -611,12 +603,10 @@
                                     <include reference="9PK-qT-Y3C"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="4E1-ac-wrq"/>
-                                    <include reference="VfI-ZR-gYm"/>
+                                    <include reference="4ml-HD-MTX"/>
                                     <include reference="Wbn-Pl-voA"/>
+                                    <include reference="bwI-tL-hKS"/>
                                     <include reference="wDi-y5-X4X"/>
-                                    <include reference="FiT-pF-kqy"/>
-                                    <include reference="Riv-gF-XJy"/>
                                     <include reference="fw2-UG-bAJ"/>
                                     <include reference="nFX-sJ-p02"/>
                                 </mask>
