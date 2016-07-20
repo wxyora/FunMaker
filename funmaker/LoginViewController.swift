@@ -49,6 +49,11 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
         print("login page appear")
     }
     
+//    RegViewController* reg = [[RegViewController alloc] init];
+//    [self presentViewController:reg animated:YES completion:^{
+//    
+//    }];
+    
     
     @IBAction func login(sender: AnyObject) {
         

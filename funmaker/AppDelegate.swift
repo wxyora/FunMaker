@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        // SMSSDK registerApp:appKey withSecret:appSecret
         //注册发短信sdk
-        //SMSSDK.registerApp(<#T##appKey: String!##String!#>, withSecret: <#T##String!#>)
+        SMSSDK.registerApp("152586542fe1a", withSecret:"e5cef2c86a470a123672b7cbaf12ec0e")
         return true
     }
 
