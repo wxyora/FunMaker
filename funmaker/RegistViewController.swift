@@ -18,6 +18,45 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
     
     @IBOutlet weak var commitUserInfo: UIButton!
     
+    @IBAction func getMobileCode(sender: AnyObject) {
+        
+    //发送手机验证码
+        SMSSDK.getVerificationCodeByMethod(SMSGetCodeMethodSMS, phoneNumber:phone.text, zone: "86", customIdentifier: nil) { (error) in
+            var message,title:String
+            if((error == nil)){
+                message="获取验证码成功"
+                title="Nice"
+                
+            }else{
+                message="获取验证码失败"
+                title="Shit"
+            }
+            let alertController:UIAlertController = UIAlertController(title: "", message:message, preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: title, style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+
+    
+    @IBAction func submitUserInfo(sender: AnyObject) {
+        
+        //验证手机验证码
+        SMSSDK.commitVerificationCode(verifyCode.text, phoneNumber:phone.text, zone: "86") { (error) in
+            var message,title:String
+            if((error == nil)){
+                message="手机验证成功"
+                title="Nice"
+            }else{
+                message="手机验证失败"
+                title="Shit"
+            }
+            let alertController:UIAlertController = UIAlertController(title: "", message:message, preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title:title, style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func cancel(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true) {
@@ -56,14 +95,6 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
         return true
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

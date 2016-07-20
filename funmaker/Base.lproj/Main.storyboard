@@ -203,6 +203,9 @@
                                 <state key="normal" title="获取验证码">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getMobileCode:" destination="NX8-dz-lIO" eventType="touchUpInside" id="Qgw-dl-iAY"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="D0J-h4-Kto">
                                 <rect key="frame" x="50" y="162" width="520" height="40"/>
@@ -228,6 +231,9 @@
                                 <state key="normal" title="提交信息">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitUserInfo:" destination="NX8-dz-lIO" eventType="touchUpInside" id="QPU-NM-cuV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -374,7 +380,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZK-LO-1z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34981.5" y="-8204.9999999999982"/>
+            <point key="canvasLocation" x="-35131.5" y="-8260"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -589,12 +595,12 @@
                                     <exclude reference="9PK-qT-Y3C"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <exclude reference="fw2-UG-bAJ"/>
+                                    <exclude reference="nFX-sJ-p02"/>
                                     <exclude reference="4ml-HD-MTX"/>
                                     <exclude reference="Wbn-Pl-voA"/>
                                     <exclude reference="bwI-tL-hKS"/>
                                     <exclude reference="wDi-y5-X4X"/>
-                                    <exclude reference="fw2-UG-bAJ"/>
-                                    <exclude reference="nFX-sJ-p02"/>
                                 </mask>
                             </variation>
                             <variation key="widthClass=compact">
@@ -603,12 +609,12 @@
                                     <include reference="9PK-qT-Y3C"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <include reference="fw2-UG-bAJ"/>
+                                    <include reference="nFX-sJ-p02"/>
                                     <include reference="4ml-HD-MTX"/>
                                     <include reference="Wbn-Pl-voA"/>
                                     <include reference="bwI-tL-hKS"/>
                                     <include reference="wDi-y5-X4X"/>
-                                    <include reference="fw2-UG-bAJ"/>
-                                    <include reference="nFX-sJ-p02"/>
                                 </mask>
                             </variation>
                         </view>
