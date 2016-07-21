@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7F-kP-GRT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7F-kP-GRT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -43,7 +43,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ss-l5-4ZQ"/>
-                                    <segue destination="lrv-1l-Nhk" kind="show" identifier="loginSuccessSegue" id="t4T-NS-qix"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="LnK-cf-qLq">
@@ -185,12 +184,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OAw-ef-zAD">
-                                <rect key="frame" x="50" y="223" width="406" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBQ-fe-Xec">
                                 <rect key="frame" x="488" y="226" width="83" height="35"/>
@@ -203,6 +197,9 @@
                                 <state key="normal" title="获取验证码">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getMobileCode:" destination="NX8-dz-lIO" eventType="touchUpInside" id="Qgw-dl-iAY"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="D0J-h4-Kto">
                                 <rect key="frame" x="50" y="162" width="520" height="40"/>
@@ -210,7 +207,7 @@
                                     <constraint firstAttribute="height" constant="40" id="BN7-Lr-P6Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_name" translatesAutoresizingMaskIntoConstraints="NO" id="TMo-Na-SWY">
                                 <rect key="frame" x="8" y="98" width="39" height="36"/>
@@ -228,7 +225,15 @@
                                 <state key="normal" title="提交信息">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitUserInfo:" destination="NX8-dz-lIO" eventType="touchUpInside" id="QPU-NM-cuV"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OAw-ef-zAD">
+                                <rect key="frame" x="50" y="223" width="406" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -374,7 +379,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZK-LO-1z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34981.5" y="-8204.9999999999982"/>
+            <point key="canvasLocation" x="-34904" y="-8376"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -434,7 +439,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -468,7 +473,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN2-yK-KNT" id="IGz-IH-r6u">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -555,8 +560,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="gi4-aK-Dpn">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <view key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="GsO-WV-tPn">
+                            <rect key="frame" x="0.0" y="64" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-6i-1CG">
@@ -570,15 +575,9 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="lOv-6i-1CG" firstAttribute="leading" secondItem="gi4-aK-Dpn" secondAttribute="leading" constant="-1" id="4E1-ac-wrq">
-                                    <variation key="widthClass=compact" constant="0.0"/>
-                                </constraint>
-                                <constraint firstItem="9PK-qT-Y3C" firstAttribute="top" secondItem="gi4-aK-Dpn" secondAttribute="top" constant="90" id="FiT-pF-kqy">
-                                    <variation key="widthClass=compact" constant="100"/>
-                                </constraint>
-                                <constraint firstItem="9PK-qT-Y3C" firstAttribute="leading" secondItem="gi4-aK-Dpn" secondAttribute="leading" constant="143" id="Riv-gF-XJy"/>
-                                <constraint firstItem="lOv-6i-1CG" firstAttribute="top" secondItem="gi4-aK-Dpn" secondAttribute="top" id="VfI-ZR-gYm"/>
+                                <constraint firstItem="lOv-6i-1CG" firstAttribute="top" secondItem="GsO-WV-tPn" secondAttribute="top" id="4ml-HD-MTX"/>
                                 <constraint firstAttribute="bottom" secondItem="lOv-6i-1CG" secondAttribute="bottom" id="Wbn-Pl-voA"/>
+                                <constraint firstItem="lOv-6i-1CG" firstAttribute="leading" secondItem="GsO-WV-tPn" secondAttribute="leading" id="bwI-tL-hKS"/>
                                 <constraint firstAttribute="bottom" secondItem="9PK-qT-Y3C" secondAttribute="bottom" constant="2" id="fw2-UG-bAJ">
                                     <variation key="widthClass=compact" constant="1"/>
                                 </constraint>
@@ -595,14 +594,12 @@
                                     <exclude reference="9PK-qT-Y3C"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="4E1-ac-wrq"/>
-                                    <exclude reference="VfI-ZR-gYm"/>
-                                    <exclude reference="Wbn-Pl-voA"/>
-                                    <exclude reference="wDi-y5-X4X"/>
-                                    <exclude reference="FiT-pF-kqy"/>
-                                    <exclude reference="Riv-gF-XJy"/>
                                     <exclude reference="fw2-UG-bAJ"/>
                                     <exclude reference="nFX-sJ-p02"/>
+                                    <exclude reference="4ml-HD-MTX"/>
+                                    <exclude reference="Wbn-Pl-voA"/>
+                                    <exclude reference="bwI-tL-hKS"/>
+                                    <exclude reference="wDi-y5-X4X"/>
                                 </mask>
                             </variation>
                             <variation key="widthClass=compact">
@@ -611,14 +608,12 @@
                                     <include reference="9PK-qT-Y3C"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="4E1-ac-wrq"/>
-                                    <include reference="VfI-ZR-gYm"/>
-                                    <include reference="Wbn-Pl-voA"/>
-                                    <include reference="wDi-y5-X4X"/>
-                                    <include reference="FiT-pF-kqy"/>
-                                    <include reference="Riv-gF-XJy"/>
                                     <include reference="fw2-UG-bAJ"/>
                                     <include reference="nFX-sJ-p02"/>
+                                    <include reference="4ml-HD-MTX"/>
+                                    <include reference="Wbn-Pl-voA"/>
+                                    <include reference="bwI-tL-hKS"/>
+                                    <include reference="wDi-y5-X4X"/>
                                 </mask>
                             </variation>
                         </view>
@@ -627,7 +622,7 @@
                                 <rect key="frame" x="0.0" y="220" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" tableViewCell="ArE-la-xig" id="1Z2-tk-O3G">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="豪华装修别墅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONR-Av-qfl">
@@ -749,8 +744,5 @@
         <image name="user_name" width="271" height="250"/>
         <image name="图层-1" width="200" height="200"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="t4T-NS-qix"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

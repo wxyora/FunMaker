@@ -23,6 +23,12 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func alert(message:String){
+        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation

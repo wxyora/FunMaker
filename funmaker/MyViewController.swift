@@ -24,7 +24,7 @@ class MyViewController: BaseViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("my host page appear")
+      
     }
     
 
