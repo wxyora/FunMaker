@@ -43,7 +43,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ss-l5-4ZQ"/>
-                                    <segue destination="lrv-1l-Nhk" kind="show" identifier="loginSuccessSegue" id="t4T-NS-qix"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="LnK-cf-qLq">
@@ -380,7 +379,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZK-LO-1z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35131.5" y="-8260"/>
+            <point key="canvasLocation" x="-34904" y="-8376"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -745,8 +744,5 @@
         <image name="user_name" width="271" height="250"/>
         <image name="图层-1" width="200" height="200"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="t4T-NS-qix"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
