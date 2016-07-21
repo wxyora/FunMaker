@@ -39,11 +39,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
        
     }
     
-    func alert(message:String){
-        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
+  
     
     
     @IBAction func login(sender: AnyObject) {
@@ -57,7 +53,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                 alert(message)
             }else{
                 do {
-                    let opt = try HTTP.GET("http://192.168.0.20:8080/WaylonServer/loginValidate.action", parameters: ["mobile":userName.text, "password": password.text])
+                    let opt = try HTTP.GET(Constant.host+Constant.loginUrl, parameters: ["mobile":userName.text, "password": password.text])
                     opt.progress = { progress in
                         print("progress: \(progress)") //this will be between 0 and 1.
                     }
