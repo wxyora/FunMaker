@@ -52,9 +52,8 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                 message = "密码不能为空"
                 alert(message)
             }else{
-                //开启网络请求
+                //开启网络请求hud
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-               
                 self.pleaseWait()
                 do {
                     let opt = try HTTP.GET(Constant.host+Constant.loginUrl, parameters: ["mobile":userName.text, "password": password.text])
@@ -175,7 +174,9 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
     }
     
     override func viewWillDisappear(animated: Bool) {
+        //关闭网络hud
         clearAllNotice()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 
 
