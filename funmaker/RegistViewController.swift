@@ -19,6 +19,9 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var commitUserInfo: UIButton!
     
     @IBAction func getMobileCode(sender: AnyObject) {
+        phone.resignFirstResponder()
+        password.resignFirstResponder()
+        verifyCode.resignFirstResponder()
         if !(phone.text?.isEmpty)!{
             //开启网络请求hud
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -190,6 +193,12 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
         //关闭网络hud
         clearAllNotice()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        phone.resignFirstResponder()
+        password.resignFirstResponder()
+        verifyCode.resignFirstResponder()
     }
    
 
