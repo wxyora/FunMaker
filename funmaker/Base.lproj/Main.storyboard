@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7F-kP-GRT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XxS-fB-eLb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -227,10 +228,69 @@
             </objects>
             <point key="canvasLocation" x="-33942" y="-7780"/>
         </scene>
+        <!--首次安装轮播-->
+        <scene sceneID="wd0-aI-6Uy">
+            <objects>
+                <viewController title="首次安装轮播" id="XxS-fB-eLb" customClass="GuideViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tdd-Jc-X58"/>
+                        <viewControllerLayoutGuide type="bottom" id="uhh-ba-uiX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IAm-Q2-bBk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-MY-5uL">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.26712477870000001" green="0.48223325820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="143" y="505" width="39" height="37"/>
+                                </variation>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9r-xD-TL6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.26712477870000001" green="0.48223325820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="开始体验">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="112" y="455" width="100" height="35"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="f7F-kP-GRT" kind="presentation" id="3cs-4T-Ku8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wF6-MY-5uL"/>
+                                <exclude reference="F9r-xD-TL6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="wF6-MY-5uL"/>
+                                <include reference="F9r-xD-TL6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="wF6-MY-5uL" id="Yo3-7R-9xH"/>
+                        <outlet property="startButton" destination="F9r-xD-TL6" id="ODa-eA-dI0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPY-lC-pUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40315.5" y="-9409"/>
+        </scene>
         <!--TAB导航-->
         <scene sceneID="Alc-7I-uRe">
             <objects>
                 <tabBarController title="TAB导航" id="f7F-kP-GRT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Phl-e2-obc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="frw-fk-vfa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -413,9 +473,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="90" y="96" width="105" height="18"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -444,10 +501,10 @@
                                 <exclude reference="bAK-Gw-ryd"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="T7U-1E-3iA"/>
                                 <exclude reference="1Hw-qQ-qIX"/>
                                 <exclude reference="mJP-Uj-qOZ"/>
                                 <exclude reference="w3g-K6-GNx"/>
-                                <exclude reference="T7U-1E-3iA"/>
                                 <exclude reference="XBN-Qz-xu8"/>
                                 <exclude reference="jUK-dJ-sfj"/>
                                 <exclude reference="sFZ-iT-F86"/>
@@ -463,10 +520,10 @@
                                 <include reference="bAK-Gw-ryd"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="T7U-1E-3iA"/>
                                 <include reference="1Hw-qQ-qIX"/>
                                 <include reference="mJP-Uj-qOZ"/>
                                 <include reference="w3g-K6-GNx"/>
-                                <include reference="T7U-1E-3iA"/>
                                 <include reference="XBN-Qz-xu8"/>
                                 <include reference="jUK-dJ-sfj"/>
                                 <include reference="sFZ-iT-F86"/>
@@ -541,7 +598,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -575,7 +632,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN2-yK-KNT" id="IGz-IH-r6u">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -724,7 +781,7 @@
                                 <rect key="frame" x="0.0" y="220" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" tableViewCell="ArE-la-xig" id="1Z2-tk-O3G">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="豪华装修别墅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONR-Av-qfl">
@@ -827,7 +884,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery2" translatesAutoresizingMaskIntoConstraints="NO" id="DaY-Oo-22s">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuideImage3" translatesAutoresizingMaskIntoConstraints="NO" id="DaY-Oo-22s">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
@@ -854,8 +911,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GuideImage3" width="187" height="333"/>
         <image name="back" width="13" height="21"/>
-        <image name="gallery2" width="1500" height="469"/>
         <image name="password" width="271" height="250"/>
         <image name="tab1" width="24" height="26"/>
         <image name="tab2" width="30" height="30"/>
