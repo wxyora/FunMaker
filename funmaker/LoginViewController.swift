@@ -44,6 +44,9 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
     
     @IBAction func login(sender: AnyObject) {
      
+        userName.resignFirstResponder()
+        password.resignFirstResponder()
+        
         if userName.text?.isEmpty == true{
             message = "用户名不能为空"
             alert(message)
@@ -63,29 +66,29 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                     opt.start { response in
                         if let err = response.error {
                             
-                            self.clearAllNotice()
+                           
                             self.alert("error: \(err.localizedDescription)")
+                             self.clearAllNotice()
+                            //关闭网络请求hud
+                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                             //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
                             //return
                         }else{
+                            //self.clearAllNotice()
                             //把NSData对象转换回JSON对象
                             let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                             let result : AnyObject = json.objectForKey("result")!
                             if String(result)=="用户不存在"{
-                                self.message = "用户不存在,请注册。"
+                                self.alert("用户不存在")
                             }else if String(result)=="用户名密码不匹配"{
-                                self.message = "用户名密码不匹配"
+                                self.alert("用户名密码不匹配")
                             }else if String(result)=="登录成功"{
-                                self.message="登录成功"
+                                self.dismissViewControllerAnimated(true, completion:nil)
                             }
                             self.clearAllNotice()
-                            //闭包中调用成员需要self指定
-                            self.alert(self.message)
+                            //关闭网络请求hud
+                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                         }
-                      
-                        //关闭网络请求
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        //self.clearAllNotice()
 
                     }
                     

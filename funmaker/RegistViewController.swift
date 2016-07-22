@@ -19,6 +19,9 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var commitUserInfo: UIButton!
     
     @IBAction func getMobileCode(sender: AnyObject) {
+        phone.resignFirstResponder()
+        password.resignFirstResponder()
+        verifyCode.resignFirstResponder()
         if !(phone.text?.isEmpty)!{
             //开启网络请求hud
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -32,8 +35,9 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
                 opt.start { response in
                     if let err = response.error {
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.clearAllNotice()
+                       
                         self.alert(err.localizedDescription)
+                         self.clearAllNotice()
                         return
                     }
                     //把NSData对象转换回JSON对象
@@ -49,19 +53,24 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
                                 message="获取验证码失败"
                             }
                             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                            self.clearAllNotice()
+                            
                             self.alert(message)
+                            self.clearAllNotice()
                         }
                     }else if String(result)=="用户存在"{
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.clearAllNotice()
+                        
                         //闭包中调用成员需要self指定
                         let message="用户已经存在，请直接登录"
                         let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
+                             //点击ok返回登录界面
+                              self.dismissViewControllerAnimated(true, completion: nil)
+                            })
                         self.presentViewController(alertController, animated: true, completion: {
-                            //self.dismissViewControllerAnimated(true, completion: nil)
+                          
                         })
+                        self.clearAllNotice()
                        // self.alert(message)
                     }
                     
@@ -96,10 +105,11 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
                     //手机验证通过，开始注册到服务器
                     self.registUser()
                 }else{
-                    self.clearAllNotice()
+                    
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     message="已经注册或者注册异常"
                     self.alert(message)
+                    self.clearAllNotice()
                     
                 }
             }
@@ -117,23 +127,24 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
             }
             opt.start { response in
                 if let err = response.error {
-                    self.clearAllNotice()
+                    
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     self.alert(err.localizedDescription)
+                    self.clearAllNotice()
                     return
                 }
                 //把NSData对象转换回JSON对象
                 let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                 let result : AnyObject = json.objectForKey("result")!
                 if String(result)=="注册成功"{
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    self.clearAllNotice()
                     let message="注册成功，请登录。"
                     let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-                    self.presentViewController(alertController, animated: true, completion: {
-                        //self.dismissViewControllerAnimated(true, completion: nil)
-                    })
+                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
+                        //点击OK返回登录界面
+                        self.dismissViewControllerAnimated(true, completion: nil)})
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    self.clearAllNotice()
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
             }
         } catch let error {
@@ -184,6 +195,12 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
         //关闭网络hud
         clearAllNotice()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        phone.resignFirstResponder()
+        password.resignFirstResponder()
+        verifyCode.resignFirstResponder()
     }
    
 
