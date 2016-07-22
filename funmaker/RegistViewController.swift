@@ -63,9 +63,12 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
                         //闭包中调用成员需要self指定
                         let message="用户已经存在，请直接登录"
                         let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
+                             //点击ok返回登录界面
+                              self.dismissViewControllerAnimated(true, completion: nil)
+                            })
                         self.presentViewController(alertController, animated: true, completion: {
-                            //self.dismissViewControllerAnimated(true, completion: nil)
+                          
                         })
                         self.clearAllNotice()
                        // self.alert(message)
@@ -134,15 +137,14 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
                 let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                 let result : AnyObject = json.objectForKey("result")!
                 if String(result)=="注册成功"{
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    
                     let message="注册成功，请登录。"
                     let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-                    self.presentViewController(alertController, animated: true, completion: {
-                        //self.dismissViewControllerAnimated(true, completion: nil)
-                    })
+                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
+                        //点击OK返回登录界面
+                        self.dismissViewControllerAnimated(true, completion: nil)})
+                    self.presentViewController(alertController, animated: true, completion: nil)
                     self.clearAllNotice()
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
             }
         } catch let error {
