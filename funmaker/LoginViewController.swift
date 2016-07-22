@@ -25,9 +25,10 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
     @IBAction func goBack(sender: UIBarButtonItem) {
         
         self.dismissViewControllerAnimated(true) {
-            print("cancel button is pressed")
+           // print("cancel button is pressed")
         }
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 3
@@ -83,7 +84,11 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                             }else if String(result)=="用户名密码不匹配"{
                                 self.alert("用户名密码不匹配")
                             }else if String(result)=="登录成功"{
-                                self.dismissViewControllerAnimated(true, completion:nil)
+                                
+                                self.dismissViewControllerAnimated(true, completion:{
+                                    let mvc = MyViewController()
+                                    mvc.loginSuccessCallBack()
+                                })
                             }
                             self.clearAllNotice()
                             //关闭网络请求hud
