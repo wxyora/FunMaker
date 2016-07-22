@@ -63,8 +63,11 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                     opt.start { response in
                         if let err = response.error {
                             
-                            self.clearAllNotice()
+                           
                             self.alert("error: \(err.localizedDescription)")
+                             self.clearAllNotice()
+                            //关闭网络请求hud
+                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                             //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
                             //return
                         }else{
@@ -78,14 +81,13 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                             }else if String(result)=="登录成功"{
                                 self.message="登录成功"
                             }
-                            self.clearAllNotice()
+                            
                             //闭包中调用成员需要self指定
                             self.alert(self.message)
+                            self.clearAllNotice()
+                            //关闭网络请求hud
+                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                         }
-                      
-                        //关闭网络请求
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        //self.clearAllNotice()
 
                     }
                     
