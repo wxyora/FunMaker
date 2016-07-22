@@ -78,11 +78,6 @@
                                 <action selector="acitonSheet:" destination="BYZ-38-t0r" id="M3O-uY-c1e"/>
                             </connections>
                         </barButtonItem>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="hQC-vd-Csc" id="pOd-b6-x0S"/>
@@ -93,55 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35847" y="-8557.9999999999982"/>
-        </scene>
-        <!--成功登录-->
-        <scene sceneID="ZXb-Dk-h4h">
-            <objects>
-                <viewController id="Doc-PJ-bAN" customClass="LoginedViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nBZ-f2-Saj"/>
-                        <viewControllerLayoutGuide type="bottom" id="mz7-iT-DY1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KTO-oP-M8d" customClass="Web">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-nZ-sle">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="I9e-jB-2Ee">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BWY-nZ-sle" firstAttribute="leading" secondItem="KTO-oP-M8d" secondAttribute="leading" id="1PP-J5-4OH"/>
-                            <constraint firstItem="mz7-iT-DY1" firstAttribute="top" secondItem="BWY-nZ-sle" secondAttribute="bottom" id="cg4-gA-0Nf"/>
-                            <constraint firstAttribute="trailing" secondItem="BWY-nZ-sle" secondAttribute="trailing" id="klM-at-eK7"/>
-                            <constraint firstItem="BWY-nZ-sle" firstAttribute="top" secondItem="nBZ-f2-Saj" secondAttribute="bottom" constant="-64" id="tcx-bs-Ujz"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="成功登录" id="8K3-yK-cKu">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="uob-fA-EDj">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="returnUpStep:" destination="Doc-PJ-bAN" id="9TP-Rx-n3p"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="下一步" id="Ex8-GY-Bae">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="myWebView" destination="BWY-nZ-sle" id="e22-3s-E8e"/>
-                        <outlet property="progressShow" destination="I9e-jB-2Ee" id="gr0-2z-tNu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bNn-uQ-b6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-34164" y="-8799"/>
+            <point key="canvasLocation" x="-35343" y="-8530"/>
         </scene>
         <!--发布导航-->
         <scene sceneID="z3j-yA-USV">
@@ -278,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-m2-7OT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33765" y="-7778"/>
+            <point key="canvasLocation" x="-33942" y="-7780"/>
         </scene>
         <!--TAB导航-->
         <scene sceneID="Alc-7I-uRe">
@@ -332,25 +279,196 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR7-Eg-hji">
-                                <rect key="frame" x="428" y="58" width="129" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJj-PS-DWh">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR7-Eg-hji">
+                                        <rect key="frame" x="428" y="58" width="129" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="马上登录">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="GJk-yM-Zd2" kind="presentation" id="TXX-Bg-V3V"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页tab" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-ue-sjF">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="I6W-3n-juL"/>
+                                    <constraint firstAttribute="width" constant="62" id="FTU-93-N53"/>
+                                    <constraint firstAttribute="height" constant="48" id="FqJ-5V-5uY"/>
                                 </constraints>
-                                <state key="normal" title="马上登录">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="GJk-yM-Zd2" kind="presentation" id="TXX-Bg-V3V"/>
-                                </connections>
-                            </button>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FTU-93-N53"/>
+                                        <exclude reference="FqJ-5V-5uY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FTU-93-N53"/>
+                                        <include reference="FqJ-5V-5uY"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有登录哦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAK-Gw-ryd">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EK-46-aXY">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab1" translatesAutoresizingMaskIntoConstraints="NO" id="Dco-Qy-L7L">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="16" y="11" width="48" height="37"/>
+                                        </variation>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbZ-WP-lak">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="我发布的结伴"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="83" y="15" width="118" height="30"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Dco-Qy-L7L"/>
+                                        <exclude reference="cbZ-WP-lak"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="162" width="400" height="60"/>
+                                    <mask key="subviews">
+                                        <include reference="Dco-Qy-L7L"/>
+                                        <include reference="cbZ-WP-lak"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lC-Xt-Cbv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层-1" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Cc-cDz">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="16" y="11" width="48" height="37"/>
+                                        </variation>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyK-Jy-RZM">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="我发布的民宿">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="86" y="15" width="113" height="30"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="S7o-Cc-cDz"/>
+                                        <exclude reference="NyK-Jy-RZM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="230" width="400" height="60"/>
+                                    <mask key="subviews">
+                                        <include reference="S7o-Cc-cDz"/>
+                                        <include reference="NyK-Jy-RZM"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-KI-dGz">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlH-sH-w7y">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="退出登录">
+                                            <color key="titleColor" red="1" green="0.1071204132" blue="0.16178715129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="110" y="15" width="113" height="30"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="mlH-sH-w7y"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="432" width="400" height="60"/>
+                                    <mask key="subviews">
+                                        <include reference="mlH-sH-w7y"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FR7-Eg-hji" firstAttribute="top" secondItem="NPA-ir-jOl" secondAttribute="bottom" constant="38" id="19G-Nf-G5Y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FR7-Eg-hji" secondAttribute="trailing" constant="23" id="V9Z-f8-Kv5"/>
+                            <constraint firstItem="q4y-ue-sjF" firstAttribute="centerY" secondItem="SJj-PS-DWh" secondAttribute="centerY" id="1Hw-qQ-qIX"/>
+                            <constraint firstItem="bAK-Gw-ryd" firstAttribute="leading" secondItem="q4y-ue-sjF" secondAttribute="trailing" constant="4" id="T7U-1E-3iA"/>
+                            <constraint firstItem="SJj-PS-DWh" firstAttribute="leading" secondItem="nNl-5B-mZb" secondAttribute="leadingMargin" id="XBN-Qz-xu8">
+                                <variation key="widthClass=compact" constant="200"/>
+                            </constraint>
+                            <constraint firstItem="SJj-PS-DWh" firstAttribute="top" secondItem="NPA-ir-jOl" secondAttribute="bottom" id="jUK-dJ-sfj">
+                                <variation key="widthClass=compact" constant="26"/>
+                            </constraint>
+                            <constraint firstItem="q4y-ue-sjF" firstAttribute="centerY" secondItem="bAK-Gw-ryd" secondAttribute="centerY" id="mJP-Uj-qOZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SJj-PS-DWh" secondAttribute="trailing" id="sFZ-iT-F86">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="q4y-ue-sjF" firstAttribute="leading" secondItem="nNl-5B-mZb" secondAttribute="leadingMargin" id="w3g-K6-GNx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SJj-PS-DWh"/>
+                                <exclude reference="q4y-ue-sjF"/>
+                                <exclude reference="bAK-Gw-ryd"/>
+                                <exclude reference="7EK-46-aXY"/>
+                                <exclude reference="0lC-Xt-Cbv"/>
+                                <exclude reference="Fg1-KI-dGz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1Hw-qQ-qIX"/>
+                                <exclude reference="mJP-Uj-qOZ"/>
+                                <exclude reference="w3g-K6-GNx"/>
+                                <exclude reference="T7U-1E-3iA"/>
+                                <exclude reference="XBN-Qz-xu8"/>
+                                <exclude reference="jUK-dJ-sfj"/>
+                                <exclude reference="sFZ-iT-F86"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="SJj-PS-DWh"/>
+                                <include reference="q4y-ue-sjF"/>
+                                <include reference="bAK-Gw-ryd"/>
+                                <include reference="7EK-46-aXY"/>
+                                <include reference="0lC-Xt-Cbv"/>
+                                <include reference="Fg1-KI-dGz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1Hw-qQ-qIX"/>
+                                <include reference="mJP-Uj-qOZ"/>
+                                <include reference="w3g-K6-GNx"/>
+                                <include reference="T7U-1E-3iA"/>
+                                <include reference="XBN-Qz-xu8"/>
+                                <include reference="jUK-dJ-sfj"/>
+                                <include reference="sFZ-iT-F86"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="GE1-74-aqO"/>
                     <connections>
@@ -359,27 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60f-C7-ykq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36615" y="-8829"/>
-        </scene>
-        <!--登录成功导航-->
-        <scene sceneID="c9d-iQ-fmX">
-            <objects>
-                <navigationController title="登录成功导航" automaticallyAdjustsScrollViewInsets="NO" id="hDe-Ul-FHa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="bNK-fO-5g4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tHr-Ep-oBy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Doc-PJ-bAN" kind="relationship" relationship="rootViewController" id="iwz-ax-mOq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wZK-LO-1z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-34904" y="-8376"/>
+            <point key="canvasLocation" x="-36537" y="-8801"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -724,7 +822,25 @@
                     <view key="view" contentMode="scaleToFill" id="DJh-Vi-F3Y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery2" translatesAutoresizingMaskIntoConstraints="NO" id="DaY-Oo-22s">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="DaY-Oo-22s"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="DaY-Oo-22s"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="TQm-jb-pMj"/>
                 </viewController>
@@ -735,6 +851,7 @@
     </scenes>
     <resources>
         <image name="back" width="13" height="21"/>
+        <image name="gallery2" width="1500" height="469"/>
         <image name="password" width="271" height="250"/>
         <image name="tab1" width="24" height="26"/>
         <image name="tab2" width="30" height="30"/>
@@ -743,6 +860,7 @@
         <image name="tab5" width="22" height="27"/>
         <image name="user_name" width="271" height="250"/>
         <image name="图层-1" width="200" height="200"/>
+        <image name="首页tab" width="50" height="50"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

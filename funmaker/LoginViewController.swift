@@ -25,7 +25,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
     @IBAction func goBack(sender: UIBarButtonItem) {
         
         self.dismissViewControllerAnimated(true) {
-            print("cancel button is pressed")
+           // print("cancel button is pressed")
         }
     }
     override func viewDidLoad() {
