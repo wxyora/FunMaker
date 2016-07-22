@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		090ACEB11D40780900C33E51 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0961972A1D40752700CCC7EB /* SwiftHTTP.framework */; };
-		090ACEBF1D408A5500C33E51 /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0961972A1D40752700CCC7EB /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
 		0930D2651D3C7759002AF3C5 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2641D3C7759002AF3C5 /* PublishViewController.swift */; };
 		093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */; };
@@ -17,6 +15,9 @@
 		095A696B1D3F6204009265ED /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095A696A1D3F6204009265ED /* MOBFoundation.framework */; };
 		096004611D2F974200507D25 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096004601D2F974200507D25 /* IndexViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
+		0974B80B1D4112D4002F978C /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0974B7FE1D4112BB002F978C /* SwiftHTTP.framework */; };
+		0974B80C1D41137D002F978C /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0974B7FE1D4112BB002F978C /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0974B8101D412291002F978C /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974B80F1D412291002F978C /* SwiftNotice.swift */; };
 		097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED51D40BD6200ADA706 /* Constant.swift */; };
 		097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED81D40C0E200ADA706 /* CommonUtil.swift */; };
 		098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FA1D1ED5A7008D1257 /* AppDelegate.swift */; };
@@ -38,51 +39,51 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		096197291D40752700CCC7EB /* PBXContainerItemProxy */ = {
+		0974B7FD1D4112BB002F978C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+			containerPortal = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
 			remoteInfo = SwiftHTTP;
 		};
-		0961972B1D40752700CCC7EB /* PBXContainerItemProxy */ = {
+		0974B7FF1D4112BB002F978C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+			containerPortal = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
 			remoteInfo = SwiftHTTPTests;
 		};
-		0961972D1D40752700CCC7EB /* PBXContainerItemProxy */ = {
+		0974B8011D4112BB002F978C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+			containerPortal = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D958025919E6EEEB003C8218;
 			remoteInfo = SwiftHTTPOSX;
 		};
-		0961972F1D40752700CCC7EB /* PBXContainerItemProxy */ = {
+		0974B8031D4112BB002F978C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+			containerPortal = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D958026319E6EEEB003C8218;
 			remoteInfo = SwiftHTTPOSXTests;
 		};
-		096197311D40752700CCC7EB /* PBXContainerItemProxy */ = {
+		0974B8051D4112BB002F978C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+			containerPortal = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5C135EC11C4733CD00AA3A01;
 			remoteInfo = SwiftHTTPtvOS;
 		};
-		096197331D40752700CCC7EB /* PBXContainerItemProxy */ = {
+		0974B8071D4112BB002F978C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+			containerPortal = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5C135ECA1C4733CE00AA3A01;
 			remoteInfo = SwiftHTTPtvOSTests;
 		};
-		096197351D40752700CCC7EB /* PBXContainerItemProxy */ = {
+		0974B8091D4112BB002F978C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+			containerPortal = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5C135FA91C4737E200AA3A01;
 			remoteInfo = SwiftHTTPWatchOS;
@@ -110,7 +111,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				090ACEBF1D408A5500C33E51 /* SwiftHTTP.framework in Copy Frameworks */,
+				0974B80C1D41137D002F978C /* SwiftHTTP.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,8 +126,9 @@
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		095A696A1D3F6204009265ED /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = SMS_SDK/MOBFoundation.framework; sourceTree = "<group>"; };
 		096004601D2F974200507D25 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
-		0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../Downloads/SwiftHTTP-master-5/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../Downloads/SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
+		0974B80F1D412291002F978C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		097A4ED51D40BD6200ADA706 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		097A4ED81D40C0E200ADA706 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		098890F71D1ED5A7008D1257 /* funmaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funmaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090ACEB11D40780900C33E51 /* SwiftHTTP.framework in Frameworks */,
+				0974B80B1D4112D4002F978C /* SwiftHTTP.framework in Frameworks */,
 				09F29FC11D3F244500211E2F /* libicucore.tbd in Frameworks */,
 				09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */,
 				09F29FBB1D3F231D00211E2F /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -220,18 +222,34 @@
 			name = util;
 			sourceTree = "<group>";
 		};
-		096197201D40752700CCC7EB /* Products */ = {
+		0974B7F41D4112BB002F978C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0961972A1D40752700CCC7EB /* SwiftHTTP.framework */,
-				0961972C1D40752700CCC7EB /* SwiftHTTPTests.xctest */,
-				0961972E1D40752700CCC7EB /* SwiftHTTP.framework */,
-				096197301D40752700CCC7EB /* SwiftHTTPOSXTests.xctest */,
-				096197321D40752700CCC7EB /* SwiftHTTP.framework */,
-				096197341D40752700CCC7EB /* SwiftHTTPtvOSTests.xctest */,
-				096197361D40752700CCC7EB /* SwiftHTTP.framework */,
+				0974B7FE1D4112BB002F978C /* SwiftHTTP.framework */,
+				0974B8001D4112BB002F978C /* SwiftHTTPTests.xctest */,
+				0974B8021D4112BB002F978C /* SwiftHTTP.framework */,
+				0974B8041D4112BB002F978C /* SwiftHTTPOSXTests.xctest */,
+				0974B8061D4112BB002F978C /* SwiftHTTP.framework */,
+				0974B8081D4112BB002F978C /* SwiftHTTPtvOSTests.xctest */,
+				0974B80A1D4112BB002F978C /* SwiftHTTP.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0974B80D1D411435002F978C /* swift-oc */ = {
+			isa = PBXGroup;
+			children = (
+				09F29FC21D3F248600211E2F /* funmaker-Bridging-Header.h */,
+			);
+			name = "swift-oc";
+			sourceTree = "<group>";
+		};
+		0974B80E1D41225F002F978C /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				0974B80F1D412291002F978C /* SwiftNotice.swift */,
+			);
+			name = extension;
 			sourceTree = "<group>";
 		};
 		097A4EC91D40BCBD00ADA706 /* common */ = {
@@ -242,23 +260,15 @@
 			name = common;
 			sourceTree = "<group>";
 		};
-		097A4ED71D40C09100ADA706 /* Swift-OC */ = {
-			isa = PBXGroup;
-			children = (
-				09F29FC21D3F248600211E2F /* funmaker-Bridging-Header.h */,
-			);
-			name = "Swift-OC";
-			sourceTree = "<group>";
-		};
 		098890EE1D1ED5A7008D1257 = {
 			isa = PBXGroup;
 			children = (
-				0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */,
 				098890F91D1ED5A7008D1257 /* funmaker */,
 				0988910E1D1ED5A7008D1257 /* funmakerTests */,
 				098891191D1ED5A7008D1257 /* funmakerUITests */,
 				098890F81D1ED5A7008D1257 /* Products */,
 				09F29FBE1D3F240700211E2F /* SMS_SDK */,
+				0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */,
 				09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */,
 				09F29FB61D3F22FE00211E2F /* MessageUI.framework */,
 				09F29FB81D3F230900211E2F /* JavaScriptCore.framework */,
@@ -282,10 +292,11 @@
 		098890F91D1ED5A7008D1257 /* funmaker */ = {
 			isa = PBXGroup;
 			children = (
-				097A4ED71D40C09100ADA706 /* Swift-OC */,
-				097A4EC91D40BCBD00ADA706 /* common */,
 				096004631D2F979200507D25 /* delegate */,
 				096004621D2F977F00507D25 /* controller */,
+				0974B80E1D41225F002F978C /* extension */,
+				097A4EC91D40BCBD00ADA706 /* common */,
+				0974B80D1D411435002F978C /* swift-oc */,
 				096004641D2F979C00507D25 /* util */,
 				098890FE1D1ED5A7008D1257 /* Main.storyboard */,
 				098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */,
@@ -407,8 +418,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 096197201D40752700CCC7EB /* Products */;
-					ProjectRef = 0961971F1D40752700CCC7EB /* SwiftHTTP.xcodeproj */;
+					ProductGroup = 0974B7F41D4112BB002F978C /* Products */;
+					ProjectRef = 0974B7F31D4112BB002F978C /* SwiftHTTP.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -421,53 +432,53 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0961972A1D40752700CCC7EB /* SwiftHTTP.framework */ = {
+		0974B7FE1D4112BB002F978C /* SwiftHTTP.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftHTTP.framework;
-			remoteRef = 096197291D40752700CCC7EB /* PBXContainerItemProxy */;
+			remoteRef = 0974B7FD1D4112BB002F978C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0961972C1D40752700CCC7EB /* SwiftHTTPTests.xctest */ = {
+		0974B8001D4112BB002F978C /* SwiftHTTPTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SwiftHTTPTests.xctest;
-			remoteRef = 0961972B1D40752700CCC7EB /* PBXContainerItemProxy */;
+			remoteRef = 0974B7FF1D4112BB002F978C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0961972E1D40752700CCC7EB /* SwiftHTTP.framework */ = {
+		0974B8021D4112BB002F978C /* SwiftHTTP.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftHTTP.framework;
-			remoteRef = 0961972D1D40752700CCC7EB /* PBXContainerItemProxy */;
+			remoteRef = 0974B8011D4112BB002F978C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		096197301D40752700CCC7EB /* SwiftHTTPOSXTests.xctest */ = {
+		0974B8041D4112BB002F978C /* SwiftHTTPOSXTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SwiftHTTPOSXTests.xctest;
-			remoteRef = 0961972F1D40752700CCC7EB /* PBXContainerItemProxy */;
+			remoteRef = 0974B8031D4112BB002F978C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		096197321D40752700CCC7EB /* SwiftHTTP.framework */ = {
+		0974B8061D4112BB002F978C /* SwiftHTTP.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftHTTP.framework;
-			remoteRef = 096197311D40752700CCC7EB /* PBXContainerItemProxy */;
+			remoteRef = 0974B8051D4112BB002F978C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		096197341D40752700CCC7EB /* SwiftHTTPtvOSTests.xctest */ = {
+		0974B8081D4112BB002F978C /* SwiftHTTPtvOSTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SwiftHTTPtvOSTests.xctest;
-			remoteRef = 096197331D40752700CCC7EB /* PBXContainerItemProxy */;
+			remoteRef = 0974B8071D4112BB002F978C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		096197361D40752700CCC7EB /* SwiftHTTP.framework */ = {
+		0974B80A1D4112BB002F978C /* SwiftHTTP.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftHTTP.framework;
-			remoteRef = 096197351D40752700CCC7EB /* PBXContainerItemProxy */;
+			remoteRef = 0974B8091D4112BB002F978C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -510,6 +521,7 @@
 				09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */,
 				097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
+				0974B8101D412291002F978C /* SwiftNotice.swift in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
 				09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */,

@@ -52,6 +52,9 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                 message = "密码不能为空"
                 alert(message)
             }else{
+                //开启网络请求hud
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+                self.pleaseWait()
                 do {
                     let opt = try HTTP.GET(Constant.host+Constant.loginUrl, parameters: ["mobile":userName.text, "password": password.text])
                     opt.progress = { progress in
@@ -59,24 +62,34 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                     }
                     opt.start { response in
                         if let err = response.error {
-                            print("error: \(err.localizedDescription)")
-                            return
+                            
+                            self.clearAllNotice()
+                            self.alert("error: \(err.localizedDescription)")
+                            //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
+                            //return
+                        }else{
+                            //把NSData对象转换回JSON对象
+                            let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                            let result : AnyObject = json.objectForKey("result")!
+                            if String(result)=="用户不存在"{
+                                self.message = "用户不存在,请注册。"
+                            }else if String(result)=="用户名密码不匹配"{
+                                self.message = "用户名密码不匹配"
+                            }else if String(result)=="登录成功"{
+                                self.message="登录成功"
+                            }
+                            self.clearAllNotice()
+                            //闭包中调用成员需要self指定
+                            self.alert(self.message)
                         }
-                        //把NSData对象转换回JSON对象
-                        let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                        let result : AnyObject = json.objectForKey("result")!
-                        if String(result)=="用户不存在"{
-                            self.message = "用户不存在,请注册。"
-                        }else if String(result)=="用户名密码不匹配"{
-                           self.message = "用户名密码不匹配"
-                        }else if String(result)=="登录成功"{
-                            self.message="登录成功"
-                        }
-                        //闭包中调用成员需要self指定
-                        self.alert(self.message)
+                      
+                        //关闭网络请求
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        //self.clearAllNotice()
 
                     }
-                } catch let error {
+                    
+                } catch {
                     print("loginValidate interface got an error creating the request: \(error)")
                 }
              
@@ -160,7 +173,11 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
         return true
     }
     
-    
+    override func viewWillDisappear(animated: Bool) {
+        //关闭网络hud
+        clearAllNotice()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
 
 
 }
