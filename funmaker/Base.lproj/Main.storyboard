@@ -313,42 +313,36 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有登录哦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAK-Gw-ryd">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EK-46-aXY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab1" translatesAutoresizingMaskIntoConstraints="NO" id="Dco-Qy-L7L">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="11" width="48" height="37"/>
-                                        </variation>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbZ-WP-lak">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="我发布的结伴"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="83" y="15" width="118" height="30"/>
+                                            <rect key="frame" x="83" y="11" width="118" height="30"/>
                                         </variation>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab1" translatesAutoresizingMaskIntoConstraints="NO" id="Dco-Qy-L7L">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="16" y="8" width="48" height="37"/>
+                                        </variation>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="Dco-Qy-L7L"/>
                                         <exclude reference="cbZ-WP-lak"/>
+                                        <exclude reference="Dco-Qy-L7L"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="162" width="400" height="60"/>
+                                    <rect key="frame" x="0.0" y="162" width="400" height="48"/>
                                     <mask key="subviews">
-                                        <include reference="Dco-Qy-L7L"/>
                                         <include reference="cbZ-WP-lak"/>
+                                        <include reference="Dco-Qy-L7L"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -358,7 +352,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层-1" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Cc-cDz">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="11" width="48" height="37"/>
+                                            <rect key="frame" x="17" y="5" width="48" height="37"/>
                                         </variation>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyK-Jy-RZM">
@@ -368,7 +362,7 @@
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="86" y="15" width="113" height="30"/>
+                                            <rect key="frame" x="86" y="9" width="113" height="30"/>
                                         </variation>
                                     </button>
                                 </subviews>
@@ -380,7 +374,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="230" width="400" height="60"/>
+                                    <rect key="frame" x="0.0" y="225" width="400" height="48"/>
                                     <mask key="subviews">
                                         <include reference="S7o-Cc-cDz"/>
                                         <include reference="NyK-Jy-RZM"/>
@@ -397,7 +391,7 @@
                                             <color key="titleColor" red="1" green="0.1071204132" blue="0.16178715129999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="110" y="15" width="113" height="30"/>
+                                            <rect key="frame" x="112" y="10" width="113" height="30"/>
                                         </variation>
                                     </button>
                                 </subviews>
@@ -408,12 +402,21 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="432" width="400" height="60"/>
+                                    <rect key="frame" x="0.0" y="427" width="400" height="47"/>
                                     <mask key="subviews">
                                         <include reference="mlH-sH-w7y"/>
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有登录哦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAK-Gw-ryd">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="90" y="96" width="105" height="18"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -435,10 +438,10 @@
                             <mask key="subviews">
                                 <exclude reference="SJj-PS-DWh"/>
                                 <exclude reference="q4y-ue-sjF"/>
-                                <exclude reference="bAK-Gw-ryd"/>
                                 <exclude reference="7EK-46-aXY"/>
                                 <exclude reference="0lC-Xt-Cbv"/>
                                 <exclude reference="Fg1-KI-dGz"/>
+                                <exclude reference="bAK-Gw-ryd"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1Hw-qQ-qIX"/>
@@ -454,10 +457,10 @@
                             <mask key="subviews">
                                 <include reference="SJj-PS-DWh"/>
                                 <include reference="q4y-ue-sjF"/>
-                                <include reference="bAK-Gw-ryd"/>
                                 <include reference="7EK-46-aXY"/>
                                 <include reference="0lC-Xt-Cbv"/>
                                 <include reference="Fg1-KI-dGz"/>
+                                <include reference="bAK-Gw-ryd"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1Hw-qQ-qIX"/>
@@ -473,6 +476,7 @@
                     <navigationItem key="navigationItem" title="我的" id="GE1-74-aqO"/>
                     <connections>
                         <outlet property="loginNow" destination="FR7-Eg-hji" id="exe-dW-VrI"/>
+                        <outlet property="loginStatusInfo" destination="bAK-Gw-ryd" id="J12-za-v23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60f-C7-ykq" userLabel="First Responder" sceneMemberID="firstResponder"/>

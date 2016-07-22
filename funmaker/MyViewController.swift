@@ -12,6 +12,8 @@ class MyViewController: BaseViewController {
 
     @IBOutlet weak var loginNow: UIButton!
     
+    @IBOutlet weak var loginStatusInfo: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginNow.layer.cornerRadius=3
@@ -28,6 +30,13 @@ class MyViewController: BaseViewController {
     }
     
 
+    //登录成功后回调
+    func loginSuccessCallBack(){
+        
+       //self.loginStatusInfo.text="成功登录"
+       //self.loginNow.hidden=true
+        
+    }
     /*
     // MARK: - Navigation
 
