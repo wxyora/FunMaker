@@ -26,7 +26,19 @@ class MyViewController: BaseViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        
+         //接收登录成功的通知
+         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MyViewController.doSome(_:)), name: "LoginSuccessNotification", object: nil)
       
+    }
+    
+    func doSome(notification:NSNotification){
+        let result = notification.object as? String
+        self.loginStatusInfo.text="恭喜你，成功登录。"
+        self.loginNow.hidden=true
+        self.noticeSuccess(result!, autoClear: true, autoClearTime:3)
+
     }
     
 

@@ -86,8 +86,10 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                             }else if String(result)=="登录成功"{
                                 
                                 self.dismissViewControllerAnimated(true, completion:{
-                                    let mvc = MyViewController()
-                                    mvc.loginSuccessCallBack()
+//                                    let mvc = MyViewController()
+//                                    mvc.loginSuccessCallBack()
+                                    //发布一条通知
+                                    NSNotificationCenter.defaultCenter().postNotificationName("LoginSuccessNotification", object:String(result))
                                 })
                             }
                             self.clearAllNotice()
