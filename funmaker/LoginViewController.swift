@@ -79,6 +79,8 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                             //把NSData对象转换回JSON对象
                             let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                             let result : AnyObject = json.objectForKey("result")!
+                            let token : AnyObject = json.objectForKey("token")!
+                            //let mobile : AnyObject = json.objectForKey("mobile")!
                             if String(result)=="用户不存在"{
                                 self.alert("用户不存在")
                             }else if String(result)=="用户名密码不匹配"{
@@ -88,6 +90,11 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                                 self.dismissViewControllerAnimated(true, completion:{
 //                                    let mvc = MyViewController()
 //                                    mvc.loginSuccessCallBack()
+                                    //存储用户token，mobile
+                                    let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+                                    userInfo.setObject(token, forKey: "token")
+                                    userInfo.setObject(self.userName.text, forKey: "mobile")
+                                    userInfo.synchronize();
                                     //发布一条通知
                                     NSNotificationCenter.defaultCenter().postNotificationName("LoginSuccessNotification", object:String(result))
                                 })

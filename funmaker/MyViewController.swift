@@ -35,10 +35,11 @@ class MyViewController: BaseViewController {
     
     func doSome(notification:NSNotification){
         let result = notification.object as? String
-        self.loginStatusInfo.text="恭喜你，成功登录。"
+        let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+        let mobile = userInfo.stringForKey("mobile")
+        self.loginStatusInfo.text=mobile
         self.loginNow.hidden=true
         self.noticeSuccess(result!, autoClear: true, autoClearTime:3)
-
     }
     
 

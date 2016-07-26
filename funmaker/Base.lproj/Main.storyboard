@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XxS-fB-eLb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XxS-fB-eLb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -89,13 +89,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35343" y="-8530"/>
+            <point key="canvasLocation" x="-33207" y="-8562"/>
         </scene>
         <!--发布导航-->
         <scene sceneID="z3j-yA-USV">
             <objects>
                 <navigationController title="发布导航" id="MGt-mL-piZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发布" image="tab3" id="w0v-Pk-5Ha"/>
+                    <tabBarItem key="tabBarItem" title="发布" image="Shape-38" id="w0v-Pk-5Ha"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tsj-9U-qVr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,7 +111,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzn-lb-GaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35904.375" y="-9931.6901408450703"/>
+            <point key="canvasLocation" x="-36709.5" y="-10852"/>
         </scene>
         <!--注册-->
         <scene sceneID="KCC-GV-uQB">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-m2-7OT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33942" y="-7780"/>
+            <point key="canvasLocation" x="-31026" y="-8562"/>
         </scene>
         <!--首次安装轮播-->
         <scene sceneID="wd0-aI-6Uy">
@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPY-lC-pUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-40315.5" y="-9409"/>
+            <point key="canvasLocation" x="-40027.5" y="-9385"/>
         </scene>
         <!--TAB导航-->
         <scene sceneID="Alc-7I-uRe">
@@ -306,7 +306,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KZ-mo-kVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39157.5" y="-9459.5070422535209"/>
+            <point key="canvasLocation" x="-38857.5" y="-9452"/>
         </scene>
         <!--注册导航-->
         <scene sceneID="7yE-3J-Vul">
@@ -325,7 +325,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOC-8x-whS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35706" y="-7761.9999999999991"/>
+            <point key="canvasLocation" x="-32058" y="-8626"/>
         </scene>
         <!--我的-->
         <scene sceneID="dqh-TP-gfJ">
@@ -538,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60f-C7-ykq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36537" y="-8801"/>
+            <point key="canvasLocation" x="-35685" y="-9241"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -558,7 +558,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyh-UK-eNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37656" y="-10275"/>
+            <point key="canvasLocation" x="-38064" y="-11251"/>
         </scene>
         <!--订单详情导航-->
         <scene sceneID="UOt-ec-xKG">
@@ -578,7 +578,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6A-zX-uPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37350" y="-9314.7887323943633"/>
+            <point key="canvasLocation" x="-37158" y="-9875"/>
         </scene>
         <!--发现-->
         <scene sceneID="bcE-Dm-Tjq">
@@ -598,7 +598,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8U-oK-sYJ" id="Swj-dR-2Mn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -612,7 +612,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smb-gi-y7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35499.375" y="-9249.2957746478842"/>
+            <point key="canvasLocation" x="-35695.5" y="-10275"/>
         </scene>
         <!--消息-->
         <scene sceneID="Yib-gJ-EF2">
@@ -632,7 +632,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN2-yK-KNT" id="IGz-IH-r6u">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -649,7 +649,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgy-Qq-YEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37933.125" y="-7955.2816901408432"/>
+            <point key="canvasLocation" x="-37369.5" y="-7900"/>
         </scene>
         <!--我的导航-->
         <scene sceneID="1fV-y9-o1E">
@@ -669,7 +669,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df8-gR-JCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38126.25" y="-8736.9718309859127"/>
+            <point key="canvasLocation" x="-37407" y="-9041"/>
         </scene>
         <!--消息导航-->
         <scene sceneID="6WE-dP-bFb">
@@ -708,7 +708,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jR-cr-mV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37063.125" y="-8174.9999999999982"/>
+            <point key="canvasLocation" x="-34471.5" y="-8535"/>
         </scene>
         <!--异客-->
         <scene sceneID="CtC-JI-CjR">
@@ -781,7 +781,7 @@
                                 <rect key="frame" x="0.0" y="220" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" tableViewCell="ArE-la-xig" id="1Z2-tk-O3G">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="豪华装修别墅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONR-Av-qfl">
@@ -851,7 +851,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsV-Y7-IWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36271.5" y="-10661"/>
+            <point key="canvasLocation" x="-36931.5" y="-11709"/>
         </scene>
         <!--发布导航-->
         <scene sceneID="GE3-hW-PZE">
@@ -870,7 +870,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rai-wW-ZXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35261.25" y="-9964.4366197183099"/>
+            <point key="canvasLocation" x="-35847" y="-10962"/>
         </scene>
         <!--发布-->
         <scene sceneID="5P5-xd-sop">
@@ -884,22 +884,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuideImage3" translatesAutoresizingMaskIntoConstraints="NO" id="DaY-Oo-22s">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m5-97-z9o">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-a3-0lS">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37912660256410258" green="0.37912660256410258" blue="0.37912660256410258" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BmU-a3-0lS" secondAttribute="bottom" constant="302" id="KEz-e1-IQM"/>
+                                    <constraint firstItem="BmU-a3-0lS" firstAttribute="leading" secondItem="8m5-97-z9o" secondAttribute="leading" constant="129" id="L8T-tG-6jY">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="BmU-a3-0lS" secondAttribute="trailing" constant="229" id="adH-BV-cBl">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="BmU-a3-0lS" firstAttribute="top" secondItem="8m5-97-z9o" secondAttribute="top" constant="277" id="xfF-sk-6QG"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="BmU-a3-0lS"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="KEz-e1-IQM"/>
+                                        <exclude reference="L8T-tG-6jY"/>
+                                        <exclude reference="adH-BV-cBl"/>
+                                        <exclude reference="xfF-sk-6QG"/>
+                                    </mask>
                                 </variation>
-                            </imageView>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="BmU-a3-0lS"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="KEz-e1-IQM"/>
+                                        <include reference="L8T-tG-6jY"/>
+                                        <include reference="adH-BV-cBl"/>
+                                        <include reference="xfF-sk-6QG"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8m5-97-z9o" secondAttribute="bottom" id="QkO-b2-1mn"/>
+                            <constraint firstItem="8m5-97-z9o" firstAttribute="top" secondItem="DJh-Vi-F3Y" secondAttribute="top" id="V25-Ov-uYa"/>
+                            <constraint firstItem="8m5-97-z9o" firstAttribute="leading" secondItem="DJh-Vi-F3Y" secondAttribute="leading" id="dp1-XR-iZq"/>
+                            <constraint firstAttribute="trailing" secondItem="8m5-97-z9o" secondAttribute="trailing" id="lB3-iu-Uod"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="DaY-Oo-22s"/>
+                                <exclude reference="8m5-97-z9o"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="QkO-b2-1mn"/>
+                                <exclude reference="V25-Ov-uYa"/>
+                                <exclude reference="dp1-XR-iZq"/>
+                                <exclude reference="lB3-iu-Uod"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="DaY-Oo-22s"/>
+                                <include reference="8m5-97-z9o"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="QkO-b2-1mn"/>
+                                <include reference="V25-Ov-uYa"/>
+                                <include reference="dp1-XR-iZq"/>
+                                <include reference="lB3-iu-Uod"/>
                             </mask>
                         </variation>
                     </view>
@@ -907,16 +964,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0m-1e-DFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34513.125" y="-9994.0140845070418"/>
+            <point key="canvasLocation" x="-34117.5" y="-10939"/>
         </scene>
     </scenes>
     <resources>
-        <image name="GuideImage3" width="187" height="333"/>
+        <image name="Shape-38" width="30" height="30"/>
         <image name="back" width="13" height="21"/>
         <image name="password" width="271" height="250"/>
         <image name="tab1" width="24" height="26"/>
         <image name="tab2" width="30" height="30"/>
-        <image name="tab3" width="30" height="30"/>
         <image name="tab4" width="32" height="30"/>
         <image name="tab5" width="22" height="27"/>
         <image name="user_name" width="271" height="250"/>
