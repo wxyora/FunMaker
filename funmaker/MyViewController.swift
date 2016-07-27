@@ -8,16 +8,21 @@
 
 import UIKit
 
-class MyViewController: BaseViewController {
+class MyViewController: UITableViewController {
 
-    @IBOutlet weak var loginNow: UIButton!
     
-    @IBOutlet weak var loginStatusInfo: UILabel!
+    private var nickName:String?
+    private var showLoginButton:Bool?
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginNow.layer.cornerRadius=3
-        // Do any additional setup after loading the view.
+        let rc = UIRefreshControl()
+        rc.attributedTitle = NSAttributedString(string: "下拉刷新")
+        rc.addTarget(self, action: #selector(PublishViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = rc
+        valideLoginState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +38,80 @@ class MyViewController: BaseViewController {
       
     }
     
+    
+    func valideLoginState(){
+        
+        let userInfo=NSUserDefaults.standardUserDefaults()
+        let token  =  userInfo.objectForKey("token")
+        if token == nil{
+            nickName = "您还没有登录哦"
+            showLoginButton = false
+            
+        }else{
+            nickName = userInfo.stringForKey("mobile")
+            showLoginButton = true
+  
+        }
+        self.refreshControl?.endRefreshing()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+        self.tableView.reloadData()
+    }
+
+    
+    
+    func refreshTableView(){
+        
+        if(self.refreshControl?.refreshing==true){
+            self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
+            
+            valideLoginState()
+            //add data
+//            let time:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_MSEC * 1000))
+//            //延迟
+//            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+//                //self.myLabel.text = "请点击调用按钮"
+//                
+//            }
+
+        }
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        
+        //不能对为空的optional进行解包,否则会报运行时错误.所以在对optional进行解包之前进行判断是否为空.
+        // var cell:CustomCell! = tableView.dequeueReusableCellWithIdentifier("RentInfoCell", forIndexPath: indexPath) as? CustomCell
+        var cell:MyCustomCell! = tableView.dequeueReusableCellWithIdentifier("MyInfoCell", forIndexPath: indexPath) as? MyCustomCell
+        if(cell == nil){
+            cell = MyCustomCell(style: UITableViewCellStyle.Default, reuseIdentifier:"MyInfoCell")
+        }else{
+            cell.nickName.text = self.nickName!
+            cell.loginButton.hidden=showLoginButton!
+           // cell.logoutButton.addTarget(MyViewController.self, action: #selector(MyViewController.buttonClick), forControlEvents: UIControlEvents.TouchUpInside)
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        }
+        return cell
+    }
+    
+    
+    func buttonClick(){
+//         let userInfo=NSUserDefaults.standardUserDefaults()
+//         userInfo.removeObjectForKey("token")
+//         valideLoginState()
+    }
+
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    
     func doSome(notification:NSNotification){
-        let result = notification.object as? String
-        let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
-        let mobile = userInfo.stringForKey("mobile")
-        self.loginStatusInfo.text=mobile
-        self.loginNow.hidden=true
-        self.noticeSuccess(result!, autoClear: true, autoClearTime:3)
+
+        valideLoginState()
+        self.noticeSuccess("登录成功", autoClear: true, autoClearTime:3)
     }
     
 
