@@ -79,7 +79,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                             //把NSData对象转换回JSON对象
                             let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                             let result : AnyObject = json.objectForKey("result")!
-                            let token : AnyObject = json.objectForKey("token")!
+                            
                             //let mobile : AnyObject = json.objectForKey("mobile")!
                             if String(result)=="用户不存在"{
                                 self.alert("用户不存在")
@@ -91,6 +91,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
 //                                    let mvc = MyViewController()
 //                                    mvc.loginSuccessCallBack()
                                     //存储用户token，mobile
+                                    let token : AnyObject = json.objectForKey("token")!
                                     let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
                                     userInfo.setObject(token, forKey: "token")
                                     userInfo.setObject(self.userName.text, forKey: "mobile")

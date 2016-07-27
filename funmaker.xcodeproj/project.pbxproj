@@ -29,6 +29,7 @@
 		098891101D1ED5A7008D1257 /* funmakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988910F1D1ED5A7008D1257 /* funmakerTests.swift */; };
 		0988911B1D1ED5A7008D1257 /* funmakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */; };
 		09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* LoginedViewController.swift */; };
+		09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */; };
 		09F29FB11D3F20AD00211E2F /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */; };
 		09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */; };
 		09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB61D3F22FE00211E2F /* MessageUI.framework */; };
@@ -147,6 +148,7 @@
 		0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funmakerUITests.swift; sourceTree = "<group>"; };
 		0988911C1D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09988B4F1D24C3280069A65C /* LoginedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginedViewController.swift; sourceTree = "<group>"; };
+		09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
 		09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
 		09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		09F29FB61D3F22FE00211E2F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -205,6 +207,7 @@
 				093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */,
 				09F2BA721D39380C00672B3A /* BaseViewController.swift */,
 				09558A511D3D10EA008A0A15 /* CustomCell.swift */,
+				09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */,
 				0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */,
 				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
+				09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */,
 				0930D2651D3C7759002AF3C5 /* PublishViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

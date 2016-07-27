@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RecentOrderViewController: UITableViewController{
 
     var str = ["景区1","景区2","景区3","景区4","景区5","景区3","景区6"]
@@ -18,6 +19,8 @@ class RecentOrderViewController: UITableViewController{
         
         
         //self.searchBar.delegate = self
+        
+        
         
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
