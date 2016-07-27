@@ -89,7 +89,7 @@ class MyViewController: UITableViewController {
         }else{
             cell.nickName.text = self.nickName!
             cell.loginButton.hidden=showLoginButton!
-            cell.logoutButton.addTarget(MyViewController.self, action: #selector(MyViewController.buttonClick), forControlEvents: UIControlEvents.TouchUpInside)
+           // cell.logoutButton.addTarget(MyViewController.self, action: #selector(MyViewController.buttonClick), forControlEvents: UIControlEvents.TouchUpInside)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         return cell
