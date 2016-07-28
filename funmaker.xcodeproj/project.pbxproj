@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
-		0930D2651D3C7759002AF3C5 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2641D3C7759002AF3C5 /* PublishViewController.swift */; };
 		093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */; };
 		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
 		09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09558A511D3D10EA008A0A15 /* CustomCell.swift */; };
@@ -17,6 +16,7 @@
 		096A035D1D424A650086C906 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096A03501D424A2A0086C906 /* SwiftHTTP.framework */; };
 		096A035E1D424A700086C906 /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 096A03501D424A2A0086C906 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		096A03601D42583C0086C906 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A035F1D42583C0086C906 /* GuideViewController.swift */; };
+		096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D25BF1D4A501900831EE7 /* PublishViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
 		0974B8101D412291002F978C /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974B80F1D412291002F978C /* SwiftNotice.swift */; };
 		097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED51D40BD6200ADA706 /* Constant.swift */; };
@@ -123,7 +123,6 @@
 
 /* Begin PBXFileReference section */
 		0930D2621D3C68FF002AF3C5 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		0930D2641D3C7759002AF3C5 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		096004601D2F974200507D25 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		096A03451D424A2A0086C906 /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../Downloads/SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
 		096A035F1D42583C0086C906 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		096D25BF1D4A501900831EE7 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		0974B80F1D412291002F978C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		097A4ED51D40BD6200ADA706 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -199,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				096A035F1D42583C0086C906 /* GuideViewController.swift */,
-				0930D2641D3C7759002AF3C5 /* PublishViewController.swift */,
 				0930D2621D3C68FF002AF3C5 /* MyViewController.swift */,
 				096004601D2F974200507D25 /* IndexViewController.swift */,
 				096E68CF1D21168000501D5B /* RegistViewController.swift */,
@@ -211,6 +210,7 @@
 				09558A511D3D10EA008A0A15 /* CustomCell.swift */,
 				09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */,
 				09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */,
+				096D25BF1D4A501900831EE7 /* PublishViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -539,9 +539,9 @@
 				09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */,
 				097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */,
 				0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */,
+				096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */,
 				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
 				09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */,
-				0930D2651D3C7759002AF3C5 /* PublishViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

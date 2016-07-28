@@ -20,7 +20,7 @@ class MyViewController: UITableViewController {
         super.viewDidLoad()
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
-        rc.addTarget(self, action: #selector(PublishViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
+        rc.addTarget(self, action: #selector(MyViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = rc
         valideLoginState()
     }
@@ -104,7 +104,7 @@ class MyViewController: UITableViewController {
             cell.nickName.text = self.nickName!
             cell.loginButton.hidden=showLoginButton!
             //cell.logoutButton.addTarget(MyViewController.self, action: #selector(MyViewController.buttonClick), forControlEvents: UIControlEvents.TouchUpInside)
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            //cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         return cell
     }
