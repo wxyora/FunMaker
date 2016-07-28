@@ -22,7 +22,9 @@ class MyCustomCell: UITableViewCell {
     
     @IBAction func loginout(sender: AnyObject) {
         
-        
+        let userInfo=NSUserDefaults.standardUserDefaults()
+        userInfo.removeObjectForKey("token")
+        userInfo.synchronize()
         
     }
     override func awakeFromNib() {

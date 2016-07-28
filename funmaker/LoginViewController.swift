@@ -61,9 +61,9 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                 self.pleaseWait()
                 do {
                     let opt = try HTTP.GET(Constant.host+Constant.loginUrl, parameters: ["mobile":userName.text, "password": password.text])
-                    opt.progress = { progress in
-                        print("progress: \(progress)") //this will be between 0 and 1.
-                    }
+//                    opt.progress = { progress in
+//                        print("progress: \(progress)") //this will be between 0 and 1.
+//                    }
                     opt.start { response in
                         if let err = response.error {
                             
