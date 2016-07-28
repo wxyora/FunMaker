@@ -22,7 +22,7 @@ class MyCustomCell: UITableViewCell {
     
     @IBAction func loginout(sender: AnyObject) {
         
-        
+      
         
     }
     override func awakeFromNib() {

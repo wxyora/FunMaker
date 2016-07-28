@@ -35,7 +35,21 @@ class MyViewController: UITableViewController {
         
          //接收登录成功的通知
          NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MyViewController.doSome(_:)), name: "LoginSuccessNotification", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MyViewController.doLoginOut(_:)), name: "LoginOutSuccessNotification", object: nil)
       
+    }
+    
+    func doSome(notification:NSNotification){
+        
+        valideLoginState()
+        self.noticeSuccess("登录成功", autoClear: true, autoClearTime:3)
+    }
+    
+    
+    func doLoginOut(notification:NSNotification){
+        
+        valideLoginState()
+        self.noticeSuccess("退出成功", autoClear: true, autoClearTime:3)
     }
     
     
@@ -89,18 +103,18 @@ class MyViewController: UITableViewController {
         }else{
             cell.nickName.text = self.nickName!
             cell.loginButton.hidden=showLoginButton!
-           // cell.logoutButton.addTarget(MyViewController.self, action: #selector(MyViewController.buttonClick), forControlEvents: UIControlEvents.TouchUpInside)
+            //cell.logoutButton.addTarget(MyViewController.self, action: #selector(MyViewController.buttonClick), forControlEvents: UIControlEvents.TouchUpInside)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         return cell
     }
     
     
-    func buttonClick(){
+//    func buttonClick(){
 //         let userInfo=NSUserDefaults.standardUserDefaults()
 //         userInfo.removeObjectForKey("token")
 //         valideLoginState()
-    }
+//    }
 
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,12 +122,7 @@ class MyViewController: UITableViewController {
     }
 
     
-    func doSome(notification:NSNotification){
 
-        valideLoginState()
-        self.noticeSuccess("登录成功", autoClear: true, autoClearTime:3)
-    }
-    
 
     //登录成功后回调
     func loginSuccessCallBack(){

@@ -30,6 +30,7 @@
 		0988911B1D1ED5A7008D1257 /* funmakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */; };
 		09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* LoginedViewController.swift */; };
 		09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */; };
+		09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */; };
 		09F29FB11D3F20AD00211E2F /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */; };
 		09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */; };
 		09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB61D3F22FE00211E2F /* MessageUI.framework */; };
@@ -149,6 +150,7 @@
 		0988911C1D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09988B4F1D24C3280069A65C /* LoginedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginedViewController.swift; sourceTree = "<group>"; };
 		09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
+		09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
 		09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		09F29FB61D3F22FE00211E2F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -208,6 +210,7 @@
 				09F2BA721D39380C00672B3A /* BaseViewController.swift */,
 				09558A511D3D10EA008A0A15 /* CustomCell.swift */,
 				09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */,
+				09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
 				0974B8101D412291002F978C /* SwiftNotice.swift in Sources */,
+				09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
 				096A03601D42583C0086C906 /* GuideViewController.swift in Sources */,
