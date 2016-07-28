@@ -326,10 +326,10 @@
             </objects>
             <point key="canvasLocation" x="-32058" y="-8626"/>
         </scene>
-        <!--My View Controller-->
+        <!--我的-->
         <scene sceneID="WsW-bR-VZH">
             <objects>
-                <tableViewController id="teM-0Z-zIR" customClass="MyViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="我的" id="teM-0Z-zIR" customClass="MyViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="419" sectionHeaderHeight="28" sectionFooterHeight="28" id="HSQ-5Y-poZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,14 +398,15 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjA-MW-0NX">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="退出">
+                                                    <state key="normal" title="设置">
                                                         <color key="titleColor" red="1" green="0.1071204132" blue="0.16178715129999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="127" y="13" width="61" height="29"/>
+                                                        <rect key="frame" x="127" y="11" width="61" height="32"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="loginout:" destination="PkB-I4-CZe" eventType="touchUpInside" id="vu9-SY-QLW"/>
+                                                        <segue destination="7lV-6w-6cj" kind="modal" id="1An-So-tUg"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -454,7 +455,86 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozs-wX-asf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34084.5" y="-9703"/>
+            <point key="canvasLocation" x="-34423.5" y="-9853"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="fkZ-TQ-Tie">
+            <objects>
+                <viewController id="FaP-ab-hDV" customClass="ConfigViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="igp-iA-vnI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ub7-42-3dg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yPk-12-qMQ">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQ9-i5-BjZ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.1071204132" blue="0.16178715129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="DFW-HU-Sbg"/>
+                                    <constraint firstAttribute="width" constant="244" id="T17-Rl-wCX"/>
+                                </constraints>
+                                <state key="normal" title="退出">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DFW-HU-Sbg"/>
+                                        <exclude reference="T17-Rl-wCX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="48" y="447" width="244" height="45"/>
+                                    <mask key="constraints">
+                                        <include reference="DFW-HU-Sbg"/>
+                                        <include reference="T17-Rl-wCX"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loginOut:" destination="FaP-ab-hDV" eventType="touchUpInside" id="Cfb-UL-Png"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JQ9-i5-BjZ" firstAttribute="leading" secondItem="yPk-12-qMQ" secondAttribute="leadingMargin" constant="14" id="0Ym-pL-ccp"/>
+                            <constraint firstItem="JQ9-i5-BjZ" firstAttribute="top" secondItem="igp-iA-vnI" secondAttribute="bottom" constant="129" id="Qxj-Bj-9br"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="JQ9-i5-BjZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Ym-pL-ccp"/>
+                                <exclude reference="Qxj-Bj-9br"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="JQ9-i5-BjZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Ym-pL-ccp"/>
+                                <include reference="Qxj-Bj-9br"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="设置" id="vhR-Da-oZg">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="DZB-LE-wRB">
+                            <connections>
+                                <action selector="back:" destination="FaP-ab-hDV" id="eud-Wr-VZS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="DZB-LE-wRB" id="3D6-Ff-hZb"/>
+                        <outlet property="loginOutButton" destination="JQ9-i5-BjZ" id="mJe-VJ-6x9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nzk-fj-Kos" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32422.5" y="-9831"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -826,10 +906,10 @@
             </objects>
             <point key="canvasLocation" x="-34221" y="-10689"/>
         </scene>
-        <!--Publish View Controller-->
+        <!--发布-->
         <scene sceneID="bnT-gV-dbn">
             <objects>
-                <tableViewController id="JFQ-Gd-5PJ" customClass="PublishViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="发布" id="JFQ-Gd-5PJ" customClass="PublishViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="447" sectionHeaderHeight="28" sectionFooterHeight="28" id="dfB-GR-y3x">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -881,6 +961,7 @@
         <!--我的-->
         <scene sceneID="o7y-xV-dqg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btN-KS-OdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H5u-Z7-s6a" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="我的" id="qGr-cV-OO0"/>
@@ -893,9 +974,26 @@
                         <segue destination="teM-0Z-zIR" kind="relationship" relationship="rootViewController" id="gWs-Ze-JGY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="btN-KS-OdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-35806.5" y="-9473"/>
+        </scene>
+        <!--设置界面-->
+        <scene sceneID="cid-JN-oPN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nta-HV-hLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController title="设置界面" automaticallyAdjustsScrollViewInsets="NO" id="7lV-6w-6cj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MQz-sl-kgw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FaP-ab-hDV" kind="relationship" relationship="rootViewController" id="AWA-QN-9Sj"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-33522" y="-9920"/>
         </scene>
     </scenes>
     <resources>
