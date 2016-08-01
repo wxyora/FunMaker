@@ -26,6 +26,8 @@ class PublishViewController: UITableViewController ,UITextFieldDelegate,UITextVi
         contact.delegate=self
         senery.delegate=self
         action.delegate=self
+        //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
+        tableView.tableFooterView = UIView()
 
     }
 
