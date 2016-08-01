@@ -9,7 +9,7 @@
 import UIKit
 import SwiftHTTP
 
-class RegistViewController: BaseViewController ,UITextFieldDelegate{
+class RegistViewController: UITableViewController ,UITextFieldDelegate{
 
     
     @IBOutlet weak var phone: UITextField!
@@ -117,6 +117,12 @@ class RegistViewController: BaseViewController ,UITextFieldDelegate{
             alert("请填写完整信息再提交")
         }
         
+    }
+    
+    func alert(message:String){
+        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func registUser(){

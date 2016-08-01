@@ -9,7 +9,7 @@
 import UIKit
 import SwiftHTTP
 
-class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
+class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewDelegate {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -31,8 +31,17 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userName.delegate=self
+        password.delegate=self
         loginButton.layer.cornerRadius = 3
         registButton.layer.cornerRadius = 3
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+    
+    func alert(message:String){
+        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 
@@ -152,30 +161,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
         
       
     }
-    @IBAction func acitonSheet(sender: AnyObject) {
-        //UIAlertController默认不传参数就是actionSheet操作表控件
-        let actionSheet = UIAlertController()
-        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
-            print("取消")
-        })
-        actionSheet.addAction(UIAlertAction(title: "腾讯QQ", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
-            print("腾讯QQ")
-        })
-        actionSheet.addAction(UIAlertAction(title: "新浪微博", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-            print("新浪微博")
-        })
-        actionSheet.addAction(UIAlertAction(title: "微信", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-            print("微信")
-        })
-        
-        actionSheet.addAction(UIAlertAction(title: "朋友圈", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-            print("朋友圈")
-        })
 
-            
-        self.presentViewController(actionSheet, animated: true, completion: nil)
-
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
