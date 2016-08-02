@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfigViewController: UIViewController {
+class ConfigViewController: UITableViewController {
 
     @IBOutlet weak var loginOutButton: UIButton!
     @IBOutlet weak var backButton: UIBarButtonItem!
@@ -28,7 +28,8 @@ class ConfigViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-loginOutButton.layer.cornerRadius=3
+        loginOutButton.layer.cornerRadius=3
+         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         // Do any additional setup after loading the view.
     }
 
