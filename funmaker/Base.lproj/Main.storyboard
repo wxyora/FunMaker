@@ -71,16 +71,6 @@
                                                         <action selector="login:" destination="LCg-Vy-Jb8" eventType="touchUpInside" id="tg3-gf-cws"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVX-8h-KzU">
-                                                    <rect key="frame" x="231" y="155" width="76" height="16"/>
-                                                    <color key="tintColor" red="0.1619222877" green="0.32123282069999998" blue="0.2050482652" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="免费注册">
-                                                        <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="R3S-9I-V4j" kind="modal" id="SjU-Nl-5rd"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="忘记密码？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-Re-h39">
                                                     <rect key="frame" x="250" y="8" width="70" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -106,17 +96,22 @@
                                 <action selector="goBack:" destination="LCg-Vy-Jb8" id="Yp4-ZU-d8A"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="免费注册" id="UXM-pg-MUD">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="R3S-9I-V4j" kind="modal" id="Sop-kV-kr8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="hQC-vd-Csc" id="QD8-aP-dsT"/>
                         <outlet property="password" destination="jMj-M8-dvj" id="gS8-es-CFC"/>
-                        <outlet property="registButton" destination="nVX-8h-KzU" id="XxL-ar-kaa"/>
                         <outlet property="userName" destination="aaF-pX-63c" id="PuK-zW-8pn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGd-ZU-iaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17967" y="-8767"/>
+            <point key="canvasLocation" x="-18174" y="-8694"/>
         </scene>
         <!--发布导航-->
         <scene sceneID="z3j-yA-USV">

@@ -17,8 +17,7 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
     
     @IBOutlet weak var loginButton: UIButton!
     
-    @IBOutlet weak var registButton: UIButton!
-    
+       
     
     var message:String!
     
@@ -34,7 +33,7 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
         userName.delegate=self
         password.delegate=self
         loginButton.layer.cornerRadius = 3
-        registButton.layer.cornerRadius = 3
+        //registButton.layer.cornerRadius = 3
         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
