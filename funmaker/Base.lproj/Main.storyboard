@@ -900,7 +900,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="KRF-5w-O2j">
-                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="10" y="9" width="30" height="30"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="出行方式" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="awJ-Ad-TB1">
                                                     <rect key="frame" x="90" y="9" width="230" height="30"/>
@@ -924,7 +924,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="5vM-JJ-wW4">
-                                                    <rect key="frame" x="11" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="10" y="9" width="30" height="30"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机、微信、QQ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJY-fx-LNY">
                                                     <rect key="frame" x="89" y="9" width="231" height="30"/>
