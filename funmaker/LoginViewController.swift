@@ -93,10 +93,9 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
                                     userInfo.setObject(self.userName.text, forKey: "mobile")
                                     userInfo.synchronize();
                                     self.navigationController?.popViewControllerAnimated(true)
-                                  
                                 }
                                 
-                                                           }
+                            }
                 
                         }
 

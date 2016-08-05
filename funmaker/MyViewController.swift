@@ -14,11 +14,6 @@ class MyViewController: UITableViewController {
     
     @IBOutlet weak var loginNow: UIButton!
 
-    @IBAction func setAction(sender: AnyObject) {
-        
-        let mysetting = ConfigViewController()
-        //pushViewController(mysetting, animated: true)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let rc = UIRefreshControl()

@@ -11,7 +11,7 @@ import UIKit
 class ConfigViewController: UITableViewController {
 
     @IBOutlet weak var loginOutButton: UIButton!
-    @IBOutlet weak var backButton: UIBarButtonItem!
+
   
     @IBAction func loginOut(sender: AnyObject) {
         let userInfo=NSUserDefaults.standardUserDefaults()
@@ -19,12 +19,14 @@ class ConfigViewController: UITableViewController {
         userInfo.synchronize()
         //NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
         self.navigationController?.popViewControllerAnimated(true)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         loginOutButton.layer.cornerRadius=3
-         //self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
-        // Do any additional setup after loading the view.
+        //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
+        tableView.tableFooterView = UIView()
+
     }
 
     override func didReceiveMemoryWarning() {
