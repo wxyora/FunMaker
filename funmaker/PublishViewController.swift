@@ -48,7 +48,7 @@ class PublishViewController: UITableViewController ,UITextFieldDelegate,UITextVi
             
         }else{
             
-             alert("您已经登录")
+             //alert("您已经登录")
         }
        
     }

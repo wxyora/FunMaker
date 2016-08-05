@@ -64,31 +64,40 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
                             //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
                             //return
                         }else{
+                            
+                            //关闭网络请求hud
+                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
                             //self.clearAllNotice()
                             //把NSData对象转换回JSON对象
                             let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                            let result : AnyObject = json.objectForKey("result")!
-                            
-                            //let mobile : AnyObject = json.objectForKey("mobile")!
-                            if String(result)=="用户不存在"{
-                                self.alert("用户不存在")
+                            if json == nil {
+                                self.alert("网络异常，请重试")
                                   self.clearAllNotice()
-                            }else if String(result)=="用户名密码不匹配"{
-                                self.alert("用户名密码不匹配")
-                                  self.clearAllNotice()
-                            }else if String(result)=="登录成功"{
-                                //存储用户token，mobile
-                                let token : AnyObject = json.objectForKey("token")!
-                                let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
-                                userInfo.setObject(token, forKey: "token")
-                                userInfo.setObject(self.userName.text, forKey: "mobile")
-                                userInfo.synchronize();
-                                self.navigationController?.popViewControllerAnimated(true)
-                                self.clearAllNotice()
-                            }
-                          
-                            //关闭网络请求hud
-                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                            }else{
+                                let result : AnyObject = json.objectForKey("result")!
+                                
+                                //let mobile : AnyObject = json.objectForKey("mobile")!
+                                if String(result)=="用户不存在"{
+                                    self.alert("用户不存在")
+                                    self.clearAllNotice()
+                                }else if String(result)=="用户名密码不匹配"{
+                                    self.alert("用户名密码不匹配")
+                                    self.clearAllNotice()
+                                }else if String(result)=="登录成功"{
+                                    //存储用户token，mobile
+                                    self.clearAllNotice()
+                                    let token : AnyObject = json.objectForKey("token")!
+                                    let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+                                    userInfo.setObject(token, forKey: "token")
+                                    userInfo.setObject(self.userName.text, forKey: "mobile")
+                                    userInfo.synchronize();
+                                    self.navigationController?.popViewControllerAnimated(true)
+                                  
+                                }
+                                
+                                                           }
+                
                         }
 
                     }
@@ -111,6 +120,12 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
         return true
     }
     
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 
 }

@@ -71,12 +71,12 @@ class RegistViewController: UITableViewController ,UITextFieldDelegate{
                           
                         })
                         self.clearAllNotice()
-                       // self.alert(message)
+                       
                     }
                     
                     //关闭网络hud
                     //self.clearAllNotice()
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//                    ／UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     
                 }
             } catch let error {

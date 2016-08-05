@@ -372,10 +372,10 @@
             </objects>
             <point key="canvasLocation" x="-20952" y="-9496"/>
         </scene>
-        <!--个人中心-->
+        <!--我的-->
         <scene sceneID="LZs-uO-bg4">
             <objects>
-                <tableViewController title="个人中心" id="MpM-9L-tH3" customClass="MyViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="我的" id="MpM-9L-tH3" customClass="MyViewController" customModule="funmaker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uFm-1M-nJj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -503,7 +503,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4W-ZM-zV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19727" y="-8617"/>
+            <point key="canvasLocation" x="-19953" y="-8683"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -619,7 +619,6 @@
         <!--我的导航-->
         <scene sceneID="1fV-y9-o1E">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="df8-gR-JCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="我的导航" automaticallyAdjustsScrollViewInsets="NO" id="Kis-1g-P7g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="tab5" id="6ld-jb-PZ7"/>
                     <toolbarItems/>
@@ -630,11 +629,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MpM-9L-tH3" kind="relationship" relationship="rootViewController" id="bys-dU-nnC"/>
+                        <segue destination="MpM-9L-tH3" kind="relationship" relationship="rootViewController" id="XnP-cr-O2B"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="df8-gR-JCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20151" y="-8652"/>
+            <point key="canvasLocation" x="-20522" y="-8683"/>
         </scene>
         <!--消息导航-->
         <scene sceneID="6WE-dP-bFb">
