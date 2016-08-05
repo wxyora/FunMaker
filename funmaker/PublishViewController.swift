@@ -31,6 +31,37 @@ class PublishViewController: UITableViewController ,UITextFieldDelegate,UITextVi
 
     }
 
+    override func viewWillAppear(animated: Bool) {
+        valideLoginState()
+    }
+
+    
+    func valideLoginState(){
+        
+        let userInfo=NSUserDefaults.standardUserDefaults()
+        let token  =  userInfo.objectForKey("token")
+        if token == nil{
+//            let login = LoginViewController()
+//            let alertController:UIAlertController!=UIAlertController(title: "", message: "请登录", preferredStyle: UIAlertControllerStyle.Alert)
+//            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in self.presentViewController(login, animated: true, completion: nil) })
+//            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }else{
+            
+             alert("您已经登录")
+        }
+       
+    }
+    
+    
+    
+    
+    func alert(message:String){
+        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {

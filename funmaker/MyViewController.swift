@@ -26,9 +26,7 @@ class MyViewController: UITableViewController {
         rc.addTarget(self, action: #selector(MyViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = rc
         valideLoginState()
-        
-         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
     

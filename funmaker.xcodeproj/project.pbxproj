@@ -28,6 +28,7 @@
 		098891051D1ED5A7008D1257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */; };
 		098891101D1ED5A7008D1257 /* funmakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988910F1D1ED5A7008D1257 /* funmakerTests.swift */; };
 		0988911B1D1ED5A7008D1257 /* funmakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */; };
+		09957D131D54207D006B968C /* MyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09957D121D54207D006B968C /* MyStoryboard.storyboard */; };
 		09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* LoginedViewController.swift */; };
 		09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */; };
 		09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */; };
@@ -148,6 +149,7 @@
 		098891161D1ED5A7008D1257 /* funmakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = funmakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funmakerUITests.swift; sourceTree = "<group>"; };
 		0988911C1D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09957D121D54207D006B968C /* MyStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyStoryboard.storyboard; sourceTree = "<group>"; };
 		09988B4F1D24C3280069A65C /* LoginedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginedViewController.swift; sourceTree = "<group>"; };
 		09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
 		09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */,
 				098891011D1ED5A7008D1257 /* Assets.xcassets */,
 				098891061D1ED5A7008D1257 /* Info.plist */,
+				09957D121D54207D006B968C /* MyStoryboard.storyboard */,
 			);
 			path = funmaker;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				098891051D1ED5A7008D1257 /* LaunchScreen.storyboard in Resources */,
+				09957D131D54207D006B968C /* MyStoryboard.storyboard in Resources */,
 				098891021D1ED5A7008D1257 /* Assets.xcassets in Resources */,
 				098891001D1ED5A7008D1257 /* Main.storyboard in Resources */,
 				09F29FBF1D3F240700211E2F /* SMS_SDK in Resources */,
