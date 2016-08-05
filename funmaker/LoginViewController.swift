@@ -13,28 +13,17 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
-    
-    
     @IBOutlet weak var loginButton: UIButton!
-    
-       
     
     var message:String!
     
-    @IBAction func goBack(sender: UIBarButtonItem) {
-        
-        self.dismissViewControllerAnimated(true) {
-           // print("cancel button is pressed")
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         userName.delegate=self
         password.delegate=self
         loginButton.layer.cornerRadius = 3
-        //registButton.layer.cornerRadius = 3
-        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+
     }
     
     func alert(message:String){
@@ -44,12 +33,6 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
     }
     
 
-    override func viewWillAppear(animated: Bool) {
-       
-    }
-    
-  
-    
     
     @IBAction func login(sender: AnyObject) {
      
@@ -74,8 +57,6 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
 //                    }
                     opt.start { response in
                         if let err = response.error {
-                            
-                           
                             self.alert("error: \(err.localizedDescription)")
                              self.clearAllNotice()
                             //关闭网络请求hud
@@ -91,24 +72,21 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
                             //let mobile : AnyObject = json.objectForKey("mobile")!
                             if String(result)=="用户不存在"{
                                 self.alert("用户不存在")
+                                  self.clearAllNotice()
                             }else if String(result)=="用户名密码不匹配"{
                                 self.alert("用户名密码不匹配")
+                                  self.clearAllNotice()
                             }else if String(result)=="登录成功"{
-                                
-                                self.dismissViewControllerAnimated(true, completion:{
-//                                    let mvc = MyViewController()
-//                                    mvc.loginSuccessCallBack()
-                                    //存储用户token，mobile
-                                    let token : AnyObject = json.objectForKey("token")!
-                                    let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
-                                    userInfo.setObject(token, forKey: "token")
-                                    userInfo.setObject(self.userName.text, forKey: "mobile")
-                                    userInfo.synchronize();
-                                    //发布一条通知
-                                    NSNotificationCenter.defaultCenter().postNotificationName("LoginSuccessNotification", object:String(result))
-                                })
+                                //存储用户token，mobile
+                                let token : AnyObject = json.objectForKey("token")!
+                                let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+                                userInfo.setObject(token, forKey: "token")
+                                userInfo.setObject(self.userName.text, forKey: "mobile")
+                                userInfo.synchronize();
+                                self.navigationController?.popViewControllerAnimated(true)
+                                self.clearAllNotice()
                             }
-                            self.clearAllNotice()
+                          
                             //关闭网络请求hud
                             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                         }
@@ -118,53 +96,14 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
                 } catch {
                     print("loginValidate interface got an error creating the request: \(error)")
                 }
-             
-                //self.performSegueWithIdentifier("loginSuccessSegue", sender: nil)
-            
-//                self.dismissViewControllerAnimated(true, completion: {
-//                    
-//                })
-               
-               
-//                let sb = UIStoryboard(name: "Main", bundle: nil)
-//                let vc = sb.instantiateViewControllerWithIdentifier("loginSuccessViewController")
-//                self.presentViewController(vc, animated: true, completion: nil)
-                
                 
             }
         
         }
-        
-        
-        
-        
-     
-        
-        
-        
-        
-//        if !message!.isEmpty{
-//            //            UIAlertController通过闭包来实现响应事件，UIAlertView是通过实现委托协议来实现的
-//            let alertController:UIAlertController = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-//            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
-//                //print("OK button was pressed")
-//                })
-//            
-//
-//            
-//            //显示
-//            self.presentViewController(alertController, animated: true, completion: nil)
-//        }
 
-
-        
-      
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         userName.resignFirstResponder()
@@ -172,15 +111,6 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
         return true
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        return true
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        //关闭网络hud
-        clearAllNotice()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-    }
 
 
 }

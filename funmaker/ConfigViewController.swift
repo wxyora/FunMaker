@@ -12,24 +12,18 @@ class ConfigViewController: UITableViewController {
 
     @IBOutlet weak var loginOutButton: UIButton!
     @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+  
     @IBAction func loginOut(sender: AnyObject) {
         let userInfo=NSUserDefaults.standardUserDefaults()
         userInfo.removeObjectForKey("token")
         userInfo.synchronize()
-        self.dismissViewControllerAnimated(true, completion:{
-            //发布一条通知
-            NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
-        })
-       
-        
+        //NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         loginOutButton.layer.cornerRadius=3
-         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+         //self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         // Do any additional setup after loading the view.
     }
 

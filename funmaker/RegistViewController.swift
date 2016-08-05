@@ -65,7 +65,7 @@ class RegistViewController: UITableViewController ,UITextFieldDelegate{
                         let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
                         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
                              //点击ok返回登录界面
-                              self.dismissViewControllerAnimated(true, completion: nil)
+                              self.navigationController?.popViewControllerAnimated(true)
                             })
                         self.presentViewController(alertController, animated: true, completion: {
                           
@@ -147,7 +147,8 @@ class RegistViewController: UITableViewController ,UITextFieldDelegate{
                     let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
                     alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
                         //点击OK返回登录界面
-                        self.dismissViewControllerAnimated(true, completion: nil)})
+                            self.navigationController?.popViewControllerAnimated(true)
+                        })
                     self.presentViewController(alertController, animated: true, completion: nil)
                     self.clearAllNotice()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -180,6 +181,8 @@ class RegistViewController: UITableViewController ,UITextFieldDelegate{
         phone.delegate = self
         password.delegate=self
         verifyCode.delegate=self
+    
+        //self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
 
         // Do any additional setup after loading the view.
     }

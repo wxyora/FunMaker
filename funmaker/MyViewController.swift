@@ -26,7 +26,10 @@ class MyViewController: UITableViewController {
         rc.addTarget(self, action: #selector(MyViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = rc
         valideLoginState()
+        self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+
+
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
     
@@ -41,22 +44,24 @@ class MyViewController: UITableViewController {
         
         
          //接收登录成功的通知
-         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MyViewController.doSome(_:)), name: "LoginSuccessNotification", object: nil)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MyViewController.doLoginOut(_:)), name: "LoginOutSuccessNotification", object: nil)
-      
+         //NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MyViewController.doSome(_:)), name: "LoginSuccessNotification", object: nil)
+         //NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MyViewController.doLoginOut(_:)), name: "LoginOutSuccessNotification", object: nil)
+        
+        
+        valideLoginState()
     }
     
     func doSome(notification:NSNotification){
         
         valideLoginState()
-        self.noticeSuccess("登录成功", autoClear: true, autoClearTime:3)
+        //self.noticeSuccess("登录成功", autoClear: true, autoClearTime:3)
     }
     
     
     func doLoginOut(notification:NSNotification){
         
         valideLoginState()
-        self.noticeSuccess("退出成功", autoClear: true, autoClearTime:3)
+        //self.noticeSuccess("退出成功", autoClear: true, autoClearTime:3)
     }
     
     
