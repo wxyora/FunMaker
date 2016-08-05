@@ -98,10 +98,11 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
                                     userInfo.setObject(self.userName.text, forKey: "mobile")
                                     userInfo.synchronize();
                                     
+                                    self.dismissViewControllerAnimated(true, completion: nil)
                                     //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                    dispatch_async(dispatch_get_main_queue()) {
-                                       self.navigationController?.popViewControllerAnimated(true)
-                                    }
+//                                    dispatch_async(dispatch_get_main_queue()) {
+//                                       self.navigationController?.popViewControllerAnimated(true)
+//                                    }
                                    
                                 }
                                 
