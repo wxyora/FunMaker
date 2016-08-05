@@ -12,6 +12,7 @@ class GuideViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var startButton: UIButton!
+
     
     private var scrollView: UIScrollView!
     
