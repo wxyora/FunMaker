@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="XxS-fB-eLb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f7F-kP-GRT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -90,6 +90,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="登录" id="hgq-2R-Vkd">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="hxb-lw-44f">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="goDown:" destination="LCg-Vy-Jb8" id="GfI-gr-pNy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="免费注册" id="UXM-pg-MUD">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -105,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGd-ZU-iaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19333" y="-8783"/>
+            <point key="canvasLocation" x="-19005" y="-8729"/>
         </scene>
         <!--发布导航-->
         <scene sceneID="z3j-yA-USV">
@@ -172,10 +178,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-mp-hRK">
-                                                    <rect key="frame" x="13" y="15" width="294" height="38"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="18" y="15" width="294" height="38"/>
+                                                    <color key="backgroundColor" red="1" green="0.1071204132" blue="0.16178715129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <state key="normal" title="退出">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="loginOut:" destination="yht-4g-cFd" eventType="touchUpInside" id="1Ob-lk-t0y"/>
@@ -183,6 +190,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="10000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -194,7 +202,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="设置" id="4Ki-sl-Swp"/>
                     <connections>
-                        <outlet property="loginOutButton" destination="cJf-mp-hRK" id="gAS-La-H8X"/>
+                        <outlet property="loginOutButton" destination="cJf-mp-hRK" id="499-qm-YWr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dja-Z5-oYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +294,7 @@
                                                     <rect key="frame" x="33" y="73" width="255" height="40"/>
                                                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <state key="normal" title="注册">
+                                                    <state key="normal" title="提交信息">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -316,7 +324,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRB-HK-l3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18834" y="-8912"/>
+            <point key="canvasLocation" x="-18302" y="-8912"/>
         </scene>
         <!--首次安装轮播-->
         <scene sceneID="wd0-aI-6Uy">
@@ -406,7 +414,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="LCg-Vy-Jb8" kind="push" id="yHs-dP-3P3"/>
+                                                        <segue destination="bgM-oT-NL1" kind="modal" id="CIs-lG-y3n"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="首页tab" translatesAutoresizingMaskIntoConstraints="NO" id="H6y-62-Ptb">
@@ -511,7 +519,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4W-ZM-zV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19953" y="-8683"/>
+            <point key="canvasLocation" x="-20113" y="-8711"/>
         </scene>
         <!--异客导航-->
         <scene sceneID="acE-Sq-0A0">
@@ -941,9 +949,29 @@
             </objects>
             <point key="canvasLocation" x="-18681" y="-10651"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Q7-nT-2Sh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgM-oT-NL1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IkB-QC-9yF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LCg-Vy-Jb8" kind="relationship" relationship="rootViewController" id="ohz-ga-TKl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9tu-pp-oYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-19537" y="-8729"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Shape-38" width="30" height="30"/>
+        <image name="back" width="13" height="21"/>
         <image name="car" width="30" height="30"/>
         <image name="hand" width="30" height="30"/>
         <image name="map" width="30" height="30"/>

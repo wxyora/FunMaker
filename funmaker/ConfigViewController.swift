@@ -14,11 +14,16 @@ class ConfigViewController: UITableViewController {
 
   
     @IBAction func loginOut(sender: AnyObject) {
-        let userInfo=NSUserDefaults.standardUserDefaults()
-        userInfo.removeObjectForKey("token")
-        userInfo.synchronize()
-        //NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
-        self.navigationController?.popViewControllerAnimated(true)
+        
+        let alertController:UIAlertController!=UIAlertController(title: "", message: "您确定要注销？", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+        alertController.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default){ (alertAciton) -> Void in
+            let userInfo=NSUserDefaults.standardUserDefaults()
+            userInfo.removeObjectForKey("token")
+            userInfo.synchronize()
+            //NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
+            self.navigationController?.popViewControllerAnimated(true)})
+        self.presentViewController(alertController, animated: true, completion: nil)
         
     }
     override func viewDidLoad() {

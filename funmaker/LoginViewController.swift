@@ -17,13 +17,18 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
     
     var message:String!
     
+    @IBAction func goDown(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         userName.delegate=self
         password.delegate=self
         loginButton.layer.cornerRadius = 3
-
+        self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     func alert(message:String){
