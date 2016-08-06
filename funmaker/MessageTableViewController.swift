@@ -32,16 +32,16 @@ class MessageTableViewController: UITableViewController ,UISearchBarDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return str.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-        cell.textLabel?.text = str[indexPath.row]
-        return cell
-    }
-    
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return str.count
+//    }
+//    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+//        cell.textLabel?.text = str[indexPath.row]
+//        return cell
+//    }
+//    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.seachBar.resignFirstResponder()
     }

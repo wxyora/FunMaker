@@ -17,7 +17,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     
     @IBAction func changeHeadImage(sender: AnyObject) {
                     let actionSheet = UIAlertController(title: "请选择操作", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
-                    actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+                    actionSheet.addAction(UIAlertAction(title: "现场自拍", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
                         
                         //判断是否能进行拍照，可以的话打开相机
                         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
@@ -35,7 +35,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                         
                         
                         })
-                    actionSheet.addAction(UIAlertAction(title: "从相册中选取", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+                    actionSheet.addAction(UIAlertAction(title: "打开相册", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
                         //调用相册功能，打开相册
                         let picker = UIImagePickerController()
                         picker.sourceType = .PhotoLibrary

@@ -114,13 +114,7 @@ class MyViewController: BaseViewController {
         //let myProfile = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "myProfileId") as UITableViewCell
         
         
-        //从文件读取用户头像
-        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
-        //可选绑定,若保存过用户头像则显示之
-        if let savedImage = UIImage(contentsOfFile: fullPath){
-            self.headImage.image = savedImage
-        }
-
+    
        
         let userInfo=NSUserDefaults.standardUserDefaults()
         let token  =  userInfo.objectForKey("token")
@@ -142,6 +136,14 @@ class MyViewController: BaseViewController {
             let s = "(\(n))"
             myTravelLb.text?="我发布的拼团游\(s)"
             homeHouseLb.text?="我发布的民宿\(s)"
+            
+            //从文件读取用户头像
+            let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+            //可选绑定,若保存过用户头像则显示之
+            if let savedImage = UIImage(contentsOfFile: fullPath){
+                self.headImage.image = savedImage
+            }
+
             
 //            myProfile.selectionStyle=UITableViewCellSelectionStyle.Default
 //            myProfile.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator

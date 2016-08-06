@@ -55,8 +55,10 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
 //                    }
                     opt.start { response in
                         if let err = response.error {
-                            self.alert("error: \(err.localizedDescription)")
-                             self.clearAllNotice()
+                            if err.localizedDescription.containsString("timed out"){
+                                self.alert("网络不给力，请重试。")
+                            }
+                            self.clearAllNotice()
                             //关闭网络请求hud
                             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                             //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
