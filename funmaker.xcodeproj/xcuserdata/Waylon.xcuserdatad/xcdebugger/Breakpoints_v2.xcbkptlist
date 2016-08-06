@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "funmaker/MyViewController.swift"
-            timestampString = "492153280.620509"
+            filePath = "funmaker/BaseViewController.swift"
+            timestampString = "492151836.127899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkName = "getToken()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "funmaker/BaseViewController.swift"
-            timestampString = "492151836.127899"
+            filePath = "funmaker/MyViewController.swift"
+            timestampString = "492157199.420305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getToken()"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "valideLoginState()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -37,9 +37,28 @@ class MyViewController: BaseViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
        // alert(String(indexPath.row))
           let token = getToken()
-        if indexPath.row == 1{
+        if indexPath.row == 0{
+            if token.isEmpty{
+                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
+                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+            }else{
+                let myProfileViewController = storyBoard.instantiateViewControllerWithIdentifier("MyProfileViewController") as! MyProfileViewController
+                self.navigationController?.pushViewController(myProfileViewController, animated: true)
+            }
+//            let actionSheet = UIAlertController()
+//            actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
+//                print("取消")
+//                })
+//            actionSheet.addAction(UIAlertAction(title: "从相册中选取", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+//                self.alert("从相册中选取")
+//                })
+//            actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+//                self.alert("拍照")
+//                })
+//            
+//            self.presentViewController(actionSheet, animated: true, completion: nil)
         
-          
+        }else if indexPath.row == 1{
             if token.isEmpty{
                 let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
                 self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
@@ -91,6 +110,8 @@ class MyViewController: BaseViewController {
     
     func valideLoginState(){
         
+        //let myProfile = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "myProfileId") as UITableViewCell
+       
         let userInfo=NSUserDefaults.standardUserDefaults()
         let token  =  userInfo.objectForKey("token")
         if token == nil{
@@ -99,6 +120,10 @@ class MyViewController: BaseViewController {
             
             myTravelLb.text? = "我发布的拼团游"
             homeHouseLb.text?="我发布的民宿"
+//            
+//             myProfile.selectionStyle=UITableViewCellSelectionStyle.None
+//            
+//               myProfile.accessoryType=UITableViewCellAccessoryType.None
             
         }else{
             nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
@@ -107,6 +132,9 @@ class MyViewController: BaseViewController {
             let s = "(\(n))"
             myTravelLb.text?="我发布的拼团游\(s)"
             homeHouseLb.text?="我发布的民宿\(s)"
+            
+//            myProfile.selectionStyle=UITableViewCellSelectionStyle.Default
+//            myProfile.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator
   
         }
         self.refreshControl?.endRefreshing()
