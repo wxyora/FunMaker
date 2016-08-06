@@ -45,18 +45,6 @@ class MyViewController: BaseViewController {
                 let myProfileViewController = storyBoard.instantiateViewControllerWithIdentifier("MyProfileViewController") as! MyProfileViewController
                 self.navigationController?.pushViewController(myProfileViewController, animated: true)
             }
-//            let actionSheet = UIAlertController()
-//            actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
-//                print("取消")
-//                })
-//            actionSheet.addAction(UIAlertAction(title: "从相册中选取", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-//                self.alert("从相册中选取")
-//                })
-//            actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-//                self.alert("拍照")
-//                })
-//            
-//            self.presentViewController(actionSheet, animated: true, completion: nil)
         
         }else if indexPath.row == 1{
             if token.isEmpty{

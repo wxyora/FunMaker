@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PublishViewController: UITableViewController ,UITextFieldDelegate,UITextViewDelegate{
+class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewDelegate{
 
     @IBOutlet weak var publish: UIButton!
     @IBOutlet weak var senery: UITextField!
@@ -52,16 +52,6 @@ class PublishViewController: UITableViewController ,UITextFieldDelegate,UITextVi
         }
        
     }
-    
-    
-    
-    
-    func alert(message:String){
-        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
 
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
