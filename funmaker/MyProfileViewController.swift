@@ -8,23 +8,45 @@
 
 import UIKit
 
-class MyProfileViewController:BaseViewController {
+class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     
+    @IBOutlet weak var headImage: UIImageView!
     //UIImageView监听 1 uiimageview上增加tap gesture recognizer 2 uiimageview 开启user interaction enabled 3 controller最上面gesture图标拖拽action
     
     @IBAction func changeHeadImage(sender: AnyObject) {
-                    let actionSheet = UIAlertController()
-                    actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
-                        print("取消")
+                    let actionSheet = UIAlertController(title: "请选择操作", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                    actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+                        
+                        //判断是否能进行拍照，可以的话打开相机
+                        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                            let picker = UIImagePickerController()
+                            picker.sourceType = .Camera
+                            picker.delegate = self
+                            picker.allowsEditing = true
+                            self.presentViewController(picker, animated: true, completion: nil)
+                            
+                        }
+                        else
+                        {
+                            print("模拟其中无法打开照相机,请在真机中使用");
+                        }
+                        
+                        
                         })
                     actionSheet.addAction(UIAlertAction(title: "从相册中选取", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-                        self.alert("从相册中选取")
-                        })
-                    actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-                        self.alert("拍照")
+                        //调用相册功能，打开相册
+                        let picker = UIImagePickerController()
+                        picker.sourceType = .PhotoLibrary
+                        picker.delegate = self
+                        picker.allowsEditing = true
+                        self.presentViewController(picker, animated: true, completion: nil)
                         })
         
+                    actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
+                            print("取消")
+                        })
+
                     self.presentViewController(actionSheet, animated: true, completion: nil)
         
     }
@@ -32,12 +54,52 @@ class MyProfileViewController:BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //设置头像圆角
+        headImage.layer.cornerRadius = headImage.frame.width/2
+        
+//        //设置遮盖额外部分,下面两句的意义及实现是相同的
+//        headImage.clipsToBounds = true
+        headImage.layer.masksToBounds = true
+        
+        //从文件读取用户头像
+        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+        //可选绑定,若保存过用户头像则显示之
+        if let savedImage = UIImage(contentsOfFile: fullPath){
+            self.headImage.image = savedImage
+        }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    //MARK: - 保存图片至沙盒
+    func saveImage(currentImage:UIImage,imageName:String){
+        var imageData = NSData()
+        imageData = UIImageJPEGRepresentation(currentImage, 0.5)!
+        // 获取沙盒目录
+        let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent(imageName)
+        // 将图片写入文件
+        imageData.writeToFile(fullPath, atomically: false)
+    }
+    
+    //UIImagePicker回调方法
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        //获取照片的原图
+        //let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
+        //获得编辑后的图片
+       let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
+        //保存图片至沙盒
+       self.saveImage(image as! UIImage, imageName: "currentImage.png")
+       let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+        //存储后拿出更新头像
+        let savedImage = UIImage(contentsOfFile: fullPath)
+        self.headImage.image=savedImage
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

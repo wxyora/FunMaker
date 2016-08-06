@@ -55,13 +55,16 @@ class MyViewController: BaseViewController {
                 self.navigationController?.pushViewController(travelListViewController, animated: true)
             }
         }else if indexPath.row==2{
-            if token.isEmpty{
-                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
-                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
-            }else{
-                let homeHotelViewController = storyBoard.instantiateViewControllerWithIdentifier("HomeHotelViewController") as! HomeHotelViewController
-                self.navigationController?.pushViewController(homeHotelViewController, animated: true)
-            }
+        
+            self.noticeInfo("敬请期待", autoClear: true, autoClearTime:1)
+
+//            if token.isEmpty{
+//                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
+//                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+//            }else{
+//                let homeHotelViewController = storyBoard.instantiateViewControllerWithIdentifier("HomeHotelViewController") as! HomeHotelViewController
+//                self.navigationController?.pushViewController(homeHotelViewController, animated: true)
+//            }
         }
         
     }
