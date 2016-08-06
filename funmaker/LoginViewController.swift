@@ -9,7 +9,7 @@
 import UIKit
 import SwiftHTTP
 
-class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewDelegate {
+class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -30,13 +30,6 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
         self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
-    
-    func alert(message:String){
-        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
 
     
     @IBAction func login(sender: AnyObject) {
@@ -98,11 +91,12 @@ class LoginViewController: UITableViewController,UITextFieldDelegate,UITextViewD
                                     userInfo.setObject(self.userName.text, forKey: "mobile")
                                     userInfo.synchronize();
                                     
-                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                    
                                     //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-//                                    dispatch_async(dispatch_get_main_queue()) {
-//                                       self.navigationController?.popViewControllerAnimated(true)
-//                                    }
+                                    dispatch_async(dispatch_get_main_queue()) {
+                                       //self.navigationController?.popViewControllerAnimated(true)
+                                       self.dismissViewControllerAnimated(true, completion: nil)
+                                    }
                                    
                                 }
                                 

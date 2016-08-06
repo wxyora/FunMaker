@@ -21,7 +21,7 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
  
     override func viewDidLoad() {
         
-        NSThread.sleepForTimeInterval(2.0) //延长2秒
+        NSThread.sleepForTimeInterval(1.0) //延长2秒
         super.viewDidLoad()
         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         // self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]

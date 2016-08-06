@@ -9,11 +9,14 @@
 import UIKit
 
 class BaseViewController: UITableViewController {
+    
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    let userInfo = NSUserDefaults.standardUserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //set navigation bar tile color ---titleTextAttributes = NSDicturnary
-         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+         //self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
 
         // Do any additional setup after loading the view.
     }
@@ -27,6 +30,34 @@ class BaseViewController: UITableViewController {
         let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
         self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func getToken()->String{
+       
+        if let token = userInfo.stringForKey("token"){
+            return token
+        }else{
+            return ""
+        }
+        
+    }
+    
+    func getMobie()->String{
+        
+        let mobile = userInfo.stringForKey("mobile")
+        return mobile!
+    }
+    
+    func clearToken(){
+        
+         userInfo.removeObjectForKey("token")
+         userInfo.synchronize()
+    }
+    
+    func generateToken(token:String){
+        userInfo.setObject(token, forKey: "Token")
+        userInfo.synchronize()
+
     }
     
 

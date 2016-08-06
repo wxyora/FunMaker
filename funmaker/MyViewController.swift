@@ -10,6 +10,10 @@ import UIKit
 
 class MyViewController: BaseViewController {
 
+    @IBOutlet weak var myTravelLb: UILabel!
+    
+    @IBOutlet weak var homeHouseLb: UILabel!
+    
     @IBOutlet weak var nickName: UILabel!
     
     @IBOutlet weak var loginNow: UIButton!
@@ -32,14 +36,25 @@ class MyViewController: BaseViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
        // alert(String(indexPath.row))
-        
+          let token = getToken()
         if indexPath.row == 1{
-            let userInfo = NSUserDefaults.standardUserDefaults()
-            
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let travelListViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelListViewController") as? TravelListViewController
-            self.navigationController?.pushViewController(travelListViewController!, animated: true)
-            
+        
+          
+            if token.isEmpty{
+                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
+                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+            }else{
+                let travelListViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelListViewController") as! TravelListViewController
+                self.navigationController?.pushViewController(travelListViewController, animated: true)
+            }
+        }else if indexPath.row==2{
+            if token.isEmpty{
+                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
+                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+            }else{
+                let homeHotelViewController = storyBoard.instantiateViewControllerWithIdentifier("HomeHotelViewController") as! HomeHotelViewController
+                self.navigationController?.pushViewController(homeHotelViewController, animated: true)
+            }
         }
         
     }
@@ -82,9 +97,16 @@ class MyViewController: BaseViewController {
             nickName.text = "您还没有登录哦"
             loginNow.hidden=false
             
+            myTravelLb.text? = "我发布的拼团游"
+            homeHouseLb.text?="我发布的民宿"
+            
         }else{
             nickName.text = userInfo.stringForKey("mobile")
             loginNow.hidden = true
+            var n :Int = 0
+            let s = "(\(n))"
+            myTravelLb.text?="我发布的拼团游\(s)"
+            homeHouseLb.text?="我发布的民宿\(s)"
   
         }
         self.refreshControl?.endRefreshing()

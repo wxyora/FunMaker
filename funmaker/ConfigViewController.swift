@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfigViewController: UITableViewController {
+class ConfigViewController: BaseViewController {
 
     @IBOutlet weak var loginOutButton: UIButton!
 
@@ -28,6 +28,13 @@ class ConfigViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let token = getToken()
+        if token.isEmpty{
+          loginOutButton.hidden = true
+        }else{
+             loginOutButton.hidden = false
+        }
+        
         loginOutButton.layer.cornerRadius=3
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
