@@ -46,6 +46,21 @@ class ConfigViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+  
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let token = getToken()
+        if indexPath.row == 0{
+            if token.isEmpty{
+                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
+                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+            }else{
+                let myProfileViewController = storyBoard.instantiateViewControllerWithIdentifier("MyProfileViewController") as! MyProfileViewController
+                self.navigationController?.pushViewController(myProfileViewController, animated: true)
+            }
+            
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

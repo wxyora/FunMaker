@@ -55,9 +55,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
             self.presentViewController(picker, animated: true, completion: nil)
             })
         
-        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
-            print("取消")
-            })
+        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in})
         
         self.presentViewController(actionSheet, animated: true, completion: nil)
     }
