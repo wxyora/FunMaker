@@ -10,6 +10,7 @@ import UIKit
 
 class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet weak var mobile: UILabel!
     
     @IBOutlet weak var headImage: UIImageView!
     //UIImageView监听 1 uiimageview上增加tap gesture recognizer 2 uiimageview 开启user interaction enabled 3 controller最上面gesture图标拖拽action
@@ -55,11 +56,15 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mobile.text=getMobie()
+        //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
+        tableView.tableFooterView = UIView()
+
+        
         //设置头像圆角
         headImage.layer.cornerRadius = headImage.frame.width/2
-        
-//        //设置遮盖额外部分,下面两句的意义及实现是相同的
-//        headImage.clipsToBounds = true
+        //设置遮盖额外部分,下面两句的意义及实现是相同的
+//      headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
         
         //从文件读取用户头像

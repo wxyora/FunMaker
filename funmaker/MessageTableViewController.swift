@@ -10,7 +10,7 @@ import UIKit
 
 class MessageTableViewController: UITableViewController ,UISearchBarDelegate{
 
-    var str = ["消息1","消息2","消息3","消息4","消息5","消息3","消息6"]
+    var str = ["敬请期待..."]
     
     @IBOutlet weak var seachBar: UISearchBar!
     

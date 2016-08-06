@@ -16,6 +16,8 @@ class MyViewController: BaseViewController {
     
     @IBOutlet weak var nickName: UILabel!
     
+    @IBOutlet weak var headImage: UIImageView!
+    
     @IBOutlet weak var loginNow: UIButton!
 
     override func viewDidLoad() {
@@ -31,7 +33,15 @@ class MyViewController: BaseViewController {
 
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
-    
+        
+        
+        
+        //设置头像圆角
+        headImage.layer.cornerRadius = headImage.frame.width/2
+        //设置遮盖额外部分,下面两句的意义及实现是相同的
+        //      headImage.clipsToBounds = true
+        headImage.layer.masksToBounds = true
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -56,7 +66,7 @@ class MyViewController: BaseViewController {
             }
         }else if indexPath.row==2{
         
-            self.noticeInfo("敬请期待", autoClear: true, autoClearTime:1)
+            self.noticeInfo("敬请期待...", autoClear: true, autoClearTime:1)
 
 //            if token.isEmpty{
 //                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
@@ -102,6 +112,15 @@ class MyViewController: BaseViewController {
     func valideLoginState(){
         
         //let myProfile = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "myProfileId") as UITableViewCell
+        
+        
+        //从文件读取用户头像
+        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+        //可选绑定,若保存过用户头像则显示之
+        if let savedImage = UIImage(contentsOfFile: fullPath){
+            self.headImage.image = savedImage
+        }
+
        
         let userInfo=NSUserDefaults.standardUserDefaults()
         let token  =  userInfo.objectForKey("token")
