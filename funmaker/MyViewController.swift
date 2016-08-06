@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyViewController: UITableViewController {
+class MyViewController: BaseViewController {
 
     @IBOutlet weak var nickName: UILabel!
     
@@ -28,6 +28,20 @@ class MyViewController: UITableViewController {
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
     
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       // alert(String(indexPath.row))
+        
+        if indexPath.row == 1{
+            let userInfo = NSUserDefaults.standardUserDefaults()
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let travelListViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelListViewController") as? TravelListViewController
+            self.navigationController?.pushViewController(travelListViewController!, animated: true)
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
