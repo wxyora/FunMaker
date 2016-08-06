@@ -16,40 +16,50 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     //UIImageView监听 1 uiimageview上增加tap gesture recognizer 2 uiimageview 开启user interaction enabled 3 controller最上面gesture图标拖拽action
     
     @IBAction func changeHeadImage(sender: AnyObject) {
-                    let actionSheet = UIAlertController(title: "请选择操作", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
-                    actionSheet.addAction(UIAlertAction(title: "现场自拍", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
-                        
-                        //判断是否能进行拍照，可以的话打开相机
-                        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-                            let picker = UIImagePickerController()
-                            picker.sourceType = .Camera
-                            picker.delegate = self
-                            picker.allowsEditing = true
-                            self.presentViewController(picker, animated: true, completion: nil)
-                            
-                        }
-                        else
-                        {
-                            print("模拟其中无法打开照相机,请在真机中使用");
-                        }
-                        
-                        
-                        })
-                    actionSheet.addAction(UIAlertAction(title: "打开相册", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
-                        //调用相册功能，打开相册
-                        let picker = UIImagePickerController()
-                        picker.sourceType = .PhotoLibrary
-                        picker.delegate = self
-                        picker.allowsEditing = true
-                        self.presentViewController(picker, animated: true, completion: nil)
-                        })
+        takePhoto()
         
-                    actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
-                            print("取消")
-                        })
-
-                    self.presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 2{
+            takePhoto()
+        }
+    }
+    
+    func takePhoto(){
+        let actionSheet = UIAlertController()
+        actionSheet.addAction(UIAlertAction(title: "现场自拍", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+            
+            //判断是否能进行拍照，可以的话打开相机
+            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                let picker = UIImagePickerController()
+                picker.sourceType = .Camera
+                picker.delegate = self
+                picker.allowsEditing = true
+                self.presentViewController(picker, animated: true, completion: nil)
+                
+            }
+            else
+            {
+                print("模拟其中无法打开照相机,请在真机中使用");
+            }
+            
+            
+            })
+        actionSheet.addAction(UIAlertAction(title: "打开相册", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            //调用相册功能，打开相册
+            let picker = UIImagePickerController()
+            picker.sourceType = .PhotoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.presentViewController(picker, animated: true, completion: nil)
+            })
         
+        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
+            print("取消")
+            })
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil)
     }
     
     

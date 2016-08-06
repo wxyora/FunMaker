@@ -122,8 +122,8 @@ class MyViewController: BaseViewController {
             nickName.text = "您还没有登录哦"
             loginNow.hidden=false
             
-            myTravelLb.text? = "我发布的拼团游"
-            homeHouseLb.text?="我发布的民宿"
+            myTravelLb.text? = "我的拼团游"
+            homeHouseLb.text?="我的民宿"
 //            
 //             myProfile.selectionStyle=UITableViewCellSelectionStyle.None
 //            
@@ -134,8 +134,8 @@ class MyViewController: BaseViewController {
             loginNow.hidden = true
             var n :Int = 0
             let s = "(\(n))"
-            myTravelLb.text?="我发布的拼团游\(s)"
-            homeHouseLb.text?="我发布的民宿\(s)"
+            myTravelLb.text?="我的拼团游\(s)"
+            homeHouseLb.text?="我的民宿\(s)"
             
             //从文件读取用户头像
             let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
