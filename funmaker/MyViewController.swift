@@ -101,7 +101,7 @@ class MyViewController: BaseViewController {
             homeHouseLb.text?="我发布的民宿"
             
         }else{
-            nickName.text = userInfo.stringForKey("mobile")
+            nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
             loginNow.hidden = true
             var n :Int = 0
             let s = "(\(n))"
