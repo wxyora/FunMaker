@@ -1,18 +1,14 @@
 //
-//  TravelListViewController.swift
+//  IndexTravelDetailViewController.swift
 //  funmaker
 //
-//  Created by Waylon on 16/8/6.
+//  Created by Waylon on 16/8/7.
 //  Copyright © 2016年 Waylon. All rights reserved.
 //
 
 import UIKit
 
-class TravelListViewController: BaseViewController ,UISearchBarDelegate{
-    
-    
-    var data :Dictionary = ["101":"香港5日游","102":"上海7日游"]
-    var str = [["101","香港5日游","2018-09-09"],["102","台湾5日游","2019-08-08"]]
+class IndexTravelDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,45 +18,10 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        let rc = UIRefreshControl()
-        rc.attributedTitle = NSAttributedString(string: "下拉刷新")
-        rc.addTarget(self, action: #selector(TravelListViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl = rc
-        
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
-
     }
     
-    func refreshTableView(){
-        
-        if(self.refreshControl?.refreshing==true){
-            self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
-            
-            
-            
-            //add data
-            let time:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_MSEC * 1000))
-            //延迟
-            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-                //self.myLabel.text = "请点击调用按钮"
-                self.refreshControl?.endRefreshing()
-                
-                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                
-                self.tableView.reloadData()
-            }
-            
-            
-            //            refreshControl?.endRefreshing()
-            //
-            //            refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-            //
-            //            self.tableView.reloadData()
-            
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -73,44 +34,21 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
 //        // #warning Incomplete implementation, return the number of sections
 //        return 0
 //    }
+//
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        return str.count
-    }
-
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell:TogetherTravelCell! = tableView.dequeueReusableCellWithIdentifier("TogetherTravelCell", forIndexPath: indexPath) as? TogetherTravelCell
-        if(cell == nil){
-            cell = TogetherTravelCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherTravelCell")
-        }else{
-            cell.themeTitle.text = str[indexPath.row][1]
-        
-            
-            cell.outDate.text=str[indexPath.row][2]
-        }
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-      
-      
-        
-        
-        
-        let travelDetailViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelDetailViewController") as! TravelDetailViewController
-        self.navigationController?.pushViewController(travelDetailViewController, animated: true)
-      
-            
-      
-    }
-
- 
+    */
 
     /*
     // Override to support conditional editing of the table view.

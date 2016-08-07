@@ -22,6 +22,7 @@ class MyViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
         rc.addTarget(self, action: #selector(MyViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
@@ -43,6 +44,7 @@ class MyViewController: BaseViewController {
         headImage.layer.masksToBounds = true
         
     }
+
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
        // alert(String(indexPath.row))
@@ -56,7 +58,7 @@ class MyViewController: BaseViewController {
                 self.navigationController?.pushViewController(myProfileViewController, animated: true)
             }
         
-        }else if indexPath.row == 1{
+        }else if indexPath.row == 2{
             if token.isEmpty{
                 let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
                 self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
@@ -64,7 +66,7 @@ class MyViewController: BaseViewController {
                 let travelListViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelListViewController") as! TravelListViewController
                 self.navigationController?.pushViewController(travelListViewController, animated: true)
             }
-        }else if indexPath.row==2{
+        }else if indexPath.row==3{
         
             self.noticeInfo("敬请期待...", autoClear: true, autoClearTime:1)
 

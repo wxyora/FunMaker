@@ -15,7 +15,7 @@ class CustomCell: UITableViewCell {
 
     @IBOutlet weak var rentInfoName: UILabel!
     
-    @IBOutlet weak var rentDetailInfo: UITextView!
+    @IBOutlet weak var rentDetailInfo: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

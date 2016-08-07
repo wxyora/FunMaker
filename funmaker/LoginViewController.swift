@@ -54,8 +54,9 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
 //                        print("progress: \(progress)") //this will be between 0 and 1.
 //                    }
                     opt.start { response in
+                       
                         if let err = response.error {
-                            if err.localizedDescription.containsString("timed out"){
+                            if String(err.code)=="-1001"{
                                 self.alert("网络不给力，请重试。")
                             }
                             self.clearAllNotice()

@@ -1,6 +1,6 @@
 import UIKit
 
-class IndexViewController: UITableViewController,UISearchBarDelegate{
+class IndexViewController: BaseViewController,UISearchBarDelegate{
     
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var progressShow: UIActivityIndicatorView?
@@ -8,11 +8,8 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var pageScrollView: UIScrollView!
     
-  
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-     var str = ["精装修别墅","豪华洋房","三亚海景房","重庆江景房","精装修别墅","豪华洋房","三亚海景房","重庆江景房"]
+
+     var str = ["香港5日游","泰国8日游"]
    // @IBOutlet var searchBar: UISearchBar!
     
 //    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -20,6 +17,14 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
 //    }
  
     override func viewDidLoad() {
+        
+        self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+
+
+        //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
+        tableView.tableFooterView = UIView()
+        
         
         //NSThread.sleepForTimeInterval(1.0) //延长2秒
         super.viewDidLoad()
@@ -82,6 +87,12 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
         
     
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let indexTravelDetailViewController = storyBoard.instantiateViewControllerWithIdentifier("IndexTravelDetailViewController") as! IndexTravelDetailViewController
+        self.navigationController?.pushViewController(indexTravelDetailViewController, animated: true)
+    }
+
     
     
     //UIScrollViewDelegate方法，每次滚动结束后调用
@@ -156,7 +167,7 @@ class IndexViewController: UITableViewController,UISearchBarDelegate{
         if(cell == nil){
             cell = CustomCell(style: UITableViewCellStyle.Default, reuseIdentifier:"RentInfoCell")
         }else{
-            cell.rentDetailInfo.text = "安静，舒适，交通方便，距离景点很近"
+            cell.rentDetailInfo.text = "2018-08-08"
             cell.rentInfoName.text = str[indexPath.row]
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             //cell.rentInfoImage.image = UIImage(contentsOfFile:"首页tab")
