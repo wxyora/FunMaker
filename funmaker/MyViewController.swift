@@ -123,13 +123,11 @@ class MyViewController: BaseViewController {
         if token == nil{
             nickName.text = "您还没有登录哦"
             loginNow.hidden=false
-            
             myTravelLb.text? = "我的拼团游"
             homeHouseLb.text?="我的民宿"
-//            
-//             myProfile.selectionStyle=UITableViewCellSelectionStyle.None
-//            
-//               myProfile.accessoryType=UITableViewCellAccessoryType.None
+            let headImage = UIImage(named: "packman")
+            self.headImage.image = headImage
+
             
         }else{
             nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
@@ -138,6 +136,7 @@ class MyViewController: BaseViewController {
             let s = "(\(n))"
             myTravelLb.text?="我的拼团游\(s)"
             homeHouseLb.text?="我的民宿\(s)"
+            
             
             //从文件读取用户头像
             let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")

@@ -483,7 +483,7 @@
                                                         <segue destination="bgM-oT-NL1" kind="modal" id="CIs-lG-y3n"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="H6y-62-Ptb">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="packman" translatesAutoresizingMaskIntoConstraints="NO" id="H6y-62-Ptb">
                                                     <rect key="frame" x="8" y="15" width="60" height="60"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您还没有登录哦。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpc-NM-T2r">
@@ -952,7 +952,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="何时出发" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EoF-Fz-KAk">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="何时出发" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EoF-Fz-KAk">
                                                     <rect key="frame" x="83" y="10" width="231" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="go"/>
@@ -1063,6 +1063,9 @@
                                                     <state key="normal" title="发布">
                                                         <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="publishUnion:" destination="Oj0-vZ-jO7" eventType="touchUpInside" id="9Bq-O3-zoI"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1086,10 +1089,10 @@
                     <connections>
                         <outlet property="action" destination="awJ-Ad-TB1" id="tBd-Ej-g7D"/>
                         <outlet property="contact" destination="LJY-fx-LNY" id="l45-NR-LvG"/>
+                        <outlet property="content" destination="att-8E-eXE" id="iJj-Ah-HWw"/>
                         <outlet property="dateInfo" destination="EoF-Fz-KAk" id="tZi-Bu-6o5"/>
-                        <outlet property="detailInfo" destination="att-8E-eXE" id="O4Z-gr-czt"/>
                         <outlet property="publish" destination="F6O-Wy-Dku" id="RAf-Qv-Npm"/>
-                        <outlet property="senery" destination="aTa-rI-0ZY" id="n6L-lV-w4c"/>
+                        <outlet property="theme" destination="aTa-rI-0ZY" id="idU-gg-XOH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2w3-G2-X4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1190,7 +1193,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="5yh-1v-tnt">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="packman" translatesAutoresizingMaskIntoConstraints="NO" id="5yh-1v-tnt">
                                                     <rect key="frame" x="79" y="10" width="45" height="45"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -1450,7 +1453,6 @@
     <resources>
         <image name="Shape-38" width="30" height="30"/>
         <image name="back" width="13" height="21"/>
-        <image name="hamburger" width="30" height="30"/>
         <image name="map" width="30" height="30"/>
         <image name="medicine" width="30" height="30"/>
         <image name="packman" width="30" height="30"/>
