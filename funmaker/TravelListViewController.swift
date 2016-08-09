@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import SwiftHTTP
 
 class TravelListViewController: BaseViewController ,UISearchBarDelegate{
     
     
     var data :Dictionary = ["101":"香港5日游","102":"上海7日游"]
     var str = [["101","香港5日游","2018-09-09"],["102","台湾5日游","2019-08-08"]]
+    
+    var tableViewData:AnyObject?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
+        getData()
 
     }
     
@@ -37,21 +41,18 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         
         if(self.refreshControl?.refreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
-            
-            
-            
             //add data
-            let time:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_MSEC * 1000))
+            //let time:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_MSEC * 1000))
             //延迟
-            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-                //self.myLabel.text = "请点击调用按钮"
-                self.refreshControl?.endRefreshing()
-                
-                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                
-                self.tableView.reloadData()
-            }
-            
+//            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+//                //self.myLabel.text = "请点击调用按钮"
+//                self.refreshControl?.endRefreshing()
+//                
+//                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+//                
+//                self.tableView.reloadData()
+//            }
+            getData()
             
             //            refreshControl?.endRefreshing()
             //
@@ -66,6 +67,91 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getData(){
+        
+            //开启网络请求hud
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            //self.pleaseWait()
+            do {
+                let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+
+                opt.start { response in
+                    
+                    if let err = response.error {
+                        if String(err.code)=="-1001"{
+                            self.alert("网络不给力，请重试。")
+                        }
+                        //self.clearAllNotice()
+                        //关闭网络请求hud
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
+                        //return
+                    }else{
+                        
+                        //关闭网络请求hud
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        
+                        //self.clearAllNotice()
+                        //把NSData对象转换回JSON对象
+                        let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                        if json == nil {
+                            self.alert("网络异常，请重试")
+                            self.clearAllNotice()
+                        }else{
+                            
+                            
+                            let data : NSArray = json.objectForKey("data")! as! NSArray
+                            
+                            //let mobile : AnyObject = json.objectForKey("mobile")!
+                            if data.count != 0{
+                               
+//                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                                dispatch_async(dispatch_get_main_queue()) {
+                                    self.noticeInfo("查询成功", autoClear: true, autoClearTime: 1)
+                                    
+                                    self.tableViewData = data
+//                                    for aaa in data{
+//                                      
+//                                        let unionTheme = aaa.objectForKey("unionTheme");
+//                                        let outTime = aaa.objectForKey("outTime");
+//                                        let unionContent = aaa.objectForKey("unionContent");
+//                                        let contactWay = aaa.objectForKey("contactWay");
+//                                        
+//                                        
+//                            
+//                                       //self.alert(String(unionTheme))
+//                                    }
+
+                                }
+                                
+                                
+                                //self.clearAllNotice()
+                            }else{
+                                
+                                dispatch_async(dispatch_get_main_queue()) {
+                                    self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+                                 }
+                               
+                            }
+                            
+                            
+                            self.refreshControl?.endRefreshing()
+                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                            self.tableView.reloadData()
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            } catch {
+                print("loginValidate interface got an error creating the request: \(error)")
+            }
+            
+        
+    }
 
     // MARK: - Table view data source
 
@@ -76,8 +162,13 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if tableViewData == nil{
+            return 0
+           
+        }else{
+            return tableViewData!.count
+        }
         
-        return str.count
     }
 
     
@@ -87,10 +178,11 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         if(cell == nil){
             cell = TogetherTravelCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherTravelCell")
         }else{
-            cell.themeTitle.text = str[indexPath.row][1]
-        
             
-            cell.outDate.text=str[indexPath.row][2]
+            let unionTheme = tableViewData?.objectAtIndex(indexPath.row).objectForKey("unionTheme")
+            let outTime = tableViewData?.objectAtIndex(indexPath.row).objectForKey("outTime")
+            cell.themeTitle.text = String(unionTheme)
+            cell.outDate.text=String(outTime)
         }
         
         return cell
