@@ -108,7 +108,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                                
 //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                                 dispatch_async(dispatch_get_main_queue()) {
-                                    self.noticeInfo("查询成功", autoClear: true, autoClearTime: 1)
+                                    //self.noticeInfo("查询成功", autoClear: true, autoClearTime: 1)
                                     
                                     self.tableViewData = data
 //                                    for aaa in data{
@@ -179,10 +179,11 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
             cell = TogetherTravelCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherTravelCell")
         }else{
             
-            let unionTheme = tableViewData?.objectAtIndex(indexPath.row).objectForKey("unionTheme")
-            let outTime = tableViewData?.objectAtIndex(indexPath.row).objectForKey("outTime")
-            cell.themeTitle.text = String(unionTheme)
-            cell.outDate.text=String(outTime)
+            let unionTheme = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme"))
+            let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime"))
+            cell.themeTitle.text = unionTheme
+            cell.outDate.text=outTime
+        
         }
         
         return cell
