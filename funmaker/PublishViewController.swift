@@ -24,15 +24,38 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        
+        if valideLoginState()==0 {
+            return false
+        }
+        
         if textField.tag == 100 {
+            theme.resignFirstResponder()
             setDate()
             return false
         }else{
             return true
         }
         
+      
+        
     }
     
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        dateInfo.text=""
+        content.text=""
+        theme.text=""
+        action.text=""
+        contact.text=""
+        
+        
+        
+     
+    }
+
     
     
     @IBAction func publishUnion(sender: AnyObject) {
@@ -95,17 +118,15 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
                                             
                                             //let mobile : AnyObject = json.objectForKey("mobile")!
                                             if String(result)=="发布成功"{
-                                                self.alert("发布成功")
-                                                self.clearAllNotice()
-                                            }else if String(result)=="登录成功"{
-                                                
-                                                
+                                                self.noticeInfo("发布成功", autoClear: true, autoClearTime: 2)
                                                 //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                                //                                                dispatch_async(dispatch_get_main_queue()) {
-                                                //                                                    //self.navigationController?.popViewControllerAnimated(true)
-                                                //                                                    self.dismissViewControllerAnimated(true, completion: nil)
-                                                //                                                }
-                                                
+                                                dispatch_async(dispatch_get_main_queue()) {
+                                                    let travelDetailViewController = self.storyBoard.instantiateViewControllerWithIdentifier("TravelDetailViewController") as! TravelDetailViewController
+                                                    self.navigationController?.pushViewController(travelDetailViewController, animated: true)
+                                                    
+                                                }
+                                    
+                                                self.clearAllNotice()
                                             }
                                             
                                         }
@@ -194,6 +215,8 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         
     }
     
+    
+    
     //选择日期
     func selectedAction(){
         var dateString:String = self.dateString(datePicker.date)
@@ -228,24 +251,18 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         print(formatter.stringFromDate(datePicker.date))
     }
     
+ 
     
-    override func viewWillAppear(animated: Bool) {
-        valideLoginState()
-    }
-    
-    
-    func valideLoginState(){
+    func valideLoginState()->Int{
         
         let userInfo=NSUserDefaults.standardUserDefaults()
         let token  =  userInfo.objectForKey("token")
         if token == nil{
-            //            let login = LoginViewController()
-            //            let alertController:UIAlertController!=UIAlertController(title: "", message: "请登录", preferredStyle: UIAlertControllerStyle.Alert)
-            //            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in self.presentViewController(login, animated: true, completion: nil) })
-            //            self.presentViewController(alertController, animated: true, completion: nil)
-            
+            let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
+            self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+            return 0
         }else{
-            
+            return 1
             //alert("您已经登录")
         }
         
