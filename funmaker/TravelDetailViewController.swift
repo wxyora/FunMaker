@@ -9,6 +9,20 @@
 import UIKit
 import SwiftHTTP
 class TravelDetailViewController: BaseViewController {
+    
+    @IBOutlet weak var unionTheme: UILabel!
+    @IBOutlet weak var contactWay: UILabel!
+    @IBOutlet weak var outTime: UILabel!
+    @IBOutlet weak var unionContent: UITextView!
+
+    
+//    let unionTheme = data!.objectForKey("unionTheme") as! String
+//    let contactWay = data!.objectForKey("contactWay") as! String
+//    let outTime = data!.objectForKey("outTime") as! String
+//    let unionContent = data!.objectForKey("unionContent") as! String
+//    let contactWay = data!.objectForKey("contactWay") as! String
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,16 +77,15 @@ class TravelDetailViewController: BaseViewController {
                         //let mobile : AnyObject = json.objectForKey("mobile")!
                         if data !=  nil{
                             
-                            let unionTheme = data!.objectForKey("unionTheme") as! String
-                             let contactWay = data!.objectForKey("contactWay") as! String
-                             let outTime = data!.objectForKey("outTime") as! String
-                             let unionContent = data!.objectForKey("unionContent") as! String
-                             let userId = data!.objectForKey("userId") as! String
                             
                             //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                             dispatch_async(dispatch_get_main_queue()) {
-                               // self.tableViewData = data
-                                //self.tableView.reloadData()
+                                
+                                self.unionTheme.text = data!.objectForKey("unionTheme") as! String
+                                self.contactWay.text = data!.objectForKey("contactWay") as! String
+                                self.outTime.text = data!.objectForKey("outTime") as! String
+                                self.unionContent.text = data!.objectForKey("unionContent") as! String
+
                             }
                         }else{
                             
