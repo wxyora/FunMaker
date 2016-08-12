@@ -160,7 +160,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                             if data.count != 0{
 //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                                 dispatch_async(dispatch_get_main_queue()) {
-                                    self.tableViewData = data
+                                    self.tableViewData! = data
                                     self.refreshControl?.endRefreshing()
                                     self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
                                     self.tableView.reloadData()
@@ -218,9 +218,10 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
             cell = TogetherTravelCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherTravelCell")
         }else{
             
-            let unionTheme:String = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme"))
-            let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime"))
-            let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId"))
+            let unionTheme:String = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme")!)
+            let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime")!)
+            let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId")!)
+            //解决Optional("***")问题
             cell.themeTitle.text = unionTheme
             cell.outDate.text=outTime
             cell.unionId.text=unionId
@@ -235,9 +236,14 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
       
       
         
+        var cell:TogetherTravelCell = tableView.cellForRowAtIndexPath(indexPath) as! TogetherTravelCell
+        let unionId = cell.unionId.text
         
+        userInfo.setObject(unionId, forKey: "unionId")
+        userInfo.synchronize()
         
         let travelDetailViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelDetailViewController") as! TravelDetailViewController
+     
         self.navigationController?.pushViewController(travelDetailViewController, animated: true)
       
             

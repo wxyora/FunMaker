@@ -21,6 +21,7 @@ class TravelDetailViewController: BaseViewController {
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
 
+        initData()
     }
     
     
@@ -29,7 +30,8 @@ class TravelDetailViewController: BaseViewController {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUnionId, parameters: ["userId":getMobie()])
+            let unionId = userInfo.stringForKey("unionId")
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUnionId, parameters: ["userId":getMobie(),"unionId":unionId])
             
             opt.start { response in
                 
@@ -56,10 +58,16 @@ class TravelDetailViewController: BaseViewController {
                     }else{
                         
                         
-                        let data : NSArray = json.objectForKey("data") as! NSArray
+                        let data  = json.objectForKey("data")
                         
                         //let mobile : AnyObject = json.objectForKey("mobile")!
-                        if data.count != 0{
+                        if data !=  nil{
+                            
+                            let unionTheme = data!.objectForKey("unionTheme") as! String
+                             let contactWay = data!.objectForKey("contactWay") as! String
+                             let outTime = data!.objectForKey("outTime") as! String
+                             let unionContent = data!.objectForKey("unionContent") as! String
+                             let userId = data!.objectForKey("userId") as! String
                             
                             //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                             dispatch_async(dispatch_get_main_queue()) {
