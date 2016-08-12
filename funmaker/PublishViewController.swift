@@ -87,7 +87,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
                             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                             self.pleaseWait()
                             do {
-                                let opt = try HTTP.GET(Constant.host+Constant.publishUrl, parameters: ["userId":getMobie(), "unionTheme": theme.text,"outTime": dateInfo.text,"unionContent": content.text,"contactWay":contact.text])
+                                let opt = try HTTP.GET(Constant.host+Constant.publishUrl, parameters: ["userId":getMobie(), "unionTheme": theme.text,"outTime": dateInfo.text,"unionContent": content.text,"contactWay":contact.text,"reachWay":action.text])
                                 //                    opt.progress = { progress in
                                 //                        print("progress: \(progress)") //this will be between 0 and 1.
                                 //                    }
@@ -118,15 +118,16 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
                                             
                                             //let mobile : AnyObject = json.objectForKey("mobile")!
                                             if String(result)=="发布成功"{
-                                                self.noticeInfo("发布成功", autoClear: true, autoClearTime: 2)
+                                               
                                                 //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                                dispatch_async(dispatch_get_main_queue()) {
-                                                    let travelDetailViewController = self.storyBoard.instantiateViewControllerWithIdentifier("TravelDetailViewController") as! TravelDetailViewController
-                                                    self.navigationController?.pushViewController(travelDetailViewController, animated: true)
-                                                    
-                                                }
+//                                                dispatch_async(dispatch_get_main_queue()) {
+//                                                    let travelDetailViewController = self.storyBoard.instantiateViewControllerWithIdentifier("TravelDetailViewController") as! TravelDetailViewController
+//                                                    self.navigationController?.pushViewController(travelDetailViewController, animated: true)
+//                                                    
+//                                                }
                                     
                                                 self.clearAllNotice()
+                                                self.noticeInfo("发布成功", autoClear: true, autoClearTime: 2)
                                             }
                                             
                                         }

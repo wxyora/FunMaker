@@ -13,6 +13,7 @@ class TravelDetailViewController: BaseViewController {
     @IBOutlet weak var unionTheme: UILabel!
     @IBOutlet weak var contactWay: UILabel!
     @IBOutlet weak var outTime: UILabel!
+    @IBOutlet weak var reachWay: UILabel!
     @IBOutlet weak var unionContent: UITextView!
 
     
@@ -85,6 +86,7 @@ class TravelDetailViewController: BaseViewController {
                                 self.contactWay.text = data!.objectForKey("contactWay") as! String
                                 self.outTime.text = data!.objectForKey("outTime") as! String
                                 self.unionContent.text = data!.objectForKey("unionContent") as! String
+                                self.reachWay.text=data!.objectForKey("reachWay") as! String
 
                             }
                         }else{

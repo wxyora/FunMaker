@@ -1403,7 +1403,7 @@
                         <sections>
                             <tableViewSection id="Fzj-bh-H83">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="352" id="vCK-5U-LLE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="352" id="vCK-5U-LLE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="352"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vCK-5U-LLE" id="y44-Yu-ib5">
@@ -1464,7 +1464,7 @@
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dla-YQ-jgC">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dla-YQ-jgC">
                                                     <rect key="frame" x="35" y="200" width="266" height="112"/>
                                                     <color key="backgroundColor" red="0.84158653849999998" green="0.84158653849999998" blue="0.84158653849999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1473,7 +1473,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="118" id="Ql0-zc-YSE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="118" id="Ql0-zc-YSE">
                                         <rect key="frame" x="0.0" y="352" width="320" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ql0-zc-YSE" id="86i-kk-2O4">
@@ -1492,6 +1492,7 @@
                     <connections>
                         <outlet property="contactWay" destination="u42-Vd-ck9" id="egU-Gf-Pbz"/>
                         <outlet property="outTime" destination="ugv-Pb-zh3" id="rPr-eM-El3"/>
+                        <outlet property="reachWay" destination="blt-WQ-T5j" id="EIM-TD-qbo"/>
                         <outlet property="unionContent" destination="Dla-YQ-jgC" id="u4e-no-oLi"/>
                         <outlet property="unionTheme" destination="ldB-Dg-Rsy" id="Odq-e5-IPC"/>
                     </connections>
