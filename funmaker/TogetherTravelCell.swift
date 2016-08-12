@@ -12,6 +12,9 @@ class TogetherTravelCell: UITableViewCell {
 
     @IBOutlet weak var themeTitle: UILabel!
     @IBOutlet weak var outDate: UILabel!
+    @IBOutlet weak var unionId: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

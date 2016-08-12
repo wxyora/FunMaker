@@ -12,9 +12,6 @@ import SwiftHTTP
 class TravelListViewController: BaseViewController ,UISearchBarDelegate{
     
     
-    var data :Dictionary = ["101":"香港5日游","102":"上海7日游"]
-    var str = [["101","香港5日游","2018-09-09"],["102","台湾5日游","2019-08-08"]]
-    
     var tableViewData:AnyObject?
 
     override func viewDidLoad() {
@@ -81,7 +78,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                     if String(err.code)=="-1001"{
                         self.alert("网络不给力，请重试。")
                     }
-                    //self.clearAllNotice()
+                    self.clearAllNotice()
                     //关闭网络请求hud
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
@@ -100,7 +97,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                     }else{
                         
                         
-                        let data : NSArray = json.objectForKey("data")! as! NSArray
+                        let data : NSArray = json.objectForKey("data") as! NSArray
                         
                         //let mobile : AnyObject = json.objectForKey("mobile")!
                         if data.count != 0{
@@ -158,7 +155,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                             self.alert("网络异常，请重试")
                             self.clearAllNotice()
                         }else{
-                            let data : NSArray = json.objectForKey("data")! as! NSArray
+                            let data : NSArray = json.objectForKey("data") as! NSArray
                             //let mobile : AnyObject = json.objectForKey("mobile")!
                             if data.count != 0{
 //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
@@ -221,10 +218,12 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
             cell = TogetherTravelCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherTravelCell")
         }else{
             
-            let unionTheme = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme"))
+            let unionTheme:String = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme"))
             let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime"))
+            let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId"))
             cell.themeTitle.text = unionTheme
             cell.outDate.text=outTime
+            cell.unionId.text=unionId
         
         }
         
