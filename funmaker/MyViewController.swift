@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHTTP
 
 class MyViewController: BaseViewController {
 
@@ -42,6 +43,8 @@ class MyViewController: BaseViewController {
         //设置遮盖额外部分,下面两句的意义及实现是相同的
         //      headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
+        
+        initData()
         
     }
 
@@ -132,10 +135,7 @@ class MyViewController: BaseViewController {
         }else{
             nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
             loginNow.hidden = true
-            var n :Int = 0
-            let s = "(\(n))"
-            myTravelLb.text?="我的拼团游\(s)"
-            homeHouseLb.text?="我的民宿\(s)"
+            
             
             
             //从文件读取用户头像
@@ -164,11 +164,142 @@ class MyViewController: BaseViewController {
             
             valideLoginState()
 
+            getData()
 
         }
     }
 
  
+    
+    func initData(){
+        //开启网络请求hud
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        self.pleaseWait()
+        do {
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            
+            opt.start { response in
+                
+                if let err = response.error {
+                    if String(err.code)=="-1001"{
+                        self.alert("网络不给力，请重试。")
+                    }
+                    self.clearAllNotice()
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
+                    //return
+                }else{
+                    
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    
+                    self.clearAllNotice()
+                    //把NSData对象转换回JSON对象
+                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                    if json == nil {
+                        self.alert("网络异常，请重试")
+                        self.clearAllNotice()
+                    }else{
+                        
+                        
+                        let data : NSArray = json.objectForKey("data") as! NSArray
+                        
+                        //let mobile : AnyObject = json.objectForKey("mobile")!
+                       // if data.count != 0{
+                            
+                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                            dispatch_async(dispatch_get_main_queue()) {
+                                //self.tableViewData = data
+                               // self.tableView.reloadData()
+                                
+                                var n :Int = data.count
+                                let s = "(\(n))"
+                                self.myTravelLb.text?="我的拼团游\(s)"
+                                self.homeHouseLb.text?="我的民宿\(s)"
+                            }
+//                        }else{
+//                            
+//                            dispatch_async(dispatch_get_main_queue()) {
+//                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+//                            }
+//                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        } catch {
+            print("loginValidate interface got an error creating the request: \(error)")
+        }
+    }
+    
+    func getData(){
+        
+        //开启网络请求hud
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        //self.pleaseWait()
+        do {
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            
+            opt.start { response in
+                
+                if let err = response.error {
+                    if String(err.code)=="-1001"{
+                        self.alert("网络不给力，请重试。")
+                    }
+                    //self.clearAllNotice()
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
+                    //return
+                }else{
+                    
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    //self.clearAllNotice()
+                    //把NSData对象转换回JSON对象
+                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                    if json == nil {
+                        self.alert("网络异常，请重试")
+                        self.clearAllNotice()
+                    }else{
+                        let data : NSArray = json.objectForKey("data") as! NSArray
+                        //let mobile : AnyObject = json.objectForKey("mobile")!
+                        
+                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                            dispatch_async(dispatch_get_main_queue()) {
+                                //self.tableViewData! = data
+                                var n :Int = data.count
+                                let s = "(\(n))"
+                                self.myTravelLb.text?="我的拼团游\(s)"
+                                self.homeHouseLb.text?="我的民宿\(s)"
+
+                                self.refreshControl?.endRefreshing()
+                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                                self.tableView.reloadData()
+                            }
+                            
+                            
+                        
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        } catch {
+            print("loginValidate interface got an error creating the request: \(error)")
+        }
+        
+        
+    }
+
     
 
 

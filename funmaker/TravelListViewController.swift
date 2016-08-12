@@ -38,25 +38,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         
         if(self.refreshControl?.refreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
-            //add data
-            //let time:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_MSEC * 1000))
-            //延迟
-//            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-//                //self.myLabel.text = "请点击调用按钮"
-//                self.refreshControl?.endRefreshing()
-//                
-//                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-//                
-//                self.tableView.reloadData()
-//            }
             getData()
-            
-            //            refreshControl?.endRefreshing()
-            //
-            //            refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-            //
-            //            self.tableView.reloadData()
-            
         }
     }
 
@@ -223,7 +205,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
             let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId")!)
             //解决Optional("***")问题
             cell.themeTitle.text = unionTheme
-            cell.outDate.text=outTime
+            cell.outTime.text=outTime
             cell.unionId.text=unionId
         
         }

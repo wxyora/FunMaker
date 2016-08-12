@@ -10,12 +10,13 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     
+    @IBOutlet weak var unionId: UILabel!
     
     @IBOutlet weak var rentInfoImage: UIImageView!
 
-    @IBOutlet weak var rentInfoName: UILabel!
+    @IBOutlet weak var unionTheme: UILabel!
     
-    @IBOutlet weak var rentDetailInfo: UILabel!
+    @IBOutlet weak var outTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

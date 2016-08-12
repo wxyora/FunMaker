@@ -11,7 +11,7 @@ import UIKit
 class TogetherTravelCell: UITableViewCell {
 
     @IBOutlet weak var themeTitle: UILabel!
-    @IBOutlet weak var outDate: UILabel!
+    @IBOutlet weak var outTime: UILabel!
     @IBOutlet weak var unionId: UILabel!
     
     

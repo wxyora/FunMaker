@@ -120,14 +120,21 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
                                             if String(result)=="发布成功"{
                                                
                                                 //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-//                                                dispatch_async(dispatch_get_main_queue()) {
-//                                                    let travelDetailViewController = self.storyBoard.instantiateViewControllerWithIdentifier("TravelDetailViewController") as! TravelDetailViewController
-//                                                    self.navigationController?.pushViewController(travelDetailViewController, animated: true)
-//                                                    
-//                                                }
-                                    
-                                                self.clearAllNotice()
-                                                self.noticeInfo("发布成功", autoClear: true, autoClearTime: 2)
+                                                dispatch_async(dispatch_get_main_queue()) {
+                                                    
+                                                    self.alert("发布成功，请到<我的>中查看。")
+                                                   // let tabBarViewController = self.storyBoard.instantiateViewControllerWithIdentifier("TabBarViewController") as! TabBarViewController
+                                                    //self.tabBarController?.presetViewController(tabBarViewController, animated: true)
+                                                    //self.tabBarController?.tabBar.selectedItem = (self.tabBarController?.tabBar.items![3])! as UITabBarItem
+                                                    self.clearAllNotice()
+                                                    //self.noticeInfo("发布成功", autoClear: true, autoClearTime: 2)
+                                                    self.dateInfo.text=""
+                                                    self.content.text=""
+                                                    self.theme.text=""
+                                                    self.action.text=""
+                                                    self.contact.text=""
+                                      
+                                                }
                                             }
                                             
                                         }
