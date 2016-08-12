@@ -33,7 +33,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
-        getData()
+        initData()
 
     }
     
@@ -68,6 +68,66 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    func initData(){
+        //开启网络请求hud
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        self.pleaseWait()
+        do {
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            
+            opt.start { response in
+                
+                if let err = response.error {
+                    if String(err.code)=="-1001"{
+                        self.alert("网络不给力，请重试。")
+                    }
+                    //self.clearAllNotice()
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
+                    //return
+                }else{
+                    
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    
+                    self.clearAllNotice()
+                    //把NSData对象转换回JSON对象
+                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                    if json == nil {
+                        self.alert("网络异常，请重试")
+                        self.clearAllNotice()
+                    }else{
+                        
+                        
+                        let data : NSArray = json.objectForKey("data")! as! NSArray
+                        
+                        //let mobile : AnyObject = json.objectForKey("mobile")!
+                        if data.count != 0{
+                            
+                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.tableViewData = data
+                                self.tableView.reloadData()
+                            }
+                        }else{
+                            
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        } catch {
+            print("loginValidate interface got an error creating the request: \(error)")
+        }
+    }
+    
     func getData(){
         
             //开启网络请求hud
@@ -91,7 +151,6 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                         
                         //关闭网络请求hud
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        
                         //self.clearAllNotice()
                         //把NSData对象转换回JSON对象
                         let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
@@ -99,30 +158,15 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                             self.alert("网络异常，请重试")
                             self.clearAllNotice()
                         }else{
-                            
-                            
                             let data : NSArray = json.objectForKey("data")! as! NSArray
-                            
                             //let mobile : AnyObject = json.objectForKey("mobile")!
                             if data.count != 0{
-                               
 //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                                 dispatch_async(dispatch_get_main_queue()) {
-                                    //self.noticeInfo("查询成功", autoClear: true, autoClearTime: 1)
-                                    
                                     self.tableViewData = data
-//                                    for aaa in data{
-//                                      
-//                                        let unionTheme = aaa.objectForKey("unionTheme");
-//                                        let outTime = aaa.objectForKey("outTime");
-//                                        let unionContent = aaa.objectForKey("unionContent");
-//                                        let contactWay = aaa.objectForKey("contactWay");
-//                                        
-//                                        
-//                            
-//                                       //self.alert(String(unionTheme))
-//                                    }
-
+                                    self.refreshControl?.endRefreshing()
+                                    self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                                    self.tableView.reloadData()
                                 }
                                 
                                 
@@ -136,9 +180,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                             }
                             
                             
-                            self.refreshControl?.endRefreshing()
-                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                            self.tableView.reloadData()
+                           
                             
                         }
                         
