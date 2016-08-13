@@ -105,7 +105,7 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser)
             
             opt.start { response in
                 
@@ -156,7 +156,7 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
             }
             
         } catch {
-            print("loginValidate interface got an error creating the request: \(error)")
+            print("loginVaidate interface got an error creating the request: \(error)")
         }
     }
     
@@ -166,7 +166,7 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         //self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser)
             
             opt.start { response in
                 
