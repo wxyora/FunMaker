@@ -7,8 +7,18 @@
 //
 
 import UIKit
+import SwiftHTTP
 
 class IndexTravelDetailViewController: BaseViewController {
+    
+    
+    
+    @IBOutlet weak var unionTheme: UILabel!
+    @IBOutlet weak var contactWay: UILabel!
+    @IBOutlet weak var outTime: UILabel!
+    @IBOutlet weak var reachWay: UILabel!
+    @IBOutlet weak var unionContent: UITextView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +30,88 @@ class IndexTravelDetailViewController: BaseViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
+        
+        initData()
     }
+    
+    
+    func initData(){
+        //开启网络请求hud
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        self.pleaseWait()
+        do {
+            let unionId = userInfo.stringForKey("unionId")
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUnionId, parameters: ["userId":getMobie(),"unionId":unionId])
+            
+            opt.start { response in
+                
+                if let err = response.error {
+                    if String(err.code)=="-1001"{
+                        self.alert("网络不给力，请重试。")
+                    }
+                    self.clearAllNotice()
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
+                    //return
+                }else{
+                    
+                    //关闭网络请求hud
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    
+                    self.clearAllNotice()
+                    //把NSData对象转换回JSON对象
+                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                    if json == nil {
+                        self.alert("网络异常，请重试")
+                        self.clearAllNotice()
+                    }else{
+                        
+                        
+                        let data  = json.objectForKey("data")
+                        
+                        //let mobile : AnyObject = json.objectForKey("mobile")!
+                        if data !=  nil{
+                            
+                            
+                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                            dispatch_async(dispatch_get_main_queue()) {
+                                
+                                self.unionTheme.text = data!.objectForKey("unionTheme") as! String
+                                
+                                
+                                if self.userInfo.stringForKey("token") != nil{
+                                    self.contactWay.text = data!.objectForKey("contactWay") as! String
+                                }else{
+                                    self.contactWay.text = "登陆后可见"
+                                    self.contactWay.textColor = UIColor.redColor()
+                                }
+                                
+                                
+                                self.outTime.text = data!.objectForKey("outTime") as! String
+                                self.unionContent.text = data!.objectForKey("unionContent") as! String
+                                self.reachWay.text=data!.objectForKey("reachWay") as! String
+                                
+                            }
+                        }else{
+                            
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        } catch {
+            print("loginValidate interface got an error creating the request: \(error)")
+        }
+    }
+    
+
     
 
     override func didReceiveMemoryWarning() {

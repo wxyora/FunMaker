@@ -37,6 +37,12 @@ class MyViewController: BaseViewController {
         tableView.tableFooterView = UIView()
         
         
+        let userInfo=NSUserDefaults.standardUserDefaults()
+        let token  =  userInfo.objectForKey("token")
+        if token != nil{
+            initData()
+        }
+        
         
         //设置头像圆角
         headImage.layer.cornerRadius = headImage.frame.width/2
@@ -44,7 +50,6 @@ class MyViewController: BaseViewController {
         //      headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
         
-        initData()
         
     }
 
@@ -136,7 +141,8 @@ class MyViewController: BaseViewController {
             nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
             loginNow.hidden = true
             
-            
+        
+            getData()
             
             //从文件读取用户头像
             let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
@@ -164,7 +170,7 @@ class MyViewController: BaseViewController {
             
             valideLoginState()
 
-            getData()
+            //getData()
 
         }
     }
@@ -174,7 +180,7 @@ class MyViewController: BaseViewController {
     func initData(){
         //开启网络请求hud
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        self.pleaseWait()
+        //self.pleaseWait()
         do {
             let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
             
@@ -184,7 +190,7 @@ class MyViewController: BaseViewController {
                     if String(err.code)=="-1001"{
                         self.alert("网络不给力，请重试。")
                     }
-                    self.clearAllNotice()
+                    //self.clearAllNotice()
                     //关闭网络请求hud
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
@@ -194,7 +200,7 @@ class MyViewController: BaseViewController {
                     //关闭网络请求hud
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     
-                    self.clearAllNotice()
+                   // self.clearAllNotice()
                     //把NSData对象转换回JSON对象
                     let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                     if json == nil {
@@ -216,7 +222,7 @@ class MyViewController: BaseViewController {
                                 var n :Int = data.count
                                 let s = "(\(n))"
                                 self.myTravelLb.text?="我的拼团游\(s)"
-                                self.homeHouseLb.text?="我的民宿\(s)"
+                                //self.homeHouseLb.text?="我的民宿\(s)"
                             }
 //                        }else{
 //                            
@@ -275,7 +281,7 @@ class MyViewController: BaseViewController {
                                 var n :Int = data.count
                                 let s = "(\(n))"
                                 self.myTravelLb.text?="我的拼团游\(s)"
-                                self.homeHouseLb.text?="我的民宿\(s)"
+                                //self.homeHouseLb.text?="我的民宿\(s)"
 
                                 self.refreshControl?.endRefreshing()
                                 self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
