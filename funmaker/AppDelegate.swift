@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // SMSSDK registerApp:appKey withSecret:appSecret
         //注册发短信sdk
         SMSSDK.registerApp("152586542fe1a", withSecret:"e5cef2c86a470a123672b7cbaf12ec0e")
+        
+        
+        
+        
+//        //QQ空间
+//        ShareSDK.connectQZoneWithAppKey("1103527931", appSecret:"WEKkOPW0NJkc1cwS", qqApiInterfaceCls: QQApiInterface.classForCoder(), tencentOAuthCls: TencentOAuth.classForCoder())
+//        //QQ
+//        ShareSDK.connectQQWithAppId("1103527931", qqApiCls:QQApiInterface.classForCoder())
+//        //链接微信
+//        ShareSDK.connectWeChatWithAppId("wx5f09f3b56fd1faf7", wechatCls: WXApi.classForCoder())
+//        //微信好友
+//        ShareSDK.connectWeChatSessionWithAppId("wx5f09f3b56fd1faf7", wechatCls:WXApi.classForCoder())
+//        //微信朋友圈
+//        ShareSDK.connectWeChatTimelineWithAppId("wx5f09f3b56fd1faf7", wechatCls: WXApi.classForCoder())
+//        
+        
+        
         
         // 得到当前应用的版本号
         let infoDictionary = NSBundle.mainBundle().infoDictionary

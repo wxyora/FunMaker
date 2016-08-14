@@ -10,6 +10,11 @@
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
 		093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */; };
 		093310F01D6062AD007E1C96 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EF1D6062AD007E1C96 /* SwiftNotice.swift */; };
+		093310F31D609865007E1C96 /* ShareSDK in Resources */ = {isa = PBXBuildFile; fileRef = 093310F21D609865007E1C96 /* ShareSDK */; };
+		093310F51D60991A007E1C96 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 093310F41D60991A007E1C96 /* libsqlite3.tbd */; };
+		093310F71D609939007E1C96 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093310F61D609939007E1C96 /* ImageIO.framework */; };
+		093310F91D609B26007E1C96 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093310F81D609B26007E1C96 /* ShareSDK.framework */; };
+		093311011D60A237007E1C96 /* WeChatSDK in Resources */ = {isa = PBXBuildFile; fileRef = 093311001D60A237007E1C96 /* WeChatSDK */; };
 		093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */; };
 		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
 		09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09558A511D3D10EA008A0A15 /* CustomCell.swift */; };
@@ -134,6 +139,11 @@
 		0930D2621D3C68FF002AF3C5 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelViewController.swift; sourceTree = "<group>"; };
 		093310EF1D6062AD007E1C96 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
+		093310F21D609865007E1C96 /* ShareSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShareSDK; sourceTree = "<group>"; };
+		093310F41D60991A007E1C96 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		093310F61D609939007E1C96 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		093310F81D609B26007E1C96 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDK.framework; path = ShareSDK/ShareSDK.framework; sourceTree = "<group>"; };
+		093311001D60A237007E1C96 /* WeChatSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WeChatSDK; path = ShareSDK/Support/PlatformSDK/WeChatSDK; sourceTree = "<group>"; };
 		093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -186,6 +196,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093310F91D609B26007E1C96 /* ShareSDK.framework in Frameworks */,
+				093310F71D609939007E1C96 /* ImageIO.framework in Frameworks */,
+				093310F51D60991A007E1C96 /* libsqlite3.tbd in Frameworks */,
 				096A035D1D424A650086C906 /* SwiftHTTP.framework in Frameworks */,
 				09F29FC11D3F244500211E2F /* libicucore.tbd in Frameworks */,
 				09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */,
@@ -301,11 +314,16 @@
 		098890EE1D1ED5A7008D1257 = {
 			isa = PBXGroup;
 			children = (
+				093310F81D609B26007E1C96 /* ShareSDK.framework */,
+				093310F61D609939007E1C96 /* ImageIO.framework */,
+				093310F41D60991A007E1C96 /* libsqlite3.tbd */,
 				098890F91D1ED5A7008D1257 /* funmaker */,
 				0988910E1D1ED5A7008D1257 /* funmakerTests */,
 				098891191D1ED5A7008D1257 /* funmakerUITests */,
 				098890F81D1ED5A7008D1257 /* Products */,
 				09F29FBE1D3F240700211E2F /* SMS_SDK */,
+				093311001D60A237007E1C96 /* WeChatSDK */,
+				093310F21D609865007E1C96 /* ShareSDK */,
 				096A03451D424A2A0086C906 /* SwiftHTTP.xcodeproj */,
 				09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */,
 				09F29FB61D3F22FE00211E2F /* MessageUI.framework */,
@@ -527,7 +545,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				098891051D1ED5A7008D1257 /* LaunchScreen.storyboard in Resources */,
+				093310F31D609865007E1C96 /* ShareSDK in Resources */,
 				098891021D1ED5A7008D1257 /* Assets.xcassets in Resources */,
+				093311011D60A237007E1C96 /* WeChatSDK in Resources */,
 				098891001D1ED5A7008D1257 /* Main.storyboard in Resources */,
 				09F29FBF1D3F240700211E2F /* SMS_SDK in Resources */,
 			);
@@ -731,6 +751,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMS_SDK",
+					"$(PROJECT_DIR)/ShareSDK",
 				);
 				INFOPLIST_FILE = funmaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -753,6 +774,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMS_SDK",
+					"$(PROJECT_DIR)/ShareSDK",
 				);
 				INFOPLIST_FILE = funmaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
