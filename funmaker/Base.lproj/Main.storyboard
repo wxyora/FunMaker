@@ -853,11 +853,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-6i-1CG">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-6i-1CG">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                                 </scrollView>
-                                <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9PK-qT-Y3C">
-                                    <rect key="frame" x="202" y="90" width="55" height="37"/>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9PK-qT-Y3C">
+                                    <rect key="frame" x="122" y="90" width="55" height="37"/>
                                     <color key="pageIndicatorTintColor" red="0.25462709700000002" green="0.46045729930000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </pageControl>
@@ -1806,8 +1806,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="291"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuideImage3" translatesAutoresizingMaskIntoConstraints="NO" id="HkC-2B-ZJ1">
-                                                    <rect key="frame" x="164" y="10" width="150" height="160"/>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="GuideImage3" translatesAutoresizingMaskIntoConstraints="NO" id="HkC-2B-ZJ1">
+                                                    <rect key="frame" x="164" y="10" width="156" height="160"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="160" id="ocy-c2-o2u"/>
@@ -1816,12 +1816,12 @@
                                                         <outletCollection property="gestureRecognizers" destination="kUc-ys-l1h" appends="YES" id="qji-6b-tjT"/>
                                                     </connections>
                                                 </imageView>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuideImage1" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-fA-dUi">
-                                                    <rect key="frame" x="8" y="11" width="150" height="160"/>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="GuideImage1" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-fA-dUi">
+                                                    <rect key="frame" x="0.0" y="11" width="158" height="160"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="160" id="eXi-mQ-pGy"/>
-                                                        <constraint firstAttribute="width" constant="150" id="yZN-dl-erL"/>
+                                                        <constraint firstAttribute="width" constant="158" id="yZN-dl-erL"/>
                                                     </constraints>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="OSY-i8-O7f" appends="YES" id="nMK-C7-SgV"/>
@@ -1829,12 +1829,12 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="HkC-2B-ZJ1" secondAttribute="trailing" constant="-2" id="GZT-Ok-1KD"/>
-                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="leading" secondItem="KFJ-ij-pNR" secondAttribute="leadingMargin" id="JDF-Dy-9tD"/>
-                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="top" secondItem="KFJ-ij-pNR" secondAttribute="topMargin" id="KC8-DL-nCB"/>
-                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="width" secondItem="fN9-fA-dUi" secondAttribute="width" id="e3w-17-5n8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HkC-2B-ZJ1" secondAttribute="trailing" constant="-8" id="GZT-Ok-1KD"/>
+                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="leading" secondItem="KFJ-ij-pNR" secondAttribute="leadingMargin" constant="-8" id="JDF-Dy-9tD"/>
+                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="top" secondItem="KFJ-ij-pNR" secondAttribute="topMargin" constant="2" id="KC8-DL-nCB"/>
+                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="width" secondItem="fN9-fA-dUi" secondAttribute="width" constant="-2" id="e3w-17-5n8"/>
                                                 <constraint firstItem="HkC-2B-ZJ1" firstAttribute="leading" secondItem="fN9-fA-dUi" secondAttribute="trailing" constant="6" id="hfD-f8-eT9"/>
-                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="top" secondItem="KFJ-ij-pNR" secondAttribute="topMargin" constant="1" id="zal-Wu-Kcx"/>
+                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="top" secondItem="KFJ-ij-pNR" secondAttribute="topMargin" constant="3" id="zal-Wu-Kcx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94194711539999998" green="0.94194711539999998" blue="0.94194711539999998" alpha="1" colorSpace="calibratedRGB"/>

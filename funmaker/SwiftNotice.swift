@@ -131,12 +131,12 @@ class SwiftNotice: NSObject {
         }
     }
     static func wait(imageNames: Array<UIImage> = Array<UIImage>(), timeInterval: Int = 0) {
-        let frame = CGRectMake(0, 0, 78, 78)
+        let frame = CGRectMake(0, 0, 110, 90)
         let window = UIWindow()
         window.backgroundColor = UIColor.clearColor()
         let mainView = UIView()
         mainView.layer.cornerRadius = 12
-        mainView.backgroundColor = UIColor(red:0, green:0, blue:0, alpha: 0.7)
+        mainView.backgroundColor = UIColor(red:0, green:0, blue:0, alpha: 0.65)
         
         if imageNames.count > 0 {
             if imageNames.count > timerTimes {
@@ -155,7 +155,7 @@ class SwiftNotice: NSObject {
             }
         } else {
             let ai = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-            ai.frame = CGRectMake(21, 21, 36, 36)
+            ai.frame = CGRectMake(33, 12, 45, 45)
             ai.startAnimating()
             mainView.addSubview(ai)
         }
@@ -165,10 +165,10 @@ class SwiftNotice: NSObject {
         
         
         
-        let label = UILabel(frame: CGRectMake(2, 62, 80, 12))
-        label.font = UIFont.systemFontOfSize(11)
+        let label = UILabel(frame: CGRectMake(19, 63, 80, 12))
+        label.font = UIFont.systemFontOfSize(13)
         label.textColor = UIColor.whiteColor()
-        label.text = "请稍等..."
+        label.text = "正在加载..."
         label.textAlignment = NSTextAlignment.Center
         mainView.addSubview(label)
         
