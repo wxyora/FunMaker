@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
 		093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */; };
+		093310F01D6062AD007E1C96 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EF1D6062AD007E1C96 /* SwiftNotice.swift */; };
 		093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */; };
 		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
 		09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09558A511D3D10EA008A0A15 /* CustomCell.swift */; };
@@ -23,7 +24,6 @@
 		096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D25BF1D4A501900831EE7 /* PublishViewController.swift */; };
 		096D56C71D563F620015839F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 096D56C61D563F620015839F /* MBProgressHUD.m */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
-		0974B8101D412291002F978C /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974B80F1D412291002F978C /* SwiftNotice.swift */; };
 		097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED51D40BD6200ADA706 /* Constant.swift */; };
 		097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED81D40C0E200ADA706 /* CommonUtil.swift */; };
 		098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FA1D1ED5A7008D1257 /* AppDelegate.swift */; };
@@ -133,6 +133,7 @@
 /* Begin PBXFileReference section */
 		0930D2621D3C68FF002AF3C5 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelViewController.swift; sourceTree = "<group>"; };
+		093310EF1D6062AD007E1C96 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -147,7 +148,6 @@
 		096D56C51D563F620015839F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		096D56C61D563F620015839F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
-		0974B80F1D412291002F978C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		097A4ED51D40BD6200ADA706 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		097A4ED81D40C0E200ADA706 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		098890F71D1ED5A7008D1257 /* funmaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funmaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,7 +285,7 @@
 		0974B80E1D41225F002F978C /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				0974B80F1D412291002F978C /* SwiftNotice.swift */,
+				093310EF1D6062AD007E1C96 /* SwiftNotice.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -560,7 +560,6 @@
 				096C23A21D57480A00256487 /* TogetherTravelCell.swift in Sources */,
 				097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
-				0974B8101D412291002F978C /* SwiftNotice.swift in Sources */,
 				09CABA9D1D559E2500776C85 /* TravelListViewController.swift in Sources */,
 				096C23A61D575F8D00256487 /* IndexTravelDetailViewController.swift in Sources */,
 				09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */,
@@ -578,6 +577,7 @@
 				097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */,
 				0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */,
 				096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */,
+				093310F01D6062AD007E1C96 /* SwiftNotice.swift in Sources */,
 				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
 				09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */,
 			);

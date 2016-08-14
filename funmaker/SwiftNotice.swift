@@ -1,17 +1,16 @@
 //
 //  SwiftNotice.swift
-//  funmaker
+//  SwiftNotice
 //
-//  Created by Waylon on 16/7/21.
-//  Copyright © 2016年 Waylon. All rights reserved.
+//  Created by JohnLui on 15/4/15.
+//  Copyright (c) 2015年 com.lvwenhan. All rights reserved.
 //
 
 import Foundation
-
-
 import UIKit
 
 extension UIViewController {
+    
     /// wait with your own animated images
     func pleaseWaitWithImages(imageNames: Array<UIImage>, timeInterval: Int) {
         SwiftNotice.wait(imageNames, timeInterval: timeInterval)
@@ -46,12 +45,16 @@ extension UIViewController {
         SwiftNotice.showNoticeWithText(type, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
     func pleaseWait() {
+        let rv = UIApplication.sharedApplication().keyWindow?.subviews.first as UIView!
+        rv.userInteractionEnabled = false
         SwiftNotice.wait()
     }
     func noticeOnlyText(text: String) {
         SwiftNotice.showText(text)
     }
     func clearAllNotice() {
+        let rv = UIApplication.sharedApplication().keyWindow?.subviews.first as UIView!
+        rv.userInteractionEnabled = true
         SwiftNotice.clear()
     }
 }
@@ -167,21 +170,7 @@ class SwiftNotice: NSObject {
         window.hidden = false
         window.addSubview(mainView)
         windows.append(window)
-       
-        
     }
-    
-    private static func getWindow() ->UIWindow {
-        if let delegate: UIApplicationDelegate = UIApplication.sharedApplication().delegate {
-            if let window = delegate.window {
-                return window!
-            }
-        }
-        
-        return UIApplication.sharedApplication().keyWindow!
-    }
-    
-    
     static func showText(text: String) {
         let window = UIWindow()
         window.backgroundColor = UIColor.clearColor()
