@@ -136,7 +136,7 @@ class SwiftNotice: NSObject {
         window.backgroundColor = UIColor.clearColor()
         let mainView = UIView()
         mainView.layer.cornerRadius = 12
-        mainView.backgroundColor = UIColor(red:0, green:0, blue:0, alpha: 0.8)
+        mainView.backgroundColor = UIColor(red:0, green:0, blue:0, alpha: 0.7)
         
         if imageNames.count > 0 {
             if imageNames.count > timerTimes {
@@ -162,6 +162,20 @@ class SwiftNotice: NSObject {
         
         window.frame = frame
         mainView.frame = frame
+        
+        
+        
+        let label = UILabel(frame: CGRectMake(2, 62, 80, 12))
+        label.font = UIFont.systemFontOfSize(11)
+        label.textColor = UIColor.whiteColor()
+        label.text = "请稍等..."
+        label.textAlignment = NSTextAlignment.Center
+        mainView.addSubview(label)
+        
+        
+        
+        
+        
         
         window.windowLevel = UIWindowLevelAlert
         window.center = getRealCenter()
