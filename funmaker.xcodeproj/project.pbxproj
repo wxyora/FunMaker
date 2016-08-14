@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
+		093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */; };
 		093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */; };
 		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
 		09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09558A511D3D10EA008A0A15 /* CustomCell.swift */; };
@@ -131,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		0930D2621D3C68FF002AF3C5 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelViewController.swift; sourceTree = "<group>"; };
 		093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				096C23A31D5757F100256487 /* TravelDetailViewController.swift */,
 				096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */,
 				09BFAEDD1D5DFCE8008EF761 /* TabBarViewController.swift */,
+				093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
+				093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */,
 				09CABAA11D55B6A900776C85 /* MyProfileViewController.swift in Sources */,
 				09BFAEDE1D5DFCE8008EF761 /* TabBarViewController.swift in Sources */,
 				096C23A41D5757F100256487 /* TravelDetailViewController.swift in Sources */,

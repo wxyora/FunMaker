@@ -17,11 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GuideImage3" translatesAutoresizingMaskIntoConstraints="NO" id="1hz-ES-UCP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuideImage3" translatesAutoresizingMaskIntoConstraints="NO" id="1hz-ES-UCP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1hz-ES-UCP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="0OI-hL-QWg"/>
+                            <constraint firstAttribute="trailing" secondItem="1hz-ES-UCP" secondAttribute="trailing" id="4dd-js-cSr"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1hz-ES-UCP" secondAttribute="bottom" id="97d-hB-9ez"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1hz-ES-UCP" secondAttribute="bottom" id="daF-bm-6pe"/>
+                            <constraint firstItem="1hz-ES-UCP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="f0y-jD-BtZ"/>
+                            <constraint firstItem="1hz-ES-UCP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="sVS-O4-A00"/>
+                            <constraint firstItem="1hz-ES-UCP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="sfk-fE-lC5"/>
+                            <constraint firstAttribute="trailing" secondItem="1hz-ES-UCP" secondAttribute="trailing" id="xOS-6S-L58"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

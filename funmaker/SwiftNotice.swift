@@ -167,7 +167,21 @@ class SwiftNotice: NSObject {
         window.hidden = false
         window.addSubview(mainView)
         windows.append(window)
+       
+        
     }
+    
+    private static func getWindow() ->UIWindow {
+        if let delegate: UIApplicationDelegate = UIApplication.sharedApplication().delegate {
+            if let window = delegate.window {
+                return window!
+            }
+        }
+        
+        return UIApplication.sharedApplication().keyWindow!
+    }
+    
+    
     static func showText(text: String) {
         let window = UIWindow()
         window.backgroundColor = UIColor.clearColor()

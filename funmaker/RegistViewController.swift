@@ -115,15 +115,15 @@ class RegistViewController: UITableViewController ,UITextFieldDelegate{
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                         
                         //闭包中调用成员需要self指定
-//                        let message="用户已经存在，请直接登录"
-//                        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-//                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
-//                             //点击ok返回登录界面
-//                              self.navigationController?.popViewControllerAnimated(true)
-//                            })
-//                        self.presentViewController(alertController, animated: true, completion: {
-//                          
-//                        })
+                        let message="用户已经存在，请直接登录"
+                        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
+                             //点击ok返回登录界面
+                              self.navigationController?.popViewControllerAnimated(true)
+                            })
+                        self.presentViewController(alertController, animated: true, completion: {
+                          
+                        })
                         self.clearAllNotice()
                        
                     }

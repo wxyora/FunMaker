@@ -8,7 +8,7 @@
 import UIKit
 import SwiftHTTP
 
-class HomeHotellViewController: BaseViewController,UISearchBarDelegate{
+class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var progressShow: UIActivityIndicatorView?
@@ -61,7 +61,7 @@ class HomeHotellViewController: BaseViewController,UISearchBarDelegate{
         //pageControl.numberOfPages = 4
         
         // 获取scrollview wight and hight
-        let wight:CGFloat=320
+        let wight:CGFloat=UIScreen.mainScreen().bounds.width
         let hight=self.pageScrollView.frame.height
         //设置scrollview 4个区域
         pageScrollView.contentSize = CGSize(width: 4*wight, height: hight)
@@ -287,9 +287,9 @@ class HomeHotellViewController: BaseViewController,UISearchBarDelegate{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:CustomCell! = tableView.dequeueReusableCellWithIdentifier("RentInfoCell", forIndexPath: indexPath) as? CustomCell
+        var cell:CustomCell! = tableView.dequeueReusableCellWithIdentifier("TogetherInfoCell", forIndexPath: indexPath) as? CustomCell
         if(cell == nil){
-            cell = CustomCell(style: UITableViewCellStyle.Default, reuseIdentifier: "RentInfoCell")
+            cell = CustomCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherInfoCell")
         }else{
             
             let unionTheme:String = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme")!)
