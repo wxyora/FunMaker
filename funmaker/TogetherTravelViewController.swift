@@ -112,7 +112,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser)
+            let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":"0","endPage":"10000"])
             
             opt.start { response in
                 
@@ -173,7 +173,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         //self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser)
+             let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":"0","endPage":"10000"])
             
             opt.start { response in
                 

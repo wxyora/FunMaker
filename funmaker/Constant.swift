@@ -18,6 +18,7 @@ class Constant: NSObject {
     static var publishUrl = "/WaylonServer/addUnion.action"
     static var getUnionByUser = "/WaylonServer/getUnionByUser.action"
     static var getUnionByUnionId = "/WaylonServer/getUnionByUnionId.action"
+    static var getAllUnionByPage = "/WaylonServer/getAllUnionByPage.action"
     
     //wxyora.xicp.net:39307/WaylonServer/getUnionByUser.action?userId=15901966196
     
