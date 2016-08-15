@@ -46,7 +46,7 @@ class TravelDetailViewController: BaseViewController {
         self.pleaseWait()
         do {
             let unionId = userInfo.stringForKey("unionId")
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUnionId, parameters: ["userId":getMobie(),"unionId":unionId])
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUnionId, parameters: ["unionId":unionId])
             
             opt.start { response in
                 
