@@ -295,10 +295,12 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             let unionTheme:String = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme")!)
             let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime")!)
             let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId")!)
+            let publishTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("publishTime")!)
             //解决Optional("***")问题
             cell.unionTheme.text = unionTheme
             cell.outTime.text=outTime
             cell.unionId.text=unionId
+            cell.publishTime.text=publishTime
             
         }
         
