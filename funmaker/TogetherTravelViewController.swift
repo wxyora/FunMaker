@@ -117,19 +117,17 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             opt.start { response in
                 
                 if let err = response.error {
-                    if String(err.code)=="-1001"{
-                        self.alert("网络不给力，请重试。")
+                    
+                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.clearAllNotice()
+                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
                     }
-                    self.clearAllNotice()
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
-                    //return
                 }else{
                     
                     //关闭网络请求hud
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    
                     self.clearAllNotice()
                     //把NSData对象转换回JSON对象
                     let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
@@ -178,14 +176,12 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             opt.start { response in
                 
                 if let err = response.error {
-                    if String(err.code)=="-1001"{
-                        self.alert("网络不给力，请重试。")
+                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.clearAllNotice()
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
                     }
-                    //self.clearAllNotice()
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    //self.notice(err.localizedDescription, type: NoticeType.info, autoClear: true)
-                    //return
                 }else{
                     
                     //关闭网络请求hud
@@ -209,7 +205,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                             }
                             
                             
-                            //self.clearAllNotice()
+                            self.clearAllNotice()
                         }else{
                             
                             dispatch_async(dispatch_get_main_queue()) {
