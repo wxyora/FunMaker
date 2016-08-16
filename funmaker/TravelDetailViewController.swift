@@ -80,13 +80,14 @@ class TravelDetailViewController: BaseViewController {
                                         //关闭网络请求hud
                                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                                         
-                                        //self.clearAllNotice()
+                                        self.clearAllNotice()
                                         //把NSData对象转换回JSON对象
                                         let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                                         if json == nil {
                                             self.alert("网络异常，请重试")
-                                            self.clearAllNotice()
+                                           
                                         }else{
+                                            
                                             let result : AnyObject = json.objectForKey("result")!
                                             
                                             //let mobile : AnyObject = json.objectForKey("mobile")!
@@ -140,6 +141,8 @@ class TravelDetailViewController: BaseViewController {
 
         initData()
     }
+    
+ 
     
     
     func initData(){
