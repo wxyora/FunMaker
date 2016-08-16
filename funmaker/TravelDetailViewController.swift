@@ -16,6 +16,8 @@ class TravelDetailViewController: BaseViewController {
     @IBOutlet weak var reachWay: UILabel!
     @IBOutlet weak var unionContent: UITextView!
 
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var editItem: UIBarButtonItem!
     
 //    let unionTheme = data!.objectForKey("unionTheme") as! String
 //    let contactWay = data!.objectForKey("contactWay") as! String
@@ -23,7 +25,107 @@ class TravelDetailViewController: BaseViewController {
 //    let unionContent = data!.objectForKey("unionContent") as! String
 //    let contactWay = data!.objectForKey("contactWay") as! String
     
+    @IBAction func deleteByUnion(sender: AnyObject) {
+        
+        let alertController:UIAlertController!=UIAlertController(title: "", message: "您确定要删除？", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
+        alertController.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default){ (alertAciton) -> Void in
+             self.deleteUnion()
+          
+            
+            })
+        self.presentViewController(alertController, animated: true, completion:nil)
+       
+    }
+
     
+    @IBAction func editAction(sender: AnyObject) {
+        //editItem.setTitleTextAttributes([String : "ddd"]?, forState: UIControlState.Normal.)
+        if editItem.title == "编辑"{
+             editItem.title="完成"
+            deleteButton.hidden=false
+        }else{
+            editItem.title="编辑"
+            deleteButton.hidden=true
+        }
+        
+    }
+    
+    func deleteUnion() {
+        
+        
+        
+     
+        
+                            //开启网络请求hud
+                            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+                            self.pleaseWait()
+                            do {
+                                let unionId = userInfo.stringForKey("unionId")
+                                let opt = try HTTP.GET(Constant.host+Constant.deleteUnion, parameters: ["unionId":unionId])
+                                //                    opt.progress = { progress in
+                                //                        print("progress: \(progress)") //this will be between 0 and 1.
+                                //                    }
+                                opt.start { response in
+                                    
+                                    if let err = response.error {
+                                        //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                                        dispatch_async(dispatch_get_main_queue()) {
+                                            self.clearAllNotice()
+                                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                                            self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
+                                        }
+                                    }else{
+                                        
+                                        //关闭网络请求hud
+                                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                                        
+                                        //self.clearAllNotice()
+                                        //把NSData对象转换回JSON对象
+                                        let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                                        if json == nil {
+                                            self.alert("网络异常，请重试")
+                                            self.clearAllNotice()
+                                        }else{
+                                            let result : AnyObject = json.objectForKey("result")!
+                                            
+                                            //let mobile : AnyObject = json.objectForKey("mobile")!
+                                            let str = String(result)
+                                            if str=="删除成功"{
+                                                
+                                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                                                dispatch_async(dispatch_get_main_queue()) {
+                                                   
+                                                    self.noticeInfo("删除成功", autoClear: true, autoClearTime: 2)
+                                                   self.navigationController?.popViewControllerAnimated(true)
+                                                   
+                                                }
+                                            }
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            } catch {
+                                print("loginValidate interface got an error creating the request: \(error)")
+                            }
+                            
+        
+                        
+        
+                    
+        
+                
+        
+            
+        
+        
+        
+        
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

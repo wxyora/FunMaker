@@ -16,6 +16,7 @@ class Constant: NSObject {
     static var registUrl = "/WaylonServer/register.action"
     static var findUserUrl = "/WaylonServer/findUserByMobile.action"
     static var publishUrl = "/WaylonServer/addUnion.action"
+    static var deleteUnion = "/WaylonServer/deleteUnion.action"
     static var getUnionByUser = "/WaylonServer/getUnionByUser.action"
     static var getUnionByUnionId = "/WaylonServer/getUnionByUnionId.action"
     static var getAllUnionByPage = "/WaylonServer/getAllUnionByPage.action"
