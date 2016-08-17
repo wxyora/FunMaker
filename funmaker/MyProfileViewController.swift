@@ -124,9 +124,12 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
         //保存图片至沙盒
         self.saveImage(image as! UIImage, imageName: "currentImage.png")
+        //let fullPath = ((NSHomeDirectory() as NSURL).stringByAppendingPathComponent("Documents") as NSURL).stringByAppendingPathComponent("currentImage.png")
+
         let gotImage=info[UIImagePickerControllerOriginalImage]as! UIImage
         //let midImage:UIImage=self.imageWithImageSimple(gotImage,scaledToSize:CGSizeMake(1000.0,1000.0))//这是对图片进行缩放，因为固定了长宽，所以这个方法会变型，有需要的自已去完善吧， 这里只是粗略使用。
-        upload(gotImage)//上传
+        //upload(gotImage)//上传
+        
         picker.dismissViewControllerAnimated(true, completion: nil)
   
     }
@@ -137,18 +140,35 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     }
     
     
-    func upload(img:UIImage){
+//    let fileUrl = NSURL(fileURLWithPath: "/Users/dalton/Desktop/testfile")!
+//    do {
+//    let opt = try HTTP.POST("https://domain.com/new", parameters: ["aParam": "aValue", "file": Upload(fileUrl: fileUrl)])
+//    opt.start { response in
+//    //do things...
+//    }
+//    } catch let error {
+//        print("got an error creating the request: \(error)")
+//    }
+    
+    
+    func upload(image:UIImage){
         
+       
+        // 先获取图片的 data
+        let imageData = UIImagePNGRepresentation(image)
+        // 把 data 转成 Base64 的 string
+        let imageString = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+        
+        //var data:NSData = UIImageJPEGRepresentation(image, 1.0)!;
         //开启网络请求hud
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.pleaseWait()
-        
+       
         do {
-        
-            let opt = try HTTP.GET(Constant.host + Constant.updateHeadImage, parameters: ["headImage":img,"mobile":getMobile()])
-            opt.progress = { progress in
-                print("progress: \(progress)") //this will be between 0 and 1.
-            }
+            // fileUrl = NSURL.fileURLWithPath("/Users/Waylon/Desktop/1.png")
+            let opt = try HTTP.POST(Constant.host + Constant.updateHeadImage, parameters: ["mobile":getMobile(),"headImage":imageString])
+    
+            
             opt.start { response in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 if let err = response.error {
@@ -164,7 +184,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                     let result : AnyObject = json.objectForKey("result")!
                     // let data : UIImage = json.objectForKey("data") as! UIImage
                     if String(result)=="上传成功"{
-                        self.headImage.image = img
+                        self.headImage.image = image
                         self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
                     }else{
                         self.noticeError("上传失败", autoClear: true, autoClearTime: 1)

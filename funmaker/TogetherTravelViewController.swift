@@ -314,12 +314,11 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             cell.unionId.text=unionId
             cell.publishTime.text=publishTime
            
-            let headData = imageObj as? NSData
+            let headData = imageObj as? UIImage
             
-            //let headImage = UIImage(data: headData!)
-           // cell.rentInfoImage.image = headImage
-            
-            //cell.rentInfoImage.image = headImage
+          
+            cell.rentInfoImage.image = headData
+
 
             
           
