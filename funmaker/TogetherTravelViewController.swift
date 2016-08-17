@@ -314,14 +314,35 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             cell.unionId.text=unionId
             cell.publishTime.text=publishTime
            
-            let headData = imageObj as? UIImage
+           // let headData = imageObj as? UIImage
             
           
-            cell.rentInfoImage.image = headData
+           // var URL:NSURL = NSURL(string: "http://p2.qqyou.com/touxiang/UploadPic/2016-8/17/a3dec7cada44965e2bbad1d13ee7ba32.jpg")!
+           // var data:NSData?=NSData(contentsOfURL: URL)
 
 
             
+            var dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+            dispatch_async(dispath, { () -> Void in
+                var URL:NSURL = NSURL(string: "http://p2.qqyou.com/touxiang/UploadPic/2016-8/17/a3dec7cada44965e2bbad1d13ee7ba32.jpg")!
+                var data:NSData?=NSData(contentsOfURL: URL)
+                if data != nil {
+                    let ZYHImage=UIImage(data: data!)
+                    //写缓存
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        //刷新主UI
+                        cell.rentInfoImage.image=ZYHImage
+                    })
+                }
+                
+            })
+         
           
+           
+            //let head = UIImage(data: data!)
+            
+          
+          //cell.rentInfoImage.image = head
           
             
             let subRange=Range(start: mobile.startIndex.advancedBy(3), end: mobile.startIndex.advancedBy(7)) //Swift 2.0

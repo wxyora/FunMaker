@@ -128,7 +128,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
 
         let gotImage=info[UIImagePickerControllerOriginalImage]as! UIImage
         //let midImage:UIImage=self.imageWithImageSimple(gotImage,scaledToSize:CGSizeMake(1000.0,1000.0))//这是对图片进行缩放，因为固定了长宽，所以这个方法会变型，有需要的自已去完善吧， 这里只是粗略使用。
-        //upload(gotImage)//上传
+        upload(gotImage)//上传
         
         picker.dismissViewControllerAnimated(true, completion: nil)
   
@@ -166,7 +166,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
        
         do {
             // fileUrl = NSURL.fileURLWithPath("/Users/Waylon/Desktop/1.png")
-            let opt = try HTTP.POST(Constant.host + Constant.updateHeadImage, parameters: ["mobile":getMobile(),"headImage":imageString])
+            let opt = try HTTP.POST(Constant.host + Constant.updateHeadImage, parameters: ["mobile":getMobile(),"headImage":image])
     
             
             opt.start { response in

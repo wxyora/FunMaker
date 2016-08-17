@@ -25,12 +25,12 @@ class CustomCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //从文件读取用户头像
-        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
-        //可选绑定,若保存过用户头像则显示之
-        if let savedImage = UIImage(contentsOfFile: fullPath){
-            self.rentInfoImage.image = savedImage
-        }
+//        //从文件读取用户头像
+//        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+//        //可选绑定,若保存过用户头像则显示之
+//        if let savedImage = UIImage(contentsOfFile: fullPath){
+//            self.rentInfoImage.image = savedImage
+//        }
         
         rentInfoImage.layer.borderWidth=1
         rentInfoImage.layer.cornerRadius=6
