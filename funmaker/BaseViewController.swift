@@ -42,7 +42,7 @@ class BaseViewController: UITableViewController {
         
     }
     
-    func getMobie()->String{
+    func getMobile()->String{
         
         let mobile = userInfo.stringForKey("mobile")
         return mobile!

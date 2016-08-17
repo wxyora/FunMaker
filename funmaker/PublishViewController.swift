@@ -87,7 +87,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
                             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                             self.pleaseWait()
                             do {
-                                let opt = try HTTP.GET(Constant.host+Constant.publishUrl, parameters: ["userId":getMobie(), "unionTheme": theme.text,"outTime": dateInfo.text,"unionContent": content.text,"contactWay":contact.text,"reachWay":action.text])
+                                let opt = try HTTP.GET(Constant.host+Constant.publishUrl, parameters: ["userId":getMobile(), "unionTheme": theme.text,"outTime": dateInfo.text,"unionContent": content.text,"contactWay":contact.text,"reachWay":action.text])
                                 //                    opt.progress = { progress in
                                 //                        print("progress: \(progress)") //this will be between 0 and 1.
                                 //                    }

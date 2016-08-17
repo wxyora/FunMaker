@@ -64,7 +64,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mobile.text=getMobie()
+        mobile.text=getMobile()
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
 

@@ -10,6 +10,8 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     
+    @IBOutlet weak var account: UILabel!
+    
     @IBOutlet weak var unionId: UILabel!
     
     @IBOutlet weak var rentInfoImage: UIImageView!

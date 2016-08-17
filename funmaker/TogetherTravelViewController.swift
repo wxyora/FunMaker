@@ -97,6 +97,10 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         
         
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
         initData()
     }
     
@@ -252,10 +256,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             getData()
         }
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        //print("页面即将出现")
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -302,6 +303,11 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             cell.outTime.text=outTime
             cell.unionId.text=unionId
             cell.publishTime.text=publishTime
+            var mobile = getMobile()
+            
+            let subRange=Range(start: mobile.startIndex.advancedBy(3), end: mobile.startIndex.advancedBy(7)) //Swift 2.0
+            mobile.replaceRange(subRange, with: "****")
+            cell.account.text=mobile
             
         }
         

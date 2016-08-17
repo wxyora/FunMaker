@@ -182,7 +182,7 @@ class MyViewController: BaseViewController {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         //self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
             
             opt.start { response in
                 
@@ -246,7 +246,7 @@ class MyViewController: BaseViewController {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         //self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
             
             opt.start { response in
                 

@@ -56,7 +56,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
             
             opt.start { response in
                 
@@ -106,7 +106,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             //self.pleaseWait()
             do {
-                let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobie()])
+                let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
 
                 opt.start { response in
                     
