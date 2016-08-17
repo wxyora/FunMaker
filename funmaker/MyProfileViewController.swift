@@ -144,6 +144,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         self.pleaseWait()
         
         do {
+        
             let opt = try HTTP.GET(Constant.host + Constant.updateHeadImage, parameters: ["headImage":img,"mobile":getMobile()])
             opt.progress = { progress in
                 print("progress: \(progress)") //this will be between 0 and 1.
