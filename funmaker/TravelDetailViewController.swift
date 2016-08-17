@@ -97,7 +97,7 @@ class TravelDetailViewController: BaseViewController {
                                                 //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                                                 dispatch_async(dispatch_get_main_queue()) {
                                                    
-                                                    self.noticeInfo("删除成功", autoClear: true, autoClearTime: 2)
+                                                    self.noticeInfo("删除成功", autoClear: true, autoClearTime: 1)
                                                    self.navigationController?.popViewControllerAnimated(true)
                                                    
                                                 }
@@ -130,6 +130,7 @@ class TravelDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteButton.layer.cornerRadius=3
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

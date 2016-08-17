@@ -237,7 +237,8 @@ class SwiftNotice: NSObject {
         checkmarkView.frame = CGRectMake(33, 12, 45, 45)
         mainView.addSubview(checkmarkView)
         
-        let label = UILabel(frame: CGRectMake(0, 60, 90, 16))
+        //let label = UILabel(frame: CGRectMake(0, 60, 90, 16))
+        let label = UILabel(frame: CGRectMake(16, 63, 80, 12))
         label.font = UIFont.systemFontOfSize(12)
         label.textColor = UIColor.whiteColor()
         label.text = text

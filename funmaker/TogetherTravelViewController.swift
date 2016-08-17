@@ -135,25 +135,16 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                         self.alert("网络异常，请重试")
                         self.clearAllNotice()
                     }else{
-                        
-                        
                         let data : NSArray = json.objectForKey("data") as! NSArray
-                        
-                        //let mobile : AnyObject = json.objectForKey("mobile")!
-                        if data.count != 0{
-                            
-                            //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.tableViewData = data
-                                self.tableView.reloadData()
-                            }
-                        }else{
-                            
-                            dispatch_async(dispatch_get_main_queue()) {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.tableViewData = data
+                            self.refreshControl?.endRefreshing()
+                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                            self.tableView.reloadData()
+                            if data.count == 0{
                                 self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
                             }
                         }
-                        
                     }
                     
                 }
@@ -184,6 +175,8 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                     }
                 }else{
                     
+                    
+                    
                     //关闭网络请求hud
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     //self.clearAllNotice()
@@ -194,30 +187,42 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                         self.clearAllNotice()
                     }else{
                         let data : NSArray = json.objectForKey("data") as! NSArray
-                        //let mobile : AnyObject = json.objectForKey("mobile")!
-                        if data.count != 0{
-                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.tableViewData! = data
-                                self.refreshControl?.endRefreshing()
-                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                                self.tableView.reloadData()
-                            }
-                            
-                            
-                            self.clearAllNotice()
-                        }else{
-                            
-                            dispatch_async(dispatch_get_main_queue()) {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.tableViewData = data
+                            self.refreshControl?.endRefreshing()
+                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                            self.tableView.reloadData()
+                            if data.count == 0{
                                 self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
                             }
-                            
                         }
-                        
-                        
-                        
-                        
                     }
+                    
+                    
+                    
+                    
+//                    //关闭网络请求hud
+//                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//                    //self.clearAllNotice()
+//                    //把NSData对象转换回JSON对象
+//                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+//                    if json == nil {
+//                        self.alert("网络异常，请重试")
+//                        self.clearAllNotice()
+//                    }else{
+//                        let data : NSArray = json.objectForKey("data") as! NSArray
+//                        dispatch_async(dispatch_get_main_queue()) {
+//                            self.tableViewData! = data
+//                            self.refreshControl?.endRefreshing()
+//                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+//                            self.tableView.reloadData()
+//                            if data.count == 0{
+//                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+//                            }
+//                        }
+//
+//
+//                    }
                     
                 }
                 
