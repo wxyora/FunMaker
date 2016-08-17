@@ -298,12 +298,30 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime")!)
             let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId")!)
             let publishTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("publishTime")!)
+            let imageObj = tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage")!
+            var mobile = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("mobile")!)
+            //let headImage = tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage")! as! UIImage
+            
+            
+             //            if(headImage){
+//                
+//            }else{
+//                alert(headImage)
+//            }
             //解决Optional("***")问题
             cell.unionTheme.text = unionTheme
             cell.outTime.text=outTime
             cell.unionId.text=unionId
             cell.publishTime.text=publishTime
-            var mobile = getMobile()
+           
+            let headImage = imageObj as? UIImage
+            cell.rentInfoImage.image = headImage
+            
+            //cell.rentInfoImage.image = headImage
+
+            
+          
+          
             
             let subRange=Range(start: mobile.startIndex.advancedBy(3), end: mobile.startIndex.advancedBy(7)) //Swift 2.0
             mobile.replaceRange(subRange, with: "****")

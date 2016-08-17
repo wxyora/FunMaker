@@ -3,7 +3,6 @@
 //
 
 #import <SMS_SDK/SMSSDK.h>
-#import "MBProgressHUD.h"
 #import <ShareSDK/ShareSDK.h>
 
 #import <ShareSDKConnector/ShareSDKConnector.h>

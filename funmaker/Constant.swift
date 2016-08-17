@@ -14,6 +14,7 @@ class Constant: NSObject {
     static var host = "http://wxyora.xicp.net:39307"
     static var loginUrl = "/WaylonServer/loginValidate.action"
     static var registUrl = "/WaylonServer/register.action"
+    static var updateHeadImage = "/WaylonServer/updateHeadImage.action"
     static var findUserUrl = "/WaylonServer/findUserByMobile.action"
     static var publishUrl = "/WaylonServer/addUnion.action"
     static var deleteUnion = "/WaylonServer/deleteUnion.action"

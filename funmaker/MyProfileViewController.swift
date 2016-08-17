@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHTTP
 
 class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -28,7 +29,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     
     func takePhoto(){
         let actionSheet = UIAlertController()
-        actionSheet.addAction(UIAlertAction(title: "现场自拍", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
             
             //判断是否能进行拍照，可以的话打开相机
             if UIImagePickerController.isSourceTypeAvailable(.Camera) {
@@ -101,23 +102,84 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     }
     
     //UIImagePicker回调方法
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+//    {
+//        //获取照片的原图
+//        //let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
+//        //获得编辑后的图片
+//       let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
+//        //保存图片至沙盒
+//       self.saveImage(image as! UIImage, imageName: "currentImage.png")
+//       let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+//        //存储后拿出更新头像
+//        let savedImage = UIImage(contentsOfFile: fullPath)
+//        self.headImage.image=savedImage
+//        picker.dismissViewControllerAnimated(true, completion: nil)
+//    }
+    
+    {
         //获取照片的原图
         //let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
         //获得编辑后的图片
-       let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
+        let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
         //保存图片至沙盒
-       self.saveImage(image as! UIImage, imageName: "currentImage.png")
-       let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
-        //存储后拿出更新头像
-        let savedImage = UIImage(contentsOfFile: fullPath)
-        self.headImage.image=savedImage
+        self.saveImage(image as! UIImage, imageName: "currentImage.png")
+        let gotImage=info[UIImagePickerControllerOriginalImage]as! UIImage
+        //let midImage:UIImage=self.imageWithImageSimple(gotImage,scaledToSize:CGSizeMake(1000.0,1000.0))//这是对图片进行缩放，因为固定了长宽，所以这个方法会变型，有需要的自已去完善吧， 这里只是粗略使用。
+        upload(gotImage)//上传
         picker.dismissViewControllerAnimated(true, completion: nil)
+  
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func upload(img:UIImage){
+        
+        //开启网络请求hud
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        self.pleaseWait()
+        
+        do {
+            let opt = try HTTP.GET(Constant.host + Constant.updateHeadImage, parameters: ["headImage":img,"mobile":getMobile()])
+            opt.progress = { progress in
+                print("progress: \(progress)") //this will be between 0 and 1.
+            }
+            opt.start { response in
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                if let err = response.error {
+                    self.alert(err.localizedDescription)
+                    self.clearAllNotice()
+                    return
+                }
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                     self.clearAllNotice()
+                    //把NSData对象转换回JSON对象
+                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+                    let result : AnyObject = json.objectForKey("result")!
+                    // let data : UIImage = json.objectForKey("data") as! UIImage
+                    if String(result)=="上传成功"{
+                        self.headImage.image = img
+                        self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
+                    }else{
+                        self.noticeError("上传失败", autoClear: true, autoClearTime: 1)
+                    }
+                    
+
+                }
+                
+                
+                
+            }
+        } catch let error {
+            print("loginValidate interface got an error creating the request: \(error)")
+        }
+        
+        
     }
 
     // MARK: - Table view data source

@@ -24,7 +24,6 @@
 		096C23A41D5757F100256487 /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C23A31D5757F100256487 /* TravelDetailViewController.swift */; };
 		096C23A61D575F8D00256487 /* IndexTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */; };
 		096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D25BF1D4A501900831EE7 /* PublishViewController.swift */; };
-		096D56C71D563F620015839F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 096D56C61D563F620015839F /* MBProgressHUD.m */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
 		097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED51D40BD6200ADA706 /* Constant.swift */; };
 		097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED81D40C0E200ADA706 /* CommonUtil.swift */; };
@@ -168,8 +167,6 @@
 		096C23A31D5757F100256487 /* TravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
 		096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTravelDetailViewController.swift; sourceTree = "<group>"; };
 		096D25BF1D4A501900831EE7 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
-		096D56C51D563F620015839F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		096D56C61D563F620015839F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		097A4ED51D40BD6200ADA706 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		097A4ED81D40C0E200ADA706 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
@@ -308,8 +305,6 @@
 				09CABA9C1D559E2500776C85 /* TravelListViewController.swift */,
 				09CABA9E1D55A8BB00776C85 /* HomeHotelViewController.swift */,
 				09CABAA01D55B6A900776C85 /* MyProfileViewController.swift */,
-				096D56C51D563F620015839F /* MBProgressHUD.h */,
-				096D56C61D563F620015839F /* MBProgressHUD.m */,
 				096C23A11D57480A00256487 /* TogetherTravelCell.swift */,
 				096C23A31D5757F100256487 /* TravelDetailViewController.swift */,
 				096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */,
@@ -787,7 +782,6 @@
 				098B882A1D61EB87006B7DDA /* README.md in Sources */,
 				096A03601D42583C0086C906 /* GuideViewController.swift in Sources */,
 				09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */,
-				096D56C71D563F620015839F /* MBProgressHUD.m in Sources */,
 				09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */,
 				09CABA9F1D55A8BB00776C85 /* HomeHotelViewController.swift in Sources */,
 				097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */,
