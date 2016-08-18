@@ -95,13 +95,13 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             //self.pageScrollView.addSubview(imageView)
         }
         
-        
+         initData()
         
     }
     
     override func viewWillAppear(animated: Bool) {
         
-        initData()
+       
     }
     
     //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

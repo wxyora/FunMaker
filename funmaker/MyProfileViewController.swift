@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftHTTP
+import Alamofire
 
 class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -103,34 +104,23 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     
     //UIImagePicker回调方法
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-//    {
-//        //获取照片的原图
-//        //let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
-//        //获得编辑后的图片
-//       let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
-//        //保存图片至沙盒
-//       self.saveImage(image as! UIImage, imageName: "currentImage.png")
-//       let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
-//        //存储后拿出更新头像
-//        let savedImage = UIImage(contentsOfFile: fullPath)
-//        self.headImage.image=savedImage
-//        picker.dismissViewControllerAnimated(true, completion: nil)
-//    }
-    
     {
         //获取照片的原图
         //let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
         //获得编辑后的图片
-        let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
+       let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
         //保存图片至沙盒
-        self.saveImage(image as! UIImage, imageName: "currentImage.png")
-        //let fullPath = ((NSHomeDirectory() as NSURL).stringByAppendingPathComponent("Documents") as NSURL).stringByAppendingPathComponent("currentImage.png")
-
-        let gotImage=info[UIImagePickerControllerOriginalImage]as! UIImage
-        //let midImage:UIImage=self.imageWithImageSimple(gotImage,scaledToSize:CGSizeMake(1000.0,1000.0))//这是对图片进行缩放，因为固定了长宽，所以这个方法会变型，有需要的自已去完善吧， 这里只是粗略使用。
-        upload(gotImage)//上传
+       self.saveImage(image as! UIImage, imageName: "currentImage.png")
+       let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+        //存储后拿出更新头像
+        let savedImage = UIImage(contentsOfFile: fullPath)
+        self.headImage.image=savedImage
+       // var fileURL = NSURL(fileURLWithPath: fullPath)
+        upload(savedImage!,address: Constant.host + Constant.updateHeadImage)//上传
         
         picker.dismissViewControllerAnimated(true, completion: nil)
+        
+
   
     }
 
@@ -151,57 +141,117 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
 //    }
     
     
-    func upload(image:UIImage){
-        
-       
-        // 先获取图片的 data
-        let imageData = UIImagePNGRepresentation(image)
-        // 把 data 转成 Base64 的 string
-        let imageString = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-        
-        //var data:NSData = UIImageJPEGRepresentation(image, 1.0)!;
-        //开启网络请求hud
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        self.pleaseWait()
-       
-        do {
-            // fileUrl = NSURL.fileURLWithPath("/Users/Waylon/Desktop/1.png")
-            let opt = try HTTP.POST(Constant.host + Constant.updateHeadImage, parameters: ["mobile":getMobile(),"headImage":image])
-    
-            
-            opt.start { response in
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                if let err = response.error {
-                    self.alert(err.localizedDescription)
-                    self.clearAllNotice()
-                    return
-                }
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                     self.clearAllNotice()
-                    //把NSData对象转换回JSON对象
-                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                    let result : AnyObject = json.objectForKey("result")!
-                    // let data : UIImage = json.objectForKey("data") as! UIImage
-                    if String(result)=="上传成功"{
-                        self.headImage.image = image
-                        self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
-                    }else{
-                        self.noticeError("上传失败", autoClear: true, autoClearTime: 1)
-                    }
-                    
+    func upload(image:UIImage,fileURL:NSURL){
 
-                }
-                
-                
-                
+        Alamofire.upload(.POST,Constant.host + Constant.updateHeadImage, file: fileURL)
+            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                print(totalBytesWritten)
             }
-        } catch let error {
-            print("loginValidate interface got an error creating the request: \(error)")
+            .response(completionHandler: { (equest, response, json, error) in
+                // print(String(json?.valueForKey("result")))
+                
+            })
+        
+        
+
         }
+    
+
+    
+//        // 先获取图片的 data
+//        let imageData = UIImagePNGRepresentation(image)
+//        // 把 data 转成 Base64 的 string
+//        let imageString = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+//        
+//        //var data:NSData = UIImageJPEGRepresentation(image, 1.0)!;
+//        //开启网络请求hud
+//        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+//        self.pleaseWait()
+//       
+//        do {
+//            // fileUrl = NSURL.fileURLWithPath("/Users/Waylon/Desktop/1.png")
+//            let opt = try HTTP.POST(Constant.host + Constant.updateHeadImage, parameters: ["mobile":getMobile(),"headImage":image])
+//    
+//            
+//            opt.start { response in
+//                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//                if let err = response.error {
+//                    self.alert(err.localizedDescription)
+//                    self.clearAllNotice()
+//                    return
+//                }
+//                
+//                dispatch_async(dispatch_get_main_queue()) {
+//                     self.clearAllNotice()
+//                    //把NSData对象转换回JSON对象
+//                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
+//                    let result : AnyObject = json.objectForKey("result")!
+//                    // let data : UIImage = json.objectForKey("data") as! UIImage
+//                    if String(result)=="上传成功"{
+//                        self.headImage.image = image
+//                        self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
+//                    }else{
+//                        self.noticeError("上传失败", autoClear: true, autoClearTime: 1)
+//                    }
+//                    
+//
+//                }
+//                
+//                
+//                
+//            }
+//        } catch let error {
+//            print("loginValidate interface got an error creating the request: \(error)")
+//        }
+//        
         
+    private func upload(uploadImage: UIImage,address: String) {
         
+        Alamofire.upload(.POST, address, multipartFormData: { (multipartFormData) in
+            
+            let data = UIImagePNGRepresentation(uploadImage)
+            //let imageName = String(NSDate()) + ".png"
+            
+            //multipartFormData.appendBodyPart(data: ,name: ,fileName: ,mimeType: )这里把图片转为二进制,作为第一个参数
+           // multipartFormData.appendBodyPart(data: data!, name: "headImage", fileName: imageName, mimeType: "image/png")
+             multipartFormData.appendBodyPart(data: data!, name:"headImage")
+            //把剩下的两个参数作为字典,利用 multipartFormData.appendBodyPart(data: name: )添加参数,
+            //因为这个方法的第一个参数接收的是NSData类型,所以要利用 NSUTF8StringEncoding 把字符串转为NSData
+            let param = ["mobile":self.getMobile()]
+            
+            //遍历字典
+            for (key, value) in param {
+                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
+            }
+            
+        }) { (encodingResult) in
+            switch encodingResult {
+            case .Success(let upload, _, _):
+                upload.responseJSON(completionHandler: { (response) in
+                    if let myJson = response.result.value {
+                        let result = String(myJson.valueForKey("result")!)
+                        if result=="上传成功" {
+                            self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
+                        }else {
+                            print("上传失败")
+                            self.noticeError("上传失败", autoClear: true, autoClearTime: 1)
+                        }
+                    }
+                })
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
+
+    
+//    func saveImage(currentImage:UIImage,imageName:NSString){
+//        var imageData:NSData = UIImageJPEGRepresentation(currentImage, 0.5)
+//        var fullPath:String = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent(imageName as String)
+//        imageData.writeToFile(fullPath as String, atomically: false)
+//        var fileURL = NSURL(fileURLWithPath: fullPath)
+//        
+//        }
 
     // MARK: - Table view data source
 
