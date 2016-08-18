@@ -209,7 +209,8 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         
         Alamofire.upload(.POST, address, multipartFormData: { (multipartFormData) in
             
-            let data = UIImagePNGRepresentation(uploadImage)
+            let data = UIImagePNGRepresentation(uploadImage)?.base64EncodedDataWithOptions(NSDataBase64EncodingOptions.init(rawValue: 0))
+            //let data:NSString = utf8str.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.fromRaw(0)!)
             //let imageName = String(NSDate()) + ".png"
             
             //multipartFormData.appendBodyPart(data: ,name: ,fileName: ,mimeType: )这里把图片转为二进制,作为第一个参数
