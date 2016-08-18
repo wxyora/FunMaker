@@ -316,8 +316,8 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
 
                 if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
                     let headUrl = String(image);
-                    let URL:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+headUrl+".png")!
-                    let data=NSData(contentsOfURL: URL)
+                    let url:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+"head"+".png")!
+                    let data=NSData(contentsOfURL: url)
                     if data != nil {
                         let ZYHImage=UIImage(data: data!)
                         //写缓存
