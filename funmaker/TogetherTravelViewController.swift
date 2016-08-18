@@ -18,6 +18,8 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     var tableViewData:AnyObject?
     
+     var thumbQueue = NSOperationQueue()
+    
     
     var str = ["香港5日游","泰国8日游"]
     // @IBOutlet var searchBar: UISearchBar!
@@ -311,26 +313,51 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
 
 
             
-            let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-            dispatch_async(dispath, { () -> Void in
-
-                if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
-                    let headUrl = String(image);
-                    let url:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+"head"+".png")!
-                    let data=NSData(contentsOfURL: url)
-                    if data != nil {
-                        let ZYHImage=UIImage(data: data!)
-                        //写缓存
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            //刷新主UI
-                            cell.rentInfoImage.image=ZYHImage
-                        })
-                    }
-                }
+//            let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+//            dispatch_async(dispath, { () -> Void in
+//
+//                if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
+//                    let headUrl = String(image);
+//                    let url:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+"head"+".png")!
+//                    let data=NSData(contentsOfURL: url)
+//                    if data != nil {
+//                        let ZYHImage=UIImage(data: data!)
+//                        //写缓存
+//                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                            //刷新主UI
+//                            cell.rentInfoImage.image=ZYHImage
+//                        })
+//                    }
+//                }
+//                
+//            })
+            if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
+                let headUrl = String(image);
+                //let url:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+headUrl+".png")!
                 
-            })
-         
-          
+                if(headUrl != "<null>"){
+                    var str = Constant.host+Constant.headImageUrl+headUrl+".png"
+                    //防止url报出空指针异常
+                    str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+                    let url:NSURL = NSURL(string:str)!
+                    
+                    let request = NSURLRequest(URL:url)
+                    NSURLConnection.sendAsynchronousRequest(request, queue: thumbQueue, completionHandler: { response, data, error in
+                        if (error != nil) {
+                            print(error)
+                            
+                        } else {
+                            let image = UIImage.init(data :data!)
+                            dispatch_async(dispatch_get_main_queue(), {
+                                cell.rentInfoImage.image = image
+                            })
+                        }
+                    })
+                }
+
+            }
+
+            
            
             //let head = UIImage(data: data!)
             
