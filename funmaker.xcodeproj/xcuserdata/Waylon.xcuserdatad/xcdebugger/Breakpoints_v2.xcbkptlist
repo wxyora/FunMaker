@@ -538,7 +538,7 @@
                   moduleName = "funmaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/TravelDetailViewController.swift"
-                  timestampString = "493034858.375205"
+                  timestampString = "493176273.011139"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -553,7 +553,7 @@
                   moduleName = "funmaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/TravelDetailViewController.swift"
-                  timestampString = "493034858.375409"
+                  timestampString = "493176273.011524"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "74"
@@ -586,7 +586,7 @@
                   moduleName = "funmaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/TravelDetailViewController.swift"
-                  timestampString = "493035808.069236"
+                  timestampString = "493176226.491644"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -601,7 +601,7 @@
                   moduleName = "funmaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/TravelDetailViewController.swift"
-                  timestampString = "493035808.069831"
+                  timestampString = "493176226.491962"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "74"
@@ -698,22 +698,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "funmaker/TogetherTravelViewController.swift"
-            timestampString = "493124347.952475"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/TogetherTravelViewController.swift"
             timestampString = "493113346.339628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -730,23 +714,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "funmaker/TogetherTravelViewController.swift"
-            timestampString = "493117587.746929"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/TogetherTravelViewController.swift"
-            timestampString = "493117587.746929"
+            timestampString = "493212900.25286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "306"
@@ -762,220 +730,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "funmaker/TogetherTravelViewController.swift"
-            timestampString = "493124347.952475"
+            timestampString = "493212900.25286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/TogetherTravelViewController.swift"
-            timestampString = "493119201.442129"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/TogetherTravelViewController.swift"
-            timestampString = "493119201.442129"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/TogetherTravelViewController.swift"
-            timestampString = "493119726.423659"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/MyProfileViewController.swift"
-            timestampString = "493126610.017538"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "upload(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/MyProfileViewController.swift"
-            timestampString = "493125305.255415"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "upload(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/MyProfileViewController.swift"
-            timestampString = "493126610.017538"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "upload(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "funmaker.MyProfileViewController.upload (__ObjC.UIImage) -&gt; ()"
-                  moduleName = "funmaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/MyProfileViewController.swift"
-                  timestampString = "493126610.229786"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "1068">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "funmaker.MyProfileViewController.(upload (__ObjC.UIImage) -&gt; ()).(closure #1)"
-                  moduleName = "funmaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/MyProfileViewController.swift"
-                  timestampString = "493126610.22998"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/MyProfileViewController.swift"
-            timestampString = "493126610.017538"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "upload(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "funmaker.MyProfileViewController.upload (__ObjC.UIImage) -&gt; ()"
-                  moduleName = "funmaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/MyProfileViewController.swift"
-                  timestampString = "493120282.210791"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "848">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "funmaker.MyProfileViewController.(upload (__ObjC.UIImage) -&gt; ()).(closure #1)"
-                  moduleName = "funmaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/MyProfileViewController.swift"
-                  timestampString = "493120282.210912"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/MyProfileViewController.swift"
-            timestampString = "493126610.017538"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "upload(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/MyProfileViewController.swift"
-            timestampString = "493126610.017538"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "upload(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1033,13 +793,93 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "funmaker/MyProfileViewController.swift"
-            timestampString = "493125500.050731"
+            filePath = "funmaker/TravelDetailViewController.swift"
+            timestampString = "493176230.561896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "upload(_:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "deleteUnion()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "funmaker/MyProfileViewController.swift"
+            timestampString = "493183348.693769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "upload(_:fileURL:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "funmaker/MyProfileViewController.swift"
+            timestampString = "493206681.561509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "upload(_:address:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "funmaker.MyProfileViewController.((upload in _236839DC861EB1A244E50820B48CB0DB) (__ObjC.UIImage, address : Swift.String) -&gt; ()).(closure #2)"
+                  moduleName = "funmaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/MyProfileViewController.swift"
+                  timestampString = "493192835.308134"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "230"
+                  endingLineNumber = "230"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "funmaker.MyProfileViewController.((upload in _236839DC861EB1A244E50820B48CB0DB) (__ObjC.UIImage, address : Swift.String) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "funmaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Waylon/Public/IOS/funmaker/funmaker/MyProfileViewController.swift"
+                  timestampString = "493192835.308408"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "funmaker/MyProfileViewController.swift"
+            timestampString = "493206681.561509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "upload(_:address:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
