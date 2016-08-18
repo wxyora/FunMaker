@@ -331,6 +331,8 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
 //                }
 //                
 //            })
+            
+            
             if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
                 let headUrl = String(image);
                 //let url:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+headUrl+".png")!
