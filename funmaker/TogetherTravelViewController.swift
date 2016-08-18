@@ -298,42 +298,34 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime")!)
             let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId")!)
             let publishTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("publishTime")!)
-            let imageObj = tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage")!
+            
             var mobile = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("mobile")!)
             //let headImage = tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage")! as! UIImage
             
-            
-             //            if(headImage){
-//                
-//            }else{
-//                alert(headImage)
-//            }
             //解决Optional("***")问题
             cell.unionTheme.text = unionTheme
             cell.outTime.text=outTime
             cell.unionId.text=unionId
             cell.publishTime.text=publishTime
            
-           // let headData = imageObj as? UIImage
-            
-          
-           // var URL:NSURL = NSURL(string: "http://p2.qqyou.com/touxiang/UploadPic/2016-8/17/a3dec7cada44965e2bbad1d13ee7ba32.jpg")!
-           // var data:NSData?=NSData(contentsOfURL: URL)
 
 
             
-            var dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+            let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
             dispatch_async(dispath, { () -> Void in
-                //var URL:NSURL = NSURL(string: "http://p2.qqyou.com/touxiang/UploadPic/2016-8/17/a3dec7cada44965e2bbad1d13ee7ba32.jpg")!
-                var URL:NSURL = NSURL(string:Constant.host+Constant.headImageUrl)!
-                var data:NSData?=NSData(contentsOfURL: URL)
-                if data != nil {
-                    let ZYHImage=UIImage(data: data!)
-                    //写缓存
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        //刷新主UI
-                        cell.rentInfoImage.image=ZYHImage
-                    })
+
+                if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
+                    let headUrl = String(image);
+                    let URL:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+headUrl+".png")!
+                    let data=NSData(contentsOfURL: URL)
+                    if data != nil {
+                        let ZYHImage=UIImage(data: data!)
+                        //写缓存
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            //刷新主UI
+                            cell.rentInfoImage.image=ZYHImage
+                        })
+                    }
                 }
                 
             })
