@@ -324,7 +324,8 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             
             var dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
             dispatch_async(dispath, { () -> Void in
-                var URL:NSURL = NSURL(string: "http://p2.qqyou.com/touxiang/UploadPic/2016-8/17/a3dec7cada44965e2bbad1d13ee7ba32.jpg")!
+                //var URL:NSURL = NSURL(string: "http://p2.qqyou.com/touxiang/UploadPic/2016-8/17/a3dec7cada44965e2bbad1d13ee7ba32.jpg")!
+                var URL:NSURL = NSURL(string:Constant.host+Constant.headImageUrl)!
                 var data:NSData?=NSData(contentsOfURL: URL)
                 if data != nil {
                     let ZYHImage=UIImage(data: data!)

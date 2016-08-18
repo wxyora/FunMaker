@@ -207,6 +207,8 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         
     private func upload(uploadImage: UIImage,address: String) {
         
+       // self.pleaseWait()
+        
         Alamofire.upload(.POST, address, multipartFormData: { (multipartFormData) in
             
             let data = UIImagePNGRepresentation(uploadImage)?.base64EncodedDataWithOptions(NSDataBase64EncodingOptions.init(rawValue: 0))
@@ -232,6 +234,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                     if let myJson = response.result.value {
                         let result = String(myJson.valueForKey("result")!)
                         if result=="上传成功" {
+                        
                             self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
                         }else {
                             print("上传失败")
@@ -242,6 +245,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
             case .Failure(let error):
                 print(error)
             }
+            //self.clearAllNotice()
         }
     }
 
