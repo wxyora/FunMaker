@@ -157,11 +157,12 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         //let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
         //获得编辑后的图片
        let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
+       let imageData = UIImageJPEGRepresentation(image as! UIImage, 0.5)!
         //保存图片至沙盒
-       self.saveImage(image as! UIImage, imageName: "currentImage.png")
-       let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+       //self.saveImage(image as! UIImage, imageName: "currentImage.png")
+       //let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
         //存储后拿出更新头像
-        let savedImage = UIImage(contentsOfFile: fullPath)
+        let savedImage = UIImage(data: imageData)
         self.headImage.image=savedImage
        // var fileURL = NSURL(fileURLWithPath: fullPath)
         upload(savedImage!,address: Constant.host + Constant.updateHeadImage)//上传
