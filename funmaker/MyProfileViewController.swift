@@ -77,19 +77,28 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
 //      headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
         
-        //从文件读取用户头像
-        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
-        //可选绑定,若保存过用户头像则显示之
-        if let savedImage = UIImage(contentsOfFile: fullPath){
-            self.headImage.image = savedImage
-        }
+        //let userInfo=NSUserDefaults.standardUserDefaults()
+        let token  =  userInfo.objectForKey("token")
+        let headObj = userInfo.objectForKey("headImage")
+        var headName = ""
         
+        if token == nil{
+            let head=UIImage(named: "packman")
+            self.headImage.image=head
+            
+        }else{
+            headName  =  String(headObj!)
+            if headName != ""{
+                var str = Constant.host+Constant.headImageUrl+headName+".png"
+                //防止url报出空指针异常
+                // str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+                let url:NSURL = NSURL(string:str)!
+                let data=NSData(contentsOfURL: url)
+                let image = UIImage(data:data!)
+                self.headImage.image = image
+            }
+        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     //MARK: - 保存图片至沙盒

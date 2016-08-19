@@ -136,8 +136,8 @@ class MyViewController: BaseViewController {
             loginNow.hidden=false
             myTravelLb.text? = "我的拼团游"
             homeHouseLb.text?="我的民宿"
-//            let head=UIImage(named: "packman")
-//            self.headImage.image=head
+            let head=UIImage(named: "packman")
+            self.headImage.image=head
   
         }else{
             nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
@@ -145,11 +145,11 @@ class MyViewController: BaseViewController {
             getData()
             
              headName  =  String(headObj!)
-            if headName != "<null>"{
+            if headName != ""{
                
                 var str = Constant.host+Constant.headImageUrl+headName+".png"
                 //防止url报出空指针异常
-                str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+               // str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                 let url:NSURL = NSURL(string:str)!
                 let data=NSData(contentsOfURL: url)
                 let image = UIImage(data:data!)
