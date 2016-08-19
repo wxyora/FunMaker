@@ -20,6 +20,25 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
      var thumbQueue = NSOperationQueue()
     
+      var dataSource = NSMutableArray()
+    
+      let allData : NSMutableArray = []
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        var offset = scrollView.contentOffset;
+        var bounds = scrollView.bounds;
+        var size = scrollView.contentSize;
+        var inset = scrollView.contentInset;
+        var currentOffset = offset.y + bounds.size.height-inset.bottom;
+        var maximumOffset = size.height;
+  
+        if((currentOffset-maximumOffset)>100.0){
+    
+         
+        }
+        
+    }
+    
     
     var str = ["香港5日游","泰国8日游"]
     // @IBOutlet var searchBar: UISearchBar!
@@ -192,9 +211,17 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                         self.alert("网络异常，请重试")
                         self.clearAllNotice()
                     }else{
-                        let data : NSArray = json.objectForKey("data") as! NSArray
+                        
+                        let data : NSMutableArray = json.objectForKey("data") as! NSMutableArray
+                        
+                        for d in data{
+                            self.allData.addObject(d)
+                        }
+                        
+                        
                         dispatch_async(dispatch_get_main_queue()) {
-                            self.tableViewData = data
+
+                             self.tableViewData = self.allData
                             self.refreshControl?.endRefreshing()
                             self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
                             self.tableView.reloadData()
@@ -342,7 +369,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                     //防止url报出空指针异常
                     str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                     let url:NSURL = NSURL(string:str)!
-                    
+                  
                     let request = NSURLRequest(URL:url)
                     NSURLConnection.sendAsynchronousRequest(request, queue: thumbQueue, completionHandler: { response, data, error in
                         if (error != nil) {
