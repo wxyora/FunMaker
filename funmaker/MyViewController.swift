@@ -20,6 +20,8 @@ class MyViewController: BaseViewController {
     @IBOutlet weak var headImage: UIImageView!
     
     @IBOutlet weak var loginNow: UIButton!
+    
+    var thumbQueue = NSOperationQueue()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,6 +153,29 @@ class MyViewController: BaseViewController {
                 
                 
                 
+                
+                
+//                
+//                var str = Constant.host+Constant.headImageUrl+headName+".png"
+//                //防止url报出空指针异常
+//                str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+//                let url:NSURL = NSURL(string:str)!
+//                
+//                let request = NSURLRequest(URL:url)
+//                NSURLConnection.sendAsynchronousRequest(request, queue: thumbQueue, completionHandler: { response, data, error in
+//                    if (error != nil) {
+//                        print(error)
+//                        
+//                    } else {
+//                        let image = UIImage.init(data :data!)
+//                        dispatch_async(dispatch_get_main_queue(), {
+//                            self.headImage.image = image
+//                        })
+//                    }
+//                })
+                
+                
+                
                 let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
                 dispatch_async(dispath, { () -> Void in
                     
@@ -168,25 +193,8 @@ class MyViewController: BaseViewController {
                            self.headImage.image = ZYHImage
                         })
                     }
-                    
-                    
-                    
-                                })
-
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-               
-                
+                 })
+    
             }
 
             
