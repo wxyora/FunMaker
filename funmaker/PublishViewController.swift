@@ -20,8 +20,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     @IBOutlet weak var contact: UITextField!
     
     var message:String=""
-    
-    
+ 
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         
@@ -32,6 +31,31 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         if textField.tag == 100 {
             theme.resignFirstResponder()
             setDate()
+            return false
+        }else if textField.tag == 2 {
+            
+            let actionSheet = UIAlertController()
+            actionSheet.addAction(UIAlertAction(title: "飞机", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+                self.action.text="飞机"
+                })
+            actionSheet.addAction(UIAlertAction(title: "高铁", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+                 self.action.text="高铁"
+                })
+            actionSheet.addAction(UIAlertAction(title: "自驾游", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+                 self.action.text="自驾游"
+                })
+            actionSheet.addAction(UIAlertAction(title: "摩托车", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+                 self.action.text="摩托车"
+                })
+            actionSheet.addAction(UIAlertAction(title: "自行车", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+                 self.action.text="自行车"
+                })
+
+            
+            actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in})
+            
+            self.presentViewController(actionSheet, animated: true, completion: nil)
+            
             return false
         }else{
             return true
@@ -221,6 +245,32 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         
     }
     
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        let animationDuration=0.30;
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        let width = self.view.frame.size.width;
+        let height = self.view.frame.size.height;
+        let rect=CGRectMake(0.0,-140,width,height);
+        self.view.frame=rect;
+        UIView.commitAnimations()
+        return true
+    }
+    
+    
+    
+    
+   
+    func textViewDidEndEditing(textView: UITextView) {
+        let animationDuration=0.30;
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        let width = self.view.frame.size.width;
+        let height = self.view.frame.size.height;
+        let rect=CGRectMake(0.0,-20,width,height);
+        self.view.frame=rect;
+         UIView.commitAnimations()
+    }
     
     
     //选择日期
