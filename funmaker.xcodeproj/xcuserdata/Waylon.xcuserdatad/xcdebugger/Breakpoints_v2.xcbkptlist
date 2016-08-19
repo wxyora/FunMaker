@@ -1114,27 +1114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "funmaker/MyViewController.swift"
-            timestampString = "493267840.900154"
+            timestampString = "493268566.807682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "valideLoginState()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funmaker/MyViewController.swift"
-            timestampString = "493267842.652261"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "valideLoginState()"
             landmarkType = "5">
          </BreakpointContent>

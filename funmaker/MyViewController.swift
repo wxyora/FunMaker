@@ -147,13 +147,46 @@ class MyViewController: BaseViewController {
              headName  =  String(headObj!)
             if headName != ""{
                
-                var str = Constant.host+Constant.headImageUrl+headName+".png"
-                //防止url报出空指针异常
-               // str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-                let url:NSURL = NSURL(string:str)!
-                let data=NSData(contentsOfURL: url)
-                let image = UIImage(data:data!)
-                self.headImage.image = image
+                
+                
+                
+                
+                let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+                dispatch_async(dispath, { () -> Void in
+                    
+                    var str = Constant.host+Constant.headImageUrl+headName+".png"
+                    //防止url报出空指针异常
+                    str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+                    let url:NSURL = NSURL(string:str)!
+                    let data=NSData(contentsOfURL: url)
+                   
+                    if data != nil {
+                        let ZYHImage=UIImage(data: data!)
+                        //写缓存
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            //刷新主UI
+                           self.headImage.image = ZYHImage
+                        })
+                    }
+                    
+                    
+                    
+                                })
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+               
+                
             }
 
             
