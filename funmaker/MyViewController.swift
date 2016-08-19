@@ -52,6 +52,9 @@ class MyViewController: BaseViewController {
         //      headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
         
+        headImage.layer.borderWidth=1
+        headImage.layer.borderColor = UIColor.grayColor().CGColor
+        
         
     }
 

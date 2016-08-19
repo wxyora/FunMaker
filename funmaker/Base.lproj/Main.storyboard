@@ -1252,7 +1252,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="packman" translatesAutoresizingMaskIntoConstraints="NO" id="5yh-1v-tnt">
-                                                    <rect key="frame" x="79" y="10" width="45" height="45"/>
+                                                    <rect key="frame" x="79" y="7" width="50" height="50"/>
                                                     <gestureRecognizers/>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="vRB-t3-lPo" appends="YES" id="KqR-D1-eFp"/>

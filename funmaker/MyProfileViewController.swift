@@ -77,6 +77,10 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
 //      headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
         
+        headImage.layer.borderWidth=1
+        headImage.layer.borderColor = UIColor.grayColor().CGColor
+        
+        
         //let userInfo=NSUserDefaults.standardUserDefaults()
         let token  =  userInfo.objectForKey("token")
         let headObj = userInfo.objectForKey("headImage")
