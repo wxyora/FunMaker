@@ -128,28 +128,41 @@ class MyViewController: BaseViewController {
        
         let userInfo=NSUserDefaults.standardUserDefaults()
         let token  =  userInfo.objectForKey("token")
+        let headObj = userInfo.objectForKey("headImage")
+        var headName = ""
+        
         if token == nil{
             nickName.text = "您还没有登录哦"
             loginNow.hidden=false
             myTravelLb.text? = "我的拼团游"
             homeHouseLb.text?="我的民宿"
-            let headImage = UIImage(named: "packman")
-            self.headImage.image = headImage
-
-            
+//            let head=UIImage(named: "packman")
+//            self.headImage.image=head
+  
         }else{
             nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
             loginNow.hidden = true
-            
-        
             getData()
             
-            //从文件读取用户头像
-            let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
-            //可选绑定,若保存过用户头像则显示之
-            if let savedImage = UIImage(contentsOfFile: fullPath){
-                self.headImage.image = savedImage
+             headName  =  String(headObj!)
+            if headName != "<null>"{
+               
+                var str = Constant.host+Constant.headImageUrl+headName+".png"
+                //防止url报出空指针异常
+                str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+                let url:NSURL = NSURL(string:str)!
+                let data=NSData(contentsOfURL: url)
+                let image = UIImage(data:data!)
+                self.headImage.image = image
             }
+
+            
+            //从文件读取用户头像
+//            let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+//            //可选绑定,若保存过用户头像则显示之
+//            if let savedImage = UIImage(contentsOfFile: fullPath){
+//                self.headImage.image = savedImage
+//            }
 
             
 //            myProfile.selectionStyle=UITableViewCellSelectionStyle.Default

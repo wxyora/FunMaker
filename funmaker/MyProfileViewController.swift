@@ -207,11 +207,11 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         
     private func upload(uploadImage: UIImage,address: String) {
         
-       // self.pleaseWait()
+        self.pleaseWait()
         
         Alamofire.upload(.POST, address, multipartFormData: { (multipartFormData) in
             
-            let data = UIImagePNGRepresentation(uploadImage)?.base64EncodedDataWithOptions(NSDataBase64EncodingOptions.init(rawValue: 0))
+            let data = UIImageJPEGRepresentation(uploadImage,0.3)?.base64EncodedDataWithOptions(NSDataBase64EncodingOptions.init(rawValue: 0))
             //let data:NSString = utf8str.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.fromRaw(0)!)
             //let imageName = String(NSDate()) + ".png"
             
@@ -245,7 +245,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
             case .Failure(let error):
                 print(error)
             }
-            //self.clearAllNotice()
+            self.clearAllNotice()
         }
     }
 

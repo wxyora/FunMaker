@@ -85,11 +85,14 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                                     self.clearAllNotice()
                                 }else if String(result)=="登录成功"{
                                     //存储用户token，mobile
+                                    
                                     self.clearAllNotice()
                                     let token : AnyObject = json.objectForKey("token")!
+                                    let headImage :String = String(json.objectForKey("headImage")!)
                                     let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
                                     userInfo.setObject(token, forKey: "token")
                                     userInfo.setObject(self.userName.text, forKey: "mobile")
+                                    userInfo.setObject(headImage, forKey: "headImage")
                                     userInfo.synchronize();
                                     
                                     
