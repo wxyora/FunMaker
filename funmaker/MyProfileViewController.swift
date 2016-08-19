@@ -233,9 +233,13 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                 upload.responseJSON(completionHandler: { (response) in
                     if let myJson = response.result.value {
                         let result = String(myJson.valueForKey("result")!)
+                
                         if result=="上传成功" {
-                        
+                            let headImage = String(myJson.valueForKey("headImage")!)
                             self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
+                            let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+                            userInfo.setObject(headImage, forKey: "headImage")
+                            userInfo.synchronize();
                         }else {
                             print("上传失败")
                             self.noticeError("上传失败", autoClear: true, autoClearTime: 1)
