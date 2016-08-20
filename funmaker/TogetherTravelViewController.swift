@@ -16,6 +16,19 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var pageScrollView: UIScrollView!
     
+    
+    
+    var idleImages:NSMutableArray = []
+    var refreshingImages:NSMutableArray = []
+    var objectArr = [String]()
+    var i = 0
+    //页码
+    var pageNo:Int = 1
+    
+    //每页显示条数
+    let pageCount:Int = 2
+    
+    
     var tableViewData:AnyObject?
     
      var thumbQueue = NSOperationQueue()
@@ -23,29 +36,9 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
       var dataSource = NSMutableArray()
     
       let allData : NSMutableArray = []
+
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        var offset = scrollView.contentOffset;
-        var bounds = scrollView.bounds;
-        var size = scrollView.contentSize;
-        var inset = scrollView.contentInset;
-        var currentOffset = offset.y + bounds.size.height-inset.bottom;
-        var maximumOffset = size.height;
-  
-        if((currentOffset-maximumOffset)>100.0){
-    
-         
-        }
-        
-    }
-    
-    
-    var str = ["香港5日游","泰国8日游"]
-    // @IBOutlet var searchBar: UISearchBar!
-    
-    //    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-    //        self.searchBar.resignFirstResponder()
-    //    }
+
     
     override func viewDidLoad() {
         
@@ -118,7 +111,94 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         
          initData()
         
+        
+        
+        
+//        
+//        for(var i = 1; i<=10; i += 1){
+//            self.objectArr.append("\(i)")
+//        }
+//        
+//        // 设置普通状态的动画图片
+//        for (var i = 1; i<=60; i += 1) {
+//            let image:UIImage = UIImage(named: "dropdown_anim__000\(i)")! as UIImage
+//            idleImages.addObject(image)
+//        }
+//        
+//        // 设置普通状态的动画图片
+//        for (var i = 1; i<=3; i++) {
+//            var image: UIImage = UIImage(named: "dropdown_loading_0\(i)")! as UIImage
+//            idleImages.addObject(image)
+//        }
+        
+        //定义动画刷新Header
+//        let header:MJRefreshGifHeader = MJRefreshGifHeader(refreshingTarget: self, refreshingAction: "headerRefresh")
+//        //设置普通状态动画图片
+//        header.setImages(idleImages as [AnyObject], forState: MJRefreshState.Idle)
+//        //设置下拉操作时动画图片
+//        header.setImages(refreshingImages as [AnyObject], forState: MJRefreshState.Pulling)
+//        //设置正在刷新时动画图片
+//        header.setImages(idleImages as [AnyObject], forState: MJRefreshState.Refreshing)
+        
+        //设置mj_header
+        //self.tableView.mj_header = header
+        //普通带文字下拉刷新的定义
+        //self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "headerRefresh")
+        //普通带文字上拉加载的定义
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(TogetherTravelViewController.footerRefresh))
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
+    
+    //下拉刷新操作
+    func headerRefresh(){
+        //模拟数据请求，设置10s是为了便于观察动画
+//        self.delay(10) { () -> () in
+//            self.objectArr.removeAll()
+//            self.i = 10
+//            for self.i ; self.i<20 ; self.i++ {
+//                self.objectArr.append("\(self.i)")
+//            }
+//            //结束刷新
+//            self.tableView.mj_header.endRefreshing()
+//            self.tableView.reloadData()
+//        }
+        self.tableView.mj_footer.endRefreshing()
+        self.tableView.reloadData()
+
+        print("下拉刷新操作")
+    }
+    
+    //上拉加载操作
+    func footerRefresh(){
+        //模拟数据请求，设置10s是为了便于观察动画
+//        self.delay(10) { () -> () in
+//            let j = self.i + 10
+//            for self.i ; self.i<j ; self.i++ {
+//                self.objectArr.append("\(self.i)")
+//            }
+//            //结束刷新
+//            self.tableView.mj_footer.endRefreshing()
+//            self.tableView.reloadData()
+//        }
+        
+        self.tableView.mj_footer.endRefreshing()
+        self.refreshControl?.endRefreshing()
+        self.tableView.reloadData()
+        getData()
+       // print("上拉加载操作")
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         
@@ -137,7 +217,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.pleaseWait()
         do {
-            let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":"0","endPage":"10000"])
+            let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":"0","endPage":String(pageCount)])
             
             opt.start { response in
                 
@@ -160,15 +240,25 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                         self.alert("网络异常，请重试")
                         self.clearAllNotice()
                     }else{
-                        let data : NSArray = json.objectForKey("data") as! NSArray
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.tableViewData = data
-                            self.refreshControl?.endRefreshing()
-                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                            self.tableView.reloadData()
-                            if data.count == 0{
+       
+                        if let data : NSMutableArray = json.objectForKey("data") as? NSMutableArray{
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.allData.removeAllObjects()
+                                self.pageNo = 0
+                                for d in data{
+                                    self.allData.addObject(d)
+                                }
+                                self.tableViewData = self.allData
+                                self.refreshControl?.endRefreshing()
+                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                                self.tableView.reloadData()
+                                
+                            }
+                        }else{
+                            dispatch_async(dispatch_get_main_queue()) {
                                 self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
                             }
+                            
                         }
                     }
                     
@@ -183,11 +273,14 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     func getData(){
         
+    
+       
+        
         //开启网络请求hud
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         //self.pleaseWait()
         do {
-             let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":"0","endPage":"10000"])
+             let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":String(pageNo*pageCount+pageCount),"endPage":String(pageCount)])
             
             opt.start { response in
                 
@@ -211,29 +304,26 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                         self.alert("网络异常，请重试")
                         self.clearAllNotice()
                     }else{
-                        
-                        let data : NSMutableArray = json.objectForKey("data") as! NSMutableArray
-                        
-                        for d in data{
-                            self.allData.addObject(d)
-                        }
-                        
-                        
-                        dispatch_async(dispatch_get_main_queue()) {
-
-                             self.tableViewData = self.allData
-                            self.refreshControl?.endRefreshing()
-                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                            self.tableView.reloadData()
-                            if data.count == 0{
-                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+                        if let data : NSMutableArray = json.objectForKey("data") as? NSMutableArray{
+                            dispatch_async(dispatch_get_main_queue()) {
+                                for d in data{
+                                    self.allData.addObject(d)
+                                }
+                                self.tableViewData = self.allData
+                                self.refreshControl?.endRefreshing()
+                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                                self.tableView.reloadData()
+                                
                             }
+                        }else{
+                            dispatch_async(dispatch_get_main_queue()) {
+                             self.noticeInfo("没有信息了", autoClear: true, autoClearTime: 1)
+                            }
+                            
                         }
+                        
                     }
-                    
-                    
-                    
-                    
+ 
 //                    //关闭网络请求hud
 //                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 //                    //self.clearAllNotice()
@@ -265,6 +355,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             print("loginValidate interface got an error creating the request: \(error)")
         }
         
+         pageNo += 1
         
     }
     
@@ -282,7 +373,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         
         if(self.refreshControl?.refreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
-            getData()
+            initData()
         }
     }
 
@@ -362,8 +453,6 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             
             if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
                 let headUrl = String(image);
-                //let url:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+headUrl+".png")!
-                
                 if(headUrl != "<null>"){
                     var str = Constant.host+Constant.headImageUrl+headUrl+".png"
                     //防止url报出空指针异常

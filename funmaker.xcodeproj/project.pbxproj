@@ -9,6 +9,26 @@
 /* Begin PBXBuildFile section */
 		090FA9161D65F7E1002C8EF5 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090FA9091D65F7B8002C8EF5 /* SwiftHTTP.framework */; };
 		090FA9171D65F7E1002C8EF5 /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 090FA9091D65F7B8002C8EF5 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		091A05E31D683AB300721653 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05B71D683AB300721653 /* MJRefreshAutoFooter.m */; };
+		091A05E41D683AB300721653 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05B91D683AB300721653 /* MJRefreshBackFooter.m */; };
+		091A05E51D683AB300721653 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05BB1D683AB300721653 /* MJRefreshComponent.m */; };
+		091A05E61D683AB300721653 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05BD1D683AB300721653 /* MJRefreshFooter.m */; };
+		091A05E71D683AB300721653 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05BF1D683AB300721653 /* MJRefreshHeader.m */; };
+		091A05E81D683AB300721653 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05C41D683AB300721653 /* MJRefreshAutoGifFooter.m */; };
+		091A05E91D683AB300721653 /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05C61D683AB300721653 /* MJRefreshAutoNormalFooter.m */; };
+		091A05EA1D683AB300721653 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05C81D683AB300721653 /* MJRefreshAutoStateFooter.m */; };
+		091A05EB1D683AB300721653 /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05CB1D683AB300721653 /* MJRefreshBackGifFooter.m */; };
+		091A05EC1D683AB300721653 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05CD1D683AB300721653 /* MJRefreshBackNormalFooter.m */; };
+		091A05ED1D683AB300721653 /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05CF1D683AB300721653 /* MJRefreshBackStateFooter.m */; };
+		091A05EE1D683AB300721653 /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05D21D683AB300721653 /* MJRefreshGifHeader.m */; };
+		091A05EF1D683AB300721653 /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05D41D683AB300721653 /* MJRefreshNormalHeader.m */; };
+		091A05F01D683AB300721653 /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05D61D683AB300721653 /* MJRefreshStateHeader.m */; };
+		091A05F11D683AB300721653 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 091A05D71D683AB300721653 /* MJRefresh.bundle */; };
+		091A05F21D683AB300721653 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05DA1D683AB300721653 /* MJRefreshConst.m */; };
+		091A05F31D683AB300721653 /* NSBundle+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05DC1D683AB300721653 /* NSBundle+MJRefresh.m */; };
+		091A05F41D683AB300721653 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05DE1D683AB300721653 /* UIScrollView+MJExtension.m */; };
+		091A05F51D683AB300721653 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05E01D683AB300721653 /* UIScrollView+MJRefresh.m */; };
+		091A05F61D683AB300721653 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05E21D683AB300721653 /* UIView+MJExtension.m */; };
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
 		093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */; };
 		093310F01D6062AD007E1C96 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EF1D6062AD007E1C96 /* SwiftNotice.swift */; };
@@ -218,6 +238,46 @@
 
 /* Begin PBXFileReference section */
 		090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../Downloads/SwiftHTTP-master-4/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
+		091A05B61D683AB300721653 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
+		091A05B71D683AB300721653 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
+		091A05B81D683AB300721653 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		091A05B91D683AB300721653 /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackFooter.m; sourceTree = "<group>"; };
+		091A05BA1D683AB300721653 /* MJRefreshComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshComponent.h; sourceTree = "<group>"; };
+		091A05BB1D683AB300721653 /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
+		091A05BC1D683AB300721653 /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
+		091A05BD1D683AB300721653 /* MJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooter.m; sourceTree = "<group>"; };
+		091A05BE1D683AB300721653 /* MJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeader.h; sourceTree = "<group>"; };
+		091A05BF1D683AB300721653 /* MJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeader.m; sourceTree = "<group>"; };
+		091A05C31D683AB300721653 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
+		091A05C41D683AB300721653 /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
+		091A05C51D683AB300721653 /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		091A05C61D683AB300721653 /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
+		091A05C71D683AB300721653 /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
+		091A05C81D683AB300721653 /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
+		091A05CA1D683AB300721653 /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
+		091A05CB1D683AB300721653 /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
+		091A05CC1D683AB300721653 /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		091A05CD1D683AB300721653 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
+		091A05CE1D683AB300721653 /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
+		091A05CF1D683AB300721653 /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
+		091A05D11D683AB300721653 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshGifHeader.h; sourceTree = "<group>"; };
+		091A05D21D683AB300721653 /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshGifHeader.m; sourceTree = "<group>"; };
+		091A05D31D683AB300721653 /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshNormalHeader.h; sourceTree = "<group>"; };
+		091A05D41D683AB300721653 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshNormalHeader.m; sourceTree = "<group>"; };
+		091A05D51D683AB300721653 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshStateHeader.h; sourceTree = "<group>"; };
+		091A05D61D683AB300721653 /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshStateHeader.m; sourceTree = "<group>"; };
+		091A05D71D683AB300721653 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		091A05D81D683AB300721653 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		091A05D91D683AB300721653 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		091A05DA1D683AB300721653 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		091A05DB1D683AB300721653 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
+		091A05DC1D683AB300721653 /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
+		091A05DD1D683AB300721653 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		091A05DE1D683AB300721653 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		091A05DF1D683AB300721653 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		091A05E01D683AB300721653 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		091A05E11D683AB300721653 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		091A05E21D683AB300721653 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		0930D2621D3C68FF002AF3C5 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelViewController.swift; sourceTree = "<group>"; };
 		093310EF1D6062AD007E1C96 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
@@ -368,6 +428,101 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		091A05B41D683AB300721653 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				091A05B51D683AB300721653 /* Base */,
+				091A05C01D683AB300721653 /* Custom */,
+				091A05D71D683AB300721653 /* MJRefresh.bundle */,
+				091A05D81D683AB300721653 /* MJRefresh.h */,
+				091A05D91D683AB300721653 /* MJRefreshConst.h */,
+				091A05DA1D683AB300721653 /* MJRefreshConst.m */,
+				091A05DB1D683AB300721653 /* NSBundle+MJRefresh.h */,
+				091A05DC1D683AB300721653 /* NSBundle+MJRefresh.m */,
+				091A05DD1D683AB300721653 /* UIScrollView+MJExtension.h */,
+				091A05DE1D683AB300721653 /* UIScrollView+MJExtension.m */,
+				091A05DF1D683AB300721653 /* UIScrollView+MJRefresh.h */,
+				091A05E01D683AB300721653 /* UIScrollView+MJRefresh.m */,
+				091A05E11D683AB300721653 /* UIView+MJExtension.h */,
+				091A05E21D683AB300721653 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		091A05B51D683AB300721653 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				091A05B61D683AB300721653 /* MJRefreshAutoFooter.h */,
+				091A05B71D683AB300721653 /* MJRefreshAutoFooter.m */,
+				091A05B81D683AB300721653 /* MJRefreshBackFooter.h */,
+				091A05B91D683AB300721653 /* MJRefreshBackFooter.m */,
+				091A05BA1D683AB300721653 /* MJRefreshComponent.h */,
+				091A05BB1D683AB300721653 /* MJRefreshComponent.m */,
+				091A05BC1D683AB300721653 /* MJRefreshFooter.h */,
+				091A05BD1D683AB300721653 /* MJRefreshFooter.m */,
+				091A05BE1D683AB300721653 /* MJRefreshHeader.h */,
+				091A05BF1D683AB300721653 /* MJRefreshHeader.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		091A05C01D683AB300721653 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				091A05C11D683AB300721653 /* Footer */,
+				091A05D01D683AB300721653 /* Header */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		091A05C11D683AB300721653 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				091A05C21D683AB300721653 /* Auto */,
+				091A05C91D683AB300721653 /* Back */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		091A05C21D683AB300721653 /* Auto */ = {
+			isa = PBXGroup;
+			children = (
+				091A05C31D683AB300721653 /* MJRefreshAutoGifFooter.h */,
+				091A05C41D683AB300721653 /* MJRefreshAutoGifFooter.m */,
+				091A05C51D683AB300721653 /* MJRefreshAutoNormalFooter.h */,
+				091A05C61D683AB300721653 /* MJRefreshAutoNormalFooter.m */,
+				091A05C71D683AB300721653 /* MJRefreshAutoStateFooter.h */,
+				091A05C81D683AB300721653 /* MJRefreshAutoStateFooter.m */,
+			);
+			path = Auto;
+			sourceTree = "<group>";
+		};
+		091A05C91D683AB300721653 /* Back */ = {
+			isa = PBXGroup;
+			children = (
+				091A05CA1D683AB300721653 /* MJRefreshBackGifFooter.h */,
+				091A05CB1D683AB300721653 /* MJRefreshBackGifFooter.m */,
+				091A05CC1D683AB300721653 /* MJRefreshBackNormalFooter.h */,
+				091A05CD1D683AB300721653 /* MJRefreshBackNormalFooter.m */,
+				091A05CE1D683AB300721653 /* MJRefreshBackStateFooter.h */,
+				091A05CF1D683AB300721653 /* MJRefreshBackStateFooter.m */,
+			);
+			path = Back;
+			sourceTree = "<group>";
+		};
+		091A05D01D683AB300721653 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				091A05D11D683AB300721653 /* MJRefreshGifHeader.h */,
+				091A05D21D683AB300721653 /* MJRefreshGifHeader.m */,
+				091A05D31D683AB300721653 /* MJRefreshNormalHeader.h */,
+				091A05D41D683AB300721653 /* MJRefreshNormalHeader.m */,
+				091A05D51D683AB300721653 /* MJRefreshStateHeader.h */,
+				091A05D61D683AB300721653 /* MJRefreshStateHeader.m */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		096004621D2F977F00507D25 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +646,7 @@
 				0974B80E1D41225F002F978C /* extension */,
 				097A4EC91D40BCBD00ADA706 /* common */,
 				0974B80D1D411435002F978C /* swift-oc */,
+				091A05B41D683AB300721653 /* MJRefresh */,
 				096004641D2F979C00507D25 /* util */,
 				098890FE1D1ED5A7008D1257 /* Main.storyboard */,
 				098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */,
@@ -877,6 +1033,7 @@
 				098B88371D61EB87006B7DDA /* ShareSDK.bundle in Resources */,
 				098891001D1ED5A7008D1257 /* Main.storyboard in Resources */,
 				09F29FBF1D3F240700211E2F /* SMS_SDK in Resources */,
+				091A05F11D683AB300721653 /* MJRefresh.bundle in Resources */,
 				098B88321D61EB87006B7DDA /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -903,31 +1060,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */,
+				091A05F31D683AB300721653 /* NSBundle+MJRefresh.m in Sources */,
+				091A05F21D683AB300721653 /* MJRefreshConst.m in Sources */,
 				098890FD1D1ED5A7008D1257 /* LoginViewController.swift in Sources */,
 				09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */,
+				091A05EF1D683AB300721653 /* MJRefreshNormalHeader.m in Sources */,
+				091A05ED1D683AB300721653 /* MJRefreshBackStateFooter.m in Sources */,
 				096C23A21D57480A00256487 /* TogetherTravelCell.swift in Sources */,
 				097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
 				09CABA9D1D559E2500776C85 /* TravelListViewController.swift in Sources */,
+				091A05E51D683AB300721653 /* MJRefreshComponent.m in Sources */,
+				091A05F51D683AB300721653 /* UIScrollView+MJRefresh.m in Sources */,
+				091A05F41D683AB300721653 /* UIScrollView+MJExtension.m in Sources */,
 				096C23A61D575F8D00256487 /* IndexTravelDetailViewController.swift in Sources */,
 				09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */,
+				091A05E71D683AB300721653 /* MJRefreshHeader.m in Sources */,
+				091A05E91D683AB300721653 /* MJRefreshAutoNormalFooter.m in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
 				093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */,
 				09CABAA11D55B6A900776C85 /* MyProfileViewController.swift in Sources */,
 				09BFAEDE1D5DFCE8008EF761 /* TabBarViewController.swift in Sources */,
+				091A05E41D683AB300721653 /* MJRefreshBackFooter.m in Sources */,
+				091A05EA1D683AB300721653 /* MJRefreshAutoStateFooter.m in Sources */,
 				096C23A41D5757F100256487 /* TravelDetailViewController.swift in Sources */,
 				098B882A1D61EB87006B7DDA /* README.md in Sources */,
 				096A03601D42583C0086C906 /* GuideViewController.swift in Sources */,
 				09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */,
+				091A05F01D683AB300721653 /* MJRefreshStateHeader.m in Sources */,
 				09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */,
+				091A05F61D683AB300721653 /* UIView+MJExtension.m in Sources */,
 				09CABA9F1D55A8BB00776C85 /* HomeHotelViewController.swift in Sources */,
+				091A05E81D683AB300721653 /* MJRefreshAutoGifFooter.m in Sources */,
 				097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */,
 				0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */,
+				091A05EB1D683AB300721653 /* MJRefreshBackGifFooter.m in Sources */,
+				091A05EE1D683AB300721653 /* MJRefreshGifHeader.m in Sources */,
 				096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */,
 				093310F01D6062AD007E1C96 /* SwiftNotice.swift in Sources */,
 				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
+				091A05E31D683AB300721653 /* MJRefreshAutoFooter.m in Sources */,
+				091A05EC1D683AB300721653 /* MJRefreshBackNormalFooter.m in Sources */,
 				09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */,
+				091A05E61D683AB300721653 /* MJRefreshFooter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

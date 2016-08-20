@@ -18,3 +18,5 @@
 #import "WeiboSDK.h"
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
 
+//下来刷新及上拉加载MJRefresh
+#import "MJRefresh.h"
