@@ -26,7 +26,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     var pageNo:Int = 1
     
     //每页显示条数
-    let pageCount:Int = 2
+    let pageCount:Int = 8
     
     
     var tableViewData:AnyObject?
@@ -317,6 +317,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                             }
                         }else{
                             dispatch_async(dispatch_get_main_queue()) {
+                             self.clearAllNotice()
                              self.noticeInfo("没有信息了", autoClear: true, autoClearTime: 1)
                             }
                             
