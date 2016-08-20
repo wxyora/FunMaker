@@ -1709,7 +1709,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="sfasfasf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Di-n6-gmK">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Di-n6-gmK">
                                                     <rect key="frame" x="8" y="200" width="304" height="226"/>
                                                     <color key="backgroundColor" red="0.9419471153846154" green="0.9419471153846154" blue="0.9419471153846154" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

@@ -86,7 +86,7 @@ class IndexTravelDetailViewController: BaseViewController {
                             }else{
                                 dispatch_async(dispatch_get_main_queue()) {
                                     //self.noticeInfo("数据被删除", autoClear: true, autoClearTime: 1)
-                                    self.alert("数据被主人删除了，请下拉刷新数据。")
+                                    self.alert("数据被主人删除了，请返回刷新数据。")
                                 }
                             }
 //                            
