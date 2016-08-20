@@ -284,21 +284,24 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                         let result = String(myJson.valueForKey("result")!)
                 
                         if result=="上传成功" {
+                            
                             let headImage = String(myJson.valueForKey("headImage")!)
                             self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
                             let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
                             userInfo.setObject(headImage, forKey: "headImage")
                             userInfo.synchronize();
+                           
                         }else {
-                            print("上传失败")
-                            self.noticeError("上传失败", autoClear: true, autoClearTime: 1)
+                            self.clearAllNotice()
+                            self.noticeError("上传失败，请重试。", autoClear: true, autoClearTime: 2)
                         }
                     }
                 })
             case .Failure(let error):
-                print(error)
+                self.clearAllNotice()
+                self.noticeError(String(error), autoClear: true, autoClearTime: 2)
             }
-            self.clearAllNotice()
+            
         }
     }
 
