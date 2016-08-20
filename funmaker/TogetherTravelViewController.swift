@@ -267,7 +267,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             }
             
         } catch {
-            print("loginVaidate interface got an error creating the request: \(error)")
+              self.noticeError(String(error), autoClear: true, autoClearTime: 3)
         }
     }
     
@@ -353,7 +353,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             }
             
         } catch {
-            print("loginValidate interface got an error creating the request: \(error)")
+              self.noticeError(String(error), autoClear: true, autoClearTime: 3)
         }
         
          pageNo += 1

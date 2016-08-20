@@ -85,6 +85,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                             self.refreshControl?.endRefreshing()
                             self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
                             self.tableView.reloadData()
+                             self.clearAllNotice()
                             if data.count == 0{
                                 self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
                             }

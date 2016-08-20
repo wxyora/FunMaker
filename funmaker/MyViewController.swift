@@ -237,7 +237,7 @@ class MyViewController: BaseViewController {
     func initData(){
         //开启网络请求hud
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        //self.pleaseWait()
+        self.pleaseWait()
         do {
             let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
             
@@ -248,44 +248,29 @@ class MyViewController: BaseViewController {
                     dispatch_async(dispatch_get_main_queue()) {
                         self.clearAllNotice()
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
+                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime:2)
                     }
                 }else{
                     
                     //关闭网络请求hud
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     
-                   // self.clearAllNotice()
+                    self.clearAllNotice()
                     //把NSData对象转换回JSON对象
                     let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                     if json == nil {
                         self.alert("网络异常，请重试")
-                        self.clearAllNotice()
                     }else{
-                        
-                        
+
                         let data : NSArray = json.objectForKey("data") as! NSArray
-                        
-                        //let mobile : AnyObject = json.objectForKey("mobile")!
-                       // if data.count != 0{
-                            
-                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+  
+                            //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                             dispatch_async(dispatch_get_main_queue()) {
-                                //self.tableViewData = data
-                               // self.tableView.reloadData()
-                                
-                                var n :Int = data.count
+                                let n :Int = data.count
                                 let s = "(\(n))"
                                 self.myTravelLb.text?="我的拼团游\(s)"
                                 //self.homeHouseLb.text?="我的民宿\(s)"
                             }
-//                        }else{
-//                            
-//                            dispatch_async(dispatch_get_main_queue()) {
-//                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
-//                            }
-//                        }
-                        
                     }
                     
                 }
@@ -293,7 +278,7 @@ class MyViewController: BaseViewController {
             }
             
         } catch {
-            print("loginValidate interface got an error creating the request: \(error)")
+             self.noticeError(String(error), autoClear: true, autoClearTime: 3)
         }
     }
     
@@ -301,7 +286,7 @@ class MyViewController: BaseViewController {
         
         //开启网络请求hud
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        //self.pleaseWait()
+        self.pleaseWait()
         do {
             let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
             
@@ -312,22 +297,22 @@ class MyViewController: BaseViewController {
                     dispatch_async(dispatch_get_main_queue()) {
                         self.clearAllNotice()
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
+                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime:2)
                     }                }else{
                     
                     //关闭网络请求hud
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    //self.clearAllNotice()
+                    self.clearAllNotice()
                     //把NSData对象转换回JSON对象
                     let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                     if json == nil {
                         self.alert("网络异常，请重试")
-                        self.clearAllNotice()
+                      
                     }else{
                         let data : NSArray = json.objectForKey("data") as! NSArray
                         //let mobile : AnyObject = json.objectForKey("mobile")!
                         
-                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                          //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                             dispatch_async(dispatch_get_main_queue()) {
                                 //self.tableViewData! = data
                                 var n :Int = data.count
@@ -352,8 +337,8 @@ class MyViewController: BaseViewController {
             }
             
         } catch {
-            print("loginValidate interface got an error creating the request: \(error)")
-        }
+            self.noticeError(String(error), autoClear: true, autoClearTime: 3)
+                   }
         
         
     }
