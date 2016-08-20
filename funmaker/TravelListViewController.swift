@@ -65,7 +65,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                     dispatch_async(dispatch_get_main_queue()) {
                         self.clearAllNotice()
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
+                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
                     }
                 }else{
                     
@@ -116,7 +116,7 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
                         dispatch_async(dispatch_get_main_queue()) {
                             self.clearAllNotice()
                             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                            self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
+                            self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
                         }
                     }else{
                         

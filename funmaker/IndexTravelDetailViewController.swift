@@ -50,7 +50,7 @@ class IndexTravelDetailViewController: BaseViewController {
                     dispatch_async(dispatch_get_main_queue()) {
                         self.clearAllNotice()
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 5)
+                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
                     }
                 }else{
                     
@@ -58,46 +58,60 @@ class IndexTravelDetailViewController: BaseViewController {
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     
                     self.clearAllNotice()
+                    let iii = response.data.length
                     //把NSData对象转换回JSON对象
                     let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
                     if json == nil {
                         self.alert("网络异常，请重试")
                         self.clearAllNotice()
                     }else{
-                        
-                        
                         let data  = json.objectForKey("data")
-                        
-                        //let mobile : AnyObject = json.objectForKey("mobile")!
-                        if data !=  nil{
-                            
-                            
-                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                            dispatch_async(dispatch_get_main_queue()) {
-                                
-                                self.unionTheme.text = data!.objectForKey("unionTheme") as! String
-                                
-                                
+                        let status  = String(json.objectForKey("status")!)
+                        //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                        dispatch_async(dispatch_get_main_queue()) {
+                            if(status=="1"){
+                                let unionTheme = data!.objectForKey("unionTheme") as? String
+                                self.unionTheme.text = unionTheme
                                 if self.userInfo.stringForKey("token") != nil{
                                     self.contactWay.text = data!.objectForKey("contactWay") as! String
                                 }else{
                                     self.contactWay.text = "登陆后可见"
                                     self.contactWay.textColor = UIColor.redColor()
+                                    
                                 }
-                                
-                                
                                 self.outTime.text = data!.objectForKey("outTime") as! String
                                 self.unionContent.text = data!.objectForKey("unionContent") as! String
                                 self.reachWay.text=data!.objectForKey("reachWay") as! String
-                                
+
+                            }else{
+                                dispatch_async(dispatch_get_main_queue()) {
+                                    //self.noticeInfo("数据被删除", autoClear: true, autoClearTime: 1)
+                                    self.alert("数据被主人删除了，请下拉刷新数据。")
+                                }
                             }
-                        }else{
-                            
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
-                            }
+//                            
+//                            if let unionTheme = data!.objectForKey("unionTheme") as? String{
+//                                self.unionTheme.text = unionTheme
+//                                if self.userInfo.stringForKey("token") != nil{
+//                                    self.contactWay.text = data!.objectForKey("contactWay") as! String
+//                                }else{
+//                                    self.contactWay.text = "登陆后可见"
+//                                    self.contactWay.textColor = UIColor.redColor()
+//                                    
+//                                }
+//                                self.outTime.text = data!.objectForKey("outTime") as! String
+//                                self.unionContent.text = data!.objectForKey("unionContent") as! String
+//                                self.reachWay.text=data!.objectForKey("reachWay") as! String
+//                                
+//                            }else{
+//                                dispatch_async(dispatch_get_main_queue()) {
+//                                    //self.noticeInfo("数据被删除", autoClear: true, autoClearTime: 1)
+//                                    self.alert("数据被主人删除了，请下拉刷新数据。")
+//                                }
+//                            }
+//                            
                         }
-                        
+
                     }
                     
                 }
