@@ -45,6 +45,7 @@
 		096C23A61D575F8D00256487 /* IndexTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */; };
 		096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D25BF1D4A501900831EE7 /* PublishViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
+		096F2D1B1D694C5E004E5526 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */; };
 		0975E68C1D6549F6004C5963 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0975E67F1D654950004C5963 /* Alamofire.framework */; };
 		0975E68D1D6549F6004C5963 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0975E67F1D654950004C5963 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED51D40BD6200ADA706 /* Constant.swift */; };
@@ -294,6 +295,7 @@
 		096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTravelDetailViewController.swift; sourceTree = "<group>"; };
 		096D25BF1D4A501900831EE7 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		0975E6731D654950004C5963 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		097A4ED51D40BD6200ADA706 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		097A4ED81D40C0E200ADA706 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 		097A4EC91D40BCBD00ADA706 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */,
 				097A4ED51D40BD6200ADA706 /* Constant.swift */,
 			);
 			name = common;
@@ -1090,6 +1093,7 @@
 				09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */,
 				091A05F01D683AB300721653 /* MJRefreshStateHeader.m in Sources */,
 				09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */,
+				096F2D1B1D694C5E004E5526 /* SwiftyJSON.swift in Sources */,
 				091A05F61D683AB300721653 /* UIView+MJExtension.m in Sources */,
 				09CABA9F1D55A8BB00776C85 /* HomeHotelViewController.swift in Sources */,
 				091A05E81D683AB300721653 /* MJRefreshAutoGifFooter.m in Sources */,

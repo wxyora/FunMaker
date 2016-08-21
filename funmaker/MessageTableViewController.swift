@@ -18,13 +18,14 @@ class MessageTableViewController: UITableViewController ,UISearchBarDelegate{
         super.viewDidLoad()
         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.seachBar.delegate = self
-        //self.searchBar.delegate = self
         
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
         rc.addTarget(self, action: #selector(IndexViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = rc
         // Do any additional setup after loading the view.
+        //注册点击事件
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,6 +74,14 @@ class MessageTableViewController: UITableViewController ,UISearchBarDelegate{
             //            self.tableView.reloadData()
             
         }
+    }
+    
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended {
+            print("收回键盘")
+            seachBar.resignFirstResponder()
+        }
+        sender.cancelsTouchesInView = false
     }
 
 

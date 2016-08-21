@@ -79,6 +79,20 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         
      
     }
+    
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended {
+            //print("收回键盘")
+            dateInfo.resignFirstResponder()
+            contact.resignFirstResponder()
+            theme.resignFirstResponder()
+            action.resignFirstResponder()
+            content.resignFirstResponder()
+            
+
+        }
+        sender.cancelsTouchesInView = false
+    }
 
     
     
