@@ -261,8 +261,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="484"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="完全自主设计开发产品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niS-qS-lN4">
-                                                    <rect key="frame" x="100" y="99" width="120" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="服务于旅行者的一款产品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niS-qS-lN4">
+                                                    <rect key="frame" x="88" y="99" width="132" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -274,7 +274,7 @@
                                                         <constraint firstAttribute="height" constant="70" id="h1r-kJ-aLC"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="       暂且还没有想好怎么介绍这个产品，哈哈哈哈..........。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zDI-68-IfF">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="       此产品提供两方面的服务，一方面侧重社交服务，我们提供了结伴出行的功能，另一方面提供了到家民宿的出租服务，在旅游景点与民俗之间建立起一个很好的桥梁。让旅行者能够联系在一起并且有一个很好的住宿体验。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zDI-68-IfF">
                                                     <rect key="frame" x="40" y="132" width="240" height="276"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		090FA9161D65F7E1002C8EF5 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090FA9091D65F7B8002C8EF5 /* SwiftHTTP.framework */; };
-		090FA9171D65F7E1002C8EF5 /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 090FA9091D65F7B8002C8EF5 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		091A05E31D683AB300721653 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05B71D683AB300721653 /* MJRefreshAutoFooter.m */; };
 		091A05E41D683AB300721653 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05B91D683AB300721653 /* MJRefreshBackFooter.m */; };
 		091A05E51D683AB300721653 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05BB1D683AB300721653 /* MJRefreshComponent.m */; };
@@ -77,6 +75,9 @@
 		098B88371D61EB87006B7DDA /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 098B88221D61EB87006B7DDA /* ShareSDK.bundle */; };
 		098B88381D61EB87006B7DDA /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098B88231D61EB87006B7DDA /* ShareSDKConnector.framework */; };
 		09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* LoginedViewController.swift */; };
+		09998E891D6AA80B00619AEE /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 09998E7C1D6AA78000619AEE /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09998E8D1D6AC7A800619AEE /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09998E8B1D6AC7A800619AEE /* MOBFoundation.framework */; };
+		09998E8E1D6AC7A800619AEE /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09998E8C1D6AC7A800619AEE /* SMS_SDK.framework */; };
 		09BFAEDE1D5DFCE8008EF761 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFAEDD1D5DFCE8008EF761 /* TabBarViewController.swift */; };
 		09CABA9D1D559E2500776C85 /* TravelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CABA9C1D559E2500776C85 /* TravelListViewController.swift */; };
 		09CABA9F1D55A8BB00776C85 /* HomeHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CABA9E1D55A8BB00776C85 /* HomeHotelViewController.swift */; };
@@ -88,68 +89,11 @@
 		09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB61D3F22FE00211E2F /* MessageUI.framework */; };
 		09F29FB91D3F230900211E2F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB81D3F230900211E2F /* JavaScriptCore.framework */; };
 		09F29FBB1D3F231D00211E2F /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */; };
-		09F29FBF1D3F240700211E2F /* SMS_SDK in Resources */ = {isa = PBXBuildFile; fileRef = 09F29FBE1D3F240700211E2F /* SMS_SDK */; };
 		09F29FC11D3F244500211E2F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FC01D3F244500211E2F /* libicucore.tbd */; };
 		09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F2BA721D39380C00672B3A /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		090FA9081D65F7B8002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
-			remoteInfo = SwiftHTTP;
-		};
-		090FA90A1D65F7B8002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
-			remoteInfo = SwiftHTTPTests;
-		};
-		090FA90C1D65F7B8002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D958025919E6EEEB003C8218;
-			remoteInfo = SwiftHTTPOSX;
-		};
-		090FA90E1D65F7B8002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D958026319E6EEEB003C8218;
-			remoteInfo = SwiftHTTPOSXTests;
-		};
-		090FA9101D65F7B8002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5C135EC11C4733CD00AA3A01;
-			remoteInfo = SwiftHTTPtvOS;
-		};
-		090FA9121D65F7B8002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5C135ECA1C4733CE00AA3A01;
-			remoteInfo = SwiftHTTPtvOSTests;
-		};
-		090FA9141D65F7B8002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5C135FA91C4737E200AA3A01;
-			remoteInfo = SwiftHTTPWatchOS;
-		};
-		090FA9181D65F7E1002C8EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6BFD901519C8D8B500DD99B6;
-			remoteInfo = SwiftHTTP;
-		};
 		0975E67E1D654950004C5963 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0975E6731D654950004C5963 /* Alamofire.xcodeproj */;
@@ -220,6 +164,55 @@
 			remoteGlobalIDString = 098890F61D1ED5A7008D1257;
 			remoteInfo = funmaker;
 		};
+		09998E7B1D6AA78000619AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
+			remoteInfo = SwiftHTTP;
+		};
+		09998E7D1D6AA78000619AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
+			remoteInfo = SwiftHTTPTests;
+		};
+		09998E7F1D6AA78000619AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958025919E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSX;
+		};
+		09998E811D6AA78000619AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958026319E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSXTests;
+		};
+		09998E831D6AA78000619AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5C135EC11C4733CD00AA3A01;
+			remoteInfo = SwiftHTTPtvOS;
+		};
+		09998E851D6AA78000619AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5C135ECA1C4733CE00AA3A01;
+			remoteInfo = SwiftHTTPtvOSTests;
+		};
+		09998E871D6AA78000619AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5C135FA91C4737E200AA3A01;
+			remoteInfo = SwiftHTTPWatchOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -229,7 +222,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				090FA9171D65F7E1002C8EF5 /* SwiftHTTP.framework in Copy Frameworks */,
+				09998E891D6AA80B00619AEE /* SwiftHTTP.framework in Copy Frameworks */,
 				0975E68D1D6549F6004C5963 /* Alamofire.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -238,7 +231,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../Downloads/SwiftHTTP-master-4/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
 		091A05B61D683AB300721653 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		091A05B71D683AB300721653 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		091A05B81D683AB300721653 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -350,6 +342,9 @@
 		098B88221D61EB87006B7DDA /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
 		098B88231D61EB87006B7DDA /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
 		09988B4F1D24C3280069A65C /* LoginedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginedViewController.swift; sourceTree = "<group>"; };
+		09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../Downloads/SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
+		09998E8B1D6AC7A800619AEE /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		09998E8C1D6AC7A800619AEE /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		09BFAEDD1D5DFCE8008EF761 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		09CABA9C1D559E2500776C85 /* TravelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListViewController.swift; sourceTree = "<group>"; };
 		09CABA9E1D55A8BB00776C85 /* HomeHotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHotelViewController.swift; sourceTree = "<group>"; };
@@ -361,7 +356,6 @@
 		09F29FB61D3F22FE00211E2F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		09F29FB81D3F230900211E2F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		09F29FBE1D3F240700211E2F /* SMS_SDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SMS_SDK; sourceTree = "<group>"; };
 		09F29FC01D3F244500211E2F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		09F29FC21D3F248600211E2F /* funmaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funmaker-Bridging-Header.h"; sourceTree = "<group>"; };
 		09F2BA721D39380C00672B3A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -372,6 +366,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09998E8D1D6AC7A800619AEE /* MOBFoundation.framework in Frameworks */,
 				098B882C1D61EB87006B7DDA /* KakaoOpenSDK.framework in Frameworks */,
 				098B882D1D61EB87006B7DDA /* TencentOpenAPI.framework in Frameworks */,
 				098B88261D61EB87006B7DDA /* ShareSDKInterfaceAdapter.framework in Frameworks */,
@@ -384,7 +379,6 @@
 				09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */,
 				098B88291D61EB87006B7DDA /* libAPOpenSdk.a in Frameworks */,
 				098B88351D61EB87006B7DDA /* libYixinSDK.a in Frameworks */,
-				090FA9161D65F7E1002C8EF5 /* SwiftHTTP.framework in Frameworks */,
 				098B88251D61EB87006B7DDA /* ShareSDKExtension.framework in Frameworks */,
 				098B88361D61EB87006B7DDA /* MOBFoundation.framework in Frameworks */,
 				098B88241D61EB87006B7DDA /* ShareSDK.framework in Frameworks */,
@@ -394,6 +388,7 @@
 				098B88311D61EB87006B7DDA /* libWeiboSDK.a in Frameworks */,
 				095A696B1D3F6204009265ED /* MOBFoundation.framework in Frameworks */,
 				098B88281D61EB87006B7DDA /* ShareSDKUI.framework in Frameworks */,
+				09998E8E1D6AC7A800619AEE /* SMS_SDK.framework in Frameworks */,
 				09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */,
 				09F29FB11D3F20AD00211E2F /* SMS_SDK.framework in Frameworks */,
 			);
@@ -416,20 +411,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		090FA8F81D65F7B8002C8EF5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				090FA9091D65F7B8002C8EF5 /* SwiftHTTP.framework */,
-				090FA90B1D65F7B8002C8EF5 /* SwiftHTTPTests.xctest */,
-				090FA90D1D65F7B8002C8EF5 /* SwiftHTTP.framework */,
-				090FA90F1D65F7B8002C8EF5 /* SwiftHTTPOSXTests.xctest */,
-				090FA9111D65F7B8002C8EF5 /* SwiftHTTP.framework */,
-				090FA9131D65F7B8002C8EF5 /* SwiftHTTPtvOSTests.xctest */,
-				090FA9151D65F7B8002C8EF5 /* SwiftHTTP.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		091A05B41D683AB300721653 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,13 +592,13 @@
 		098890EE1D1ED5A7008D1257 = {
 			isa = PBXGroup;
 			children = (
-				090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */,
+				09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */,
 				0975E6731D654950004C5963 /* Alamofire.xcodeproj */,
 				098890F91D1ED5A7008D1257 /* funmaker */,
 				0988910E1D1ED5A7008D1257 /* funmakerTests */,
 				098891191D1ED5A7008D1257 /* funmakerUITests */,
 				098890F81D1ED5A7008D1257 /* Products */,
-				09F29FBE1D3F240700211E2F /* SMS_SDK */,
+				09998E8A1D6AC7A800619AEE /* SMS_SDK */,
 				098B87F01D61EB87006B7DDA /* ShareSDK */,
 				09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */,
 				09F29FB61D3F22FE00211E2F /* MessageUI.framework */,
@@ -809,6 +790,29 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		09998E6B1D6AA77F00619AEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09998E7C1D6AA78000619AEE /* SwiftHTTP.framework */,
+				09998E7E1D6AA78000619AEE /* SwiftHTTPTests.xctest */,
+				09998E801D6AA78000619AEE /* SwiftHTTP.framework */,
+				09998E821D6AA78000619AEE /* SwiftHTTPOSXTests.xctest */,
+				09998E841D6AA78000619AEE /* SwiftHTTP.framework */,
+				09998E861D6AA78000619AEE /* SwiftHTTPtvOSTests.xctest */,
+				09998E881D6AA78000619AEE /* SwiftHTTP.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09998E8A1D6AC7A800619AEE /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				09998E8B1D6AC7A800619AEE /* MOBFoundation.framework */,
+				09998E8C1D6AC7A800619AEE /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -825,7 +829,6 @@
 			);
 			dependencies = (
 				0975E68F1D6549F6004C5963 /* PBXTargetDependency */,
-				090FA9191D65F7E1002C8EF5 /* PBXTargetDependency */,
 			);
 			name = funmaker;
 			productName = funmaker;
@@ -909,8 +912,8 @@
 					ProjectRef = 0975E6731D654950004C5963 /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = 090FA8F81D65F7B8002C8EF5 /* Products */;
-					ProjectRef = 090FA8F71D65F7B8002C8EF5 /* SwiftHTTP.xcodeproj */;
+					ProductGroup = 09998E6B1D6AA77F00619AEE /* Products */;
+					ProjectRef = 09998E6A1D6AA77F00619AEE /* SwiftHTTP.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -923,55 +926,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		090FA9091D65F7B8002C8EF5 /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 090FA9081D65F7B8002C8EF5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		090FA90B1D65F7B8002C8EF5 /* SwiftHTTPTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftHTTPTests.xctest;
-			remoteRef = 090FA90A1D65F7B8002C8EF5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		090FA90D1D65F7B8002C8EF5 /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 090FA90C1D65F7B8002C8EF5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		090FA90F1D65F7B8002C8EF5 /* SwiftHTTPOSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftHTTPOSXTests.xctest;
-			remoteRef = 090FA90E1D65F7B8002C8EF5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		090FA9111D65F7B8002C8EF5 /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 090FA9101D65F7B8002C8EF5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		090FA9131D65F7B8002C8EF5 /* SwiftHTTPtvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftHTTPtvOSTests.xctest;
-			remoteRef = 090FA9121D65F7B8002C8EF5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		090FA9151D65F7B8002C8EF5 /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 090FA9141D65F7B8002C8EF5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		0975E67F1D654950004C5963 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1021,6 +975,55 @@
 			remoteRef = 0975E68A1D654950004C5963 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		09998E7C1D6AA78000619AEE /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 09998E7B1D6AA78000619AEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		09998E7E1D6AA78000619AEE /* SwiftHTTPTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPTests.xctest;
+			remoteRef = 09998E7D1D6AA78000619AEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		09998E801D6AA78000619AEE /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 09998E7F1D6AA78000619AEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		09998E821D6AA78000619AEE /* SwiftHTTPOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPOSXTests.xctest;
+			remoteRef = 09998E811D6AA78000619AEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		09998E841D6AA78000619AEE /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 09998E831D6AA78000619AEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		09998E861D6AA78000619AEE /* SwiftHTTPtvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPtvOSTests.xctest;
+			remoteRef = 09998E851D6AA78000619AEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		09998E881D6AA78000619AEE /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 09998E871D6AA78000619AEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1035,7 +1038,6 @@
 				098B88271D61EB87006B7DDA /* ShareSDKUI.bundle in Resources */,
 				098B88371D61EB87006B7DDA /* ShareSDK.bundle in Resources */,
 				098891001D1ED5A7008D1257 /* Main.storyboard in Resources */,
-				09F29FBF1D3F240700211E2F /* SMS_SDK in Resources */,
 				091A05F11D683AB300721653 /* MJRefresh.bundle in Resources */,
 				098B88321D61EB87006B7DDA /* WeiboSDK.bundle in Resources */,
 			);
@@ -1130,11 +1132,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		090FA9191D65F7E1002C8EF5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftHTTP;
-			targetProxy = 090FA9181D65F7E1002C8EF5 /* PBXContainerItemProxy */;
-		};
 		0975E68F1D6549F6004C5963 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
