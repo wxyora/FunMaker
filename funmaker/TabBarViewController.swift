@@ -22,7 +22,7 @@ class TabBarViewController: UITabBarController {
         //设置按钮位置和大小
         let swidth = UIScreen.mainScreen().bounds.width;
         let shight = UIScreen.mainScreen().bounds.height;
-        button.frame=CGRectMake((swidth-55)/2,shight-70, 55, 55)
+        button.frame=CGRectMake((swidth-55)/2,shight-65, 55, 55)
         
         button.layer.cornerRadius = 27.5
         //设置按钮文字
