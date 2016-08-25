@@ -64,7 +64,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQC-vd-Csc">
                                                     <rect key="frame" x="21" y="98" width="279" height="38"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.066666666666666666" green="0.50196078431372548" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="LlY-ha-JzL"/>
                                                     </constraints>
@@ -718,7 +718,7 @@
         <scene sceneID="Kge-Xy-Zbg">
             <objects>
                 <navigationController id="Yve-Yb-hdU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发布" image="pizza" id="xWK-rS-ewR">
+                    <tabBarItem key="tabBarItem" enabled="NO" title="发布" image="pizza" id="xWK-rS-ewR">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lbH-OI-XSn">
@@ -1204,7 +1204,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6O-Wy-Dku">
                                                     <rect key="frame" x="18" y="17" width="284" height="40"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="发布">
                                                         <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>

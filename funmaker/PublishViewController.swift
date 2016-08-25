@@ -175,6 +175,8 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
 //                                                    self.action.text=""
 //                                                    self.contact.text=""
                                                     
+                                            
+                                                    
                                                     //self.dismissViewControllerAnimated(true, completion: nil)
                                                      // self.dismissViewControllerAnimated(true, completion: nil)
                                       
