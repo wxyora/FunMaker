@@ -23,7 +23,7 @@ class Constant: NSObject {
     static var getAllUnionByPage = "/WaylonServer/getAllUnionByPage.action"
     static var headImageUrl = "/WaylonServer/image/"
     
-    //wxyora.xicp.net:39307WaylonServer/updateHeadImage.action
+    //wxyora.xicp.net:39307WaylonServer/getUnionByUser.action?mobile=15901966196
     
     
     //wxyora.xicp.net:39307/WaylonServer/getUnionByUnionId.action?userId=15901966196&unionId=6

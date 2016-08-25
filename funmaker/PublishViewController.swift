@@ -21,7 +21,12 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     
     var message:String=""
  
+    @IBOutlet weak var cancel: UIButton!
     
+    @IBAction func cancelClick(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         
         if valideLoginState()==0 {
@@ -157,18 +162,21 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
                                                
                                                 //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                                                 dispatch_async(dispatch_get_main_queue()) {
-                                                    
-                                                    self.alert("发布成功，请到<我的>中查看。")
+                                                    self.clearAllNotice()
+                                                    self.myAlert("发布成功，请到<我的>中查看。")
                                                    // let tabBarViewController = self.storyBoard.instantiateViewControllerWithIdentifier("TabBarViewController") as! TabBarViewController
                                                     //self.tabBarController?.presetViewController(tabBarViewController, animated: true)
                                                     //self.tabBarController?.tabBar.selectedItem = (self.tabBarController?.tabBar.items![3])! as UITabBarItem
-                                                    self.clearAllNotice()
+                                                   
                                                     //self.noticeInfo("发布成功", autoClear: true, autoClearTime: 2)
-                                                    self.dateInfo.text=""
-                                                    self.content.text=""
-                                                    self.theme.text=""
-                                                    self.action.text=""
-                                                    self.contact.text=""
+//                                                    self.dateInfo.text=""
+//                                                    self.content.text=""
+//                                                    self.theme.text=""
+//                                                    self.action.text=""
+//                                                    self.contact.text=""
+                                                    
+                                                    //self.dismissViewControllerAnimated(true, completion: nil)
+                                                     // self.dismissViewControllerAnimated(true, completion: nil)
                                       
                                                 }
                                             }
@@ -205,6 +213,15 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     @IBAction func date(sender: AnyObject) {
         
         setDate()
+    }
+    
+    func myAlert(message:String){
+        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
+             self.dismissViewControllerAnimated(true, completion: nil)
+            
+            })
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func setDate() {
