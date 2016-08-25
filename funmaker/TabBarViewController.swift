@@ -22,9 +22,9 @@ class TabBarViewController: UITabBarController {
         //设置按钮位置和大小
         let swidth = UIScreen.mainScreen().bounds.width;
         let shight = UIScreen.mainScreen().bounds.height;
-        button.frame=CGRectMake((swidth-60)/2,shight-75, 60, 60)
+        button.frame=CGRectMake((swidth-55)/2,shight-70, 55, 55)
         
-        button.layer.cornerRadius = 30
+        button.layer.cornerRadius = 27.5
         //设置按钮文字
         button.setTitle("发布", forState:UIControlState.Normal)
         self.view.addSubview(button);
