@@ -46,6 +46,9 @@
 		096F2D1B1D694C5E004E5526 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */; };
 		0975E68C1D6549F6004C5963 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0975E67F1D654950004C5963 /* Alamofire.framework */; };
 		0975E68D1D6549F6004C5963 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0975E67F1D654950004C5963 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0977C5931D6FE65A00798B53 /* DWBubbleMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0977C5921D6FE65A00798B53 /* DWBubbleMenuButton.swift */; };
+		0977C5971D6FEC0200798B53 /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0977C5951D6FEC0200798B53 /* PathMenu.swift */; };
+		0977C5981D6FEC0200798B53 /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0977C5961D6FEC0200798B53 /* PathMenuItem.swift */; };
 		097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED51D40BD6200ADA706 /* Constant.swift */; };
 		097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED81D40C0E200ADA706 /* CommonUtil.swift */; };
 		098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FA1D1ED5A7008D1257 /* AppDelegate.swift */; };
@@ -289,6 +292,9 @@
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		0975E6731D654950004C5963 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		0977C5921D6FE65A00798B53 /* DWBubbleMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DWBubbleMenuButton.swift; sourceTree = "<group>"; };
+		0977C5951D6FEC0200798B53 /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
+		0977C5961D6FEC0200798B53 /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
 		097A4ED51D40BD6200ADA706 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		097A4ED81D40C0E200ADA706 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		098890F71D1ED5A7008D1257 /* funmaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funmaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -580,9 +586,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0977C5941D6FEC0200798B53 /* PathMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0977C5951D6FEC0200798B53 /* PathMenu.swift */,
+				0977C5961D6FEC0200798B53 /* PathMenuItem.swift */,
+			);
+			path = PathMenu;
+			sourceTree = "<group>";
+		};
 		097A4EC91D40BCBD00ADA706 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				0977C5921D6FE65A00798B53 /* DWBubbleMenuButton.swift */,
 				096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */,
 				097A4ED51D40BD6200ADA706 /* Constant.swift */,
 			);
@@ -631,6 +647,7 @@
 				097A4EC91D40BCBD00ADA706 /* common */,
 				0974B80D1D411435002F978C /* swift-oc */,
 				091A05B41D683AB300721653 /* MJRefresh */,
+				0977C5941D6FEC0200798B53 /* PathMenu */,
 				096004641D2F979C00507D25 /* util */,
 				098890FE1D1ED5A7008D1257 /* Main.storyboard */,
 				098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */,
@@ -1065,15 +1082,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */,
+				0977C5931D6FE65A00798B53 /* DWBubbleMenuButton.swift in Sources */,
 				091A05F31D683AB300721653 /* NSBundle+MJRefresh.m in Sources */,
 				091A05F21D683AB300721653 /* MJRefreshConst.m in Sources */,
 				098890FD1D1ED5A7008D1257 /* LoginViewController.swift in Sources */,
 				09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */,
+				0977C5981D6FEC0200798B53 /* PathMenuItem.swift in Sources */,
 				091A05EF1D683AB300721653 /* MJRefreshNormalHeader.m in Sources */,
 				091A05ED1D683AB300721653 /* MJRefreshBackStateFooter.m in Sources */,
 				096C23A21D57480A00256487 /* TogetherTravelCell.swift in Sources */,
 				097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
+				0977C5971D6FEC0200798B53 /* PathMenu.swift in Sources */,
 				09CABA9D1D559E2500776C85 /* TravelListViewController.swift in Sources */,
 				091A05E51D683AB300721653 /* MJRefreshComponent.m in Sources */,
 				091A05F51D683AB300721653 /* UIScrollView+MJRefresh.m in Sources */,
