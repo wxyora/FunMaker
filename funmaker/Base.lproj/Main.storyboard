@@ -1946,17 +1946,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuideImage3" translatesAutoresizingMaskIntoConstraints="NO" id="HkC-2B-ZJ1">
-                                                    <rect key="frame" x="16" y="8" width="287" height="121"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="121"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="121" id="z3H-T0-Mqc"/>
+                                                        <constraint firstAttribute="height" constant="121" id="wdm-Hz-yoK"/>
                                                     </constraints>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="kUc-ys-l1h" appends="YES" id="qji-6b-tjT"/>
                                                     </connections>
                                                 </imageView>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuideImage1" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-fA-dUi">
-                                                    <rect key="frame" x="16" y="137" width="288" height="121"/>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="GuideImage1" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-fA-dUi">
+                                                    <rect key="frame" x="8" y="137" width="304" height="121"/>
                                                     <gestureRecognizers/>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="OSY-i8-O7f" appends="YES" id="nMK-C7-SgV"/>
@@ -1976,18 +1976,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="centerX" secondItem="oYM-4O-O8a" secondAttribute="centerX" id="5D6-59-FmU"/>
-                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="centerY" secondItem="oYM-4O-O8a" secondAttribute="centerY" id="6Rr-zy-A5O"/>
-                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="leading" secondItem="fN9-fA-dUi" secondAttribute="leading" id="84R-aG-9sq"/>
-                                                <constraint firstItem="Lvo-hi-Vri" firstAttribute="top" secondItem="HkC-2B-ZJ1" secondAttribute="bottom" constant="58" id="E9e-zv-L9a"/>
-                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="top" secondItem="HkC-2B-ZJ1" secondAttribute="bottom" constant="8" symbolic="YES" id="EH2-SS-JK8"/>
-                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="centerX" secondItem="Lvo-hi-Vri" secondAttribute="centerX" id="IGk-Pp-ynp"/>
-                                                <constraint firstItem="Lvo-hi-Vri" firstAttribute="centerY" secondItem="fN9-fA-dUi" secondAttribute="centerY" id="MQi-w6-W6B"/>
-                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="centerX" secondItem="oYM-4O-O8a" secondAttribute="centerX" id="QqS-4r-d85"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Lvo-hi-Vri" secondAttribute="bottom" constant="74" id="da5-eJ-SuZ"/>
-                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="centerX" secondItem="KFJ-ij-pNR" secondAttribute="centerX" id="ekG-FZ-oXJ"/>
-                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="leading" secondItem="KFJ-ij-pNR" secondAttribute="leadingMargin" constant="8" id="fq9-7K-Bcy"/>
-                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="top" secondItem="KFJ-ij-pNR" secondAttribute="topMargin" constant="-2" id="jGS-IG-GaB"/>
+                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="leading" secondItem="HkC-2B-ZJ1" secondAttribute="leading" id="0XA-TV-tfL"/>
+                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="leading" secondItem="KFJ-ij-pNR" secondAttribute="leadingMargin" id="2DG-We-6zY"/>
+                                                <constraint firstItem="Lvo-hi-Vri" firstAttribute="centerY" secondItem="fN9-fA-dUi" secondAttribute="centerY" id="Cxg-Si-OhN"/>
+                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="centerY" secondItem="oYM-4O-O8a" secondAttribute="centerY" id="DdB-GM-kOj"/>
+                                                <constraint firstItem="Lvo-hi-Vri" firstAttribute="leading" secondItem="oYM-4O-O8a" secondAttribute="leading" id="GAw-BX-NCZ"/>
+                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="trailing" secondItem="HkC-2B-ZJ1" secondAttribute="trailing" id="JW6-0A-Pqn"/>
+                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="top" secondItem="HkC-2B-ZJ1" secondAttribute="bottom" constant="8" symbolic="YES" id="T9N-pq-KMo"/>
+                                                <constraint firstItem="HkC-2B-ZJ1" firstAttribute="top" secondItem="KFJ-ij-pNR" secondAttribute="topMargin" constant="-2" id="U82-9J-YaD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="fN9-fA-dUi" secondAttribute="bottom" constant="24" id="VL7-Mv-vED"/>
+                                                <constraint firstItem="fN9-fA-dUi" firstAttribute="trailing" secondItem="KFJ-ij-pNR" secondAttribute="trailingMargin" id="h9i-61-7rp"/>
+                                                <constraint firstItem="Lvo-hi-Vri" firstAttribute="centerX" secondItem="fN9-fA-dUi" secondAttribute="centerX" id="jSJ-yF-itk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94194711539999998" green="0.94194711539999998" blue="0.94194711539999998" alpha="1" colorSpace="calibratedRGB"/>
