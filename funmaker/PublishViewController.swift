@@ -279,7 +279,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     }
     
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        let animationDuration=0.30;
+        let animationDuration=0.90;
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(animationDuration)
         let width = self.view.frame.size.width;
@@ -295,12 +295,12 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     
    
     func textViewDidEndEditing(textView: UITextView) {
-        let animationDuration=0.30;
+        let animationDuration=0.90;
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(animationDuration)
         let width = self.view.frame.size.width;
         let height = self.view.frame.size.height;
-        let rect=CGRectMake(0.0,-20,width,height);
+        let rect=CGRectMake(0.0,0,width,height);
         self.view.frame=rect;
          UIView.commitAnimations()
     }
