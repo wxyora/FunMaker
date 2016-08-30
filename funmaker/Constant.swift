@@ -11,7 +11,8 @@ import Foundation
 class Constant: NSObject {
     
     
-    static var host = "http://wxyora.xicp.net:39307"
+    static var host = "http://139.196.192.191:8080"
+    //static var host = "http://wxyora.xicp.net:39307"
     static var loginUrl = "/WaylonServer/loginValidate.action"
     static var registUrl = "/WaylonServer/register.action"
     static var updateHeadImage = "/WaylonServer/updateHeadImage.action"
@@ -23,10 +24,15 @@ class Constant: NSObject {
     static var getAllUnionByPage = "/WaylonServer/getAllUnionByPage.action"
     static var headImageUrl = "/WaylonServer/image/"
     
-    //wxyora.xicp.net:39307WaylonServer/getUnionByUser.action?mobile=15901966196
+    //wxyora.xicp.net:39307WaylonServer/getUnionByUser.action?userId=15901966196
     
     
-    //wxyora.xicp.net:39307/WaylonServer/getUnionByUnionId.action?userId=15901966196&unionId=6
+    //wxyora.xicp.net:39307/WaylonServer/getUnionByUnionId.action?unionId=6
+    
+    //139.196.192.191:8080/WaylonServer/getUnionByUnionId.action?unionId=86
+    
+    //139.196.192.191:8080/WaylonServer/getUnionByUser.action?userId=15901966196
+
     
 
 }
