@@ -32,7 +32,7 @@ class TabBarViewController: UITabBarController {
         let button1:UIButton = UIButton()
         //设置按钮位置和大小
      
-        button1.frame=CGRectMake((swidth-52)/2,shight-150, 52, 52)
+        button1.frame=CGRectMake((swidth-52)/2,shight-140, 52, 52)
         
         button1.layer.cornerRadius = 26
         //设置按钮文字
@@ -91,7 +91,7 @@ class TabBarViewController: UITabBarController {
         
         let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
         menu.delegate = self
-        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width/2, view.frame.size.height - 40.0)
+        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width/2, view.frame.size.height - 32.0)
         menu.menuWholeAngle = CGFloat(M_PI) - CGFloat(M_PI/1.5)
         menu.rotateAngle    = -CGFloat(M_PI_2) + CGFloat(M_PI/1.5) * 1/2
         menu.timeOffset     = 0.0
