@@ -96,7 +96,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                 let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
                 dispatch_async(dispath, { () -> Void in
                     
-                    var str = Constant.host+Constant.headImageUrl+headName+".png"
+                    var str = Constant.head_image_host+headName+".png"
                     //防止url报出空指针异常
                     str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                     let url:NSURL = NSURL(string:str)!

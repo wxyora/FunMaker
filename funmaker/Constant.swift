@@ -12,6 +12,8 @@ class Constant: NSObject {
     
     
     static var host = "http://139.196.192.191:8080"
+    //http://139.196.192.191:8080/eguest_image/
+    static var head_image_host = "http://139.196.192.191:8080/eguest_image/"
     //static var host = "http://wxyora.xicp.net:39307"
     static var loginUrl = "/WaylonServer/loginValidate.action"
     static var registUrl = "/WaylonServer/register.action"
@@ -22,8 +24,7 @@ class Constant: NSObject {
     static var getUnionByUser = "/WaylonServer/getUnionByUser.action"
     static var getUnionByUnionId = "/WaylonServer/getUnionByUnionId.action"
     static var getAllUnionByPage = "/WaylonServer/getAllUnionByPage.action"
-    static var headImageUrl = "/WaylonServer/image/"
-    
+ 
     //wxyora.xicp.net:39307WaylonServer/getUnionByUser.action?userId=15901966196
     
     

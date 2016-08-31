@@ -455,7 +455,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
                 let headUrl = String(image);
                 if(headUrl != "<null>"){
-                    var str = Constant.host+Constant.headImageUrl+headUrl+".png"
+                    var str = Constant.head_image_host+headUrl+".png"
                     //防止url报出空指针异常
                     str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                     let url:NSURL = NSURL(string:str)!
