@@ -68,10 +68,10 @@ class BBAllPhotosViewController: UIViewController, PHPhotoLibraryChangeObserver,
         
         //  添加collectionView，区分横竖屏
         if KSCREEN_WIDTH > KSCREEN_HEIGHT {
-            defaultHeight = 44
+            defaultHeight = 55
             createCollectionView(everyLineNumberOfPhoto: 7)
         } else {
-            defaultHeight = 50
+            defaultHeight = 70
             createCollectionView(everyLineNumberOfPhoto: 4)
         }
         
@@ -97,7 +97,7 @@ class BBAllPhotosViewController: UIViewController, PHPhotoLibraryChangeObserver,
         backButton.frame = CGRectMake(0, 0, 60, 30)
         backButton.setTitle("取消", forState: .Normal)
         backButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        backButton.center = CGPointMake(KSCREEN_WIDTH - 40, defaultHeight / 1.5)
+        backButton.center = CGPointMake(30, defaultHeight / 1.5)
         backButton.titleLabel?.font = UIFont.systemFontOfSize(17)
         //  注意这里给按钮添加点击方法的写法
         backButton.addTarget(self, action:#selector(BBAllPhotosViewController.dismissAction),
@@ -108,13 +108,13 @@ class BBAllPhotosViewController: UIViewController, PHPhotoLibraryChangeObserver,
         let titleLable = UILabel(frame: CGRectMake(0, 0, KSCREEN_WIDTH / 2, defaultHeight))
         titleLable.text = "全部图片"
         titleLable.textColor = UIColor.whiteColor()
-        titleLable.font = UIFont.systemFontOfSize(19)
+        titleLable.font = UIFont.systemFontOfSize(18)
         titleLable.textAlignment = .Center
         titleLable.center = CGPointMake(KSCREEN_WIDTH / 2, defaultHeight / 1.5)
         headerView.addSubview(titleLable)
         
         //  底部View，点击选择完成
-        completedButton.frame = CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, 44)
+        completedButton.frame = CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, 80)
         completedButton.addTarget(self, action: #selector(self.completedButtonClicked),
                                   forControlEvents: .TouchUpInside)
         completedButton.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
