@@ -163,7 +163,10 @@ extension TabBarViewController: PathMenuDelegate {
             self.presentViewController(publishViewController, animated: true, completion: nil)
 
         }else if idx==1 {
-            self.noticeInfo("敬请期待", autoClear: true, autoClearTime: 1)
+            //self.noticeInfo("敬请期待", autoClear: true, autoClearTime: 1)
+            
+            let photoViewController = storyBoard.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController
+            self.presentViewController(photoViewController, animated: true, completion: nil)
         }
     }
     
