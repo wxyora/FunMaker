@@ -226,7 +226,7 @@ class RegistViewController: UITableViewController ,UITextFieldDelegate{
         do {
             let opt = try HTTP.GET(Constant.host + Constant.registUrl, parameters: ["mobile":phone.text,"password":password.text])
             opt.progress = { progress in
-                print("progress: \(progress)") //this will be between 0 and 1.
+                //print("progress: \(progress)") //this will be between 0 and 1.
             }
             opt.start { response in
                 if let err = response.error {
@@ -259,12 +259,12 @@ class RegistViewController: UITableViewController ,UITextFieldDelegate{
     @IBAction func cancel(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true) {
-            print("cancel button is pressed")
+            //print("cancel button is pressed")
         }
     }
     @IBAction func save(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) {
-            print("cave button is pressed")
+            //print("cave button is pressed")
         }
         
         NSNotificationCenter.defaultCenter().postNotificationName("registerName",object: "")

@@ -348,7 +348,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         let token  =  userInfo.objectForKey("token")
         if token == nil{
             let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
-            self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+            self.presentViewController(loginViewController, animated: true, completion: nil)
             return 0
         }else{
             return 1

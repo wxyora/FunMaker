@@ -39,7 +39,7 @@ class RecentOrderViewController: BaseViewController,UISearchBarDelegate{
     
     func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
-            print("收回键盘")
+            //print("收回键盘")
             searchBar.resignFirstResponder()
         }
         sender.cancelsTouchesInView = false

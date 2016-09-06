@@ -78,7 +78,7 @@ class MessageTableViewController: UITableViewController ,UISearchBarDelegate{
     
     func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
-            print("收回键盘")
+            //print("收回键盘")
             seachBar.resignFirstResponder()
         }
         sender.cancelsTouchesInView = false

@@ -131,7 +131,7 @@ class TabBarViewController: UITabBarController {
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         
-             print(String(item.title!))
+             //print(String(item.title!))
 //        if(String(item.title!)=="发布"){
 //            let publishViewController = storyBoard.instantiateViewControllerWithIdentifier("PublishViewController") as! PublishViewController
 //            self.presentViewController(publishViewController, animated: true, completion: nil)
@@ -171,19 +171,19 @@ extension TabBarViewController: PathMenuDelegate {
     }
     
     func pathMenuWillAnimateOpen(menu: PathMenu) {
-        print("Menu will open!")
+        //print("Menu will open!")
     }
     
     func pathMenuWillAnimateClose(menu: PathMenu) {
-        print("Menu will close!")
+        //print("Menu will close!")
     }
     
     func pathMenuDidFinishAnimationOpen(menu: PathMenu) {
-        print("Menu was open!")
+        //print("Menu was open!")
     }
     
     func pathMenuDidFinishAnimationClose(menu: PathMenu) {
-        print("Menu was closed!")
+        //print("Menu was closed!")
     }
 }
 
