@@ -12,11 +12,12 @@ class Constant: NSObject {
     
     
     static var host = "http://139.196.192.191:8080"
-    //http://139.196.192.191:8080/eguest_image/
-    static var head_image_host = "http://139.196.192.191:8080/eguest_image/"
     //static var host = "http://wxyora.xicp.net:39307"
+    
+    static var head_image_host = "http://139.196.192.191:8080/eguest_image/"
     static var loginUrl = "/WaylonServer/loginValidate.action"
     static var registUrl = "/WaylonServer/register.action"
+    static var updateUserUrl = "/WaylonServer/updateUser.action"
     static var updateHeadImage = "/WaylonServer/updateHeadImage.action"
     static var findUserUrl = "/WaylonServer/findUserByMobile.action"
     static var publishUrl = "/WaylonServer/addUnion.action"

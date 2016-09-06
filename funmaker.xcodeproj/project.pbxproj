@@ -37,6 +37,7 @@
 		09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09558A511D3D10EA008A0A15 /* CustomCell.swift */; };
 		095A696B1D3F6204009265ED /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095A696A1D3F6204009265ED /* MOBFoundation.framework */; };
 		096004611D2F974200507D25 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096004601D2F974200507D25 /* IndexViewController.swift */; };
+		09641C221D7E5928000A34CB /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09641C211D7E5928000A34CB /* ModifyPasswordViewController.swift */; };
 		096A03601D42583C0086C906 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A035F1D42583C0086C906 /* GuideViewController.swift */; };
 		096C23A21D57480A00256487 /* TogetherTravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C23A11D57480A00256487 /* TogetherTravelCell.swift */; };
 		096C23A41D5757F100256487 /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C23A31D5757F100256487 /* TravelDetailViewController.swift */; };
@@ -278,6 +279,7 @@
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		095A696A1D3F6204009265ED /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = SMS_SDK/MOBFoundation.framework; sourceTree = "<group>"; };
 		096004601D2F974200507D25 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		09641C211D7E5928000A34CB /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		096A035F1D42583C0086C906 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		096C23A11D57480A00256487 /* TogetherTravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelCell.swift; sourceTree = "<group>"; };
 		096C23A31D5757F100256487 /* TravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				09BFAEDD1D5DFCE8008EF761 /* TabBarViewController.swift */,
 				093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */,
 				09F5EEC01D782B8800FC4F85 /* PhotoViewController.swift */,
+				09641C211D7E5928000A34CB /* ModifyPasswordViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -1096,6 +1099,7 @@
 				091A05F41D683AB300721653 /* UIScrollView+MJExtension.m in Sources */,
 				096C23A61D575F8D00256487 /* IndexTravelDetailViewController.swift in Sources */,
 				09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */,
+				09641C221D7E5928000A34CB /* ModifyPasswordViewController.swift in Sources */,
 				091A05E71D683AB300721653 /* MJRefreshHeader.m in Sources */,
 				091A05E91D683AB300721653 /* MJRefreshAutoNormalFooter.m in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
