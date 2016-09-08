@@ -11,6 +11,7 @@ import SwiftHTTP
 
 class IndexTravelDetailViewController: BaseViewController {
     
+
     
     
     @IBOutlet weak var unionTheme: UILabel!
@@ -18,7 +19,24 @@ class IndexTravelDetailViewController: BaseViewController {
     @IBOutlet weak var outTime: UILabel!
     @IBOutlet weak var reachWay: UILabel!
     @IBOutlet weak var unionContent: UITextView!
+    var mobile:String = ""
     
+    @IBAction func talkWithHer(sender: UIButton) {
+        
+        
+        //新建一个聊天会话View Controller对象
+        let chat = RCConversationViewController()
+        //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+        chat.conversationType = RCConversationType.ConversationType_PRIVATE
+        //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+        chat.targetId = mobile
+        //设置聊天会话界面要显示的标题
+        chat.title = mobile
+        //显示聊天会话界面
+        //self.presentViewController(chat, animated: true, completion: nil)
+        self.navigationController?.pushViewController(chat, animated: true)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +100,7 @@ class IndexTravelDetailViewController: BaseViewController {
                                 self.outTime.text = data!.objectForKey("outTime") as! String
                                 self.unionContent.text = data!.objectForKey("unionContent") as! String
                                 self.reachWay.text=data!.objectForKey("reachWay") as! String
+                                self.mobile = data!.objectForKey("userId") as! String
 
                             }else{
                                 dispatch_async(dispatch_get_main_queue()) {

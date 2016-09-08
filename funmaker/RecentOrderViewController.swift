@@ -15,7 +15,6 @@ class RecentOrderViewController: BaseViewController,UISearchBarDelegate{
 
     var str = ["景区1","景区2","景区3","景区4","景区5","景区3","景区6"]
 
-    @IBOutlet weak var searchedInfo: UITextView!
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,15 +49,15 @@ class RecentOrderViewController: BaseViewController,UISearchBarDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return str.count
-//    }
-//    
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-//        cell.textLabel?.text = str[indexPath.row]
-//        return cell
-//    }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return str.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        cell.textLabel?.text = str[indexPath.row]
+        return cell
+    }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
@@ -130,9 +129,9 @@ class RecentOrderViewController: BaseViewController,UISearchBarDelegate{
                             let msg = String(json.objectForKey("msg")!)
                             if msg=="success"{
                                 let result = String(json.objectForKey("result")!)
-                                self.searchedInfo.text = result
+                                //self.searchedInfo.text = result
                             }else{
-                                self.searchedInfo.text = "未查到相关信息"
+                                //self.searchedInfo.text = "未查到相关信息"
                             }
                         }
       
@@ -165,10 +164,10 @@ class RecentOrderViewController: BaseViewController,UISearchBarDelegate{
                     if json["msg"].string=="success" {
                         print("json：",json["result"])
                         let info = String(json["result"])
-                        self.searchedInfo.text = info
+                        //self.searchedInfo.text = info
                        
                     }else{
-                        self.searchedInfo.text = "未查到相关信息"
+                        //elf.searchedInfo.text = "未查到相关信息"
                     }
                 }
                 

@@ -21,8 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //注册发短信sdk
         SMSSDK.registerApp("152586542fe1a", withSecret:"e5cef2c86a470a123672b7cbaf12ec0e")
         
-        
-        
+        RCIM.sharedRCIM().initWithAppKey("qd46yzrf4q6yf")
+        RCIM.sharedRCIM().connectWithToken("Xj69iHhzn4MGq/iN5ETcvlbWTqS+NpaLpS/LM3YSYJwb0euN1DSYvpqAJFrWY+msJBiiR7zFiQCahgCqKnfeOW/ETl/W1yFZ5z87Q7Z6Uh0=",
+                                           success: { (userId) -> Void in
+                                            print("登陆成功。当前登录的用户ID：\(userId)")
+            }, error: { (status) -> Void in
+                print("登陆的错误码为:\(status.rawValue)")
+            }, tokenIncorrect: {
+                //token过期或者不正确。
+                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                print("token错误")
+        })
         
 //        //QQ空间
 //        ShareSDK.connectQZoneWithAppKey("1103527931", appSecret:"WEKkOPW0NJkc1cwS", qqApiInterfaceCls: QQApiInterface.classForCoder(), tencentOAuthCls: TencentOAuth.classForCoder())

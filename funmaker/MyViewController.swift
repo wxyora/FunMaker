@@ -141,7 +141,7 @@ class MyViewController: BaseViewController {
             loginNow.hidden=false
             myTravelLb.text? = "我的拼团游"
             homeHouseLb.text?="我的民宿"
-            let head=UIImage(named: "packman")
+            let head=UIImage(named: "skull")
             self.headImage.image=head
   
         }else{

@@ -46,7 +46,6 @@ public class PathMenuItem: UIImageView {
 
         self.init(frame: CGRectZero)
         self.image = image
-              
         self.highlightedImage = himg
         self.contentImageView = UIImageView(image: cimg)
         self.contentImageView?.highlightedImage = hcimg

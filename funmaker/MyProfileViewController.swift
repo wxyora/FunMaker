@@ -87,7 +87,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         var headName = ""
         
         if token == nil{
-            let head=UIImage(named: "packman")
+            let head=UIImage(named: "skull")
             self.headImage.image=head
             
         }else{

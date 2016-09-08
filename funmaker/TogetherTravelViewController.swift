@@ -10,6 +10,8 @@ import SwiftHTTP
 
 class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
+    let PopoverAnimatorWillShow = "PopoverAnimatorWillShow"
+    let PopoverAnimatorWillDismiss = "PopoverAnimatorWillDismiss"
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var progressShow: UIActivityIndicatorView?
     
@@ -201,6 +203,9 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     
     override func viewWillAppear(animated: Bool) {
+         self.tabBarController?.tabBar.hidden=false
+        // 发送通知,通知控制器即将展开
+        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillShow, object: self)
         
        
     }
@@ -505,7 +510,18 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         userInfo.synchronize()
         
         let indexTravelDetailViewController = storyBoard.instantiateViewControllerWithIdentifier("IndexTravelDetailViewController") as! IndexTravelDetailViewController
+        
+//        let unionInfoNavigation = storyBoard.instantiateViewControllerWithIdentifier("unionInfoNavigation") as! UINavigationController
+        
+        
+        //self.presentViewController(unionInfoNavigation, animated: true, completion: nil)
         self.navigationController?.pushViewController(indexTravelDetailViewController, animated: true)
+        self.tabBarController?.tabBar.hidden=true
+     
+      
+        
+        // 发送通知,通知控制器即将消失
+        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillDismiss, object: self)
         
     }
     

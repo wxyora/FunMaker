@@ -6,138 +6,51 @@
 //  Copyright © 2016年 Waylon. All rights reserved.
 //
 
-import UIKit
 
-class MessageTableViewController: UITableViewController ,UISearchBarDelegate{
+import Foundation
 
-    var str = ["敬请期待..."]
+class MessageTableViewController: RCConversationListViewController {
     
-    @IBOutlet weak var seachBar: UISearchBar!
+    let PopoverAnimatorWillShow = "PopoverAnimatorWillShow"
+    let PopoverAnimatorWillDismiss = "PopoverAnimatorWillDismiss"
+
+    
+    
     
     override func viewDidLoad() {
+        //重写显示相关的接口，必须先调用super，否则会屏蔽SDK默认的处理
         super.viewDidLoad()
-        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.seachBar.delegate = self
         
-        let rc = UIRefreshControl()
-        rc.attributedTitle = NSAttributedString(string: "下拉刷新")
-        rc.addTarget(self, action: #selector(IndexViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl = rc
-        // Do any additional setup after loading the view.
-        //注册点击事件
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+        //设置需要显示哪些类型的会话
+        self.setDisplayConversationTypes([RCConversationType.ConversationType_PRIVATE.rawValue,
+            RCConversationType.ConversationType_DISCUSSION.rawValue,
+            RCConversationType.ConversationType_CHATROOM.rawValue,
+            RCConversationType.ConversationType_GROUP.rawValue,
+            RCConversationType.ConversationType_APPSERVICE.rawValue,
+            RCConversationType.ConversationType_SYSTEM.rawValue])
+        //设置需要将哪些类型的会话在会话列表中聚合显示
+        self.setCollectionConversationType([RCConversationType.ConversationType_DISCUSSION.rawValue,
+            RCConversationType.ConversationType_GROUP.rawValue])
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return str.count
-//    }
-//    
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-//        cell.textLabel?.text = str[indexPath.row]
-//        return cell
-//    }
-//    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.seachBar.resignFirstResponder()
-    }
-    
-    func refreshTableView(){
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+         self.tabBarController!.tabBar.hidden = false
+        // 发送通知,通知控制器即将展开
+        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillShow, object: self)
         
-        if(self.refreshControl?.refreshing==true){
-            self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
-            
-            
-            
-            //add data
-            let time:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_MSEC * 1000))
-            //延迟
-            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-                //self.myLabel.text = "请点击调用按钮"
-                self.refreshControl?.endRefreshing()
-                
-                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                
-                self.tableView.reloadData()
-            }
-            
-            
-            //            refreshControl?.endRefreshing()
-            //
-            //            refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-            //
-            //            self.tableView.reloadData()
-            
-        }
     }
     
-    func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            //print("收回键盘")
-            seachBar.resignFirstResponder()
-        }
-        sender.cancelsTouchesInView = false
+    //重写RCConversationListViewController的onSelectedTableRow事件
+    override func onSelectedTableRow(conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, atIndexPath indexPath: NSIndexPath!) {
+        //打开会话界面
+        let chat = RCConversationViewController(conversationType: model.conversationType, targetId: model.targetId)
+        chat.title = model.targetId
+        self.navigationController?.pushViewController(chat, animated: true)
+        self.tabBarController!.tabBar.hidden = true
+        // 发送通知,通知控制器即将展开
+        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillDismiss, object: self)
+        
+        
     }
-
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
