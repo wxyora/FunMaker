@@ -35,6 +35,5 @@ class Constant: NSObject {
     
     //139.196.192.191:8080/WaylonServer/getUnionByUser.action?userId=15901966196
 
-    
-
+    //http://wxyora.xicp.net:39307/WaylonServer/loginValidate.action?mobile=15901966196&password=123456&heasImageUrl=xxx
 }

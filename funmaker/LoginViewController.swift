@@ -74,39 +74,44 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                                 self.alert("网络异常，请重试")
                                   self.clearAllNotice()
                             }else{
-                                let result : AnyObject = json.objectForKey("result")!
+            
+                                let json = JSON(json)
                                 
-                                //let mobile : AnyObject = json.objectForKey("mobile")!
-                                if String(result)=="用户不存在"{
-                                    self.alert("用户不存在")
-                                    self.clearAllNotice()
-                                }else if String(result)=="用户名密码不匹配"{
-                                    self.alert("用户名密码不匹配")
-                                    self.clearAllNotice()
-                                }else if String(result)=="登录成功"{
-                                    //存储用户token，mobile
+                                if json["result"].string=="登录成功" {
+                                  
+                                    let result = json["result"].string
+                                    let headImage = json["headImage"].string
+                                    let token = json["token"].string
+                                    let socketToken = json["socketToken"].string
                                     
-                                    
-                                    self.clearAllNotice()
-                                    let token : AnyObject = json.objectForKey("token")!
-                                    let headImage :String = String(json.objectForKey("headImage")!)
-                                    let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
-                                    userInfo.setObject(token, forKey: "token")
-                                    userInfo.setObject(self.userName.text, forKey: "mobile")
-                                    userInfo.setObject(headImage, forKey: "headImage")
-                                    userInfo.synchronize();
-                                    
-                                    
-                                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                    dispatch_async(dispatch_get_main_queue()) {
-                                        RCIM.sharedRCIM().userInfoDataSource = self
-                                        //[[RCIM sharedRCIM] setUserInfoDataSource:self];
-                                       //self.navigationController?.popViewControllerAnimated(true)
-                                       self.dismissViewControllerAnimated(true, completion: nil)
+                                    if result=="用户不存在"{
+                                        self.alert("用户不存在")
+                                        self.clearAllNotice()
+                                    }else if result=="用户名密码不匹配"{
+                                        self.alert("用户名密码不匹配")
+                                        self.clearAllNotice()
+                                    }else if result=="登录成功"{
+                                        self.clearAllNotice()
+                                        let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+                                        userInfo.setObject(token, forKey: "token")
+                                        userInfo.setObject(self.userName.text, forKey: "mobile")
+                                        userInfo.setObject(headImage, forKey: "headImage")
+                                        userInfo.setObject(socketToken, forKey: "socketToken")
+                                        userInfo.synchronize();
+                                        
+                                        //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                                        dispatch_async(dispatch_get_main_queue()) {
+                                            RCIM.sharedRCIM().userInfoDataSource = self
+                                            //[[RCIM sharedRCIM] setUserInfoDataSource:self];
+                                            //self.navigationController?.popViewControllerAnimated(true)
+                                            self.dismissViewControllerAnimated(true, completion: nil)
+                                        }
+                                        
                                     }
-                                   
-                                }
-                                
+                                    
+                                }else{
+                                                                   }
+
                             }
                 
                         }

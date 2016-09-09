@@ -8,8 +8,9 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
     
+
     let PopoverAnimatorWillShow = "PopoverAnimatorWillShow"
     let PopoverAnimatorWillDismiss = "PopoverAnimatorWillDismiss"
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -24,9 +25,48 @@ class TabBarViewController: UITabBarController {
         menu?.hidden = false
     }
 
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        
+        let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+        let token = userInfo.valueForKey("token")
+
+        print(viewController.title)
+        if viewController.title=="消息导航"{
+            if(token != nil){
+                let socketToken = String(userInfo.valueForKey("socketToken"))
+                RCIM.sharedRCIM().initWithAppKey("qd46yzrf4q6yf")
+                RCIM.sharedRCIM().connectWithToken(socketToken,
+                                                   success: { (userId) -> Void in
+                                                    print("登陆成功。当前登录的用户ID：\(userId)")
+                    }, error: { (status) -> Void in
+                        print("登陆的错误码为:\(status.rawValue)")
+                    }, tokenIncorrect: {
+                        //token过期或者不正确。
+                        //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                        //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                        print("token错误")
+                })
+                return true
+               
+            }else{
+                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
+                self.presentViewController(loginViewController, animated: true, completion: nil)
+                return false
+            }
+        }else{
+            return true
+ 
+        }
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //tabBarControllerDelegate委托的绑定方式
+        
+        self.delegate = self ;
         // 3.注册通知，监听菜单
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TabBarViewController.changeShow), name: PopoverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TabBarViewController.changeHidden), name: PopoverAnimatorWillDismiss, object: nil)
@@ -117,8 +157,13 @@ class TabBarViewController: UITabBarController {
     }
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        if item.title == "消息"{
         
+
+        }
     }
+    
+
     
 
 }
