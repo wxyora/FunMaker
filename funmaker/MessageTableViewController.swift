@@ -33,7 +33,7 @@ class MessageTableViewController: RCConversationListViewController {
             RCConversationType.ConversationType_GROUP.rawValue])
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(true)
          self.tabBarController!.tabBar.hidden = false
         // 发送通知,通知控制器即将展开
@@ -45,8 +45,14 @@ class MessageTableViewController: RCConversationListViewController {
     override func onSelectedTableRow(conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, atIndexPath indexPath: NSIndexPath!) {
         //打开会话界面
         let chat = RCConversationViewController(conversationType: model.conversationType, targetId: model.targetId)
-        chat.title = model.targetId
+        chat.title = "与\(model.targetId)会话"
+        chat.userName=RCIMClient.sharedRCIMClient().currentUserInfo.name
+        
         self.navigationController?.pushViewController(chat, animated: true)
+        
+        
+        
+        
         self.tabBarController!.tabBar.hidden = true
         // 发送通知,通知控制器即将展开
         NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillDismiss, object: self)

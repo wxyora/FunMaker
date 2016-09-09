@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
        // SMSSDK registerApp:appKey withSecret:appSecret
@@ -22,9 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SMSSDK.registerApp("152586542fe1a", withSecret:"e5cef2c86a470a123672b7cbaf12ec0e")
         
         RCIM.sharedRCIM().initWithAppKey("qd46yzrf4q6yf")
-        RCIM.sharedRCIM().connectWithToken("Xj69iHhzn4MGq/iN5ETcvlbWTqS+NpaLpS/LM3YSYJwb0euN1DSYvpqAJFrWY+msJBiiR7zFiQCahgCqKnfeOW/ETl/W1yFZ5z87Q7Z6Uh0=",
+        RCIM.sharedRCIM().connectWithToken("MoY0fd+QfBRg0/W1vFkT6FbWTqS+NpaLpS/LM3YSYJwb0euN1DSYvl9ge89Mr5fcv3DavaPlHJUUT86SHRGTc2CO40aN1oes",
                                            success: { (userId) -> Void in
                                             print("登陆成功。当前登录的用户ID：\(userId)")
+                                            //设置当前用户信息
+                                            let userInfo = RCUserInfo(userId: "15901966196", name: "吴某人", portrait: "http://139.196.192.191:8080/eguest_image/20160906032728.png")
+                                            RCIMClient.sharedRCIMClient().currentUserInfo = userInfo
             }, error: { (status) -> Void in
                 print("登陆的错误码为:\(status.rawValue)")
             }, tokenIncorrect: {

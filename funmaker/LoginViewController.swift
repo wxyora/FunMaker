@@ -9,7 +9,7 @@
 import UIKit
 import SwiftHTTP
 
-class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
+class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate,RCIMUserInfoDataSource {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -86,6 +86,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                                 }else if String(result)=="登录成功"{
                                     //存储用户token，mobile
                                     
+                                    
                                     self.clearAllNotice()
                                     let token : AnyObject = json.objectForKey("token")!
                                     let headImage :String = String(json.objectForKey("headImage")!)
@@ -98,6 +99,8 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                                     
                                     //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                                     dispatch_async(dispatch_get_main_queue()) {
+                                        RCIM.sharedRCIM().userInfoDataSource = self
+                                        //[[RCIM sharedRCIM] setUserInfoDataSource:self];
                                        //self.navigationController?.popViewControllerAnimated(true)
                                        self.dismissViewControllerAnimated(true, completion: nil)
                                     }
@@ -119,8 +122,13 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
         }
 
     }
+    
+    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
+        print("qweqwe")
+    }
 
-
+    
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         userName.resignFirstResponder()

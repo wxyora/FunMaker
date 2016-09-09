@@ -1959,9 +1959,12 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUL-3X-xAO">
-                                                    <rect key="frame" x="48" y="443" width="224" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUL-3X-xAO">
+                                                    <rect key="frame" x="30" y="441" width="256" height="40"/>
                                                     <color key="backgroundColor" red="0.066666666669999999" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="TIi-Qt-LWf"/>
+                                                    </constraints>
                                                     <state key="normal" title="聊聊">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1973,6 +1976,7 @@
                                             <constraints>
                                                 <constraint firstItem="amC-wG-w4I" firstAttribute="top" secondItem="NAN-Ev-zDP" secondAttribute="bottom" constant="16" id="1ZQ-vP-p9R"/>
                                                 <constraint firstItem="02V-hM-1vH" firstAttribute="top" secondItem="QOn-8I-acp" secondAttribute="bottom" constant="6" id="2ir-J2-OXy"/>
+                                                <constraint firstItem="sUL-3X-xAO" firstAttribute="centerX" secondItem="Peh-tG-zHl" secondAttribute="centerX" constant="-2" id="3of-vw-vGL"/>
                                                 <constraint firstItem="amC-wG-w4I" firstAttribute="leading" secondItem="Peh-tG-zHl" secondAttribute="leadingMargin" constant="6" id="EHj-WI-uhb"/>
                                                 <constraint firstItem="Fr5-zj-VDs" firstAttribute="leading" secondItem="Jd5-Mq-291" secondAttribute="trailing" constant="14" id="Fwy-fU-AGw"/>
                                                 <constraint firstItem="9Di-n6-gmK" firstAttribute="top" secondItem="amC-wG-w4I" secondAttribute="bottom" constant="9" id="KMS-jq-CsT"/>
@@ -1983,9 +1987,11 @@
                                                 <constraint firstItem="9Di-n6-gmK" firstAttribute="top" secondItem="Peh-tG-zHl" secondAttribute="top" constant="200" id="Obb-LH-IFm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QOn-8I-acp" secondAttribute="trailing" constant="56" id="VJa-Wa-MK2"/>
                                                 <constraint firstItem="NAN-Ev-zDP" firstAttribute="top" secondItem="02V-hM-1vH" secondAttribute="bottom" constant="34" id="XdG-lh-jZM"/>
+                                                <constraint firstItem="sUL-3X-xAO" firstAttribute="leading" secondItem="Peh-tG-zHl" secondAttribute="leadingMargin" constant="22" id="ZVr-Ef-pXI"/>
                                                 <constraint firstItem="NAN-Ev-zDP" firstAttribute="leading" secondItem="Peh-tG-zHl" secondAttribute="leading" constant="60" id="dna-PH-PSf"/>
                                                 <constraint firstItem="NAN-Ev-zDP" firstAttribute="leading" secondItem="02V-hM-1vH" secondAttribute="leading" id="gJf-73-K5u"/>
                                                 <constraint firstItem="QOn-8I-acp" firstAttribute="top" secondItem="Peh-tG-zHl" secondAttribute="topMargin" constant="16" id="gjR-ee-YrX"/>
+                                                <constraint firstItem="sUL-3X-xAO" firstAttribute="top" secondItem="9Di-n6-gmK" secondAttribute="bottom" constant="15" id="hvw-fz-PYK"/>
                                                 <constraint firstItem="QOn-8I-acp" firstAttribute="leading" secondItem="Mb0-uy-l0t" secondAttribute="trailing" constant="15" id="joR-Nc-MvV"/>
                                                 <constraint firstItem="NAN-Ev-zDP" firstAttribute="centerY" secondItem="5s1-sK-HXZ" secondAttribute="centerY" id="l5e-aN-2le"/>
                                                 <constraint firstItem="NAN-Ev-zDP" firstAttribute="leading" secondItem="QOn-8I-acp" secondAttribute="leading" id="nNK-uJ-GBb"/>

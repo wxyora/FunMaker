@@ -203,11 +203,15 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     
     override func viewWillAppear(animated: Bool) {
-         self.tabBarController?.tabBar.hidden=false
-        // 发送通知,通知控制器即将展开
-        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillShow, object: self)
         
        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tabBarController?.tabBar.hidden=false
+        // 发送通知,通知控制器即将展开
+        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillShow, object: self)
+
     }
     
     //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
