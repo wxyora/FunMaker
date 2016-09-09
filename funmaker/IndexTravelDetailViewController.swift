@@ -28,7 +28,7 @@ class IndexTravelDetailViewController: BaseViewController {
        
 
         if(token != nil){
-            let socketToken = String(userInfo.valueForKey("socketToken"))
+            let socketToken = String(userInfo.valueForKey("socketToken")!)
             RCIM.sharedRCIM().initWithAppKey("qd46yzrf4q6yf")
             RCIM.sharedRCIM().connectWithToken(socketToken,
                                                success: { (userId) -> Void in

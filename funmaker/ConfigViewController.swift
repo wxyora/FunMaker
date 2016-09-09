@@ -20,6 +20,7 @@ class ConfigViewController: BaseViewController {
         alertController.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default){ (alertAciton) -> Void in
             let userInfo=NSUserDefaults.standardUserDefaults()
             userInfo.removeObjectForKey("token")
+            userInfo.removeObjectForKey("socketToken")
             userInfo.synchronize()
             //NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
             self.navigationController?.popViewControllerAnimated(true)})
