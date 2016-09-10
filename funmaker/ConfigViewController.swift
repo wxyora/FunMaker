@@ -22,6 +22,7 @@ class ConfigViewController: BaseViewController {
             userInfo.removeObjectForKey("token")
             userInfo.removeObjectForKey("socketToken")
             userInfo.synchronize()
+            RCIM.sharedRCIM().disconnect()
             //NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
             self.navigationController?.popViewControllerAnimated(true)})
         self.presentViewController(alertController, animated: true, completion: nil)

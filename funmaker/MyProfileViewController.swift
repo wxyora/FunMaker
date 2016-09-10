@@ -288,7 +288,13 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                             self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
                             let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
                             userInfo.setObject(headImage, forKey: "headImage")
+                            userInfo.setObject(Constant.head_image_host+headImage+".png", forKey: self.getMobile())
                             userInfo.synchronize();
+                            //上传头像成功后更新本地会话显示
+                            RCIM.sharedRCIM().currentUserInfo=RCUserInfo(userId: self.getMobile(), name: self.getMobile(), portrait: Constant.head_image_host+headImage+".png")
+                            //通知融云头像发生变更
+//                            let user = RCUserInfo(userId:self.getMobile(), name: self.getMobile(), portrait:Constant.head_image_host+headImage+".png")
+//                            RCIM.sharedRCIM().refreshUserInfoCache(user, withUserId: self.getMobile())
                         }else {
                             self.noticeError("上传失败，请重试。", autoClear: true, autoClearTime: 2)
                         }

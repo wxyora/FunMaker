@@ -725,6 +725,11 @@
 					098890F61D1ED5A7008D1257 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8K9U2T8H8D;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					0988910A1D1ED5A7008D1257 = {
 						CreatedOnToolsVersion = 7.3.1;

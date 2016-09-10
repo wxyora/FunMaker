@@ -9,7 +9,7 @@
 import UIKit
 import SwiftHTTP
 
-class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate,RCIMUserInfoDataSource {
+class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDelegate {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -24,13 +24,18 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+
         userName.delegate=self
         password.delegate=self
         loginButton.layer.cornerRadius = 3
         self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
         self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
+    
+    
 
+    
     
     @IBAction func login(sender: AnyObject) {
      
@@ -77,13 +82,11 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
             
                                 let json = JSON(json)
                                 
-                                if json["result"].string=="登录成功" {
-                                  
+     
                                     let result = json["result"].string
                                     let headImage = json["headImage"].string
                                     let token = json["token"].string
                                     let socketToken = json["socketToken"].string
-                                    
                                     if result=="用户不存在"{
                                         self.alert("用户不存在")
                                         self.clearAllNotice()
@@ -91,26 +94,43 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
                                         self.alert("用户名密码不匹配")
                                         self.clearAllNotice()
                                     }else if result=="登录成功"{
+                                       
+                                        //登录成功后链接融云
+                                        RCIM.sharedRCIM().initWithAppKey(Constant.rongyun_key)
+                                        RCIM.sharedRCIM().connectWithToken(socketToken,
+                                            success: { (userId) -> Void in
+                                                print("融云登陆成功。当前登录的用户ID：\(userId)")
+                                                
+                                            }, error: { (status) -> Void in
+                                                print("登融云陆的错误码为:\(status.rawValue)")
+                                            }, tokenIncorrect: {
+                                                //token过期或者不正确。
+                                                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                                                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                                                print("token错误")
+                                        })
+
                                         self.clearAllNotice()
                                         let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
                                         userInfo.setObject(token, forKey: "token")
                                         userInfo.setObject(self.userName.text, forKey: "mobile")
                                         userInfo.setObject(headImage, forKey: "headImage")
+                                        userInfo.setObject(Constant.head_image_host+headImage!+".png", forKey: "headImageUrl")
                                         userInfo.setObject(socketToken, forKey: "socketToken")
                                         userInfo.synchronize();
                                         
                                         //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
                                         dispatch_async(dispatch_get_main_queue()) {
-                                            RCIM.sharedRCIM().userInfoDataSource = self
-                                            //[[RCIM sharedRCIM] setUserInfoDataSource:self];
-                                            //self.navigationController?.popViewControllerAnimated(true)
+                                           
+                                            
                                             self.dismissViewControllerAnimated(true, completion: nil)
                                         }
-                                        
+                                        //设置当前用户信息
+                                         RCIM.sharedRCIM().currentUserInfo=RCUserInfo(userId: self.getMobile(), name: self.getMobile(), portrait: Constant.head_image_host+headImage!+".png")
+                                       
                                     }
                                     
-                                }else{
-                                                                   }
+                             
 
                             }
                 
@@ -128,9 +148,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
 
     }
     
-    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
-        print("qweqwe")
-    }
+
 
     
     
@@ -147,6 +165,9 @@ class LoginViewController: BaseViewController,UITextFieldDelegate,UITextViewDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
 
 
 }

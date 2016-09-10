@@ -465,6 +465,8 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
                 let headUrl = String(image);
                 if(headUrl != "<null>"){
                     var str = Constant.head_image_host+headUrl+".png"
+                    userInfo.setValue(str, forKey: mobile)
+                    userInfo.synchronize()
                     //防止url报出空指针异常
                     str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                     let url:NSURL = NSURL(string:str)!
@@ -485,7 +487,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
 
             }
 
-            
+          
            
             //let head = UIImage(data: data!)
             

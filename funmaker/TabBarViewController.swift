@@ -31,22 +31,10 @@ class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
         let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
         let token = userInfo.valueForKey("token")
 
-        print(viewController.title)
+        //print(viewController.title)
         if viewController.title=="消息导航"{
             if(token != nil){
-                let socketToken = String(userInfo.valueForKey("socketToken")!)
-                RCIM.sharedRCIM().initWithAppKey("qd46yzrf4q6yf")
-                RCIM.sharedRCIM().connectWithToken(socketToken,
-                                                   success: { (userId) -> Void in
-                                                    print("登陆成功。当前登录的用户ID：\(userId)")
-                    }, error: { (status) -> Void in
-                        print("登陆的错误码为:\(status.rawValue)")
-                    }, tokenIncorrect: {
-                        //token过期或者不正确。
-                        //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
-                        //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
-                        print("token错误")
-                })
+                
                 return true
                
             }else{
@@ -63,7 +51,7 @@ class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarItem.badgeValue="2"
         //tabBarControllerDelegate委托的绑定方式
         
         self.delegate = self ;
@@ -171,7 +159,7 @@ class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
 
 extension TabBarViewController: PathMenuDelegate {
     func pathMenu(menu: PathMenu, didSelectIndex idx: Int) {
-        print("Select the index : \(idx)")
+        //print("Select the index : \(idx)")
         menu.menuItems.first?.hidden=true
         menu.menuItems[1].hidden=true
         if idx == 0{

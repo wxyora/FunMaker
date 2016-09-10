@@ -149,10 +149,10 @@ class MyViewController: BaseViewController {
             loginNow.hidden = true
             getData()
             
-             headName  =  String(headObj!)
-            if headName != ""{
+            
+            if headObj != nil{
                
-                
+                 headName  =  String(headObj!)
                 
                 
                 
