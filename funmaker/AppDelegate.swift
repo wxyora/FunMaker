@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application.applicationIconBadgeNumber = 0
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        print("123")
+    }
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
        // SMSSDK registerApp:appKey withSecret:appSecret
@@ -36,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SMSSDK.registerApp("152586542fe1a", withSecret:"e5cef2c86a470a123672b7cbaf12ec0e")
        
         
-        application.applicationIconBadgeNumber=0
+        //application.applicationIconBadgeNumber=0
        
         let mobile = userInfo.stringForKey("mobile")
 
