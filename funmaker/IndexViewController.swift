@@ -15,10 +15,10 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
     
 
     
-    @IBAction func hotelImageOnclick(sender: AnyObject) {
-        
-        self.noticeInfo("敬请期待...", autoClear: true, autoClearTime: 1)
-    }
+//    @IBAction func hotelImageOnclick(sender: AnyObject) {
+//        
+//        self.noticeInfo("敬请期待...", autoClear: true, autoClearTime: 1)
+//    }
     
    // @IBOutlet var searchBar: UISearchBar!
     

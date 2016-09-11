@@ -67,6 +67,7 @@
 		09CABA9F1D55A8BB00776C85 /* HomeHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CABA9E1D55A8BB00776C85 /* HomeHotelViewController.swift */; };
 		09CABAA11D55B6A900776C85 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CABAA01D55B6A900776C85 /* MyProfileViewController.swift */; };
 		09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */; };
+		09EDE6B91D84F2F9002219D8 /* AtHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EDE6B81D84F2F9002219D8 /* AtHomeViewController.swift */; };
 		09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */; };
 		09F29FB11D3F20AD00211E2F /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */; };
 		09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */; };
@@ -298,6 +299,7 @@
 		09CABA9E1D55A8BB00776C85 /* HomeHotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHotelViewController.swift; sourceTree = "<group>"; };
 		09CABAA01D55B6A900776C85 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
+		09EDE6B81D84F2F9002219D8 /* AtHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtHomeViewController.swift; sourceTree = "<group>"; };
 		09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
 		09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -509,6 +511,7 @@
 				093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */,
 				09F5EEC01D782B8800FC4F85 /* PhotoViewController.swift */,
 				09641C211D7E5928000A34CB /* ModifyPasswordViewController.swift */,
+				09EDE6B81D84F2F9002219D8 /* AtHomeViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				091A05ED1D683AB300721653 /* MJRefreshBackStateFooter.m in Sources */,
 				096C23A21D57480A00256487 /* TogetherTravelCell.swift in Sources */,
 				097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */,
+				09EDE6B91D84F2F9002219D8 /* AtHomeViewController.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
 				09CABA9D1D559E2500776C85 /* TravelListViewController.swift in Sources */,
 				0939D4991D7EB626004FF56E /* PathMenu.swift in Sources */,

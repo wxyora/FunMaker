@@ -32,15 +32,18 @@ class MessageTableViewController: RCConversationListViewController,RCIMUserInfoD
                         //let result = String(myJson.valueForKey("result")!)
                         let userInfoTemp = myJson.objectForKey("userInfo")
                         let headImage = String(userInfoTemp!.valueForKey("headImage")!)
+                        let nickName = String(userInfoTemp!.valueForKey("nickName")!)
                         let headImageUrlNew = Constant.head_image_host+headImage+".png"
                         
                         
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             userInfo.setValue(headImageUrlNew, forKey: userId)
                             userInfo.synchronize()
-                            
+                            var nickName = userId
+                            let subRange=Range(start: nickName.startIndex.advancedBy(3), end: nickName.startIndex.advancedBy(7)) //Swift 2.0
+                            nickName.replaceRange(subRange, with: "****")
                             //刷新主UI
-                            let userInfo1 = RCUserInfo(userId: userId, name: userId, portrait:headImageUrlNew)
+                            let userInfo1 = RCUserInfo(userId: userId, name: nickName, portrait:headImageUrlNew)
                             return completion(userInfo1)
                         })
                     }
