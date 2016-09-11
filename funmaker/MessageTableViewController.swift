@@ -94,7 +94,10 @@ class MessageTableViewController: RCConversationListViewController,RCIMUserInfoD
     override func onSelectedTableRow(conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, atIndexPath indexPath: NSIndexPath!) {
         //打开会话界面
         let chat = RCConversationViewController(conversationType: model.conversationType, targetId: model.targetId)
-        chat.title = "与\(model.targetId)会话"
+        var nickName = model.targetId
+        let subRange=Range(start: nickName.startIndex.advancedBy(3), end: nickName.startIndex.advancedBy(7)) //Swift 2.0
+        nickName.replaceRange(subRange, with: "****")
+        chat.title = "与\(nickName)会话"
          //RCIM.sharedRCIM().globalMessageAvatarStyle = .USER_AVATAR_CYCLE
          RCIM.sharedRCIM().enableTypingStatus = true
        
