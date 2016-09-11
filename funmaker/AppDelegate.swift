@@ -13,46 +13,42 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
 
-//    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
-//        let userInfo = NSUserDefaults.standardUserDefaults()
-//        let mobile = userInfo.stringForKey("mobile")
-//        if userId != mobile{
-//            let userInfo = RCUserInfo(userId: userId, name: "张三", portrait: "http://139.196.192.191:8080/eguest_image/20160906032728.png")
-//            return completion(userInfo)
-//        }
-//    }
-    
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-         application.applicationIconBadgeNumber = 0
-    }
-    
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        print("123")
-    }
+
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-       // SMSSDK registerApp:appKey withSecret:appSecret
+
         //注册发短信sdk
-        
         SMSSDK.registerApp("152586542fe1a", withSecret:"e5cef2c86a470a123672b7cbaf12ec0e")
        
         
-        //application.applicationIconBadgeNumber=0
+        application.applicationIconBadgeNumber=0
        
-        let mobile = userInfo.stringForKey("mobile")
+        let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
 
         let socketTokenObj = userInfo.objectForKey("socketToken")
-        let headImageUrl = userInfo.stringForKey("headImageUrl")
+
         if socketTokenObj != nil{
             RCIM.sharedRCIM().initWithAppKey(Constant.rongyun_key)
             RCIM.sharedRCIM().connectWithToken(String(socketTokenObj!),
                                                success: { (userId) -> Void in
                                                 print("融云登陆成功。当前登录的用户ID：\(userId)")
-                                                //RCIM.sharedRCIM().userInfoDataSource=self
-                            
-//                                                RCIM.sharedRCIM().currentUserInfo=RCUserInfo(userId: mobile, name: mobile, portrait: headImageUrl)
+                             
+                }, error: { (status) -> Void in
+                    print("融云登陆的错误码为:\(status.rawValue)")
+                }, tokenIncorrect: {
+                    //token过期或者不正确。
+                    //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                    //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                    print("token错误")
+            })
+        }else{
+            //解决游客身份应用从后台到前台的闪退问题
+            RCIM.sharedRCIM().initWithAppKey(Constant.rongyun_key)
+            RCIM.sharedRCIM().connectWithToken(String("未登录token"),
+                                               success: { (userId) -> Void in
+                                                print("融云登陆成功。当前登录的用户ID：\(userId)")
+                                                
                 }, error: { (status) -> Void in
                     print("融云登陆的错误码为:\(status.rawValue)")
                 }, tokenIncorrect: {
@@ -87,24 +83,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
         let pushNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
         application.registerUserNotificationSettings(pushNotificationSettings)
-        application.registerForRemoteNotifications()
+        //application.registerForRemoteNotifications()
       
         return true
     }
     
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+          application.registerForRemoteNotifications()
+    }
+    
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        print("DEVICE TOKEN = \(deviceToken)")
-        
-//        NSString *token =
-//            [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"
-//                withString:@""] stringByReplacingOccurrencesOfString:@">"
-//        withString:@""]
-//        stringByReplacingOccurrencesOfString:@" "
-//        withString:@""];
+       
         
         let token = deviceToken.description.stringByReplacingOccurrencesOfString("<", withString: "").stringByReplacingOccurrencesOfString(">", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "")
-        //[[RCIMClient sharedRCIMClient] setDeviceToken:token];
+  
         RCIMClient.sharedRCIMClient().setDeviceToken(token)
+        print("DEVICE TOKEN = \(token)")
     }
 
     func applicationWillResignActive(application: UIApplication) {

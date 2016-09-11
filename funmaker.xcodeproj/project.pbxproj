@@ -211,6 +211,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0915E9271D84D91400509CEE /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
 		091A05B61D683AB300721653 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		091A05B71D683AB300721653 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		091A05B81D683AB300721653 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -647,6 +648,7 @@
 		637284B30BDF6D86B5C41CD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0915E9271D84D91400509CEE /* dylib1.o */,
 				62CCD018FABD1C88FBD53A5D /* libPods-funmaker.a */,
 			);
 			name = Frameworks;
@@ -726,8 +728,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8K9U2T8H8D;
 						SystemCapabilities = {
-							com.apple.Push = {
+							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1176,7 +1181,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.funny.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "57462b63-0349-4aa9-9ef6-a800256f25f5";
 				SWIFT_OBJC_BRIDGING_HEADER = "funmaker/funmaker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1214,7 +1219,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.funny.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "70bcd82e-188b-49c1-8578-9659672df84c";
 				SWIFT_OBJC_BRIDGING_HEADER = "funmaker/funmaker-Bridging-Header.h";
 			};
 			name = Release;
