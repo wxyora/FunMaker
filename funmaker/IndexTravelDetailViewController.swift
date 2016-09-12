@@ -48,9 +48,13 @@ class IndexTravelDetailViewController: BaseViewController {
             chat.title = "与\(nickName)会话"
             //设置聊天会话界面要显示的标题
             //chat.title = mobile
-            
-            //显示聊天会话界面
-            self.navigationController?.pushViewController(chat, animated: true)
+            if mobile == self.getMobile(){
+                self.noticeInfo("勿自言自语", autoClear: true, autoClearTime: 1)
+            }else{
+                //显示聊天会话界面
+                self.navigationController?.pushViewController(chat, animated: true)
+            }
+           
         }else{
             let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
             self.presentViewController(loginViewController, animated: true, completion: nil)

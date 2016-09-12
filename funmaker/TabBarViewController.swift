@@ -169,28 +169,28 @@ extension TabBarViewController: PathMenuDelegate {
         }else if idx==1 {
             //self.noticeInfo("敬请期待", autoClear: true, autoClearTime: 1)
             
-            let photoViewController = storyBoard.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController
-            self.presentViewController(photoViewController, animated: true, completion: nil)
+//            let photoViewController = storyBoard.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController
+//            self.presentViewController(photoViewController, animated: true, completion: nil)
         }
     }
     
     func pathMenuWillAnimateOpen(menu: PathMenu) {
-        print("Menu will open!")
+        //print("Menu will open!")
      menu.menuItems.first?.hidden=false
          menu.menuItems[1].hidden=false
-
+        
     }
     
     func pathMenuWillAnimateClose(menu: PathMenu) {
-        print("Menu will close!")
+        //print("Menu will close!")
     }
     
     func pathMenuDidFinishAnimationOpen(menu: PathMenu) {
-        print("Menu was open!")
+        //print("Menu was open!")
     }
     
     func pathMenuDidFinishAnimationClose(menu: PathMenu) {
-        print("Menu was closed!")
+        //print("Menu was closed!")
         menu.menuItems.first?.hidden=true
         menu.menuItems[1].hidden=true
       

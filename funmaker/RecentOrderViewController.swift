@@ -13,7 +13,7 @@ import Alamofire
 
 class RecentOrderViewController: BaseViewController,UISearchBarDelegate{
 
-    var str = ["景区1","景区2","景区3","景区4","景区5","景区3","景区6"]
+    var str = ["可以根据查询信息制定最佳出行方案"]
 
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
