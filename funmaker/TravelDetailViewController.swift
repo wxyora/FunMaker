@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import SwiftHTTP
+import Alamofire
+
 class TravelDetailViewController: BaseViewController {
     
     @IBOutlet weak var unionTheme: UILabel!
@@ -25,28 +26,28 @@ class TravelDetailViewController: BaseViewController {
 //    let unionContent = data!.objectForKey("unionContent") as! String
 //    let contactWay = data!.objectForKey("contactWay") as! String
     
-    @IBAction func deleteByUnion(sender: AnyObject) {
+    @IBAction func deleteByUnion(_ sender: AnyObject) {
         
-        let alertController:UIAlertController!=UIAlertController(title: "", message: "您确定要删除？", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-        alertController.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default){ (alertAciton) -> Void in
+        let alertController:UIAlertController!=UIAlertController(title: "", message: "您确定要删除？", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel){ (alertAciton) -> Void in })
+        alertController.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.default){ (alertAciton) -> Void in
              self.deleteUnion()
           
             
             })
-        self.presentViewController(alertController, animated: true, completion:nil)
+        self.present(alertController, animated: true, completion:nil)
        
     }
 
     
-    @IBAction func editAction(sender: AnyObject) {
+    @IBAction func editAction(_ sender: AnyObject) {
         //editItem.setTitleTextAttributes([String : "ddd"]?, forState: UIControlState.Normal.)
         if editItem.title == "编辑"{
              editItem.title="完成"
-            deleteButton.hidden=false
+            deleteButton.isHidden=false
         }else{
             editItem.title="编辑"
-            deleteButton.hidden=true
+            deleteButton.isHidden=true
         }
         
     }
@@ -58,69 +59,40 @@ class TravelDetailViewController: BaseViewController {
      
         
                             //开启网络请求hud
-                            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+                            //UIApplication.shared.isNetworkActivityIndicatorVisible = true
                             self.pleaseWait()
-                            do {
-                                let unionId = userInfo.stringForKey("unionId")
-                                let opt = try HTTP.GET(Constant.host+Constant.deleteUnion, parameters: ["unionId":unionId])
-                                //                    opt.progress = { progress in
-                                //                        print("progress: \(progress)") //this will be between 0 and 1.
-                                //                    }
-                                opt.start { response in
-                                    
-                                    if let err = response.error {
-                                        //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                        dispatch_async(dispatch_get_main_queue()) {
-                                            self.clearAllNotice()
-                                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                                            self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
-                                        }
-                                    }else{
-                                        
-                                        //关闭网络请求hud
-                                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                                        
-                                        self.clearAllNotice()
-                                        //把NSData对象转换回JSON对象
-                                        let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                                        if json == nil {
-                                            self.alert("网络异常，请重试")
-                                           
-                                        }else{
-                                            
-                                            let result : AnyObject = json.objectForKey("result")!
-                                            
-                                            //let mobile : AnyObject = json.objectForKey("mobile")!
-                                            let str = String(result)
-                                            if str=="删除成功"{
-                                                
-                                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                                dispatch_async(dispatch_get_main_queue()) {
-                                                   
-                                                    self.noticeInfo("删除成功", autoClear: true, autoClearTime: 1)
-                                                   self.navigationController?.popViewControllerAnimated(true)
-                                                   
-                                                }
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
+        
                                 
-                            } catch {
-                                print("loginValidate interface got an error creating the request: \(error)")
-                            }
-                            
-        
-                        
-        
-                    
-        
-                
-        
-            
+                                
+                                let unionId = userInfo.string(forKey: "unionId")
+
+                                Alamofire.request(Constant.host+Constant.deleteUnion,method:.get, parameters: ["unionId":unionId!])
+                                    .responseJSON { response in
+                                        
+                                        if let myJson = response.result.value {
+                                            let dict = myJson as! Dictionary<String,AnyObject>
+                                            //let origin = dict["origin"] as! String
+                                            let result = dict["result"] as! String
+                                            
+                                          
+                                            
+                                          
+                                                DispatchQueue.main.async { [weak self] in
+                                                    
+                                                    if result=="删除成功"{
+                                                        
+                                                        //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
+                                                        
+                                                            self?.noticeInfo("删除成功", autoClear: true, autoClearTime: 1)
+                                                            self?.navigationController?.popViewController(animated: true)
+                                                            
+                                                    }
+                                                    
+                                                }
+                                     }
+                                        
+                                }
+
         
         
         
@@ -148,139 +120,46 @@ class TravelDetailViewController: BaseViewController {
     
     func initData(){
         //开启网络请求hud
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.pleaseWait()
-        do {
-            let unionId = userInfo.stringForKey("unionId")
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUnionId, parameters: ["unionId":unionId])
+        
             
-            opt.start { response in
-                
-                if let err = response.error {
-                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.clearAllNotice()
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
-                    }
-                }else{
+            
+            
+            let unionId = userInfo.string(forKey: "unionId")
+            
+            Alamofire.request(Constant.host+Constant.getUnionByUnionId,method:.get, parameters: ["unionId":unionId!])
+                .responseJSON { response in
                     
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    if let myJson = response.result.value {
+                        let dict = myJson as! Dictionary<String,AnyObject>
+                        let data = dict["data"] as! Dictionary<String,AnyObject>
                     
-                    self.clearAllNotice()
-                    //把NSData对象转换回JSON对象
-                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                    if json == nil {
-                        self.alert("网络异常，请重试")
-                        self.clearAllNotice()
-                    }else{
+         
                         
                         
-                        let data  = json.objectForKey("data")
-                        
-                        //let mobile : AnyObject = json.objectForKey("mobile")!
-                        if data !=  nil{
+                        DispatchQueue.main.async { [weak self] in
                             
+                            self?.unionTheme.text = data["unionTheme"] as? String
+                            self?.contactWay.text =  data["contactWay"] as? String
+                            self?.outTime.text =  data["outTime"] as? String
+                            self?.unionContent.text =  data["unionContent"] as? String
+                            self?.reachWay.text = data["reachWay"] as? String
                             
-                            //                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                            dispatch_async(dispatch_get_main_queue()) {
-                                
-                                self.unionTheme.text = data!.objectForKey("unionTheme") as! String
-                                self.contactWay.text = data!.objectForKey("contactWay") as! String
-                                self.outTime.text = data!.objectForKey("outTime") as! String
-                                self.unionContent.text = data!.objectForKey("unionContent") as! String
-                                self.reachWay.text=data!.objectForKey("reachWay") as! String
-
-                            }
-                        }else{
-                            
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
-                            }
                         }
-                        
+                    }else{
+                         self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
                     }
                     
-                }
-                
+                     self.clearAllNotice()
+                    
             }
-            
-        } catch {
-            print("loginValidate interface got an error creating the request: \(error)")
-        }
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-//    
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-//
-//        // Configure the cell...
-//
-//        return cell
-//    }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

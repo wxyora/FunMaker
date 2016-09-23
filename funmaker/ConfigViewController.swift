@@ -13,28 +13,28 @@ class ConfigViewController: BaseViewController {
     @IBOutlet weak var loginOutButton: UIButton!
 
   
-    @IBAction func loginOut(sender: AnyObject) {
+    @IBAction func loginOut(_ sender: AnyObject) {
         
-        let alertController:UIAlertController!=UIAlertController(title: "", message: "您确定要注销？", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-        alertController.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default){ (alertAciton) -> Void in
-            let userInfo=NSUserDefaults.standardUserDefaults()
-            userInfo.removeObjectForKey("token")
-            userInfo.removeObjectForKey("socketToken")
+        let alertController:UIAlertController!=UIAlertController(title: "", message: "您确定要注销？", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel){ (alertAciton) -> Void in })
+        alertController.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.default){ (alertAciton) -> Void in
+            let userInfo=UserDefaults.standard
+            userInfo.removeObject(forKey: "token")
+            userInfo.removeObject(forKey: "socketToken")
             userInfo.synchronize()
-            RCIM.sharedRCIM().disconnect()
+            RCIM.shared().disconnect()
             //NSNotificationCenter.defaultCenter().postNotificationName("LoginOutSuccessNotification", object:nil)
-            self.navigationController?.popViewControllerAnimated(true)})
-        self.presentViewController(alertController, animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)})
+        self.present(alertController, animated: true, completion: nil)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         let token = getToken()
         if token.isEmpty{
-          loginOutButton.hidden = true
+          loginOutButton.isHidden = true
         }else{
-             loginOutButton.hidden = false
+             loginOutButton.isHidden = false
         }
         
         loginOutButton.layer.cornerRadius=3
@@ -49,14 +49,14 @@ class ConfigViewController: BaseViewController {
     }
     
   
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let token = getToken()
-        if indexPath.row == 0{
+        if (indexPath as NSIndexPath).row == 0{
             if token.isEmpty{
-                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
-                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+                let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! UINavigationController
+                self.navigationController?.present(loginViewController, animated: true, completion: nil)
             }else{
-                let myProfileViewController = storyBoard.instantiateViewControllerWithIdentifier("MyProfileViewController") as! MyProfileViewController
+                let myProfileViewController = storyBoard.instantiateViewController(withIdentifier: "MyProfileViewController") as! MyProfileViewController
                 self.navigationController?.pushViewController(myProfileViewController, animated: true)
             }
             

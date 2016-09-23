@@ -23,7 +23,7 @@ class TogetherTravelCell: UITableViewCell {
         // Initialization code
         
         //从文件读取用户头像
-        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent("currentImage.png")
+        let fullPath = ((NSHomeDirectory() as NSString) .appendingPathComponent("Documents") as NSString).appendingPathComponent("currentImage.png")
         //可选绑定,若保存过用户头像则显示之
         if let savedImage = UIImage(contentsOfFile: fullPath){
             self.myHeadImage.image = savedImage
@@ -31,7 +31,7 @@ class TogetherTravelCell: UITableViewCell {
         
         myHeadImage.layer.borderWidth=1
         myHeadImage.layer.cornerRadius=6
-        myHeadImage.layer.borderColor = UIColor.grayColor().CGColor
+        myHeadImage.layer.borderColor = UIColor.gray.cgColor
         
         
         
@@ -44,7 +44,7 @@ class TogetherTravelCell: UITableViewCell {
 
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

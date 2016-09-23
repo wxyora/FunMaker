@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftHTTP
+
 import Alamofire
 
 class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -17,28 +17,28 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     @IBOutlet weak var headImage: UIImageView!
     //UIImageView监听 1 uiimageview上增加tap gesture recognizer 2 uiimageview 开启user interaction enabled 3 controller最上面gesture图标拖拽action
     
-    @IBAction func changeHeadImage(sender: AnyObject) {
+    @IBAction func changeHeadImage(_ sender: AnyObject) {
         takePhoto()
         
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 2{
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).row == 2{
             takePhoto()
         }
     }
     
     func takePhoto(){
         let actionSheet = UIAlertController()
-        actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.destructive) { (alertAciton) -> Void in
             
             //判断是否能进行拍照，可以的话打开相机
-            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let picker = UIImagePickerController()
-                picker.sourceType = .Camera
+                picker.sourceType = .camera
                 picker.delegate = self
                 picker.allowsEditing = true
-                self.presentViewController(picker, animated: true, completion: nil)
+                self.present(picker, animated: true, completion: nil)
                 
             }
             else
@@ -48,18 +48,18 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
             
             
             })
-        actionSheet.addAction(UIAlertAction(title: "打开相册", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "打开相册", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
             //调用相册功能，打开相册
             let picker = UIImagePickerController()
-            picker.sourceType = .PhotoLibrary
+            picker.sourceType = .photoLibrary
             picker.delegate = self
             picker.allowsEditing = true
-            self.presentViewController(picker, animated: true, completion: nil)
+            self.present(picker, animated: true, completion: nil)
             })
         
-        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in})
+        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (alertAciton) -> Void in})
         
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     
@@ -73,17 +73,18 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         
         //设置头像圆角
         headImage.layer.cornerRadius = headImage.frame.width/2
+        print(headImage.frame.width/2)
         //设置遮盖额外部分,下面两句的意义及实现是相同的
 //      headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
         
         headImage.layer.borderWidth=1
-        headImage.layer.borderColor = UIColor.grayColor().CGColor
+        headImage.layer.borderColor = UIColor.gray.cgColor
         
         
         //let userInfo=NSUserDefaults.standardUserDefaults()
-        let token  =  userInfo.objectForKey("token")
-        let headObj = userInfo.objectForKey("headImage")
+        let token  =  userInfo.object(forKey: "token")
+        let headObj = userInfo.object(forKey: "headImage")
         var headName = ""
         
         if token == nil{
@@ -91,21 +92,21 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
             self.headImage.image=head
             
         }else{
-            headName  =  String(headObj!)
+            headName  =  String(describing: headObj!)
             if headName != ""{
-                let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-                dispatch_async(dispath, { () -> Void in
+                let dispath=DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high)
+                dispath.async(execute: { () -> Void in
                     
                     var str = Constant.head_image_host+headName+".png"
                     //防止url报出空指针异常
-                    str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-                    let url:NSURL = NSURL(string:str)!
-                    let data=NSData(contentsOfURL: url)
+                    str = str.addingPercentEscapes(using: String.Encoding.utf8)!
+                    let url:URL = URL(string:str)!
+                    let data=try? Data(contentsOf: url)
                     
                     if data != nil {
                         let ZYHImage=UIImage(data: data!)
                         //写缓存
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        DispatchQueue.main.async(execute: { () -> Void in
                             //刷新主UI
                             self.headImage.image = ZYHImage
                         })
@@ -141,22 +142,22 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
     }
     
     //MARK: - 保存图片至沙盒
-    func saveImage(currentImage:UIImage,imageName:String){
-        var imageData = NSData()
+    func saveImage(_ currentImage:UIImage,imageName:String){
+        var imageData = Data()
         imageData = UIImageJPEGRepresentation(currentImage, 0.5)!
         // 获取沙盒目录
-        let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent(imageName)
+        let fullPath = ((NSHomeDirectory() as NSString).appendingPathComponent("Documents") as NSString).appendingPathComponent(imageName)
         // 将图片写入文件
-        imageData.writeToFile(fullPath, atomically: false)
+        try? imageData.write(to: URL(fileURLWithPath: fullPath), options: [])
     }
     
     //UIImagePicker回调方法
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         //获取照片的原图
         //let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
         //获得编辑后的图片
-       let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
+       let image = (info as NSDictionary).object(forKey: UIImagePickerControllerEditedImage)
        let imageData = UIImageJPEGRepresentation(image as! UIImage, 0.5)!
         //保存图片至沙盒
        //self.saveImage(image as! UIImage, imageName: "currentImage.png")
@@ -167,7 +168,7 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
        // var fileURL = NSURL(fileURLWithPath: fullPath)
         upload(savedImage!,address: Constant.host + Constant.updateHeadImage)//上传
         
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
         
 
   
@@ -177,121 +178,45 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-//    let fileUrl = NSURL(fileURLWithPath: "/Users/dalton/Desktop/testfile")!
-//    do {
-//    let opt = try HTTP.POST("https://domain.com/new", parameters: ["aParam": "aValue", "file": Upload(fileUrl: fileUrl)])
-//    opt.start { response in
-//    //do things...
-//    }
-//    } catch let error {
-//        print("got an error creating the request: \(error)")
-//    }
-    
-    
-    func upload(image:UIImage,fileURL:NSURL){
 
-        Alamofire.upload(.POST,Constant.host + Constant.updateHeadImage, file: fileURL)
-            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                print(totalBytesWritten)
-            }
-            .response(completionHandler: { (equest, response, json, error) in
-                // print(String(json?.valueForKey("result")))
-                
-            })
         
-        
-
-        }
-    
-
-    
-//        // 先获取图片的 data
-//        let imageData = UIImagePNGRepresentation(image)
-//        // 把 data 转成 Base64 的 string
-//        let imageString = imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-//        
-//        //var data:NSData = UIImageJPEGRepresentation(image, 1.0)!;
-//        //开启网络请求hud
-//        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-//        self.pleaseWait()
-//       
-//        do {
-//            // fileUrl = NSURL.fileURLWithPath("/Users/Waylon/Desktop/1.png")
-//            let opt = try HTTP.POST(Constant.host + Constant.updateHeadImage, parameters: ["mobile":getMobile(),"headImage":image])
-//    
-//            
-//            opt.start { response in
-//                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-//                if let err = response.error {
-//                    self.alert(err.localizedDescription)
-//                    self.clearAllNotice()
-//                    return
-//                }
-//                
-//                dispatch_async(dispatch_get_main_queue()) {
-//                     self.clearAllNotice()
-//                    //把NSData对象转换回JSON对象
-//                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-//                    let result : AnyObject = json.objectForKey("result")!
-//                    // let data : UIImage = json.objectForKey("data") as! UIImage
-//                    if String(result)=="上传成功"{
-//                        self.headImage.image = image
-//                        self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
-//                    }else{
-//                        self.noticeError("上传失败", autoClear: true, autoClearTime: 1)
-//                    }
-//                    
-//
-//                }
-//                
-//                
-//                
-//            }
-//        } catch let error {
-//            print("loginValidate interface got an error creating the request: \(error)")
-//        }
-//        
-        
-    private func upload(uploadImage: UIImage,address: String) {
+     func upload(_ uploadImage: UIImage,address: String) {
         
         self.pleaseWait()
         
-        Alamofire.upload(.POST, address, multipartFormData: { (multipartFormData) in
+        //Alamofire.upload(multipartFormData: (MultipartFormData) -> Void, to: URLConvertible, encodingCompletion: <#T##((SessionManager.MultipartFormDataEncodingResult) -> Void)?##((SessionManager.MultipartFormDataEncodingResult) -> Void)?##(SessionManager.MultipartFormDataEncodingResult) -> Void#>)
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
             
-            let data = UIImageJPEGRepresentation(uploadImage,0.3)?.base64EncodedDataWithOptions(NSDataBase64EncodingOptions.init(rawValue: 0))
-            //let data:NSString = utf8str.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.fromRaw(0)!)
-            //let imageName = String(NSDate()) + ".png"
-            
-            //multipartFormData.appendBodyPart(data: ,name: ,fileName: ,mimeType: )这里把图片转为二进制,作为第一个参数
-           // multipartFormData.appendBodyPart(data: data!, name: "headImage", fileName: imageName, mimeType: "image/png")
-             multipartFormData.appendBodyPart(data: data!, name:"headImage")
+            let data = UIImageJPEGRepresentation(uploadImage,0.3)?.base64EncodedData(options: Data.Base64EncodingOptions.init(rawValue: 0))
+
+            multipartFormData.append(data!, withName: "headImage")
             //把剩下的两个参数作为字典,利用 multipartFormData.appendBodyPart(data: name: )添加参数,
             //因为这个方法的第一个参数接收的是NSData类型,所以要利用 NSUTF8StringEncoding 把字符串转为NSData
             let param = ["mobile":self.getMobile()]
             
             //遍历字典
             for (key, value) in param {
-                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
+                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
             
-        }) { (encodingResult) in
+        },to:address) { (encodingResult) in
             switch encodingResult {
-            case .Success(let upload, _, _):
+            case .success(let upload, _, _):
                 upload.responseJSON(completionHandler: { (response) in
                     if let myJson = response.result.value {
-                        let result = String(myJson.valueForKey("result")!)
+                        let json = myJson as! Dictionary<String,AnyObject>
+                        let result = json["result"] as! String
                         self.clearAllNotice()
                         if result=="上传成功" {
-                            let headImage = String(myJson.valueForKey("headImage")!)
+                            let headImage = String(describing: json["headImage"]!)
                             self.noticeSuccess("上传成功", autoClear: true, autoClearTime: 1)
-                            let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
-                            userInfo.setObject(headImage, forKey: "headImage")
-                            userInfo.setObject(Constant.head_image_host+headImage+".png", forKey: self.getMobile())
+                            let userInfo:UserDefaults=UserDefaults.standard
+                            userInfo.set(headImage, forKey: "headImage")
+                            userInfo.set(Constant.head_image_host+headImage+".png", forKey: self.getMobile())
                             userInfo.synchronize();
                             //上传头像成功后更新本地会话显示
-                            RCIM.sharedRCIM().currentUserInfo=RCUserInfo(userId: self.getMobile(), name: self.getMobile(), portrait: Constant.head_image_host+headImage+".png")
+                            RCIM.shared().currentUserInfo=RCUserInfo(userId: self.getMobile(), name: self.getMobile(), portrait: Constant.head_image_host+headImage+".png")
                             //通知融云头像发生变更
 //                            let user = RCUserInfo(userId:self.getMobile(), name: self.getMobile(), portrait:Constant.head_image_host+headImage+".png")
 //                            RCIM.sharedRCIM().refreshUserInfoCache(user, withUserId: self.getMobile())
@@ -300,88 +225,11 @@ class MyProfileViewController:BaseViewController,UIImagePickerControllerDelegate
                         }
                     }
                 })
-            case .Failure(let error):
+            case .failure(let error):
                 self.clearAllNotice()
-                self.noticeError(String(error), autoClear: true, autoClearTime: 2)
+                self.noticeError(String(describing: error), autoClear: true, autoClearTime: 2)
             }
             
         }
     }
-
-    
-//    func saveImage(currentImage:UIImage,imageName:NSString){
-//        var imageData:NSData = UIImageJPEGRepresentation(currentImage, 0.5)
-//        var fullPath:String = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent(imageName as String)
-//        imageData.writeToFile(fullPath as String, atomically: false)
-//        var fileURL = NSURL(fileURLWithPath: fullPath)
-//        
-//        }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

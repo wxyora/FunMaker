@@ -27,21 +27,17 @@
 		091A05F41D683AB300721653 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05DE1D683AB300721653 /* UIScrollView+MJExtension.m */; };
 		091A05F51D683AB300721653 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05E01D683AB300721653 /* UIScrollView+MJRefresh.m */; };
 		091A05F61D683AB300721653 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 091A05E21D683AB300721653 /* UIView+MJExtension.m */; };
+		092ED3A81D952216004E9711 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092ED3A61D952216004E9711 /* MOBFoundation.framework */; };
+		092ED3A91D952216004E9711 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092ED3A71D952216004E9711 /* SMS_SDK.framework */; };
 		0930D2631D3C68FF002AF3C5 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930D2621D3C68FF002AF3C5 /* MyViewController.swift */; };
-		093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */; };
 		093310F01D6062AD007E1C96 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093310EF1D6062AD007E1C96 /* SwiftNotice.swift */; };
 		093310F51D60991A007E1C96 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 093310F41D60991A007E1C96 /* libsqlite3.tbd */; };
 		093310F71D609939007E1C96 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093310F61D609939007E1C96 /* ImageIO.framework */; };
 		093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */; };
-		0939D4991D7EB626004FF56E /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939D4971D7EB626004FF56E /* PathMenu.swift */; };
-		0939D49A1D7EB626004FF56E /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939D4981D7EB626004FF56E /* PathMenuItem.swift */; };
-		0939D4CC1D7EC2B1004FF56E /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0939D4A61D7EC29A004FF56E /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0939D4CD1D7EC2B8004FF56E /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0939D4BF1D7EC2A1004FF56E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		093C0F691D33775F007C62BC /* RecentOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093C0F681D33775F007C62BC /* RecentOrderViewController.swift */; };
 		09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09558A511D3D10EA008A0A15 /* CustomCell.swift */; };
-		095721CD1D813C9400A19936 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 095721CC1D813C9400A19936 /* Podfile */; };
-		095A696B1D3F6204009265ED /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095A696A1D3F6204009265ED /* MOBFoundation.framework */; };
 		096004611D2F974200507D25 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096004601D2F974200507D25 /* IndexViewController.swift */; };
+		09627BC31D8E943A00CA3D71 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 09627BC21D8E943A00CA3D71 /* Podfile */; };
 		09641C221D7E5928000A34CB /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09641C211D7E5928000A34CB /* ModifyPasswordViewController.swift */; };
 		096A03601D42583C0086C906 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A035F1D42583C0086C906 /* GuideViewController.swift */; };
 		096C23A21D57480A00256487 /* TogetherTravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C23A11D57480A00256487 /* TogetherTravelCell.swift */; };
@@ -49,7 +45,6 @@
 		096C23A61D575F8D00256487 /* IndexTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */; };
 		096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D25BF1D4A501900831EE7 /* PublishViewController.swift */; };
 		096E68D01D21168000501D5B /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096E68CF1D21168000501D5B /* RegistViewController.swift */; };
-		096F2D1B1D694C5E004E5526 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */; };
 		097A4ED61D40BD6200ADA706 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED51D40BD6200ADA706 /* Constant.swift */; };
 		097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A4ED81D40C0E200ADA706 /* CommonUtil.swift */; };
 		098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098890FA1D1ED5A7008D1257 /* AppDelegate.swift */; };
@@ -57,144 +52,23 @@
 		098891001D1ED5A7008D1257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098890FE1D1ED5A7008D1257 /* Main.storyboard */; };
 		098891021D1ED5A7008D1257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098891011D1ED5A7008D1257 /* Assets.xcassets */; };
 		098891051D1ED5A7008D1257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */; };
-		098891101D1ED5A7008D1257 /* funmakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988910F1D1ED5A7008D1257 /* funmakerTests.swift */; };
-		0988911B1D1ED5A7008D1257 /* funmakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */; };
 		09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09988B4F1D24C3280069A65C /* LoginedViewController.swift */; };
-		09998E8D1D6AC7A800619AEE /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09998E8B1D6AC7A800619AEE /* MOBFoundation.framework */; };
-		09998E8E1D6AC7A800619AEE /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09998E8C1D6AC7A800619AEE /* SMS_SDK.framework */; };
 		09BFAEDE1D5DFCE8008EF761 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFAEDD1D5DFCE8008EF761 /* TabBarViewController.swift */; };
 		09CABA9D1D559E2500776C85 /* TravelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CABA9C1D559E2500776C85 /* TravelListViewController.swift */; };
 		09CABA9F1D55A8BB00776C85 /* HomeHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CABA9E1D55A8BB00776C85 /* HomeHotelViewController.swift */; };
 		09CABAA11D55B6A900776C85 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CABAA01D55B6A900776C85 /* MyProfileViewController.swift */; };
+		09EA1C821D927EC400657F75 /* TogetherTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA1C811D927EC400657F75 /* TogetherTravelViewController.swift */; };
 		09EC2B331D48AD9D009EFD76 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */; };
 		09EDE6B91D84F2F9002219D8 /* AtHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EDE6B81D84F2F9002219D8 /* AtHomeViewController.swift */; };
 		09F0D5EC1D4A07ED00DA6234 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */; };
-		09F29FB11D3F20AD00211E2F /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */; };
 		09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */; };
 		09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB61D3F22FE00211E2F /* MessageUI.framework */; };
 		09F29FB91D3F230900211E2F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FB81D3F230900211E2F /* JavaScriptCore.framework */; };
 		09F29FBB1D3F231D00211E2F /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */; };
 		09F29FC11D3F244500211E2F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F29FC01D3F244500211E2F /* libicucore.tbd */; };
 		09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F2BA721D39380C00672B3A /* BaseViewController.swift */; };
-		09F5EEB01D782AC300FC4F85 /* BBAllPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5EEAF1D782AC300FC4F85 /* BBAllPhotosViewController.swift */; };
-		09F5EEC11D782B8800FC4F85 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5EEC01D782B8800FC4F85 /* PhotoViewController.swift */; };
-		CD396C3B92A534832FF68DF7 /* libPods-funmaker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CCD018FABD1C88FBD53A5D /* libPods-funmaker.a */; };
+		73F3A101678DB0A65B0CE756 /* Pods_funmaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108250AAE6E69BC606D017C9 /* Pods_funmaker.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0939D4A51D7EC29A004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
-			remoteInfo = SwiftHTTP;
-		};
-		0939D4A71D7EC29A004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
-			remoteInfo = SwiftHTTPTests;
-		};
-		0939D4A91D7EC29A004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D958025919E6EEEB003C8218;
-			remoteInfo = SwiftHTTPOSX;
-		};
-		0939D4AB1D7EC29A004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D958026319E6EEEB003C8218;
-			remoteInfo = SwiftHTTPOSXTests;
-		};
-		0939D4AD1D7EC29A004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5C135EC11C4733CD00AA3A01;
-			remoteInfo = SwiftHTTPtvOS;
-		};
-		0939D4AF1D7EC29A004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5C135ECA1C4733CE00AA3A01;
-			remoteInfo = SwiftHTTPtvOSTests;
-		};
-		0939D4B11D7EC29A004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5C135FA91C4737E200AA3A01;
-			remoteInfo = SwiftHTTPWatchOS;
-		};
-		0939D4BE1D7EC2A1004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
-		0939D4C01D7EC2A1004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS Tests";
-		};
-		0939D4C21D7EC2A1004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
-			remoteInfo = "Alamofire OSX";
-		};
-		0939D4C41D7EC2A1004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
-			remoteInfo = "Alamofire OSX Tests";
-		};
-		0939D4C61D7EC2A1004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS";
-		};
-		0939D4C81D7EC2A1004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS Tests";
-		};
-		0939D4CA1D7EC2A1004FF56E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4202FE01B667AA100C997FB;
-			remoteInfo = "Alamofire watchOS";
-		};
-		0988910C1D1ED5A7008D1257 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 098890EF1D1ED5A7008D1257 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 098890F61D1ED5A7008D1257;
-			remoteInfo = funmaker;
-		};
-		098891171D1ED5A7008D1257 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 098890EF1D1ED5A7008D1257 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 098890F61D1ED5A7008D1257;
-			remoteInfo = funmaker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		090ACEB61D40896400C33E51 /* Copy Frameworks */ = {
@@ -203,8 +77,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0939D4CD1D7EC2B8004FF56E /* Alamofire.framework in Copy Frameworks */,
-				0939D4CC1D7EC2B1004FF56E /* SwiftHTTP.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +84,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0915E9271D84D91400509CEE /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
 		091A05B61D683AB300721653 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		091A05B71D683AB300721653 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		091A05B81D683AB300721653 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -253,21 +124,17 @@
 		091A05E01D683AB300721653 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		091A05E11D683AB300721653 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		091A05E21D683AB300721653 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		092ED3A61D952216004E9711 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		092ED3A71D952216004E9711 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		0930D2621D3C68FF002AF3C5 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelViewController.swift; sourceTree = "<group>"; };
 		093310EF1D6062AD007E1C96 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		093310F41D60991A007E1C96 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		093310F61D609939007E1C96 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		093398DF1D3CBA6C0065BEE5 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
-		0939D4971D7EB626004FF56E /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
-		0939D4981D7EB626004FF56E /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
-		0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../Desktop/SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
-		0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Desktop/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		093C0F681D33775F007C62BC /* RecentOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentOrderViewController.swift; sourceTree = "<group>"; };
 		09558A511D3D10EA008A0A15 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		095721CC1D813C9400A19936 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		095A696A1D3F6204009265ED /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = SMS_SDK/MOBFoundation.framework; sourceTree = "<group>"; };
 		096004601D2F974200507D25 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		09627BC21D8E943A00CA3D71 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		09641C211D7E5928000A34CB /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		096A035F1D42583C0086C906 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		096C23A11D57480A00256487 /* TogetherTravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelCell.swift; sourceTree = "<group>"; };
@@ -275,7 +142,6 @@
 		096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTravelDetailViewController.swift; sourceTree = "<group>"; };
 		096D25BF1D4A501900831EE7 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		096E68CF1D21168000501D5B /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
-		096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		097A4ED51D40BD6200ADA706 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		097A4ED81D40C0E200ADA706 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		098890F71D1ED5A7008D1257 /* funmaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funmaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,23 +151,15 @@
 		098891011D1ED5A7008D1257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		098891041D1ED5A7008D1257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		098891061D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0988910B1D1ED5A7008D1257 /* funmakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = funmakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0988910F1D1ED5A7008D1257 /* funmakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funmakerTests.swift; sourceTree = "<group>"; };
-		098891111D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		098891161D1ED5A7008D1257 /* funmakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = funmakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funmakerUITests.swift; sourceTree = "<group>"; };
-		0988911C1D1ED5A7008D1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09988B4F1D24C3280069A65C /* LoginedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginedViewController.swift; sourceTree = "<group>"; };
-		09998E8B1D6AC7A800619AEE /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
-		09998E8C1D6AC7A800619AEE /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		09BFAEDD1D5DFCE8008EF761 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		09CABA9C1D559E2500776C85 /* TravelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListViewController.swift; sourceTree = "<group>"; };
 		09CABA9E1D55A8BB00776C85 /* HomeHotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHotelViewController.swift; sourceTree = "<group>"; };
 		09CABAA01D55B6A900776C85 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		09EA1C811D927EC400657F75 /* TogetherTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogetherTravelViewController.swift; sourceTree = "<group>"; };
 		09EC2B321D48AD9D009EFD76 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
 		09EDE6B81D84F2F9002219D8 /* AtHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtHomeViewController.swift; sourceTree = "<group>"; };
 		09F0D5EB1D4A07ED00DA6234 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
-		09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
 		09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		09F29FB61D3F22FE00211E2F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		09F29FB81D3F230900211E2F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -309,11 +167,9 @@
 		09F29FC01D3F244500211E2F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		09F29FC21D3F248600211E2F /* funmaker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "funmaker-Bridging-Header.h"; sourceTree = "<group>"; };
 		09F2BA721D39380C00672B3A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		09F5EEAF1D782AC300FC4F85 /* BBAllPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAllPhotosViewController.swift; sourceTree = "<group>"; };
-		09F5EEC01D782B8800FC4F85 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		62CCD018FABD1C88FBD53A5D /* libPods-funmaker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-funmaker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		63081C05DB4E05820CAEA495 /* Pods-funmaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funmaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-funmaker/Pods-funmaker.debug.xcconfig"; sourceTree = "<group>"; };
-		C128A2C4A96269B6B033D099 /* Pods-funmaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funmaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-funmaker/Pods-funmaker.release.xcconfig"; sourceTree = "<group>"; };
+		0E4BC037F8B49C7C9FFA56F1 /* Pods-funmaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funmaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-funmaker/Pods-funmaker.debug.xcconfig"; sourceTree = "<group>"; };
+		108250AAE6E69BC606D017C9 /* Pods_funmaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_funmaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9988AC4F8B68D51B4D0BEBC5 /* Pods-funmaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funmaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-funmaker/Pods-funmaker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,32 +177,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09998E8D1D6AC7A800619AEE /* MOBFoundation.framework in Frameworks */,
 				093310F71D609939007E1C96 /* ImageIO.framework in Frameworks */,
 				093310F51D60991A007E1C96 /* libsqlite3.tbd in Frameworks */,
 				09F29FC11D3F244500211E2F /* libicucore.tbd in Frameworks */,
 				09F29FB31D3F22CC00211E2F /* libz.1.2.5.tbd in Frameworks */,
 				09F29FBB1D3F231D00211E2F /* libstdc++.6.0.9.tbd in Frameworks */,
 				09F29FB91D3F230900211E2F /* JavaScriptCore.framework in Frameworks */,
-				095A696B1D3F6204009265ED /* MOBFoundation.framework in Frameworks */,
-				09998E8E1D6AC7A800619AEE /* SMS_SDK.framework in Frameworks */,
+				092ED3A81D952216004E9711 /* MOBFoundation.framework in Frameworks */,
+				092ED3A91D952216004E9711 /* SMS_SDK.framework in Frameworks */,
 				09F29FB71D3F22FE00211E2F /* MessageUI.framework in Frameworks */,
-				09F29FB11D3F20AD00211E2F /* SMS_SDK.framework in Frameworks */,
-				CD396C3B92A534832FF68DF7 /* libPods-funmaker.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		098891081D1ED5A7008D1257 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		098891131D1ED5A7008D1257 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				73F3A101678DB0A65B0CE756 /* Pods_funmaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,41 +288,14 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		0939D4961D7EB626004FF56E /* PathMenu */ = {
+		092ED3A51D952216004E9711 /* SMS_SDK */ = {
 			isa = PBXGroup;
 			children = (
-				0939D4971D7EB626004FF56E /* PathMenu.swift */,
-				0939D4981D7EB626004FF56E /* PathMenuItem.swift */,
+				092ED3A61D952216004E9711 /* MOBFoundation.framework */,
+				092ED3A71D952216004E9711 /* SMS_SDK.framework */,
 			);
-			path = PathMenu;
-			sourceTree = "<group>";
-		};
-		0939D49C1D7EC29A004FF56E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0939D4A61D7EC29A004FF56E /* SwiftHTTP.framework */,
-				0939D4A81D7EC29A004FF56E /* SwiftHTTPTests.xctest */,
-				0939D4AA1D7EC29A004FF56E /* SwiftHTTP.framework */,
-				0939D4AC1D7EC29A004FF56E /* SwiftHTTPOSXTests.xctest */,
-				0939D4AE1D7EC29A004FF56E /* SwiftHTTP.framework */,
-				0939D4B01D7EC29A004FF56E /* SwiftHTTPtvOSTests.xctest */,
-				0939D4B21D7EC29A004FF56E /* SwiftHTTP.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0939D4B41D7EC2A0004FF56E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0939D4BF1D7EC2A1004FF56E /* Alamofire.framework */,
-				0939D4C11D7EC2A1004FF56E /* Alamofire iOS Tests.xctest */,
-				0939D4C31D7EC2A1004FF56E /* Alamofire.framework */,
-				0939D4C51D7EC2A1004FF56E /* Alamofire OSX Tests.xctest */,
-				0939D4C71D7EC2A1004FF56E /* Alamofire.framework */,
-				0939D4C91D7EC2A1004FF56E /* Alamofire tvOS Tests.xctest */,
-				0939D4CB1D7EC2A1004FF56E /* Alamofire.framework */,
-			);
-			name = Products;
+			name = SMS_SDK;
+			path = funmaker/SMS_SDK;
 			sourceTree = "<group>";
 		};
 		096004621D2F977F00507D25 /* controller */ = {
@@ -508,10 +321,9 @@
 				096C23A31D5757F100256487 /* TravelDetailViewController.swift */,
 				096C23A51D575F8D00256487 /* IndexTravelDetailViewController.swift */,
 				09BFAEDD1D5DFCE8008EF761 /* TabBarViewController.swift */,
-				093310EB1D6003F5007E1C96 /* TogetherTravelViewController.swift */,
-				09F5EEC01D782B8800FC4F85 /* PhotoViewController.swift */,
 				09641C211D7E5928000A34CB /* ModifyPasswordViewController.swift */,
 				09EDE6B81D84F2F9002219D8 /* AtHomeViewController.swift */,
+				09EA1C811D927EC400657F75 /* TogetherTravelViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -551,8 +363,6 @@
 		097A4EC91D40BCBD00ADA706 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				09F5EEAF1D782AC300FC4F85 /* BBAllPhotosViewController.swift */,
-				096F2D1A1D694C5E004E5526 /* SwiftyJSON.swift */,
 				097A4ED51D40BD6200ADA706 /* Constant.swift */,
 			);
 			name = common;
@@ -561,25 +371,19 @@
 		098890EE1D1ED5A7008D1257 = {
 			isa = PBXGroup;
 			children = (
-				095721CC1D813C9400A19936 /* Podfile */,
-				0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */,
-				0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */,
+				09627BC21D8E943A00CA3D71 /* Podfile */,
 				098890F91D1ED5A7008D1257 /* funmaker */,
-				0988910E1D1ED5A7008D1257 /* funmakerTests */,
-				098891191D1ED5A7008D1257 /* funmakerUITests */,
 				098890F81D1ED5A7008D1257 /* Products */,
-				09998E8A1D6AC7A800619AEE /* SMS_SDK */,
-				09F29FB01D3F20AD00211E2F /* SMS_SDK.framework */,
+				092ED3A51D952216004E9711 /* SMS_SDK */,
 				09F29FB61D3F22FE00211E2F /* MessageUI.framework */,
 				09F29FB81D3F230900211E2F /* JavaScriptCore.framework */,
-				095A696A1D3F6204009265ED /* MOBFoundation.framework */,
 				093310F61D609939007E1C96 /* ImageIO.framework */,
 				093310F41D60991A007E1C96 /* libsqlite3.tbd */,
 				09F29FB21D3F22CC00211E2F /* libz.1.2.5.tbd */,
 				09F29FBA1D3F231D00211E2F /* libstdc++.6.0.9.tbd */,
 				09F29FC01D3F244500211E2F /* libicucore.tbd */,
-				40BD81FD32EDB7C7FC6D471F /* Pods */,
-				637284B30BDF6D86B5C41CD5 /* Frameworks */,
+				32F7D179C1C301DB96C1BD72 /* Pods */,
+				126659D88BEE363B826FAD05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -587,8 +391,6 @@
 			isa = PBXGroup;
 			children = (
 				098890F71D1ED5A7008D1257 /* funmaker.app */,
-				0988910B1D1ED5A7008D1257 /* funmakerTests.xctest */,
-				098891161D1ED5A7008D1257 /* funmakerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -602,7 +404,6 @@
 				097A4EC91D40BCBD00ADA706 /* common */,
 				0974B80D1D411435002F978C /* swift-oc */,
 				091A05B41D683AB300721653 /* MJRefresh */,
-				0939D4961D7EB626004FF56E /* PathMenu */,
 				096004641D2F979C00507D25 /* util */,
 				098890FE1D1ED5A7008D1257 /* Main.storyboard */,
 				098891031D1ED5A7008D1257 /* LaunchScreen.storyboard */,
@@ -612,49 +413,21 @@
 			path = funmaker;
 			sourceTree = "<group>";
 		};
-		0988910E1D1ED5A7008D1257 /* funmakerTests */ = {
+		126659D88BEE363B826FAD05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0988910F1D1ED5A7008D1257 /* funmakerTests.swift */,
-				098891111D1ED5A7008D1257 /* Info.plist */,
-			);
-			path = funmakerTests;
-			sourceTree = "<group>";
-		};
-		098891191D1ED5A7008D1257 /* funmakerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0988911A1D1ED5A7008D1257 /* funmakerUITests.swift */,
-				0988911C1D1ED5A7008D1257 /* Info.plist */,
-			);
-			path = funmakerUITests;
-			sourceTree = "<group>";
-		};
-		09998E8A1D6AC7A800619AEE /* SMS_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				09998E8B1D6AC7A800619AEE /* MOBFoundation.framework */,
-				09998E8C1D6AC7A800619AEE /* SMS_SDK.framework */,
-			);
-			path = SMS_SDK;
-			sourceTree = "<group>";
-		};
-		40BD81FD32EDB7C7FC6D471F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				63081C05DB4E05820CAEA495 /* Pods-funmaker.debug.xcconfig */,
-				C128A2C4A96269B6B033D099 /* Pods-funmaker.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		637284B30BDF6D86B5C41CD5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0915E9271D84D91400509CEE /* dylib1.o */,
-				62CCD018FABD1C88FBD53A5D /* libPods-funmaker.a */,
+				108250AAE6E69BC606D017C9 /* Pods_funmaker.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32F7D179C1C301DB96C1BD72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E4BC037F8B49C7C9FFA56F1 /* Pods-funmaker.debug.xcconfig */,
+				9988AC4F8B68D51B4D0BEBC5 /* Pods-funmaker.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,13 +437,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0988911F1D1ED5A7008D1257 /* Build configuration list for PBXNativeTarget "funmaker" */;
 			buildPhases = (
-				6DCA815E19CBE3C04CA2E450 /* [CP] Check Pods Manifest.lock */,
+				E593D66E76755F6604FC15CA /* [CP] Check Pods Manifest.lock */,
 				098890F31D1ED5A7008D1257 /* Sources */,
 				098890F41D1ED5A7008D1257 /* Frameworks */,
 				098890F51D1ED5A7008D1257 /* Resources */,
 				090ACEB61D40896400C33E51 /* Copy Frameworks */,
-				FF90057C0EE4E569591CA9CF /* [CP] Embed Pods Frameworks */,
-				03183AC7DEDC828A452725F5 /* [CP] Copy Pods Resources */,
+				89C036122509D9E082ECE88C /* [CP] Embed Pods Frameworks */,
+				7A7CC97F438668D23D6D6473 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -681,42 +454,6 @@
 			productReference = 098890F71D1ED5A7008D1257 /* funmaker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0988910A1D1ED5A7008D1257 /* funmakerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 098891221D1ED5A7008D1257 /* Build configuration list for PBXNativeTarget "funmakerTests" */;
-			buildPhases = (
-				098891071D1ED5A7008D1257 /* Sources */,
-				098891081D1ED5A7008D1257 /* Frameworks */,
-				098891091D1ED5A7008D1257 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0988910D1D1ED5A7008D1257 /* PBXTargetDependency */,
-			);
-			name = funmakerTests;
-			productName = funmakerTests;
-			productReference = 0988910B1D1ED5A7008D1257 /* funmakerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		098891151D1ED5A7008D1257 /* funmakerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 098891251D1ED5A7008D1257 /* Build configuration list for PBXNativeTarget "funmakerUITests" */;
-			buildPhases = (
-				098891121D1ED5A7008D1257 /* Sources */,
-				098891131D1ED5A7008D1257 /* Frameworks */,
-				098891141D1ED5A7008D1257 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				098891181D1ED5A7008D1257 /* PBXTargetDependency */,
-			);
-			name = funmakerUITests;
-			productName = funmakerUITests;
-			productReference = 098891161D1ED5A7008D1257 /* funmakerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -724,12 +461,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Waylon;
 				TargetAttributes = {
 					098890F61D1ED5A7008D1257 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8K9U2T8H8D;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -738,14 +477,6 @@
 								enabled = 0;
 							};
 						};
-					};
-					0988910A1D1ED5A7008D1257 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 098890F61D1ED5A7008D1257;
-					};
-					098891151D1ED5A7008D1257 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 098890F61D1ED5A7008D1257;
 					};
 				};
 			};
@@ -760,132 +491,19 @@
 			mainGroup = 098890EE1D1ED5A7008D1257;
 			productRefGroup = 098890F81D1ED5A7008D1257 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0939D4B41D7EC2A0004FF56E /* Products */;
-					ProjectRef = 0939D4B31D7EC2A0004FF56E /* Alamofire.xcodeproj */;
-				},
-				{
-					ProductGroup = 0939D49C1D7EC29A004FF56E /* Products */;
-					ProjectRef = 0939D49B1D7EC29A004FF56E /* SwiftHTTP.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				098890F61D1ED5A7008D1257 /* funmaker */,
-				0988910A1D1ED5A7008D1257 /* funmakerTests */,
-				098891151D1ED5A7008D1257 /* funmakerUITests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0939D4A61D7EC29A004FF56E /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 0939D4A51D7EC29A004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4A81D7EC29A004FF56E /* SwiftHTTPTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftHTTPTests.xctest;
-			remoteRef = 0939D4A71D7EC29A004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4AA1D7EC29A004FF56E /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 0939D4A91D7EC29A004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4AC1D7EC29A004FF56E /* SwiftHTTPOSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftHTTPOSXTests.xctest;
-			remoteRef = 0939D4AB1D7EC29A004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4AE1D7EC29A004FF56E /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 0939D4AD1D7EC29A004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4B01D7EC29A004FF56E /* SwiftHTTPtvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftHTTPtvOSTests.xctest;
-			remoteRef = 0939D4AF1D7EC29A004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4B21D7EC29A004FF56E /* SwiftHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 0939D4B11D7EC29A004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4BF1D7EC2A1004FF56E /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 0939D4BE1D7EC2A1004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4C11D7EC2A1004FF56E /* Alamofire iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire iOS Tests.xctest";
-			remoteRef = 0939D4C01D7EC2A1004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4C31D7EC2A1004FF56E /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 0939D4C21D7EC2A1004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4C51D7EC2A1004FF56E /* Alamofire OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire OSX Tests.xctest";
-			remoteRef = 0939D4C41D7EC2A1004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4C71D7EC2A1004FF56E /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 0939D4C61D7EC2A1004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4C91D7EC2A1004FF56E /* Alamofire tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire tvOS Tests.xctest";
-			remoteRef = 0939D4C81D7EC2A1004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0939D4CB1D7EC2A1004FF56E /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 0939D4CA1D7EC2A1004FF56E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		098890F51D1ED5A7008D1257 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				095721CD1D813C9400A19936 /* Podfile in Resources */,
+				09627BC31D8E943A00CA3D71 /* Podfile in Resources */,
 				098891051D1ED5A7008D1257 /* LaunchScreen.storyboard in Resources */,
 				098891021D1ED5A7008D1257 /* Assets.xcassets in Resources */,
 				098891001D1ED5A7008D1257 /* Main.storyboard in Resources */,
@@ -893,24 +511,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		098891091D1ED5A7008D1257 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		098891141D1ED5A7008D1257 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03183AC7DEDC828A452725F5 /* [CP] Copy Pods Resources */ = {
+		7A7CC97F438668D23D6D6473 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -925,22 +529,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-funmaker/Pods-funmaker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6DCA815E19CBE3C04CA2E450 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FF90057C0EE4E569591CA9CF /* [CP] Embed Pods Frameworks */ = {
+		89C036122509D9E082ECE88C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -953,6 +542,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-funmaker/Pods-funmaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E593D66E76755F6604FC15CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -968,14 +572,12 @@
 				098890FD1D1ED5A7008D1257 /* LoginViewController.swift in Sources */,
 				09558A521D3D10EA008A0A15 /* CustomCell.swift in Sources */,
 				091A05EF1D683AB300721653 /* MJRefreshNormalHeader.m in Sources */,
-				0939D49A1D7EB626004FF56E /* PathMenuItem.swift in Sources */,
 				091A05ED1D683AB300721653 /* MJRefreshBackStateFooter.m in Sources */,
 				096C23A21D57480A00256487 /* TogetherTravelCell.swift in Sources */,
 				097A4ED91D40C0E200ADA706 /* CommonUtil.swift in Sources */,
 				09EDE6B91D84F2F9002219D8 /* AtHomeViewController.swift in Sources */,
 				093398E01D3CBA6C0065BEE5 /* MessageTableViewController.swift in Sources */,
 				09CABA9D1D559E2500776C85 /* TravelListViewController.swift in Sources */,
-				0939D4991D7EB626004FF56E /* PathMenu.swift in Sources */,
 				091A05E51D683AB300721653 /* MJRefreshComponent.m in Sources */,
 				091A05F51D683AB300721653 /* UIScrollView+MJRefresh.m in Sources */,
 				091A05F41D683AB300721653 /* UIScrollView+MJExtension.m in Sources */,
@@ -986,18 +588,16 @@
 				091A05E91D683AB300721653 /* MJRefreshAutoNormalFooter.m in Sources */,
 				098890FB1D1ED5A7008D1257 /* AppDelegate.swift in Sources */,
 				096E68D01D21168000501D5B /* RegistViewController.swift in Sources */,
-				093310EC1D6003F5007E1C96 /* TogetherTravelViewController.swift in Sources */,
 				09CABAA11D55B6A900776C85 /* MyProfileViewController.swift in Sources */,
 				09BFAEDE1D5DFCE8008EF761 /* TabBarViewController.swift in Sources */,
+				09EA1C821D927EC400657F75 /* TogetherTravelViewController.swift in Sources */,
 				091A05E41D683AB300721653 /* MJRefreshBackFooter.m in Sources */,
 				091A05EA1D683AB300721653 /* MJRefreshAutoStateFooter.m in Sources */,
 				096C23A41D5757F100256487 /* TravelDetailViewController.swift in Sources */,
-				09F5EEB01D782AC300FC4F85 /* BBAllPhotosViewController.swift in Sources */,
 				096A03601D42583C0086C906 /* GuideViewController.swift in Sources */,
 				09988B501D24C3280069A65C /* LoginedViewController.swift in Sources */,
 				091A05F01D683AB300721653 /* MJRefreshStateHeader.m in Sources */,
 				09F2BA731D39380C00672B3A /* BaseViewController.swift in Sources */,
-				096F2D1B1D694C5E004E5526 /* SwiftyJSON.swift in Sources */,
 				091A05F61D683AB300721653 /* UIView+MJExtension.m in Sources */,
 				09CABA9F1D55A8BB00776C85 /* HomeHotelViewController.swift in Sources */,
 				091A05E81D683AB300721653 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1006,7 +606,6 @@
 				091A05EB1D683AB300721653 /* MJRefreshBackGifFooter.m in Sources */,
 				091A05EE1D683AB300721653 /* MJRefreshGifHeader.m in Sources */,
 				096D25C01D4A501900831EE7 /* PublishViewController.swift in Sources */,
-				09F5EEC11D782B8800FC4F85 /* PhotoViewController.swift in Sources */,
 				093310F01D6062AD007E1C96 /* SwiftNotice.swift in Sources */,
 				096004611D2F974200507D25 /* IndexViewController.swift in Sources */,
 				091A05E31D683AB300721653 /* MJRefreshAutoFooter.m in Sources */,
@@ -1016,36 +615,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		098891071D1ED5A7008D1257 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				098891101D1ED5A7008D1257 /* funmakerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		098891121D1ED5A7008D1257 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0988911B1D1ED5A7008D1257 /* funmakerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0988910D1D1ED5A7008D1257 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 098890F61D1ED5A7008D1257 /* funmaker */;
-			targetProxy = 0988910C1D1ED5A7008D1257 /* PBXContainerItemProxy */;
-		};
-		098891181D1ED5A7008D1257 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 098890F61D1ED5A7008D1257 /* funmaker */;
-			targetProxy = 098891171D1ED5A7008D1257 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		098890FE1D1ED5A7008D1257 /* Main.storyboard */ = {
@@ -1070,6 +640,7 @@
 		0988911D1D1ED5A7008D1257 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1081,14 +652,15 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1117,6 +689,7 @@
 		0988911E1D1ED5A7008D1257 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1128,14 +701,15 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1150,19 +724,21 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "be218442-08f8-4354-8946-3298b3db5572";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		098891201D1ED5A7008D1257 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63081C05DB4E05820CAEA495 /* Pods-funmaker.debug.xcconfig */;
+			baseConfigurationReference = 0E4BC037F8B49C7C9FFA56F1 /* Pods-funmaker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMS_SDK",
@@ -1173,8 +749,10 @@
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformSDK/RenRenSDK",
 					"$(PROJECT_DIR)/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/funmaker/SMS_SDK",
 				);
 				INFOPLIST_FILE = funmaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1185,22 +763,25 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.funny.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "57462b63-0349-4aa9-9ef6-a800256f25f5";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "funmaker/funmaker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		098891211D1ED5A7008D1257 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C128A2C4A96269B6B033D099 /* Pods-funmaker.release.xcconfig */;
+			baseConfigurationReference = 9988AC4F8B68D51B4D0BEBC5 /* Pods-funmaker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMS_SDK",
@@ -1211,8 +792,10 @@
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformSDK/RenRenSDK",
 					"$(PROJECT_DIR)/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/funmaker/SMS_SDK",
 				);
 				INFOPLIST_FILE = funmaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1223,54 +806,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.funny.funmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "70bcd82e-188b-49c1-8578-9659672df84c";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "funmaker/funmaker-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		098891231D1ED5A7008D1257 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = funmakerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmakerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/funmaker.app/funmaker";
-			};
-			name = Debug;
-		};
-		098891241D1ED5A7008D1257 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = funmakerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmakerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/funmaker.app/funmaker";
-			};
-			name = Release;
-		};
-		098891261D1ED5A7008D1257 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = funmakerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmakerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = funmaker;
-			};
-			name = Debug;
-		};
-		098891271D1ED5A7008D1257 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = funmakerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celechem.funmakerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = funmaker;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1291,24 +830,6 @@
 			buildConfigurations = (
 				098891201D1ED5A7008D1257 /* Debug */,
 				098891211D1ED5A7008D1257 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		098891221D1ED5A7008D1257 /* Build configuration list for PBXNativeTarget "funmakerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				098891231D1ED5A7008D1257 /* Debug */,
-				098891241D1ED5A7008D1257 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		098891251D1ED5A7008D1257 /* Build configuration list for PBXNativeTarget "funmakerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				098891261D1ED5A7008D1257 /* Debug */,
-				098891271D1ED5A7008D1257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

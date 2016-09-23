@@ -34,7 +34,7 @@ class CustomCell: UITableViewCell {
         
         rentInfoImage.layer.borderWidth=1
         rentInfoImage.layer.cornerRadius=6
-        rentInfoImage.layer.borderColor = UIColor.grayColor().CGColor
+        rentInfoImage.layer.borderColor = UIColor.gray.cgColor
         
 
         
@@ -46,7 +46,7 @@ class CustomCell: UITableViewCell {
 //        // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

@@ -1,5 +1,5 @@
 import UIKit
-import SwiftHTTP
+
 
 class IndexViewController: BaseViewController,UISearchBarDelegate{
     
@@ -27,11 +27,10 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
 //    }
  
     override func viewDidLoad() {
+
         
-        
-        
-        self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
-        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.tintColor=UIColor.white;
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.white]
 
  
 
@@ -40,7 +39,7 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
         
 
         super.viewDidLoad()
-        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.white]
         // self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         //myWebView.delegate = self
         //let url = NSURL(string: "https://login.m.taobao.com/login.htm")!
@@ -61,10 +60,12 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
 
         
         // 获取scrollview wight and hight
-        let wight:CGFloat=UIScreen.mainScreen().bounds.width
-        let hight=self.pageScrollView.frame.height
+        let wight:CGFloat=UIScreen.main.bounds.width
+        //let hight=self.pageScrollView.frame.height
         //设置scrollview 4个区域
-        pageScrollView.contentSize = CGSize(width: 4*wight, height: hight)
+        pageScrollView.contentSize = CGSize(width: 4*wight, height: 0)
+        
+        //scrollview.contentSize =  CGSizeMake(你要的长度, 0);
 //         pageScrollView.contentSize=CGSizeMake(
 //            CGFloat(CGRectGetWidth(self.view.bounds)) * CGFloat(4),
 //            CGRectGetHeight(self.view.bounds))
@@ -84,7 +85,7 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
         for index in 0..<totalCount{
             //let imageView:UIImageView = UIImageView();
             let imageX:CGFloat = CGFloat(index) * wight;
-            let imageView:UIImageView = UIImageView(frame: CGRectMake(imageX, 0, wight, 128))
+            let imageView:UIImageView = UIImageView(frame: CGRect(x: imageX, y: 0, width: wight, height: 128))
             //let imageX:CGFloat = CGFloat(index) * wight;
             //imageView.frame = CGRectMake(imageX, hight, wight, hight);//设置图片的大小，注意Image和ScrollView的关系，其实几张图片是按顺序从左向右依次放置在ScrollView中的，但是ScrollView在界面中显示的只是一张图片的大小，效果类似与画廊；
             let name:String = String(format: "gallery%d.png", index);
@@ -109,7 +110,7 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
     
     
     //UIScrollViewDelegate方法，每次滚动结束后调用
-    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //通过scrollView内容的偏移计算当前显示的是第几页
         let page = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         //设置pageController的当前页
@@ -118,13 +119,13 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
 
     func refreshTableView(){
         
-        if(self.refreshControl?.refreshing==true){
+        if(self.refreshControl?.isRefreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
            // getData()
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //print("页面即将出现")
     }
     
@@ -134,14 +135,14 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
     }
     
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         progressShow?.stopAnimating()
         progressShow?.hidesWhenStopped = true
         
         
     }
     
-    func webViewDidStartLoad(webView: UIWebView) {
+    func webViewDidStartLoad(_ webView: UIWebView) {
         progressShow?.startAnimating()
     }
 //    
@@ -207,28 +208,28 @@ class IndexViewController: BaseViewController,UISearchBarDelegate{
      */
     
     
-    @IBAction func acitonSheet(sender: AnyObject) {
+    @IBAction func acitonSheet(_ sender: AnyObject) {
         //UIAlertController默认不传参数就是actionSheet操作表控件
         let actionSheet = UIAlertController()
-        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (alertAciton) -> Void in
             //print("取消")
             })
-        actionSheet.addAction(UIAlertAction(title: "腾讯QQ", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "腾讯QQ", style: UIAlertActionStyle.destructive) { (alertAciton) -> Void in
             //print("腾讯QQ")
             })
-        actionSheet.addAction(UIAlertAction(title: "新浪微博", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "新浪微博", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
             //print("新浪微博")
             })
-        actionSheet.addAction(UIAlertAction(title: "微信", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "微信", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
             //print("微信")
             })
         
-        actionSheet.addAction(UIAlertAction(title: "朋友圈", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "朋友圈", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
             //print("朋友圈")
             })
         
         
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+        self.present(actionSheet, animated: true, completion: nil)
         
     }
     

@@ -6,8 +6,7 @@
 //  Copyright © 2016年 Waylon. All rights reserved.
 //
 import UIKit
-import SwiftHTTP
-
+import Alamofire
 class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     let PopoverAnimatorWillShow = "PopoverAnimatorWillShow"
@@ -33,19 +32,19 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     var tableViewData:AnyObject?
     
-     var thumbQueue = NSOperationQueue()
+    var thumbQueue = OperationQueue()
     
-      var dataSource = NSMutableArray()
+    var dataSource = NSMutableArray()
     
-      let allData : NSMutableArray = []
-
+    let allData : NSMutableArray = []
     
-
+    
+    
     
     override func viewDidLoad() {
         
-        self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
-        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.tintColor=UIColor.white;
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.white]
         
         
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
@@ -54,7 +53,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         
         //NSThread.sleepForTimeInterval(1.0) //延长2秒
         super.viewDidLoad()
-        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.white]
         // self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
         //myWebView.delegate = self
         //let url = NSURL(string: "https://login.m.taobao.com/login.htm")!
@@ -69,7 +68,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
-        rc.addTarget(self, action: #selector(IndexViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
+        rc.addTarget(self, action: #selector(IndexViewController.refreshTableView), for: UIControlEvents.valueChanged)
         self.refreshControl = rc
         
         //set pagecontrol infomation
@@ -77,10 +76,10 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         //pageControl.numberOfPages = 4
         
         // 获取scrollview wight and hight
-        let wight:CGFloat=UIScreen.mainScreen().bounds.width
-        let hight=self.pageScrollView.frame.height
+        let wight:CGFloat=UIScreen.main.bounds.width
+        //let hight=self.pageScrollView.frame.height
         //设置scrollview 4个区域
-        pageScrollView.contentSize = CGSize(width: 4*wight, height: hight)
+        pageScrollView.contentSize = CGSize(width: 4*wight, height: 0)
         //         pageScrollView.contentSize=CGSizeMake(
         //            CGFloat(CGRectGetWidth(self.view.bounds)) * CGFloat(4),
         //            CGRectGetHeight(self.view.bounds))
@@ -100,7 +99,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         for index in 0..<totalCount{
             //let imageView:UIImageView = UIImageView();
             let imageX:CGFloat = CGFloat(index) * wight;
-            let imageView:UIImageView = UIImageView(frame: CGRectMake(imageX, 0, wight, 128))
+            let imageView:UIImageView = UIImageView(frame: CGRect(x: imageX, y: 0, width: wight, height: 128))
             //let imageX:CGFloat = CGFloat(index) * wight;
             //imageView.frame = CGRectMake(imageX, hight, wight, hight);//设置图片的大小，注意Image和ScrollView的关系，其实几张图片是按顺序从左向右依次放置在ScrollView中的，但是ScrollView在界面中显示的只是一张图片的大小，效果类似与画廊；
             let name:String = String(format: "gallery%d.png", index);
@@ -111,36 +110,36 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
             //self.pageScrollView.addSubview(imageView)
         }
         
-         initData()
+        initData()
         
         
         
         
-//        
-//        for(var i = 1; i<=10; i += 1){
-//            self.objectArr.append("\(i)")
-//        }
-//        
-//        // 设置普通状态的动画图片
-//        for (var i = 1; i<=60; i += 1) {
-//            let image:UIImage = UIImage(named: "dropdown_anim__000\(i)")! as UIImage
-//            idleImages.addObject(image)
-//        }
-//        
-//        // 设置普通状态的动画图片
-//        for (var i = 1; i<=3; i++) {
-//            var image: UIImage = UIImage(named: "dropdown_loading_0\(i)")! as UIImage
-//            idleImages.addObject(image)
-//        }
+        //
+        //        for(var i = 1; i<=10; i += 1){
+        //            self.objectArr.append("\(i)")
+        //        }
+        //
+        //        // 设置普通状态的动画图片
+        //        for (var i = 1; i<=60; i += 1) {
+        //            let image:UIImage = UIImage(named: "dropdown_anim__000\(i)")! as UIImage
+        //            idleImages.addObject(image)
+        //        }
+        //
+        //        // 设置普通状态的动画图片
+        //        for (var i = 1; i<=3; i++) {
+        //            var image: UIImage = UIImage(named: "dropdown_loading_0\(i)")! as UIImage
+        //            idleImages.addObject(image)
+        //        }
         
         //定义动画刷新Header
-//        let header:MJRefreshGifHeader = MJRefreshGifHeader(refreshingTarget: self, refreshingAction: "headerRefresh")
-//        //设置普通状态动画图片
-//        header.setImages(idleImages as [AnyObject], forState: MJRefreshState.Idle)
-//        //设置下拉操作时动画图片
-//        header.setImages(refreshingImages as [AnyObject], forState: MJRefreshState.Pulling)
-//        //设置正在刷新时动画图片
-//        header.setImages(idleImages as [AnyObject], forState: MJRefreshState.Refreshing)
+        //        let header:MJRefreshGifHeader = MJRefreshGifHeader(refreshingTarget: self, refreshingAction: "headerRefresh")
+        //        //设置普通状态动画图片
+        //        header.setImages(idleImages as [AnyObject], forState: MJRefreshState.Idle)
+        //        //设置下拉操作时动画图片
+        //        header.setImages(refreshingImages as [AnyObject], forState: MJRefreshState.Pulling)
+        //        //设置正在刷新时动画图片
+        //        header.setImages(idleImages as [AnyObject], forState: MJRefreshState.Refreshing)
         
         //设置mj_header
         //self.tableView.mj_header = header
@@ -148,7 +147,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         //self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "headerRefresh")
         //普通带文字上拉加载的定义
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(TogetherTravelViewController.footerRefresh))
-
+        
         
         
         
@@ -165,53 +164,44 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     //下拉刷新操作
     func headerRefresh(){
         //模拟数据请求，设置10s是为了便于观察动画
-//        self.delay(10) { () -> () in
-//            self.objectArr.removeAll()
-//            self.i = 10
-//            for self.i ; self.i<20 ; self.i++ {
-//                self.objectArr.append("\(self.i)")
-//            }
-//            //结束刷新
-//            self.tableView.mj_header.endRefreshing()
-//            self.tableView.reloadData()
-//        }
+        //        self.delay(10) { () -> () in
+        //            self.objectArr.removeAll()
+        //            self.i = 10
+        //            for self.i ; self.i<20 ; self.i++ {
+        //                self.objectArr.append("\(self.i)")
+        //            }
+        //            //结束刷新
+        //            self.tableView.mj_header.endRefreshing()
+        //            self.tableView.reloadData()
+        //        }
         self.tableView.mj_footer.endRefreshing()
         self.tableView.reloadData()
-
+        
         print("下拉刷新操作")
     }
     
     //上拉加载操作
     func footerRefresh(){
-        //模拟数据请求，设置10s是为了便于观察动画
-//        self.delay(10) { () -> () in
-//            let j = self.i + 10
-//            for self.i ; self.i<j ; self.i++ {
-//                self.objectArr.append("\(self.i)")
-//            }
-//            //结束刷新
-//            self.tableView.mj_footer.endRefreshing()
-//            self.tableView.reloadData()
-//        }
+        
         
         self.tableView.mj_footer.endRefreshing()
         self.refreshControl?.endRefreshing()
         self.tableView.reloadData()
         getData()
-       // print("上拉加载操作")
+        // print("上拉加载操作")
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
-       
+        
     }
     
-    override func viewDidAppear(animated: Bool) {
-        self.tabBarController?.tabBar.hidden=false
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden=false
         // 发送通知,通知控制器即将展开
-        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillShow, object: self)
-
+        NotificationCenter.default.post(name: Notification.Name(rawValue: PopoverAnimatorWillShow), object: self)
+        
     }
     
     //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -223,156 +213,103 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     func initData(){
         //开启网络请求hud
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.pleaseWait()
-        do {
-            let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":"0","endPage":String(pageCount)])
-            
-            opt.start { response in
+        
+        
+        Alamofire.request(Constant.host+Constant.getAllUnionByPage,method:.get, parameters: ["beginPage":"0","endPage":String(pageCount)])
+            .responseJSON { response in
                 
-                if let err = response.error {
-                    
-                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.clearAllNotice()
-                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
-                    }
-                }else{
-                    
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    self.clearAllNotice()
-                    //把NSData对象转换回JSON对象
-                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                    if json == nil {
-                        self.alert("网络异常，请重试")
-                        self.clearAllNotice()
-                    }else{
-       
-                        if let data : NSMutableArray = json.objectForKey("data") as? NSMutableArray{
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.allData.removeAllObjects()
-                                self.pageNo = 0
-                                for d in data{
-                                    self.allData.addObject(d)
-                                }
-                                self.tableViewData = self.allData
-                                self.refreshControl?.endRefreshing()
-                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                                self.tableView.reloadData()
+                print(Constant.host+Constant.getAllUnionByPage)
+                print(String(self.pageCount))
+                if let myJson = response.result.value{
+                    //print(myJson)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.pageNo = 1
+                        self?.allData.removeAllObjects()
+                        if  let data : NSArray = ((myJson as AnyObject).object(forKey: "data") as? NSArray){
+                            
+                            
+                            for d in data{
+                                self?.allData.add(d)
                                 
                             }
-                        }else{
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+                            self?.tableViewData = self?.allData
+                            self?.refreshControl?.endRefreshing()
+                            self?.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                            self?.tableView.reloadData()
+                            
+                            if(data.count>0){
+                               
+                                self?.clearAllNotice()
+                            }else{
+                                
+                                self?.clearAllNotice()
+                                self?.noticeInfo("没有信息了", autoClear: true, autoClearTime: 1)
+                                
                             }
+
                             
                         }
+                     
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        
                     }
-                    
                 }
                 
-            }
-            
-        } catch {
-              self.noticeError(String(error), autoClear: true, autoClearTime: 3)
         }
+        
     }
     
     func getData(){
         
-    
-       
         
         //开启网络请求hud
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
         //self.pleaseWait()
-        do {
-             let opt = try HTTP.GET(Constant.host+Constant.getAllUnionByPage,parameters: ["beginPage":String(pageNo*pageCount+pageCount),"endPage":String(pageCount)])
-            
-            opt.start { response in
+        
+        Alamofire.request(Constant.host+Constant.getAllUnionByPage,method:.get, parameters: ["beginPage":String(pageNo*pageCount),"endPage":String(pageNo*pageCount+pageCount)])
+            .responseJSON { response in
                 
-                if let err = response.error {
-                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.clearAllNotice()
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
-                    }
-                }else{
+                if let myJson = response.result.value {
                     
-                    
-                    
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    //self.clearAllNotice()
-                    //把NSData对象转换回JSON对象
-                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                    if json == nil {
-                        self.alert("网络异常，请重试")
-                        self.clearAllNotice()
-                    }else{
-                        if let data : NSMutableArray = json.objectForKey("data") as? NSMutableArray{
-                            dispatch_async(dispatch_get_main_queue()) {
-                                for d in data{
-                                    self.allData.addObject(d)
-                                }
-                                self.tableViewData = self.allData
-                                self.refreshControl?.endRefreshing()
-                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                                self.tableView.reloadData()
-                                
+                    DispatchQueue.main.async { [weak self] in
+                        let json = myJson as AnyObject
+                        
+                        if let data : NSArray = json.object(forKey: "data") as? NSArray{
+                            
+                            for d in data{
+                                self?.allData.add(d)
                             }
-                        }else{
-                            dispatch_async(dispatch_get_main_queue()) {
-                             self.clearAllNotice()
-                             self.noticeInfo("没有信息了", autoClear: true, autoClearTime: 1)
+                            self?.tableViewData = self?.allData
+                            
+                            self?.tableView.reloadData()
+                            
+                            if(data.count>0){
+                                self?.pageNo += 1
+                                self?.clearAllNotice()
+                            }else{
+                                
+                                self?.clearAllNotice()
+                                self?.noticeInfo("没有信息了", autoClear: true, autoClearTime: 1)
+                                
                             }
                             
                         }
                         
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        
                     }
- 
-//                    //关闭网络请求hud
-//                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-//                    //self.clearAllNotice()
-//                    //把NSData对象转换回JSON对象
-//                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-//                    if json == nil {
-//                        self.alert("网络异常，请重试")
-//                        self.clearAllNotice()
-//                    }else{
-//                        let data : NSArray = json.objectForKey("data") as! NSArray
-//                        dispatch_async(dispatch_get_main_queue()) {
-//                            self.tableViewData! = data
-//                            self.refreshControl?.endRefreshing()
-//                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-//                            self.tableView.reloadData()
-//                            if data.count == 0{
-//                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
-//                            }
-//                        }
-//
-//
-//                    }
-                    
                 }
                 
-            }
-            
-        } catch {
-              self.noticeError(String(error), autoClear: true, autoClearTime: 3)
         }
-        
-         pageNo += 1
         
     }
     
     
     
     //UIScrollViewDelegate方法，每次滚动结束后调用
-    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //通过scrollView内容的偏移计算当前显示的是第几页
         let page = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         //设置pageController的当前页
@@ -381,12 +318,12 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     
     func refreshTableView(){
         
-        if(self.refreshControl?.refreshing==true){
+        if(self.refreshControl?.isRefreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
             initData()
         }
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -394,7 +331,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     }
     
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         progressShow?.stopAnimating()
         progressShow?.hidesWhenStopped = true
         
@@ -405,7 +342,7 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
         progressShow?.startAnimating()
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if tableViewData == nil{
             return 0
@@ -417,86 +354,63 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell:CustomCell! = tableView.dequeueReusableCellWithIdentifier("TogetherInfoCell", forIndexPath: indexPath) as? CustomCell
+        var cell:CustomCell! = tableView.dequeueReusableCell(withIdentifier: "TogetherInfoCell", for: indexPath) as? CustomCell
         if(cell == nil){
-            cell = CustomCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherInfoCell")
+            cell = CustomCell(style: UITableViewCellStyle.default, reuseIdentifier: "TogetherInfoCell")
         }else{
-            
-            let unionTheme:String = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme")!)
-            let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime")!)
-            let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId")!)
-            let publishTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("publishTime")!)
-            
-            var mobile = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("mobile")!)
-            //let headImage = tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage")! as! UIImage
+            let unionTheme = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "unionTheme") as! String
+            let unionId = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "unionId") as! String
+            let outTime = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "outTime") as! String
+            let publishTime = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "publishTime") as! String
+            var mobile = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "userId") as! String
             
             //解决Optional("***")问题
             cell.unionTheme.text = unionTheme
             cell.outTime.text=outTime
             cell.unionId.text=unionId
             cell.publishTime.text=publishTime
-           
-
-
-            
-//            let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-//            dispatch_async(dispath, { () -> Void in
-//
-//                if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
-//                    let headUrl = String(image);
-//                    let url:NSURL = NSURL(string:Constant.host+Constant.headImageUrl+"head"+".png")!
-//                    let data=NSData(contentsOfURL: url)
-//                    if data != nil {
-//                        let ZYHImage=UIImage(data: data!)
-//                        //写缓存
-//                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                            //刷新主UI
-//                            cell.rentInfoImage.image=ZYHImage
-//                        })
-//                    }
-//                }
-//                
-//            })
             
             
-            if let image = self.tableViewData!.objectAtIndex(indexPath.row).objectForKey("headImage"){
-                let headUrl = String(image);
+            if let image = (self.tableViewData!.object(at: (indexPath as NSIndexPath).row) as AnyObject).object(forKey: "headImage"){
+                let headUrl = String(describing: image);
                 if(headUrl != "<null>"){
                     var str = Constant.head_image_host+headUrl+".png"
                     userInfo.setValue(str, forKey: mobile)
                     userInfo.synchronize()
                     //防止url报出空指针异常
-                    str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-                    let url:NSURL = NSURL(string:str)!
-                  
-                    let request = NSURLRequest(URL:url)
+                    str = str.addingPercentEscapes(using: String.Encoding.utf8)!
+                    let url:URL = URL(string:str)!
+                    
+                    let request = URLRequest(url:url)
                     NSURLConnection.sendAsynchronousRequest(request, queue: thumbQueue, completionHandler: { response, data, error in
                         if (error != nil) {
                             print(error)
                             
                         } else {
                             let image = UIImage.init(data :data!)
-                            dispatch_async(dispatch_get_main_queue(), {
+                            DispatchQueue.main.async(execute: {
                                 cell.rentInfoImage.image = image
                             })
                         }
                     })
                 }
-
+                
             }
-
-          
-           
+            
+            
+            
             //let head = UIImage(data: data!)
             
-          
-          //cell.rentInfoImage.image = head
-          
             
-            let subRange=Range(start: mobile.startIndex.advancedBy(3), end: mobile.startIndex.advancedBy(7)) //Swift 2.0
-            mobile.replaceRange(subRange, with: "****")
+            //cell.rentInfoImage.image = head
+            
+            let subRange=(mobile.characters.index(mobile.startIndex, offsetBy: 3) ..< mobile.characters.index(mobile.startIndex, offsetBy: 7)) //Swift 2.0
+            mobile.replaceSubrange(subRange, with: "****")
+            
+            //            let subRange=(mobile.characters.index(mobile.startIndex, offsetBy: 3) ..< mobile.characters.index(mobile.startIndex, offsetBy: 7)) //Swift 2.0
+            //            mobile.replaceSubrange(subRange, with: "****")
             cell.account.text=mobile
             
         }
@@ -505,29 +419,29 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
     }
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
         
-        var cell:CustomCell = tableView.cellForRowAtIndexPath(indexPath) as! CustomCell
+        let cell:CustomCell = tableView.cellForRow(at: indexPath) as! CustomCell
         let unionId = cell.unionId.text
         
-        userInfo.setObject(unionId, forKey: "unionId")
+        userInfo.set(unionId, forKey: "unionId")
         userInfo.synchronize()
         
-        let indexTravelDetailViewController = storyBoard.instantiateViewControllerWithIdentifier("IndexTravelDetailViewController") as! IndexTravelDetailViewController
+        let indexTravelDetailViewController = storyBoard.instantiateViewController(withIdentifier: "IndexTravelDetailViewController") as! IndexTravelDetailViewController
         
-//        let unionInfoNavigation = storyBoard.instantiateViewControllerWithIdentifier("unionInfoNavigation") as! UINavigationController
+        //        let unionInfoNavigation = storyBoard.instantiateViewControllerWithIdentifier("unionInfoNavigation") as! UINavigationController
         
         
         //self.presentViewController(unionInfoNavigation, animated: true, completion: nil)
         self.navigationController?.pushViewController(indexTravelDetailViewController, animated: true)
-        self.tabBarController?.tabBar.hidden=true
-     
-      
+        self.tabBarController?.tabBar.isHidden=true
+        
+        
         
         // 发送通知,通知控制器即将消失
-        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillDismiss, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: PopoverAnimatorWillDismiss), object: self)
         
     }
     
@@ -545,28 +459,28 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
      */
     
     
-    @IBAction func acitonSheet(sender: AnyObject) {
+    @IBAction func acitonSheet(_ sender: AnyObject) {
         //UIAlertController默认不传参数就是actionSheet操作表控件
         let actionSheet = UIAlertController()
-        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (alertAciton) -> Void in
             //print("取消")
-            })
-        actionSheet.addAction(UIAlertAction(title: "腾讯QQ", style: UIAlertActionStyle.Destructive) { (alertAciton) -> Void in
+        })
+        actionSheet.addAction(UIAlertAction(title: "腾讯QQ", style: UIAlertActionStyle.destructive) { (alertAciton) -> Void in
             //print("腾讯QQ")
-            })
-        actionSheet.addAction(UIAlertAction(title: "新浪微博", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+        })
+        actionSheet.addAction(UIAlertAction(title: "新浪微博", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
             //print("新浪微博")
-            })
-        actionSheet.addAction(UIAlertAction(title: "微信", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+        })
+        actionSheet.addAction(UIAlertAction(title: "微信", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
             //print("微信")
-            })
+        })
         
-        actionSheet.addAction(UIAlertAction(title: "朋友圈", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "朋友圈", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
             //print("朋友圈")
-            })
+        })
         
         
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+        self.present(actionSheet, animated: true, completion: nil)
         
     }
     
@@ -574,4 +488,4 @@ class TogetherTravelViewController: BaseViewController,UISearchBarDelegate{
 
 
 
-    
+

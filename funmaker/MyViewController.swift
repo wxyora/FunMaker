@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftHTTP
+import Alamofire
 
 class MyViewController: BaseViewController {
 
@@ -21,26 +21,26 @@ class MyViewController: BaseViewController {
     
     @IBOutlet weak var loginNow: UIButton!
     
-    var thumbQueue = NSOperationQueue()
+    var thumbQueue = OperationQueue()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
-        rc.addTarget(self, action: #selector(MyViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
+        rc.addTarget(self, action: #selector(MyViewController.refreshTableView), for: UIControlEvents.valueChanged)
         self.refreshControl = rc
         valideLoginState()
-        self.navigationController!.navigationBar.tintColor=UIColor.whiteColor();
-        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.tintColor=UIColor.white;
+        self.navigationController!.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName: UIColor.white]
 
 
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
         
         
-        let userInfo=NSUserDefaults.standardUserDefaults()
-        let token  =  userInfo.objectForKey("token")
+        let userInfo=UserDefaults.standard
+        let token  =  userInfo.object(forKey: "token")
         if token != nil{
             initData()
         }
@@ -53,33 +53,33 @@ class MyViewController: BaseViewController {
         headImage.layer.masksToBounds = true
         
         headImage.layer.borderWidth=1
-        headImage.layer.borderColor = UIColor.grayColor().CGColor
+        headImage.layer.borderColor = UIColor.gray.cgColor
         
         
     }
 
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // alert(String(indexPath.row))
           let token = getToken()
-        if indexPath.row == 0{
+        if (indexPath as NSIndexPath).row == 0{
             if token.isEmpty{
-                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
-                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+                let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! UINavigationController
+                self.navigationController?.present(loginViewController, animated: true, completion: nil)
             }else{
-                let myProfileViewController = storyBoard.instantiateViewControllerWithIdentifier("MyProfileViewController") as! MyProfileViewController
+                let myProfileViewController = storyBoard.instantiateViewController(withIdentifier: "MyProfileViewController") as! MyProfileViewController
                 self.navigationController?.pushViewController(myProfileViewController, animated: true)
             }
         
-        }else if indexPath.row == 2{
+        }else if (indexPath as NSIndexPath).row == 2{
             if token.isEmpty{
-                let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
-                self.navigationController?.presentViewController(loginViewController, animated: true, completion: nil)
+                let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! UINavigationController
+                self.navigationController?.present(loginViewController, animated: true, completion: nil)
             }else{
-                let travelListViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelListViewController") as! TravelListViewController
+                let travelListViewController = storyBoard.instantiateViewController(withIdentifier: "TravelListViewController") as! TravelListViewController
                 self.navigationController?.pushViewController(travelListViewController, animated: true)
             }
-        }else if indexPath.row==3{
+        }else if (indexPath as NSIndexPath).row==3{
         
             self.noticeInfo("敬请期待...", autoClear: true, autoClearTime:1)
 
@@ -99,7 +99,7 @@ class MyViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         
          //接收登录成功的通知
@@ -110,14 +110,14 @@ class MyViewController: BaseViewController {
         valideLoginState()
     }
     
-    func doSome(notification:NSNotification){
+    func doSome(_ notification:Notification){
         
         valideLoginState()
         //self.noticeSuccess("登录成功", autoClear: true, autoClearTime:3)
     }
     
     
-    func doLoginOut(notification:NSNotification){
+    func doLoginOut(_ notification:Notification){
         
         valideLoginState()
         //self.noticeSuccess("退出成功", autoClear: true, autoClearTime:3)
@@ -131,67 +131,43 @@ class MyViewController: BaseViewController {
         
     
        
-        let userInfo=NSUserDefaults.standardUserDefaults()
-        let token  =  userInfo.objectForKey("token")
-        let headObj = userInfo.objectForKey("headImage")
+        let userInfo=UserDefaults.standard
+        let token  =  userInfo.object(forKey: "token")
+        let headObj = userInfo.object(forKey: "headImage")
         var headName = ""
         
         if token == nil{
             nickName.text = "您还没有登录哦"
-            loginNow.hidden=false
+            loginNow.isHidden=false
             myTravelLb.text? = "我的拼团游"
             homeHouseLb.text?="我的民宿"
             let head=UIImage(named: "skull")
             self.headImage.image=head
   
         }else{
-            nickName.text = userInfo.stringForKey("mobile")!+" 已登录"
-            loginNow.hidden = true
+            nickName.text = userInfo.string(forKey: "mobile")!+" 已登录"
+            loginNow.isHidden = true
             getData()
             
             
             if headObj != nil{
                
-                 headName  =  String(headObj!)
+                 headName  =  String(describing: headObj!)
+
                 
-                
-                
-                
-                
-//                
-//                var str = Constant.host+Constant.headImageUrl+headName+".png"
-//                //防止url报出空指针异常
-//                str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-//                let url:NSURL = NSURL(string:str)!
-//                
-//                let request = NSURLRequest(URL:url)
-//                NSURLConnection.sendAsynchronousRequest(request, queue: thumbQueue, completionHandler: { response, data, error in
-//                    if (error != nil) {
-//                        print(error)
-//                        
-//                    } else {
-//                        let image = UIImage.init(data :data!)
-//                        dispatch_async(dispatch_get_main_queue(), {
-//                            self.headImage.image = image
-//                        })
-//                    }
-//                })
-                
-                
-                
-                let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-                dispatch_async(dispath, { () -> Void in
+                let dispath=DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high)
+                dispath.async(execute: { () -> Void in
                     
                     var str = Constant.head_image_host+headName+".png"
                     //防止url报出空指针异常
-                    str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-                    let url:NSURL = NSURL(string:str)!
-                    let data=NSData(contentsOfURL: url)
+                    str = str.addingPercentEscapes(using: String.Encoding.utf8)!
+                    let url:URL = URL(string:str)!
+                    let data=try? Data(contentsOf: url)
                    
                     if data != nil {
                         let ZYHImage=UIImage(data: data!)
                         //写缓存
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        DispatchQueue.main.async(execute: { () -> Void in
                             //刷新主UI
                            self.headImage.image = ZYHImage
                         })
@@ -222,12 +198,12 @@ class MyViewController: BaseViewController {
     
     func refreshTableView(){
         
-        if(self.refreshControl?.refreshing==true){
+        if(self.refreshControl?.isRefreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
             
             valideLoginState()
 
-            //getData()
+            getData()
 
         }
     }
@@ -236,111 +212,52 @@ class MyViewController: BaseViewController {
     
     func initData(){
         //开启网络请求hud
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.pleaseWait()
-        do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
-            
-            opt.start { response in
+        
+        
+        
+        Alamofire.request(Constant.host+Constant.getUnionByUser,method:.get, parameters: ["userId":getMobile()])
+            .responseJSON { response in
                 
-                if let err = response.error {
-                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.clearAllNotice()
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime:2)
+                if let myJson = response.result.value {
+                    if let data : NSArray = ((myJson as AnyObject).object(forKey: "data") as? NSArray){
+                    DispatchQueue.main.async { [weak self] in
+                        let n :Int = data.count
+                        let s = "(\(n))"
+                        self?.myTravelLb.text?="我的拼团游\(s)"
                     }
-                }else{
-                    
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    
-                    self.clearAllNotice()
-                    //把NSData对象转换回JSON对象
-                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                    if json == nil {
-                        self.alert("网络异常，请重试")
-                    }else{
-
-                        let data : NSArray = json.objectForKey("data") as! NSArray
-  
-                            //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                            dispatch_async(dispatch_get_main_queue()) {
-                                let n :Int = data.count
-                                let s = "(\(n))"
-                                self.myTravelLb.text?="我的拼团游\(s)"
-                                //self.homeHouseLb.text?="我的民宿\(s)"
-                            }
-                    }
-                    
+                }
                 }
                 
-            }
-            
-        } catch {
-             self.noticeError(String(error), autoClear: true, autoClearTime: 3)
+                self.clearAllNotice()
         }
+
+ 
     }
     
     func getData(){
         
-        //开启网络请求hud
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        self.pleaseWait()
-        do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
-            
-            opt.start { response in
-                
-                if let err = response.error {
-                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.clearAllNotice()
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime:2)
-                    }                }else{
-                    
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    self.clearAllNotice()
-                    //把NSData对象转换回JSON对象
-                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                    if json == nil {
-                        self.alert("网络异常，请重试")
-                      
-                    }else{
-                        let data : NSArray = json.objectForKey("data") as! NSArray
-                        //let mobile : AnyObject = json.objectForKey("mobile")!
-                        
-                          //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                            dispatch_async(dispatch_get_main_queue()) {
-                                //self.tableViewData! = data
-                                var n :Int = data.count
-                                let s = "(\(n))"
-                                self.myTravelLb.text?="我的拼团游\(s)"
-                                //self.homeHouseLb.text?="我的民宿\(s)"
-
-                                self.refreshControl?.endRefreshing()
-                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                                self.tableView.reloadData()
-                            }
-                            
-                            
-                        
-                        
-                        
-                        
+ 
+        
+        Alamofire.request(Constant.host+Constant.getUnionByUser,method:.get, parameters: ["userId":getMobile()])
+            .responseJSON { response in
+                //print(Constant.host+Constant.getUnionByUser+"?userId=\(self.getMobile())")
+                if let myJson = response.result.value {
+                    //let data = myJson as! Dictionary<String,AnyObject>
+                    if let data : NSArray = ((myJson as AnyObject).object(forKey: "data") as? NSArray){
+                    DispatchQueue.main.async { [weak self] in
+                        let n :Int = data.count
+                        let s = "(\(n))"
+                        self?.myTravelLb.text?="我的拼团游\(s)"
                     }
-                    
+                    }
                 }
                 
-            }
-            
-        } catch {
-            self.noticeError(String(error), autoClear: true, autoClearTime: 3)
-                   }
-        
-        
+               
+                
+        }
+     
     }
 
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftHTTP
+import Alamofire
 
 class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewDelegate{
     
@@ -23,11 +23,11 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
  
     @IBOutlet weak var cancel: UIButton!
     
-    @IBAction func cancelClick(sender: AnyObject) {
+    @IBAction func cancelClick(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         if valideLoginState()==0 {
             return false
@@ -40,26 +40,26 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         }else if textField.tag == 2 {
             
             let actionSheet = UIAlertController()
-            actionSheet.addAction(UIAlertAction(title: "飞机", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "飞机", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
                 self.action.text="飞机"
                 })
-            actionSheet.addAction(UIAlertAction(title: "高铁", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "高铁", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
                  self.action.text="高铁"
                 })
-            actionSheet.addAction(UIAlertAction(title: "自驾游", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "自驾游", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
                  self.action.text="自驾游"
                 })
-            actionSheet.addAction(UIAlertAction(title: "摩托车", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "摩托车", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
                  self.action.text="摩托车"
                 })
-            actionSheet.addAction(UIAlertAction(title: "自行车", style: UIAlertActionStyle.Default) { (alertAciton) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "自行车", style: UIAlertActionStyle.default) { (alertAciton) -> Void in
                  self.action.text="自行车"
                 })
 
             
-            actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (alertAciton) -> Void in})
+            actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (alertAciton) -> Void in})
             
-            self.presentViewController(actionSheet, animated: true, completion: nil)
+            self.present(actionSheet, animated: true, completion: nil)
             
             return false
         }else{
@@ -72,7 +72,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         dateInfo.text=""
         content.text=""
@@ -85,8 +85,8 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
      
     }
     
-    func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
             //print("收回键盘")
             dateInfo.resignFirstResponder()
             contact.resignFirstResponder()
@@ -101,7 +101,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
 
     
     
-    @IBAction func publishUnion(sender: AnyObject) {
+    @IBAction func publishUnion(_ sender: AnyObject) {
         
         
         
@@ -126,72 +126,29 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
                             message = "请填写具体计划"
                             alert(message)
                         }else{
-                            //开启网络请求hud
-                            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-                            self.pleaseWait()
-                            do {
-                                let opt = try HTTP.GET(Constant.host+Constant.publishUrl, parameters: ["userId":getMobile(), "unionTheme": theme.text,"outTime": dateInfo.text,"unionContent": content.text,"contactWay":contact.text,"reachWay":action.text])
-                                //                    opt.progress = { progress in
-                                //                        print("progress: \(progress)") //this will be between 0 and 1.
-                                //                    }
-                                opt.start { response in
+                            
+                            
+                            Alamofire.request(Constant.host+Constant.publishUrl,method:.get, parameters: ["userId":getMobile(), "unionTheme": theme.text!,"outTime": dateInfo.text!,"unionContent": content.text!,"contactWay":contact.text!,"reachWay":action.text!])
+                                .responseJSON { response in
                                     
-                                    if let err = response.error {
-                                        //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                        dispatch_async(dispatch_get_main_queue()) {
-                                            self.clearAllNotice()
-                                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                                            self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
-                                        }
-                                    }else{
+                                    if let myJson = response.result.value {
                                         
-                                        //关闭网络请求hud
-                                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                                        
-                                        //self.clearAllNotice()
-                                        //把NSData对象转换回JSON对象
-                                        let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                                        if json == nil {
-                                            self.alert("网络异常，请重试")
-                                            self.clearAllNotice()
-                                        }else{
-                                            let result : AnyObject = json.objectForKey("result")!
-                                            
-                                            //let mobile : AnyObject = json.objectForKey("mobile")!
-                                            if String(result)=="发布成功"{
-                                               
-                                                //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                                                dispatch_async(dispatch_get_main_queue()) {
-                                                    self.clearAllNotice()
-                                                    self.myAlert("发布成功，请到<我的>中查看。")
-                                                   // let tabBarViewController = self.storyBoard.instantiateViewControllerWithIdentifier("TabBarViewController") as! TabBarViewController
-                                                    //self.tabBarController?.presetViewController(tabBarViewController, animated: true)
-                                                    //self.tabBarController?.tabBar.selectedItem = (self.tabBarController?.tabBar.items![3])! as UITabBarItem
-                                                   
-                                                    //self.noticeInfo("发布成功", autoClear: true, autoClearTime: 2)
-//                                                    self.dateInfo.text=""
-//                                                    self.content.text=""
-//                                                    self.theme.text=""
-//                                                    self.action.text=""
-//                                                    self.contact.text=""
-                                                    
-                                            
-                                                    
-                                                    //self.dismissViewControllerAnimated(true, completion: nil)
-                                                     // self.dismissViewControllerAnimated(true, completion: nil)
-                                      
-                                                }
+                                        let json = myJson as! Dictionary<String,AnyObject>
+                                        let result = json["result"] as! String
+                                            DispatchQueue.main.async { [weak self] in
+                                               if result=="发布成功"{
+                                                self?.clearAllNotice()
+                                                self?.myAlert("发布成功，请到<我的>中查看。")
                                             }
-                                            
-                                        }
                                         
                                     }
                                     
-                                }
-                                
-                            } catch {
-                                print("loginValidate interface got an error creating the request: \(error)")
+                                    self.clearAllNotice()
                             }
+                            }
+                         
+                            self.pleaseWait()
+
                             
                         }
                         
@@ -212,44 +169,44 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     var alertview:UIView! = UIView()
     
     
-    @IBAction func date(sender: AnyObject) {
+    @IBAction func date(_ sender: AnyObject) {
         
         setDate()
     }
     
-    func myAlert(message:String){
-        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in
-             self.dismissViewControllerAnimated(true, completion: nil)
+    func myAlert(_ message:String){
+        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel){ (alertAciton) -> Void in
+             self.dismiss(animated: true, completion: nil)
             
             })
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func setDate() {
         
         
         
-        var screen:UIScreen = UIScreen.mainScreen()
-        var devicebounds:CGRect = screen.bounds
-        var deviceWidth:CGFloat = devicebounds.width
-        var deviceHeight:CGFloat = devicebounds.height
-        var viewColor:UIColor = UIColor(white:0, alpha: 0.6)
+        let screen:UIScreen = UIScreen.main
+        let devicebounds:CGRect = screen.bounds
+        let deviceWidth:CGFloat = devicebounds.width
+        let deviceHeight:CGFloat = devicebounds.height
+        let viewColor:UIColor = UIColor(white:0, alpha: 0.6)
         
         //设置日期弹出窗口
         alertview = UIView(frame:devicebounds)
         alertview.backgroundColor = viewColor
-        alertview.userInteractionEnabled = true
+        alertview.isUserInteractionEnabled = true
         
         //设置datepicker
-        datePicker.datePickerMode = .Date
-        datePicker.backgroundColor = UIColor.whiteColor()
+        datePicker.datePickerMode = .date
+        datePicker.backgroundColor = UIColor.white
         datePicker.frame = CGRect(x:0,y:deviceHeight/3,width:deviceWidth,height:216)
         
         //设置 确定 和 取消 按钮
         //var li_common:Li_common = Li_common()
-        var selectedButton:UIButton = Li_createButton("确定",x:0,y:deviceHeight/3,width:deviceWidth/2,height:45,target:self, action: Selector("selectedAction"))
-        var cancelButton:UIButton = Li_createButton("取消",x:deviceWidth/2,y:deviceHeight/3,width:deviceWidth/2,height:45,target:self, action: Selector("cancelAction"))
+        let selectedButton:UIButton = Li_createButton("确定",x:0,y:deviceHeight/3,width:deviceWidth/2,height:45,target:self, action: #selector(PublishViewController.selectedAction))
+        let cancelButton:UIButton = Li_createButton("取消",x:deviceWidth/2,y:deviceHeight/3,width:deviceWidth/2,height:45,target:self, action: #selector(PublishViewController.cancelAction))
         
         alertview.addSubview(datePicker)
         alertview.addSubview(selectedButton)
@@ -278,13 +235,13 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
         
     }
     
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         let animationDuration=0.90;
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(animationDuration)
         let width = self.view.frame.size.width;
         let height = self.view.frame.size.height;
-        let rect=CGRectMake(0.0,-140,width,height);
+        let rect=CGRect(x: 0.0,y: -140,width: width,height: height);
         self.view.frame=rect;
         UIView.commitAnimations()
         return true
@@ -294,13 +251,13 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     
     
    
-    func textViewDidEndEditing(textView: UITextView) {
-        let animationDuration=0.90;
+    func textViewDidEndEditing(_ textView: UITextView) {
+        let animationDuration=0.20;
         UIView.beginAnimations("ResizeForKeyboard", context: nil)
         UIView.setAnimationDuration(animationDuration)
         let width = self.view.frame.size.width;
         let height = self.view.frame.size.height;
-        let rect=CGRectMake(0.0,0,width,height);
+        let rect=CGRect(x: 0.0,y: 0,width: width,height: height);
         self.view.frame=rect;
          UIView.commitAnimations()
     }
@@ -308,7 +265,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     
     //选择日期
     func selectedAction(){
-        var dateString:String = self.dateString(datePicker.date)
+        let dateString:String = self.dateString(datePicker.date)
         dateInfo.text=dateString
         removeAlertview()
         
@@ -323,32 +280,32 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     }
     
     //返回2014-06-19格式的日期
-    func dateString(date:NSDate) ->String{
-        var dateFormatter:NSDateFormatter = NSDateFormatter()
+    func dateString(_ date:Date) ->String{
+        let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        var dateString:String = dateFormatter.stringFromDate(date)
+        let dateString:String = dateFormatter.string(from: date)
         return dateString
     }
     
     
     //日期选择器响应方法
-    func dateChanged(datePicker : UIDatePicker){
+    func dateChanged(_ datePicker : UIDatePicker){
         //更新提醒时间文本框
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         //日期样式
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
-        print(formatter.stringFromDate(datePicker.date))
+        print(formatter.string(from: datePicker.date))
     }
     
  
     
     func valideLoginState()->Int{
         
-        let userInfo=NSUserDefaults.standardUserDefaults()
-        let token  =  userInfo.objectForKey("token")
+        let userInfo=UserDefaults.standard
+        let token  =  userInfo.object(forKey: "token")
         if token == nil{
-            let loginViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! UINavigationController
-            self.presentViewController(loginViewController, animated: true, completion: nil)
+            let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! UINavigationController
+            self.present(loginViewController, animated: true, completion: nil)
             return 0
         }else{
             return 1
@@ -358,7 +315,7 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         dateInfo.resignFirstResponder()
         contact.resignFirstResponder()
@@ -371,9 +328,9 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     
     
     //关闭textview的键盘
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
-        if text.containsString("\n") {
+        if text.contains("\n") {
             
             self.view.endEditing(true)
             
@@ -388,13 +345,13 @@ class PublishViewController: BaseViewController ,UITextFieldDelegate,UITextViewD
     /*
      快速创建一种常用的button，state：normal，  backgroundcolor：white，  type：system    ControlEvents:TouchUpInside
      */
-    func Li_createButton(title:String!,x:CGFloat,y:CGFloat,width:CGFloat,height:CGFloat,target: AnyObject!, action: Selector) ->UIButton{
-        var buttonRect:CGRect = CGRect(x:x, y:y, width:width, height:height)
-        let button:UIButton = UIButton(type: UIButtonType.System)
-        button.setTitle(title, forState: UIControlState.Normal)
+    func Li_createButton(_ title:String!,x:CGFloat,y:CGFloat,width:CGFloat,height:CGFloat,target: AnyObject!, action: Selector) ->UIButton{
+        let buttonRect:CGRect = CGRect(x:x, y:y, width:width, height:height)
+        let button:UIButton = UIButton(type: UIButtonType.system)
+        button.setTitle(title, for: UIControlState())
         button.frame = buttonRect
-        button.backgroundColor = UIColor.whiteColor()
-        button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        button.backgroundColor = UIColor.white
+        button.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
         return button
     }
     

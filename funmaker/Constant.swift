@@ -34,12 +34,14 @@ class Constant: NSObject {
  
     //wxyora.xicp.net:39307/WaylonServer/getUnionByUser.action?userId=15901966196
     
-    //wxyora.xicp.net:39307/WaylonServer/findUserByMobile.action?mobile=15901966196
-    //wxyora.xicp.net:39307/WaylonServer/getUnionByUnionId.action?unionId=6
+    //139.196.192.191:8080/WaylonServer/findUserByMobile.action?mobile=15901966196
+    //wxyora.xicp.net:39307/WaylonServer/getUnionByUnionId.action?unionId=86
     
     //139.196.192.191:8080/WaylonServer/getUnionByUnionId.action?unionId=86
     
     //139.196.192.191:8080/WaylonServer/getUnionByUser.action?userId=15901966196
+    
+    //139.196.192.191:8080/WaylonServer/getAllUnionByPage.action?beginPage=0&endPage=8
 
     //http://wxyora.xicp.net:39307/WaylonServer/loginValidate.action?mobile=15901966196&password=123456&heasImageUrl=xxx
 }

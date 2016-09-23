@@ -19,33 +19,44 @@ class MessageTableViewController: RCConversationListViewController,RCIMUserInfoD
     
 
     //聊天列表中新建的回话userid会传进来
-    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
-        let userInfo = NSUserDefaults.standardUserDefaults()
+    func getUserInfo(withUserId userId: String!, completion: ((RCUserInfo?) -> Void)!) {
+        let userInfo = UserDefaults.standard
         
-        let headImageUrl = userInfo.stringForKey(userId)
+      //  let headImageUrl = userInfo.string(forKey: userId)
         
       //  if headImageUrl == nil{
-            Alamofire.request(.GET, Constant.host+Constant.findUserUrl, parameters: ["mobile": userId])
+        //Alamofire.request(<#T##url: URLConvertible##URLConvertible#>, method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
+        Alamofire.request(Constant.host+Constant.findUserUrl,method:.get, parameters: ["mobile": userId])
                 .responseJSON { response in
                     
                     if let myJson = response.result.value {
-                        //let result = String(myJson.valueForKey("result")!)
-                        let userInfoTemp = myJson.objectForKey("userInfo")
-                        let headImage = String(userInfoTemp!.valueForKey("headImage")!)
-                        let nickName = String(userInfoTemp!.valueForKey("nickName")!)
+                    
+             
+                        let dict = myJson as! Dictionary<String,AnyObject>
+                        let userInfo1 = dict["userInfo"]
+                        
+                        //let userInfoTemp = json.object(forKey: "userInfo") as AnyObject
+                        let headImage = userInfo1?["headImage"] as! String
+                        //let headImage = userInfoTemp.object(forKey: "headImage") as! String
+                        //let nickName = userInfoTemp.object(forKey: "nickName") as! String
                         let headImageUrlNew = Constant.head_image_host+headImage+".png"
-                        
-                        
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
+//                        
+                        DispatchQueue.main.async { [weak self] in
+                            let name = self?.nibName
+                            print(name)
                             userInfo.setValue(headImageUrlNew, forKey: userId)
                             userInfo.synchronize()
-                            var nickName = userId
-                            let subRange=Range(start: nickName.startIndex.advancedBy(3), end: nickName.startIndex.advancedBy(7)) //Swift 2.0
-                            nickName.replaceRange(subRange, with: "****")
+                            var nickName = userId!
+                            let subRange=(nickName.characters.index(nickName.startIndex, offsetBy: 3) ..< nickName.characters.index(nickName.startIndex, offsetBy: 7)) //Swift 2.0
+                            nickName.replaceSubrange(subRange, with: "****")
+                            //nickName?.replaceSubrange(3...4, with: "****")
+//                            let subRange=Range(start: nickName?.startIndex.advancedBy(3), end: nickName?.startIndex.advancedBy(7)) //Swift 2.0
+//                            nickName.replaceRange(subRange, with: "****")
                             //刷新主UI
                             let userInfo1 = RCUserInfo(userId: userId, name: nickName, portrait:headImageUrlNew)
                             return completion(userInfo1)
-                        })
+                        }
                     }
                 
             }
@@ -67,7 +78,7 @@ class MessageTableViewController: RCConversationListViewController,RCIMUserInfoD
         //重写显示相关的接口，必须先调用super，否则会屏蔽SDK默认的处理
         super.viewDidLoad()
         
-         RCIM.sharedRCIM().userInfoDataSource = self
+         RCIM.shared().userInfoDataSource = self
        
         
         //设置需要显示哪些类型的会话
@@ -78,38 +89,40 @@ class MessageTableViewController: RCConversationListViewController,RCIMUserInfoD
            // RCConversationType.ConversationType_GROUP.rawValue])
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-         self.tabBarController!.tabBar.hidden = false
+         self.tabBarController!.tabBar.isHidden = false
         // 发送通知,通知控制器即将展开
-        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillShow, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: PopoverAnimatorWillShow), object: self)
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
             }
     
     //重写RCConversationListViewController的onSelectedTableRow事件
-    override func onSelectedTableRow(conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, atIndexPath indexPath: NSIndexPath!) {
+    override func onSelectedTableRow(_ conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, at indexPath: IndexPath!) {
         //打开会话界面
         let chat = RCConversationViewController(conversationType: model.conversationType, targetId: model.targetId)
-        var nickName = model.targetId
-        let subRange=Range(start: nickName.startIndex.advancedBy(3), end: nickName.startIndex.advancedBy(7)) //Swift 2.0
-        nickName.replaceRange(subRange, with: "****")
-        chat.title = "与\(nickName)会话"
+        var nickName = model.targetId!
+        let subRange=(nickName.characters.index(nickName.startIndex, offsetBy: 3) ..< nickName.characters.index(nickName.startIndex, offsetBy: 7)) //Swift 2.0
+        nickName.replaceSubrange(subRange, with: "****")
+//        let subRange=(nickName?.index((nickName?.startIndex)!, offsetBy: 3) ..< nickName?.index((nickName?.startIndex)!, offsetBy: 7)) //Swift 2.0
+//        nickName.replaceSubrange(subRange, with: "****")
+        chat?.title = "与\(nickName)会话"
          //RCIM.sharedRCIM().globalMessageAvatarStyle = .USER_AVATAR_CYCLE
-         RCIM.sharedRCIM().enableTypingStatus = true
+         RCIM.shared().enableTypingStatus = true
        
-        chat.displayUserNameInCell=true
-        self.navigationController?.pushViewController(chat, animated: true)
+        chat?.displayUserNameInCell=true
+        self.navigationController?.pushViewController(chat!, animated: true)
         
         
         
         
-        self.tabBarController!.tabBar.hidden = true
+        self.tabBarController!.tabBar.isHidden = true
         // 发送通知,通知控制器即将展开
-        NSNotificationCenter.defaultCenter().postNotificationName(PopoverAnimatorWillDismiss, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: PopoverAnimatorWillDismiss), object: self)
         
         
     }

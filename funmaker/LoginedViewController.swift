@@ -13,15 +13,15 @@ class LoginedViewController: BaseViewController,UIWebViewDelegate {
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var progressShow: UIActivityIndicatorView!
     
-    @IBAction func returnUpStep(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func returnUpStep(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
     
         super.viewDidLoad()
         myWebView.delegate = self
-        let url = NSURL(string: "https://www.baidu.com")!
-        let request = NSURLRequest(URL: url)
+        let url = URL(string: "https://www.baidu.com")!
+        let request = URLRequest(url: url)
         myWebView.loadRequest(request)
         
         // Do any additional setup after loading the view.
@@ -33,14 +33,14 @@ class LoginedViewController: BaseViewController,UIWebViewDelegate {
     }
     
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         progressShow.stopAnimating()
         progressShow.hidesWhenStopped = true
 
         
     }
     
-    func webViewDidStartLoad(webView: UIWebView) {
+    func webViewDidStartLoad(_ webView: UIWebView) {
         progressShow.startAnimating()
     }
 

@@ -11,7 +11,7 @@ import UIKit
 class BaseViewController: UITableViewController {
     
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    let userInfo = NSUserDefaults.standardUserDefaults()
+    let userInfo = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +28,15 @@ class BaseViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func alert(message:String){
-        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ (alertAciton) -> Void in })
-        self.presentViewController(alertController, animated: true, completion: nil)
+    func alert(_ message:String){
+        let alertController:UIAlertController!=UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel){ (alertAciton) -> Void in })
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func getToken()->String{
        
-        if let token = userInfo.stringForKey("token"){
+        if let token = userInfo.string(forKey: "token"){
             return token
         }else{
             return ""
@@ -46,18 +46,18 @@ class BaseViewController: UITableViewController {
     
     func getMobile()->String{
         
-        let mobile = userInfo.stringForKey("mobile")
+        let mobile = userInfo.string(forKey: "mobile")
         return mobile!
     }
     
     func clearToken(){
         
-         userInfo.removeObjectForKey("token")
+         userInfo.removeObject(forKey: "token")
          userInfo.synchronize()
     }
     
-    func generateToken(token:String){
-        userInfo.setObject(token, forKey: "Token")
+    func generateToken(_ token:String){
+        userInfo.set(token, forKey: "Token")
         userInfo.synchronize()
 
     }

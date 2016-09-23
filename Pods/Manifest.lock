@@ -1,12 +1,15 @@
 PODS:
-  - RongCloudIMKit (2.7.1)
+  - Alamofire (4.0.0)
+  - RongCloudIMKit (2.7.2)
 
 DEPENDENCIES:
-  - RongCloudIMKit (= 2.7.1)
+  - Alamofire (~> 4.0)
+  - RongCloudIMKit (= 2.7.2)
 
 SPEC CHECKSUMS:
-  RongCloudIMKit: a425b9dbe4d3f05290dd8c0fdcfda1c98a05aac5
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  RongCloudIMKit: 9dcdee89da511bf1fa375ac0646754783cdb9c9e
 
-PODFILE CHECKSUM: 53e7da5660dffe83e810f4b7a9d6499cc97aa317
+PODFILE CHECKSUM: 9242df8f4c3c880ce2a568b361cb107bf92c13e7
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.2

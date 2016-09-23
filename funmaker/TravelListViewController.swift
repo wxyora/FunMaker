@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftHTTP
+import Alamofire
 
 class TravelListViewController: BaseViewController ,UISearchBarDelegate{
     
@@ -25,22 +25,22 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
         
         let rc = UIRefreshControl()
         rc.attributedTitle = NSAttributedString(string: "下拉刷新")
-        rc.addTarget(self, action: #selector(TravelListViewController.refreshTableView), forControlEvents: UIControlEvents.ValueChanged)
+        rc.addTarget(self, action: #selector(TravelListViewController.refreshTableView), for: UIControlEvents.valueChanged)
         self.refreshControl = rc
         
         //去除tableView 多余行的方法 添加一个tableFooterView 后面多余行不再显示
         tableView.tableFooterView = UIView()
-       // initData()
+        initData()
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
        initData()
     }
     
     func refreshTableView(){
         
-        if(self.refreshControl?.refreshing==true){
+        if(self.refreshControl?.isRefreshing==true){
             self.refreshControl?.attributedTitle=NSAttributedString(string:"加载中")
             getData()
         }
@@ -53,113 +53,73 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
     
     func initData(){
         //开启网络请求hud
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.pleaseWait()
-        do {
-            let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
-            
-            opt.start { response in
+        
+        
+        Alamofire.request(Constant.host+Constant.getUnionByUser,method:.get, parameters: ["userId":getMobile()])
+            .responseJSON { response in
                 
-                if let err = response.error {
-                    //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.clearAllNotice()
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
-                    }
-                }else{
-                    
-                    //关闭网络请求hud
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    
-                    self.clearAllNotice()
-                    //把NSData对象转换回JSON对象
-                    let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                    if json == nil {
-                        self.alert("网络异常，请重试")
-                        self.clearAllNotice()
-                    }else{
-                        let data : NSArray = json.objectForKey("data") as! NSArray
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.tableViewData = data
-                            self.refreshControl?.endRefreshing()
-                            self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                            self.tableView.reloadData()
-                             self.clearAllNotice()
+                if let myJson = response.result.value {
+   
+                    if let data : NSArray = ((myJson as AnyObject).object(forKey: "data") as? NSArray){
+                        DispatchQueue.main.async { [weak self] in
                             if data.count == 0{
-                                self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
+                                self?.clearAllNotice()
+                                self?.noticeInfo("还没有发布信息", autoClear: true, autoClearTime: 1)
+
+                            }else{
+                                self?.tableViewData = data
+                                //                            self?.refreshControl?.endRefreshing()
+                                //                            self?.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                                self?.tableView.reloadData()
+
                             }
-                        }
-                    }
-                    
-                }
+                            
+                          }
+                    }                }
                 
-            }
-            
-        } catch {
-            print("loginValidate interface got an error creating the request: \(error)")
+                self.clearAllNotice()
+                
         }
+
     }
     
     func getData(){
         
-            //开启网络请求hud
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            //self.pleaseWait()
-            do {
-                let opt = try HTTP.GET(Constant.host+Constant.getUnionByUser, parameters: ["userId":getMobile()])
-
-                opt.start { response in
-                    
-                    if let err = response.error {
-                        //＊＊＊＊＊＊从主线程中执行＊＊＊＊＊＊＊＊＊
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.clearAllNotice()
-                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                            self.noticeInfo(err.localizedDescription, autoClear: true, autoClearTime: 2)
-                        }
-                    }else{
-                        
-                        //关闭网络请求hud
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        //self.clearAllNotice()
-                        //把NSData对象转换回JSON对象
-                        let json : AnyObject! = try? NSJSONSerialization.JSONObjectWithData(response.data, options:NSJSONReadingOptions.AllowFragments)
-                        if json == nil {
-                            self.alert("网络异常，请重试")
-                            self.clearAllNotice()
-                        }else{
-                            let data : NSArray = json.objectForKey("data") as! NSArray
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.tableViewData = data
-                                self.refreshControl?.endRefreshing()
-                                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                                self.tableView.reloadData()
-                                if data.count == 0{
-                                    self.noticeInfo("没有数据", autoClear: true, autoClearTime: 1)
-                                }
-                            }
-                        }
-                        
-                    }
-                    
-                }
+      Alamofire.request(Constant.host+Constant.getUnionByUser,method:.get, parameters: ["userId":getMobile()])
+            .responseJSON { response in
                 
-            } catch {
-                print("loginValidate interface got an error creating the request: \(error)")
+                if let myJson = response.result.value {
+                    
+                    
+                    
+                    if let data : NSArray = ((myJson as AnyObject).object(forKey: "data") as? NSArray){
+                        DispatchQueue.main.async { [weak self] in
+                            if data.count == 0{
+                                self?.clearAllNotice()
+                                self?.noticeInfo("还没有发布信息", autoClear: true, autoClearTime: 1)
+                            }else{
+                                self?.tableViewData = data
+                               
+                                self?.tableView.reloadData()
+
+                            }
+                            self?.refreshControl?.endRefreshing()
+                            self?.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                        }
+                    }
+                }
+                 self.clearAllNotice()
             }
-            
         
-    }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                
+        }
+        
+        
+        
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if tableViewData == nil{
             return 0
@@ -171,17 +131,22 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell:TogetherTravelCell! = tableView.dequeueReusableCellWithIdentifier("TogetherTravelCell", forIndexPath: indexPath) as? TogetherTravelCell
+        var cell:TogetherTravelCell! = tableView.dequeueReusableCell(withIdentifier: "TogetherTravelCell", for: indexPath) as? TogetherTravelCell
         if(cell == nil){
-            cell = TogetherTravelCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TogetherTravelCell")
+            cell = TogetherTravelCell(style: UITableViewCellStyle.default, reuseIdentifier: "TogetherTravelCell")
         }else{
             
-            let unionTheme:String = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionTheme")!)
-            let outTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("outTime")!)
-            let unionId = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("unionId")!)
-            let publishTime = String(tableViewData!.objectAtIndex(indexPath.row).objectForKey("publishTime")!)
+             //let unionTheme = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "unionTheme") as! String
+            
+            let unionTheme = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "unionTheme") as! String
+            let unionId = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "unionId") as! String
+            let outTime = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "outTime") as! String
+            let publishTime = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "publishTime") as! String
+            let mobile = (tableViewData!.object(at: indexPath.row) as AnyObject).value(forKey: "userId") as! String
+           
+
             //解决Optional("***")问题
             cell.themeTitle.text = unionTheme
             cell.outTime.text=outTime
@@ -189,22 +154,22 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
             cell.publishTime.text=publishTime
             
             
-            let headObj = userInfo.objectForKey("headImage")
-            var headName  =  String(headObj!)
+            let headObj = userInfo.object(forKey: "headImage")
+            var headName  =  String(describing: headObj!)
             if headName != ""{
-                let dispath=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-                dispatch_async(dispath, { () -> Void in
+                let dispath=DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high)
+                dispath.async(execute: { () -> Void in
                     
                     var str = Constant.head_image_host+headName+".png"
                     //防止url报出空指针异常
-                    str = str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-                    let url:NSURL = NSURL(string:str)!
-                    let data=NSData(contentsOfURL: url)
+                    str = str.addingPercentEscapes(using: String.Encoding.utf8)!
+                    let url:URL = URL(string:str)!
+                    let data=try? Data(contentsOf: url)
                     
                     if data != nil {
                         let ZYHImage=UIImage(data: data!)
                         //写缓存
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        DispatchQueue.main.async(execute: { () -> Void in
                             //刷新主UI
                             cell.myHeadImage.image = ZYHImage
                         })
@@ -234,17 +199,17 @@ class TravelListViewController: BaseViewController ,UISearchBarDelegate{
     }
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
       
         
-        var cell:TogetherTravelCell = tableView.cellForRowAtIndexPath(indexPath) as! TogetherTravelCell
+        let cell:TogetherTravelCell = tableView.cellForRow(at: indexPath) as! TogetherTravelCell
         let unionId = cell.unionId.text
         
-        userInfo.setObject(unionId, forKey: "unionId")
+        userInfo.set(unionId, forKey: "unionId")
         userInfo.synchronize()
         
-        let travelDetailViewController = storyBoard.instantiateViewControllerWithIdentifier("TravelDetailViewController") as! TravelDetailViewController
+        let travelDetailViewController = storyBoard.instantiateViewController(withIdentifier: "TravelDetailViewController") as! TravelDetailViewController
      
         self.navigationController?.pushViewController(travelDetailViewController, animated: true)
       

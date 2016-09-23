@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         //注册发短信sdk
         SMSSDK.registerApp("152586542fe1a", withSecret:"e5cef2c86a470a123672b7cbaf12ec0e")
@@ -24,13 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.applicationIconBadgeNumber=0
        
-        let userInfo:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+        let userInfo:UserDefaults=UserDefaults.standard
 
-        let socketTokenObj = userInfo.objectForKey("socketToken")
+        let socketTokenObj = userInfo.object(forKey: "socketToken")
 
         if socketTokenObj != nil{
-            RCIM.sharedRCIM().initWithAppKey(Constant.rongyun_key)
-            RCIM.sharedRCIM().connectWithToken(String(socketTokenObj!),
+            RCIM.shared().initWithAppKey(Constant.rongyun_key)
+            RCIM.shared().connect(withToken: String(describing: socketTokenObj!),
                                                success: { (userId) -> Void in
                                                 print("融云登陆成功。当前登录的用户ID：\(userId)")
                              
@@ -44,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }else{
             //解决游客身份应用从后台到前台的闪退问题
-            RCIM.sharedRCIM().initWithAppKey(Constant.rongyun_key)
-            RCIM.sharedRCIM().connectWithToken(String("未登录token"),
+            RCIM.shared().initWithAppKey(Constant.rongyun_key)
+            RCIM.shared().connect(withToken: String("未登录token"),
                                                success: { (userId) -> Void in
                                                 print("融云登陆成功。当前登录的用户ID：\(userId)")
                                                 
@@ -61,12 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // 得到当前应用的版本号
-        let infoDictionary = NSBundle.mainBundle().infoDictionary
+        let infoDictionary = Bundle.main.infoDictionary
         let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
         
         // 取出之前保存的版本号
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let appVersion = userDefaults.stringForKey("appVersion")
+        let userDefaults = UserDefaults.standard
+        let appVersion = userDefaults.string(forKey: "appVersion")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -75,51 +75,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 保存最新的版本号
             userDefaults.setValue(currentAppVersion, forKey: "appVersion")
             
-            let guideViewController = storyboard.instantiateViewControllerWithIdentifier("GuideViewController") as! GuideViewController
+            let guideViewController = storyboard.instantiateViewController(withIdentifier: "GuideViewController") as! GuideViewController
             self.window?.rootViewController = guideViewController
         }
         
         //注册推送服务
-        let notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
-        let pushNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound]
+        let pushNotificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
         application.registerUserNotificationSettings(pushNotificationSettings)
         //application.registerForRemoteNotifications()
       
         return true
     }
     
-    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
           application.registerForRemoteNotifications()
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
        
         
-        let token = deviceToken.description.stringByReplacingOccurrencesOfString("<", withString: "").stringByReplacingOccurrencesOfString(">", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "")
+        let token = deviceToken.description.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "").replacingOccurrences(of: " ", with: "")
   
-        RCIMClient.sharedRCIMClient().setDeviceToken(token)
+        RCIMClient.shared().setDeviceToken(token)
         print("DEVICE TOKEN = \(token)")
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     

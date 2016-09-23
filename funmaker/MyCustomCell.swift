@@ -20,7 +20,7 @@ class MyCustomCell: UITableViewCell {
     
     @IBOutlet weak var logoutButton: UIButton!
     
-    @IBAction func loginout(sender: AnyObject) {
+    @IBAction func loginout(_ sender: AnyObject) {
         
       
         
@@ -32,7 +32,7 @@ class MyCustomCell: UITableViewCell {
       
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
